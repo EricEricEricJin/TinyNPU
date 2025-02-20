@@ -1,0 +1,62 @@
+// TODO
+1   LUI
+1   AUIPC
+1   JAL
+1   JALR
+1   BEQ
+1   BNE
+1   BLT
+1   BGE
+BLTU
+BGEU
+LB  load byte
+LH  load 16-bit 
+1   LW  
+LBU
+LHU
+1   SB
+SH
+SW
+ADDI
+
+SLTI
+SLTIU
+XORI
+ORI
+ANDI
+SLLI
+SRLI
+SRAI
+ADD
+SUB
+SLL
+SLT
+SLTU
+XOR
+SRL
+SRA
+OR
+AND
+FENCE
+FENCE.I
+ECALL
+EBREAK
+CSRRW
+CSRRS
+CSRRC
+CSRRWI
+CSRRSI
+CSRRCI
+
+// NPU instructions
+vlm      dev, addr
+
+vll      v1, addr
+
+vex     dev
+vmv      r1, r2
+
+// done signals are register-mapped
+// andi 0bxxxx --> compare with 0
+
+
