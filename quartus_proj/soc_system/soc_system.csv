@@ -1,0 +1,25 @@
+# system info soc_system on 2025.02.19.09:55:48
+system_info:
+name,value
+DEVICE,5CSEBA6U23I7
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1739930145
+#
+#
+# Files generated for soc_system on 2025.02.19.09:55:48
+files:
+filepath,kind,attributes,module,is_top
+simulation/soc_system.v,VERILOG,,soc_system,true
+simulation/submodules/soc_system_hps_0.v,VERILOG,,soc_system_hps_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+soc_system.hps_0,soc_system_hps_0
+soc_system.hps_0.fpga_interfaces,soc_system_hps_0_fpga_interfaces
+soc_system.hps_0.hps_io,soc_system_hps_0_hps_io
+soc_system.pio32_f2h_0,soc_system_pio32_f2h_0
+soc_system.pio32_h2f_0,soc_system_pio32_h2f_0
+soc_system.mm_interconnect_0,soc_system_mm_interconnect_0
+soc_system.rst_controller,altera_reset_controller
+soc_system.rst_controller_001,altera_reset_controller

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="159" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library/Basic Functions,Project,Library/Basic Functions/Bridges and Adaptors,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Library/Basic Functions/Bridges and Adaptors/Reset,Library/Basic Functions/Clocks; PLLs and Resets,Library/Basic Functions/Simulation; Debug and Verification,Library/Interface Protocols,Library,Library/Interface Protocols/Transceiver PHY" />
+ <window width="1920" height="961" x="0" y="69" />
+ <generation simulation="NONE" />
+ <hdlexample language="VERILOG" />
+</preferences>

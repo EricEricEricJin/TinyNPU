@@ -1,0 +1,6 @@
+DATE = "03:29:31 February 17, 2025"
+QUARTUS_VERSION = "16.0.2"
+
+# Revisions
+
+PROJECT_REVISION = "tiny_npu"

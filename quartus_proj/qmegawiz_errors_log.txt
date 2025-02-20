@@ -1,0 +1,11 @@
+
+
+/home/eric/Documents/Conformer-FPGA-New/TinyNPU/ip_cores/pll_50_to_400.v
+
+Feb 17 05AM:29:24>: Megafunction PLL Intel FPGA IP v23.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+/home/eric/Documents/Conformer-FPGA-New/TinyNPU/ip_cores/pll_50_to_400.v
+
+Feb 17 05AM:32:05>: Megafunction PLL Intel FPGA IP v23.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
