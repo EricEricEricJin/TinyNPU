@@ -1,31 +1,33 @@
 `default_nettype none
 
-module 
-
 import pkg_cpu_types::*;
 
-cpu (
-    input logic clk, rst_n,
+module cpu (
+    input wire clk, rst_n,
 
     // to inst mem 
     output logic [13 : 0] inst_addr,
-    input logic [31 : 0] inst_data,
+    input wire [31 : 0] inst_data,
 
     // to data mem
     output logic [13 : 0] data_addr,
     output logic data_we,
-    inout wire [31 : 0] data_d, data_q
+    
+    output logic [31 : 0] data_d, 
+    input wire [31 : 0] data_q,
 
-    // register-mapped IOs
-    output logic [31 : 0] start_io,
-    input logic [31 : 0] done_io,
+    // // register-mapped IOs
+    // output logic [31 : 0] start_io,
+    // input wire [31 : 0] done_io,
 
     // memory-mapped IOs
-    input logic [31 : 0] h2f_io [0 : 3],
-    output logic [31 : 0] f2h_io [0 : 3],
+    // input wire [31 : 0] h2f_io [0 : 3],
+    // output logic [31 : 0] f2h_io [0 : 3],
 
     output logic ebreak
 );
+
+assign ebreak = inst_data == 32'h100073;
 
 // pc
 logic [31 : 0] prgm_cnt;
@@ -65,12 +67,12 @@ logic bcomp;
 ////////////////////////
 always_comb begin
     case (pc_sel)
-        NXT_PC: prgm_cnt_d = prgm_cnt + 32'h4;
-        BCOMP: begin
+        PC_NXT_PC: prgm_cnt_d = prgm_cnt + 32'h4;
+        PC_BCOMP: begin
             if (bcomp) prgm_cnt_d = prgm_cnt +  {{19{b_im[12]}}, b_im, 1'b0};
             else       prgm_cnt_d = prgm_cnt + 32'h4;
         end
-        PLUS_JIM: prgm_cnt_d = prgm_cnt + {{11{j_im[20]}} , j_im, 1'b0};
+        PC_PLUS_JIM: prgm_cnt_d = prgm_cnt + {{11{j_im[20]}} , j_im, 1'b0};
         default:  prgm_cnt_d = {alu_out[31 : 1], 1'b0};
     endcase
 end
@@ -82,7 +84,8 @@ always_ff @( posedge clk, negedge rst_n ) begin
         prgm_cnt <= prgm_cnt_d;
 end
 
-assign inst_addr = prgm_cnt_d;
+// assign inst_addr = rst_n ? prgm_cnt_d : '0;
+assign inst_addr = prgm_cnt;
 
 ////////////////////////
 // Inst decoder 
@@ -91,12 +94,12 @@ inst_decode i_inst_decode (
     .inst       (inst_data),
 
     .br_fun     (br_fun),
-    .alu_fun    (alu_fun),
 
     .rs1        (ra1),
     .rs2        (ra2),
     .rd         (rf_wa),
 
+    .alu_fun    (alu_fun),
     .wb_sel     (wb_sel),
     .op1_sel    (op1_sel),
     .op2_sel    (op2_sel),
@@ -137,15 +140,15 @@ rf32 i_rf32 (
 
 always_comb begin
     case (op1_sel)
-        RD1:     alu_in0 = rf_rd1;
+        OP1_RD1:     alu_in0 = rf_rd1;
         default: alu_in0 = prgm_cnt;
     endcase
 
     case (op2_sel)
-        2'h0: alu_in1 = rf_rd2;
-        2'h1: alu_in1 = i_im;
-        2'h2: alu_in1 = s_im;
-        default: alu_in1 = '0;
+        OP2_RD2: alu_in1 = rf_rd2;
+        OP2_I_IM: alu_in1 = { { 20 {i_im[11]} }, i_im };
+        OP2_S_IM: alu_in1 = { { 20 {s_im[11]} }, s_im };
+        default: alu_in1 = {u_im, 12'b0};
     endcase
 end
 
@@ -180,9 +183,9 @@ assign data_we = sw_en;
 ////////////////////////
 always_comb begin
     case (wb_sel)
-        ALU_OUT:    rf_wd = alu_out;
-        MEM_Q:      rf_wd = data_q;
-        U_IM:       rf_wd = {u_im, 12'b0};
+        WB_ALU_OUT:    rf_wd = alu_out;
+        WB_MEM_Q:      rf_wd = data_q;
+        WB_U_IM:       rf_wd = {u_im, 12'b0};
         default:    rf_wd = prgm_cnt + 32'h4;
     endcase
 end

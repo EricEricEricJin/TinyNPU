@@ -1,0 +1,428 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/eric/Documents/Conformer-FPGA-New/TinyNPU
+T_opt
+!s110 1740365637
+VU<A=ESK69_Jd]8ljXFz_j2
+04 10 4 work cpu_sim_tb fast 0
+=1-000ae431a4f1-67bbdf45-76bf3-46715
+R1
+!s12b OEM100
+!s124 OEM10U8 
+o-quiet -auto_acc_if_foreign -work work -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+valu
+Z4 2design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_mem.sv|ip_cores/ram_32x256.v|simulation/cpu_sim/cpu_sim_tb.sv
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z6 DXx4 work 13 pkg_cpu_types 0 22 EGc?C=L`Z4JW2ZU]T@;^91
+DXx4 work 11 alu_sv_unit 0 22 4<@gmVZYS2d[cgl^U=X<00
+Z7 !s110 1740365636
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 OZ_efFDPmn>WLUcUoR69k1
+IFcdT[iS=h?m1J]k1ANYb:0
+!s105 alu_sv_unit
+S1
+R2
+Z9 w1740131923
+Z10 8design_rtl/cpu/alu.sv
+Z11 Fdesign_rtl/cpu/alu.sv
+!i122 29
+L0 6 37
+Z12 OL;L;2023.3;77
+31
+Z13 !s108 1740365636.000000
+Z14 !s107 simulation/cpu_sim/cpu_sim_tb.sv|ip_cores/ram_32x256.v|design_rtl/cpu/inst_mem.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/cpu_typedef.sv|
+Z15 !s90 -reportprogress|300|-sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_mem.sv|ip_cores/ram_32x256.v|simulation/cpu_sim/cpu_sim_tb.sv|
+!i113 0
+Z16 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+Xalu_sv_unit
+R4
+R5
+R6
+R7
+V4<@gmVZYS2d[cgl^U=X<00
+r1
+!s85 0
+!i10b 1
+!s100 5aTWIXTZNE_BKf4G8[UU>3
+I4<@gmVZYS2d[cgl^U=X<00
+!i103 1
+S1
+R2
+R9
+R10
+R11
+!i122 29
+L0 4 0
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+vbr_logic
+R4
+R5
+R6
+DXx4 work 16 br_logic_sv_unit 0 22 X@4O67T2T7=RR8i2WEKai0
+R7
+R8
+r1
+!s85 0
+!i10b 1
+!s100 iVXZg9Yo[ZU;Q21UP7^0C2
+IiC7DTH5]dB0^<7YaVQ=1;0
+!s105 br_logic_sv_unit
+S1
+R2
+Z17 w1740210738
+Z18 8design_rtl/cpu/br_logic.sv
+Z19 Fdesign_rtl/cpu/br_logic.sv
+!i122 29
+L0 5 16
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+Xbr_logic_sv_unit
+R4
+R5
+R6
+R7
+VX@4O67T2T7=RR8i2WEKai0
+r1
+!s85 0
+!i10b 1
+!s100 aj:GOX;>^W]W;P>o6TeY03
+IX@4O67T2T7=RR8i2WEKai0
+!i103 1
+S1
+R2
+R17
+R18
+R19
+!i122 29
+Z20 L0 3 0
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+vcpu
+R4
+R5
+R6
+DXx4 work 11 cpu_sv_unit 0 22 ID[zME;C<aW=C_F9HL3mQ3
+R7
+R8
+r1
+!s85 0
+!i10b 1
+!s100 cn0lU_4XIjKP@30C_?6lM1
+InbT9o^dC;_zlY^n]^=;nm1
+!s105 cpu_sv_unit
+S1
+R2
+Z21 w1740364232
+Z22 8design_rtl/cpu/cpu.sv
+Z23 Fdesign_rtl/cpu/cpu.sv
+!i122 29
+Z24 L0 5 189
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+vcpu_sim_tb
+R4
+R5
+DXx4 work 18 cpu_sim_tb_sv_unit 0 22 ]Qd`Dm`<Z0fJm][5P578Z2
+R7
+R8
+r1
+!s85 0
+!i10b 1
+!s100 N6YRiOkMLjAXM6:Q22gnn0
+IGiXOZz3=?=glc:8`iAMjd0
+!s105 cpu_sim_tb_sv_unit
+S1
+R2
+Z25 w1740364655
+Z26 8simulation/cpu_sim/cpu_sim_tb.sv
+Z27 Fsimulation/cpu_sim/cpu_sim_tb.sv
+!i122 29
+L0 35 114
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+Xcpu_sim_tb_sv_unit
+R4
+R5
+R7
+V]Qd`Dm`<Z0fJm][5P578Z2
+r1
+!s85 0
+!i10b 1
+!s100 SZg@HiGNYG[]kiA=TP:3c1
+I]Qd`Dm`<Z0fJm][5P578Z2
+!i103 1
+S1
+R2
+R25
+R26
+R27
+!i122 29
+R20
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+Xcpu_sv_unit
+R4
+R5
+R6
+R7
+VID[zME;C<aW=C_F9HL3mQ3
+r1
+!s85 0
+!i10b 1
+!s100 >8_aFM]=BPm6<UKW3GKgA2
+IID[zME;C<aW=C_F9HL3mQ3
+!i103 1
+S1
+R2
+R21
+R22
+R23
+!i122 29
+R20
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+vinst_decode
+R4
+R5
+R6
+DXx4 work 19 inst_decode_sv_unit 0 22 nYgl2DJhIRNYKMoaGMHo?0
+R7
+R8
+r1
+!s85 0
+!i10b 1
+!s100 ZOiA8T^<IIXO9MLzCT0?F2
+IfHe5YoQ6_CK;I14P5@LgJ2
+!s105 inst_decode_sv_unit
+S1
+R2
+Z28 w1740365426
+Z29 8design_rtl/cpu/inst_decode.sv
+Z30 Fdesign_rtl/cpu/inst_decode.sv
+!i122 29
+R24
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+Xinst_decode_sv_unit
+R4
+R5
+R6
+R7
+VnYgl2DJhIRNYKMoaGMHo?0
+r1
+!s85 0
+!i10b 1
+!s100 76gY1o^2J4@U^?0dbJ6EA0
+InYgl2DJhIRNYKMoaGMHo?0
+!i103 1
+S1
+R2
+R28
+R29
+R30
+!i122 29
+R20
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+vinst_mem
+R4
+R5
+R7
+!i10b 1
+!s100 b6UnHS8>=Nd:O9PJ?gCM=3
+I@YR97[91Af9UEh@FgLdm@0
+S1
+R2
+w1740363967
+8design_rtl/cpu/inst_mem.sv
+Fdesign_rtl/cpu/inst_mem.sv
+!i122 29
+L0 3 20
+R8
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+Xpkg_cpu_types
+R4
+R5
+R7
+!i10b 1
+!s100 L_0EoQ]RSCL;cnnZAJ<K=2
+IEGc?C=L`Z4JW2ZU]T@;^91
+S1
+R2
+w1740233287
+8design_rtl/cpu/cpu_typedef.sv
+Fdesign_rtl/cpu/cpu_typedef.sv
+!i122 29
+R20
+VEGc?C=L`Z4JW2ZU]T@;^91
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+vram_32x256
+R4
+R5
+R7
+!i10b 1
+!s100 e0a0in?WWW_D:;8zW;fRn2
+IiNiFRn7ahl1eQ;QDFH66M2
+S1
+R2
+w1740019605
+8ip_cores/ram_32x256.v
+Fip_cores/ram_32x256.v
+!i122 29
+L0 40 65
+R8
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+vrf32
+R4
+R5
+R7
+!i10b 1
+!s100 deM8DVGg^AcB:`i>Wn_c>3
+IQBA]4;5LlG093Rm^LOZZK2
+S1
+R2
+w1740365630
+8design_rtl/cpu/rf32.sv
+Fdesign_rtl/cpu/rf32.sv
+!i122 29
+L0 3 28
+R8
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3

@@ -88,7 +88,7 @@ assign avg_out = avg_mul [AVG_BS +: 16];
 // genvar i;
 // generate
 //     for (int = 0; i < N; i++;) begin: blk_unpack_x
-//         assign x_unpacked[i] = x_in[i * Q :+ Q];
+//         assign x_unpacked[i] = x_in[i * Q +: Q];
 //     end
 // endgenerate
 

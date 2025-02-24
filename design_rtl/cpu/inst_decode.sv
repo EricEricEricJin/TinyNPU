@@ -1,12 +1,10 @@
 `default_nettype none
 
-module    
-
 import pkg_cpu_types::*;
 
-inst_decode (
+module inst_decode (
 
-    input logic [31 : 0] inst,
+    input wire [31 : 0] inst,
 
     // for CPU
     // output logic         beq, blt, bge, bne,
@@ -32,10 +30,7 @@ inst_decode (
 
 
 logic [6 : 0] op;
-logic [4 : 0] rd;
 logic [2 : 0] fun3;
-logic [4 : 0] rs1;
-logic [4 : 0] rs2;
 logic [6 : 0] fun7;
 
 assign op = inst[6 : 0];
@@ -54,8 +49,8 @@ always_comb begin
         7'h33: inst_type = R_TYPE;
         7'h63: inst_type = B_TYPE;
         7'h6f: inst_type = J_TYPE;
-        {7'h17, 7'h37}: inst_type = U_TYPE;
-        {7'h03, 7'h13, 7'h67, 7'h73}: inst_type = I_TYPE;
+        7'h17, 7'h37: inst_type = U_TYPE;
+        7'h03, 7'h13, 7'h67, 7'h73: inst_type = I_TYPE;
         default: begin inst_type = UNK_TYPE; err_op_unk = 1; end
     endcase
 end
@@ -82,10 +77,10 @@ end
 ////////////////////////
 always_comb begin
     case (fun3)
-        3'h0: br_fun = BEQ;
-        3'h1: br_fun = BNE;
-        3'h4: br_fun = BLT;
-        default: br_fun = BGE; 
+        3'h0: br_fun = BR_BEQ;
+        3'h1: br_fun = BR_BNE;
+        3'h4: br_fun = BR_BLT;
+        default: br_fun = BR_BGE; 
     endcase
 end
 
@@ -93,25 +88,25 @@ always_comb begin
     case (inst_type) inside
         {I_TYPE, R_TYPE}: begin
             case (fun3)
-                3'b001: alu_fun = SLL;
-                3'b010: alu_fun = SLT;
-                3'b011: alu_fun = SLTU;
-                3'b100: alu_fun = XOR;
+                3'b001: alu_fun = ALU_SLL;
+                3'b010: alu_fun = ALU_SLT;
+                3'b011: alu_fun = ALU_SLTU;
+                3'b100: alu_fun = ALU_XOR;
                 3'b101: begin
-                    if (fun7 == 7'h0) alu_fun = SRL;
-                    else alu_fun = SRA;
+                    if (fun7 == 7'h0) alu_fun = ALU_SRL;
+                    else alu_fun = ALU_SRA;
                 end
-                3'b110: alu_fun = OR;
-                3'b111: alu_fun = AND;
+                3'b110: alu_fun = ALU_OR;
+                3'b111: alu_fun = ALU_AND;
                 default: begin  // 0
                     if (inst_type == R_TYPE && fun7 == 7'b0100000)
-                        alu_fun = SUB;
-                    else:
-                        alu_fun = ADD;
+                        alu_fun = ALU_SUB;
+                    else
+                        alu_fun = ALU_ADD;
                 end 
             endcase
         end
-        default: alu_fun = ADD; 
+        default: alu_fun = ALU_ADD; 
     endcase
 end
 
@@ -121,73 +116,74 @@ end
 always_comb begin
     rf_we = 0;
     sw_en = 0;
-    wb_sel = 2'h0;
-    op1_sel = 1'h0;
-    op2_sel = 2'h0;
-    pc_sel = 2'h0;
+    
+    wb_sel = WB_ALU_OUT;
+    op1_sel = OP1_RD1;
+    op2_sel = OP2_RD2;
+    pc_sel = PC_NXT_PC;
 
     case (inst_type)
         R_TYPE: begin
             rf_we = 1;
             sw_en = 0;
-            op1_sel = RD1;
-            op2_sel = RD2;
-            wb_sel = ALU_OUT;
-            pc_sel = NXT_PC;
+            op1_sel = OP1_RD1;
+            op2_sel = OP2_RD2;
+            wb_sel = WB_ALU_OUT;
+            pc_sel = PC_NXT_PC;
         end
 
         I_TYPE: begin
             rf_we = 1;
             sw_en = 0;
-            op1_sel = RD1;
-            op2_sel = I_IM;
+            op1_sel = OP1_RD1;
+            op2_sel = OP2_I_IM;
             if (op == 7'h67 && fun3 == 3'h0) begin  // JALR
-                wb_sel = NXT_PC;
-                pc_sel = ALU_OUT;
+                wb_sel = WB_NXT_PC;
+                pc_sel = PC_ALU_OUT;
             end else if (op == 7'h3 && fun3 == 3'h2) begin  // LW
-                wb_sel = MEM_Q;
-                pc_sel = NXT_PC;
+                wb_sel = WB_MEM_Q;
+                pc_sel = PC_NXT_PC;
             end else begin
-                wb_sel = ALU_OUT;
-                pc_sel = NXT_PC;
+                wb_sel = WB_ALU_OUT;
+                pc_sel = PC_NXT_PC;
             end
         end
         S_TYPE: begin
             rf_we = 0;
             sw_en = 1;
-            op1_sel = RD1;
-            op2_sel = S_IM;
-            wb_sel = 'x;
-            pc_sel = NXT_PC;
+            op1_sel = OP1_RD1;
+            op2_sel = OP2_S_IM;
+            // wb_sel = 'x;
+            pc_sel = PC_NXT_PC;
         end
         B_TYPE: begin
             rf_we = 0;
             sw_en = 0;
-            op1_sel = 'x;
-            op2_sel = 'x;
-            wb_sel = 'x;
-            pc_sel = BCOMP;
+            // op1_sel = 'x;
+            // op2_sel = 'x;
+            // wb_sel = 'x;
+            pc_sel = PC_BCOMP;
         end
         U_TYPE: begin
             rf_we = 1;
             sw_en = 0;
-            op1_sel = PC;
-            op2_sel = U_IM;
+            op1_sel = OP1_PC;
+            op2_sel = OP2_U_IM;
             
             if (op == 7'h37)    // LUI
-                wb_sel = U_IM;
+                wb_sel = WB_U_IM;
             else // AUIPC
-                wb_sel = ALU_OUT;
+                wb_sel = WB_ALU_OUT;
             
-            pc_sel = NXT_PC;
+            pc_sel = PC_NXT_PC;
         end
         J_TYPE: begin
             rf_we = 1;
             sw_en = 0;
-            op1_sel = 'x;
-            op2_sel = 'x;
-            wb_sel = NXT_PC;
-            pc_sel = PLUS_JIM;
+            // op1_sel = 'x;
+            // op2_sel = 'x;
+            wb_sel = WB_NXT_PC;
+            pc_sel = PC_PLUS_JIM;
         end
         default: begin end 
     endcase

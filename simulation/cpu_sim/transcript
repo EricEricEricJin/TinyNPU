@@ -1,0 +1,971 @@
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 linux_x86_64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading project cmd_parser_sim
+ls
+# cmd_parser_sim.cr.mti
+# cmd_parser_sim.mpf
+# cmd_parser.sv
+# cmd_parser_tb.sv
+# vsim.wlf
+# work
+quit
+ls
+# cmd_parser_sim.cr.mti
+# cmd_parser_sim.mpf
+# cmd_parser.sv
+# cmd_parser_tb.sv
+# vsim.wlf
+# work
+cd ~
+cd /home/eric/Documents/Conformer-FPGA-New/TinyNPU/simulation
+# reading /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/../modelsim.ini
+ls
+# cpu_sim
+cd cpu_sim
+ls
+# compile.tcl
+# cpu_sim_tb.sv
+# elaborate.tcl
+# transcript
+do compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# ** Error: extra characters after close-brace
+# Error in macro ./compile.tcl line 24
+# extra characters after close-brace
+#     while executing
+# "vlog -sv {$SRC_PATH/*}$"
+do compile.tcl
+# Cannot open macro file: compile.tcl
+cd simulation
+do compile.tcl
+# Cannot open macro file: compile.tcl
+ls
+# cpu_sim
+cd cpu_sim
+do compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 16:34:44 on Feb 21,2025
+# vlog -reportprogress 300 -sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# ** Error: (vlog-13069) alu.sv(5): near "import": syntax error, unexpected "SystemVerilog keyword 'import'".
+# ** Error: (vlog-13069) br_logic.sv(5): near "import": syntax error, unexpected "SystemVerilog keyword 'import'".
+# -- Compiling package pkg_cpu_types
+# ** Error: (vlog-13069) cpu_typedef.sv(9): near "}": syntax error, unexpected '}', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: cpu_typedef.sv(15): Enum literal name 'U_IM' already exists at cpu_typedef.sv(14).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'NXT_PC' already exists at cpu_typedef.sv(15).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'ALU_OUT' already exists at cpu_typedef.sv(15).
+# ** Error: (vlog-13069) cpu.sv(5): near "import": syntax error, unexpected "SystemVerilog keyword 'import'".
+# ** Error: (vlog-13069) inst_decode.sv(5): near "import": syntax error, unexpected "SystemVerilog keyword 'import'".
+# -- Compiling module rf32
+# End time: 16:34:44 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do compile.tcl
+# Cannot open macro file: compile.tcl
+ls
+# alu.sv
+# br_logic.sv
+# cpu.sv
+# cpu_typedef.sv
+# inst_decode.sv
+# rf32.sv
+# work
+cd ../../
+ls
+# design_rtl
+# doc
+# ip_cores
+# quartus_proj
+# simulation
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 16:37:30 on Feb 21,2025
+# vlog -reportprogress 300 -sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# ** Error: alu.sv(3): (vlog-13006) Could not find the package (pkg_cpu_types).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: (vlog-13069) alu.sv(7): near "u_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# ** Error: (vlog-13069) br_logic.sv(7): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# ** Error: (vlog-13069) cpu_typedef.sv(9): near "}": syntax error, unexpected '}', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: cpu_typedef.sv(15): Enum literal name 'U_IM' already exists at cpu_typedef.sv(14).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'NXT_PC' already exists at cpu_typedef.sv(15).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'ALU_OUT' already exists at cpu_typedef.sv(15).
+# ** Error: cpu.sv(3): (vlog-13006) Could not find the package (pkg_cpu_types).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error: (vlog-13069) inst_decode.sv(11): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# End time: 16:37:30 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do simulation/cpu_sim/compile.tcl
+# Cannot open macro file: simulation/cpu_sim/compile.tcl
+cd ../../
+ls
+# design_rtl
+# doc
+# ip_cores
+# quartus_proj
+# simulation
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 16:37:58 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# ** Error: (vlog-13069) cpu_typedef.sv(9): near "}": syntax error, unexpected '}', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: cpu_typedef.sv(15): Enum literal name 'U_IM' already exists at cpu_typedef.sv(14).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'NXT_PC' already exists at cpu_typedef.sv(15).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'ALU_OUT' already exists at cpu_typedef.sv(15).
+# ** Error: alu.sv(3): (vlog-13006) Could not find the package (pkg_cpu_types).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: (vlog-13069) alu.sv(7): near "u_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# ** Error: (vlog-13069) br_logic.sv(7): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# ** Error: (vlog-13069) cpu_typedef.sv(9): near "}": syntax error, unexpected '}', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: cpu_typedef.sv(15): Enum literal name 'U_IM' already exists at cpu_typedef.sv(14).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'NXT_PC' already exists at cpu_typedef.sv(15).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'ALU_OUT' already exists at cpu_typedef.sv(15).
+# ** Error: cpu.sv(3): (vlog-13006) Could not find the package (pkg_cpu_types).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error: (vlog-13069) inst_decode.sv(11): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# End time: 16:37:58 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 14, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do simulation/cpu_sim/compile.tcl
+# Cannot open macro file: simulation/cpu_sim/compile.tcl
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 16:38:23 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# ** Error: cpu_typedef.sv(15): Enum literal name 'U_IM' already exists at cpu_typedef.sv(14).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'NXT_PC' already exists at cpu_typedef.sv(15).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'ALU_OUT' already exists at cpu_typedef.sv(15).
+# ** Error: alu.sv(3): (vlog-13006) Could not find the package (pkg_cpu_types).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: (vlog-13069) alu.sv(7): near "u_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# ** Error: (vlog-13069) br_logic.sv(7): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# ** Error: cpu_typedef.sv(15): Enum literal name 'U_IM' already exists at cpu_typedef.sv(14).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'NXT_PC' already exists at cpu_typedef.sv(15).
+# ** Error: cpu_typedef.sv(16): Enum literal name 'ALU_OUT' already exists at cpu_typedef.sv(15).
+# ** Error: cpu.sv(3): (vlog-13006) Could not find the package (pkg_cpu_types).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error: (vlog-13069) inst_decode.sv(11): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# End time: 16:38:23 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do simulation/cpu_sim/compile.tcl
+# Cannot open macro file: simulation/cpu_sim/compile.tcl
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:35:25 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(6): (vlog-2892) Net type of 'alu_in0' was not explicitly declared.
+# ** Error (suppressible): alu.sv(6): (vlog-2892) Net type of 'alu_in1' was not explicitly declared.
+# ** Error (suppressible): alu.sv(7): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:35:25 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:37:42 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(6): (vlog-2892) Net type of 'alu_in0' was not explicitly declared.
+# ** Error (suppressible): alu.sv(7): (vlog-2892) Net type of 'alu_in1' was not explicitly declared.
+# ** Error (suppressible): alu.sv(8): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:37:42 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:38:55 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# ** Error: (vlog-13069) alu.sv(6): near "import": syntax error, unexpected "SystemVerilog keyword 'import'".
+# -- Importing package pkg_cpu_types
+# -- Compiling module br_logic
+# ** Error: (vlog-13069) br_logic.sv(7): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# -- Compiling package pkg_cpu_types
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error (suppressible): inst_decode.sv(33): (vlog-2388) 'rd' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(35): (vlog-2388) 'rs1' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(36): (vlog-2388) 'rs2' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error: (vlog-13069) inst_decode.sv(107): near ":": syntax error, unexpected ':'.
+# End time: 17:38:55 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do simulation/cpu_sim/compile.tcl
+# Cannot open macro file: simulation/cpu_sim/compile.tcl
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:39:12 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(7): (vlog-2892) Net type of 'alu_in0' was not explicitly declared.
+# ** Error (suppressible): alu.sv(8): (vlog-2892) Net type of 'alu_in1' was not explicitly declared.
+# ** Error (suppressible): alu.sv(9): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:39:12 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:42:31 on Feb 21,2025
+# vlog -reportprogress 300 "+sv" cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(7): (vlog-2892) Net type of 'alu_in0' was not explicitly declared.
+# ** Error (suppressible): alu.sv(8): (vlog-2892) Net type of 'alu_in1' was not explicitly declared.
+# ** Error (suppressible): alu.sv(9): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:42:31 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:43:03 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(7): (vlog-2892) Net type of 'alu_in0' was not explicitly declared.
+# ** Error (suppressible): alu.sv(8): (vlog-2892) Net type of 'alu_in1' was not explicitly declared.
+# ** Error (suppressible): alu.sv(9): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:43:03 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:45:41 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling module alu
+# ** Error: (vlog-13069) alu.sv(9): near "u_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# -- Importing package pkg_cpu_types
+# -- Compiling module br_logic
+# ** Error: (vlog-13069) br_logic.sv(7): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# -- Compiling package pkg_cpu_types
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error (suppressible): inst_decode.sv(33): (vlog-2388) 'rd' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(35): (vlog-2388) 'rs1' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(36): (vlog-2388) 'rs2' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error: (vlog-13069) inst_decode.sv(107): near ":": syntax error, unexpected ':'.
+# End time: 17:45:41 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:46:00 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(7): (vlog-2892) Net type of 'alu_in0' was not explicitly declared.
+# ** Error (suppressible): alu.sv(8): (vlog-2892) Net type of 'alu_in1' was not explicitly declared.
+# ** Error (suppressible): alu.sv(9): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:46:00 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do simulation/cpu_sim/compile.tcl
+# Cannot open macro file: simulation/cpu_sim/compile.tcl
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:47:56 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# ** Error: (vlog-13069) alu.sv(4): near "import": syntax error, unexpected "SystemVerilog keyword 'import'".
+# -- Importing package pkg_cpu_types
+# -- Compiling module br_logic
+# ** Error: (vlog-13069) br_logic.sv(7): near "br_fun": syntax error, unexpected IDENTIFIER, expecting ')'.
+# -- Compiling package pkg_cpu_types
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error (suppressible): inst_decode.sv(33): (vlog-2388) 'rd' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(35): (vlog-2388) 'rs1' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(36): (vlog-2388) 'rs2' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error: (vlog-13069) inst_decode.sv(107): near ":": syntax error, unexpected ':'.
+# End time: 17:47:56 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:49:31 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling module alu
+# -- Importing package pkg_cpu_types
+# ** Error: alu.sv(21): (vlog-2730) Undefined variable: 'ALU_ADD'.
+# ** Error: alu.sv(22): (vlog-2730) Undefined variable: 'ALU_SUB'.
+# ** Error: alu.sv(25): (vlog-2730) Undefined variable: 'ALU_XOR'.
+# ** Error: alu.sv(26): (vlog-2730) Undefined variable: 'ALU_OR'.
+# ** Error: alu.sv(27): (vlog-2730) Undefined variable: 'ALU_AND'.
+# ** Error: alu.sv(30): (vlog-2730) Undefined variable: 'ALU_SLL'.
+# ** Error: alu.sv(31): (vlog-2730) Undefined variable: 'ALU_SRL'.
+# ** Error: alu.sv(32): (vlog-2730) Undefined variable: 'ALU_SRA'.
+# ** Error: alu.sv(35): (vlog-2730) Undefined variable: 'ALU_SLT'.
+# ** Error: alu.sv(36): (vlog-2730) Undefined variable: 'ALU_SLTU'.
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error (suppressible): inst_decode.sv(33): (vlog-2388) 'rd' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(35): (vlog-2388) 'rs1' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(36): (vlog-2388) 'rs2' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error: (vlog-13069) inst_decode.sv(107): near ":": syntax error, unexpected ':'.
+# End time: 17:49:31 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 1
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:49:48 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(7): (vlog-2892) Net type of 'alu_in0' was not explicitly declared.
+# ** Error (suppressible): alu.sv(8): (vlog-2892) Net type of 'alu_in1' was not explicitly declared.
+# ** Error (suppressible): alu.sv(10): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:49:48 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do simulation/cpu_sim/compile.tcl
+# Cannot open macro file: simulation/cpu_sim/compile.tcl
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:50:02 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling module alu
+# -- Importing package pkg_cpu_types
+# ** Error: alu.sv(22): (vlog-2730) Undefined variable: 'ALU_ADD'.
+# ** Error: alu.sv(23): (vlog-2730) Undefined variable: 'ALU_SUB'.
+# ** Error: alu.sv(26): (vlog-2730) Undefined variable: 'ALU_XOR'.
+# ** Error: alu.sv(27): (vlog-2730) Undefined variable: 'ALU_OR'.
+# ** Error: alu.sv(28): (vlog-2730) Undefined variable: 'ALU_AND'.
+# ** Error: alu.sv(31): (vlog-2730) Undefined variable: 'ALU_SLL'.
+# ** Error: alu.sv(32): (vlog-2730) Undefined variable: 'ALU_SRL'.
+# ** Error: alu.sv(33): (vlog-2730) Undefined variable: 'ALU_SRA'.
+# ** Error: alu.sv(36): (vlog-2730) Undefined variable: 'ALU_SLT'.
+# ** Error: alu.sv(37): (vlog-2730) Undefined variable: 'ALU_SLTU'.
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error (suppressible): inst_decode.sv(33): (vlog-2388) 'rd' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(35): (vlog-2388) 'rs1' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(36): (vlog-2388) 'rs2' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error: (vlog-13069) inst_decode.sv(107): near ":": syntax error, unexpected ':'.
+# End time: 17:50:02 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 1
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:51:03 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(9): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:51:03 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:51:19 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(9): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:51:19 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:57:14 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# ** Error (suppressible): alu.sv(9): (vlog-2892) Net type of 'u_fun' was not explicitly declared.
+# End time: 17:57:14 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:57:27 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# ** Error (suppressible): br_logic.sv(6): (vlog-2892) Net type of 'rd1' was not explicitly declared.
+# ** Error (suppressible): br_logic.sv(6): (vlog-2892) Net type of 'rd2' was not explicitly declared.
+# ** Error (suppressible): br_logic.sv(7): (vlog-2892) Net type of 'br_fun' was not explicitly declared.
+# End time: 17:57:27 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:58:46 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# ** Error (suppressible): inst_decode.sv(33): (vlog-2388) 'rd' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(35): (vlog-2388) 'rs1' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error (suppressible): inst_decode.sv(36): (vlog-2388) 'rs2' already declared in this scope (inst_decode) at inst_decode.sv(12).
+# ** Error: (vlog-13069) inst_decode.sv(107): near ":": syntax error, unexpected ':'.
+# End time: 17:58:46 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 1
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:05:57 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# ** Error: (vlog-13069) cpu.sv(18): near "output": syntax error, unexpected output, expecting ')'.
+# End time: 18:05:57 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do simulation/cpu_sim/compile.tcl
+# Cannot open macro file: simulation/cpu_sim/compile.tcl
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:06:28 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# ** Warning: cpu.sv(22): (vlog-13314) Defaulting port 'h2f_io' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Error: cpu.sv(66): (vlog-2730) Undefined variable: 'NXT_PC'.
+# ** Error: cpu.sv(67): (vlog-2730) Undefined variable: 'BCOMP'.
+# ** Error: cpu.sv(71): (vlog-2730) Undefined variable: 'PLUS_JIM'.
+# ** Error: cpu.sv(138): (vlog-2730) Undefined variable: 'RD1'.
+# ** Error: cpu.sv(143): (vlog-2730) Undefined variable: 'RD2'.
+# ** Error: cpu.sv(144): (vlog-2730) Undefined variable: 'I_IM'.
+# ** Error: cpu.sv(145): (vlog-2730) Undefined variable: 'S_IM'.
+# ** Error: cpu.sv(181): (vlog-2730) Undefined variable: 'ALU_OUT'.
+# ** Error: cpu.sv(182): (vlog-2730) Undefined variable: 'MEM_Q'.
+# ** Error: cpu.sv(183): (vlog-2730) Undefined variable: 'U_IM'.
+# End time: 18:06:28 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 2
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+do simulation/cpu_sim/compile.tcl
+# Cannot open macro file: simulation/cpu_sim/compile.tcl
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:07:32 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# ** Warning: cpu.sv(22): (vlog-13314) Defaulting port 'h2f_io' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Compiling package cpu_sv_unit
+# -- Compiling module cpu
+# ** Warning: cpu.sv(22): (vlog-13314) Defaulting port 'h2f_io' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Error (suppressible): cpu.sv(6): (vlog-2892) Net type of 'clk' was not explicitly declared.
+# ** Error (suppressible): cpu.sv(6): (vlog-2892) Net type of 'rst_n' was not explicitly declared.
+# ** Error (suppressible): cpu.sv(10): (vlog-2892) Net type of 'inst_data' was not explicitly declared.
+# ** Error (suppressible): cpu.sv(19): (vlog-2892) Net type of 'done_io' was not explicitly declared.
+# End time: 18:07:32 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 3
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:09:05 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# -- Compiling package cpu_sv_unit
+# -- Compiling module cpu
+# -- Compiling package inst_decode_sv_unit
+# -- Compiling module inst_decode
+# ** Error (suppressible): inst_decode.sv(7): (vlog-2892) Net type of 'inst' was not explicitly declared.
+# ** Warning: inst_decode.sv(119): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(120): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(121): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(122): (vlog-8386) An enum variable 'pc_sel' of type 'pc_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(155): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(161): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(162): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(163): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(182): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(183): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# End time: 18:09:05 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 11
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:09:24 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# -- Compiling package cpu_sv_unit
+# -- Compiling module cpu
+# -- Compiling package inst_decode_sv_unit
+# -- Compiling module inst_decode
+# ** Warning: inst_decode.sv(119): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(120): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(121): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(122): (vlog-8386) An enum variable 'pc_sel' of type 'pc_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(155): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(161): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(162): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(163): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(182): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(183): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# -- Compiling module rf32
+# ** Error (suppressible): rf32.sv(4): (vlog-2892) Net type of 'clk' was not explicitly declared.
+# ** Error (suppressible): rf32.sv(4): (vlog-2892) Net type of 'rst_n' was not explicitly declared.
+# ** Error (suppressible): rf32.sv(5): (vlog-2892) Net type of 'ra1' was not explicitly declared.
+# ** Error (suppressible): rf32.sv(5): (vlog-2892) Net type of 'ra2' was not explicitly declared.
+# ** Error (suppressible): rf32.sv(5): (vlog-2892) Net type of 'wa' was not explicitly declared.
+# ** Error (suppressible): rf32.sv(6): (vlog-2892) Net type of 'we' was not explicitly declared.
+# ** Error (suppressible): rf32.sv(7): (vlog-2892) Net type of 'wd' was not explicitly declared.
+# End time: 18:09:24 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 11
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES "
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:09:42 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# -- Compiling package cpu_sv_unit
+# -- Compiling module cpu
+# -- Compiling package inst_decode_sv_unit
+# -- Compiling module inst_decode
+# ** Warning: inst_decode.sv(119): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(120): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(121): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(122): (vlog-8386) An enum variable 'pc_sel' of type 'pc_sel_t' may only be assigned the same enum typed variable or one of its values. Reg Value '0' requires an explicit cast.
+# ** Warning: inst_decode.sv(155): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(161): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(162): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(163): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(182): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(183): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# -- Compiling module rf32
+# 
+# Top level modules:
+# 	cpu
+# End time: 18:09:42 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 11
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:09:42 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_sim_tb.sv 
+# -- Compiling module cpu_sim_tb
+# ** Error: (vlog-13069) cpu_sim_tb.sv(5): near "void": syntax error, unexpected "SystemVerilog keyword 'void'".
+# ** Error: cpu_sim_tb.sv(15): (vlog-13205) Syntax error found in the scope following 'we'. Is there a missing '::'?
+# End time: 18:09:42 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 26
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$TB_FILES"
+cd ../../
+do simulation/cpu_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# design_rtl/cpu/
+#  cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# simulation/cpu_sim/
+#  cpu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:10:59 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_typedef.sv alu.sv br_logic.sv cpu_typedef.sv cpu.sv inst_decode.sv rf32.sv 
+# -- Compiling package pkg_cpu_types
+# -- Compiling package alu_sv_unit
+# -- Importing package pkg_cpu_types
+# -- Compiling module alu
+# -- Compiling package br_logic_sv_unit
+# -- Compiling module br_logic
+# -- Compiling package pkg_cpu_types
+# ** Warning: cpu_typedef.sv(3): (vlog-2275) Existing package 'pkg_cpu_types' at line 3 will be overwritten.
+# -- Compiling package cpu_sv_unit
+# -- Compiling module cpu
+# -- Compiling package inst_decode_sv_unit
+# -- Compiling module inst_decode
+# ** Warning: inst_decode.sv(156): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(162): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(163): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(164): (vlog-8386) An enum variable 'wb_sel' of type 'wb_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(183): (vlog-8386) An enum variable 'op1_sel' of type 'op1_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# ** Warning: inst_decode.sv(184): (vlog-8386) An enum variable 'op2_sel' of type 'op2_sel_t' may only be assigned the same enum typed variable or one of its values. Scalar Value 'x' requires an explicit cast.
+# -- Compiling module rf32
+# 
+# Top level modules:
+# 	cpu
+# End time: 18:10:59 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:10:59 on Feb 21,2025
+# vlog -reportprogress 300 -sv cpu_sim_tb.sv 
+# -- Compiling module cpu_sim_tb
+# ** Error: (vlog-13069) cpu_sim_tb.sv(5): near "void": syntax error, unexpected "SystemVerilog keyword 'void'".
+# ** Error: cpu_sim_tb.sv(15): (vlog-13205) Syntax error found in the scope following 'we'. Is there a missing '::'?
+# End time: 18:10:59 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/cpu_sim/compile.tcl line 26
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$TB_FILES"
