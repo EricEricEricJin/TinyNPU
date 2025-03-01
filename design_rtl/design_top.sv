@@ -1,13 +1,14 @@
 `default_nettype none
 
 module design_top (
-    input logic clk, rst_n,
+    input wire clk, rst_n,
     
     // connect to sdram_read_wrapper
     sdram_read_wrapper_intf mem_read_intf,
 
     // connect to MMIO
-    input logic [31 : 0] h2f_pio32,
+    input wire [31 : 0] h2f_pio32,
+    input wire h2f_write,
     output logic [31 : 0] f2h_pio32
 );
 

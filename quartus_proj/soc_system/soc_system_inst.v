@@ -1,4 +1,6 @@
 	soc_system u0 (
+		.ext_clk_clk              (<connected-to-ext_clk_clk>),              //    ext_clk.clk
+		.ext_rst_reset_n          (<connected-to-ext_rst_reset_n>),          //    ext_rst.reset_n
 		.f2h_pio32_en_out         (<connected-to-f2h_pio32_en_out>),         //  f2h_pio32.en_out
 		.f2h_pio32_data_in        (<connected-to-f2h_pio32_data_in>),        //           .data_in
 		.f2h_sdram0_address       (<connected-to-f2h_sdram0_address>),       // f2h_sdram0.address
@@ -7,6 +9,9 @@
 		.f2h_sdram0_readdata      (<connected-to-f2h_sdram0_readdata>),      //           .readdata
 		.f2h_sdram0_readdatavalid (<connected-to-f2h_sdram0_readdatavalid>), //           .readdatavalid
 		.f2h_sdram0_read          (<connected-to-f2h_sdram0_read>),          //           .read
+		.f2h_sdram0_writedata     (<connected-to-f2h_sdram0_writedata>),     //           .writedata
+		.f2h_sdram0_byteenable    (<connected-to-f2h_sdram0_byteenable>),    //           .byteenable
+		.f2h_sdram0_write         (<connected-to-f2h_sdram0_write>),         //           .write
 		.h2f_pio32_en_out         (<connected-to-h2f_pio32_en_out>),         //  h2f_pio32.en_out
 		.h2f_pio32_data_out       (<connected-to-h2f_pio32_data_out>),       //           .data_out
 		.h2f_reset_reset_n        (<connected-to-h2f_reset_reset_n>),        //  h2f_reset.reset_n
@@ -26,10 +31,8 @@
 		.memory_mem_odt           (<connected-to-memory_mem_odt>),           //           .mem_odt
 		.memory_mem_dm            (<connected-to-memory_mem_dm>),            //           .mem_dm
 		.memory_oct_rzqin         (<connected-to-memory_oct_rzqin>),         //           .oct_rzqin
-		.ext_rst_reset_n          (<connected-to-ext_rst_reset_n>),          //    ext_rst.reset_n
-		.sys_clk_clk              (<connected-to-sys_clk_clk>),              //    sys_clk.clk
 		.pll_locked_export        (<connected-to-pll_locked_export>),        // pll_locked.export
-		.ext_clk_clk              (<connected-to-ext_clk_clk>),              //    ext_clk.clk
+		.sys_clk_clk              (<connected-to-sys_clk_clk>),              //    sys_clk.clk
 		.sys_rst_reset_n          (<connected-to-sys_rst_reset_n>)           //    sys_rst.reset_n
 	);
 

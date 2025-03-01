@@ -200,6 +200,8 @@
    type="conduit"
    dir="end" />
  <interface name="h2f_reset" internal="hps_0.h2f_reset" type="reset" dir="start" />
+ <interface name="hps_0_f2h_axi_slave" internal="hps_0.f2h_axi_slave" />
+ <interface name="hps_0_f2h_dma_req0" internal="hps_0.f2h_dma_req0" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface
    name="pll_locked"
@@ -341,7 +343,7 @@
   <parameter name="F2SCLK_SDRAMCLK_Enable" value="false" />
   <parameter name="F2SCLK_SDRAMCLK_FREQ" value="0" />
   <parameter name="F2SCLK_WARMRST_Enable" value="false" />
-  <parameter name="F2SDRAM_Type" value="Avalon-MM Read-Only" />
+  <parameter name="F2SDRAM_Type">Avalon-MM Bidirectional</parameter>
   <parameter name="F2SDRAM_Width" value="128" />
   <parameter name="F2SINTERRUPT_Enable" value="false" />
   <parameter name="F2S_Width" value="0" />

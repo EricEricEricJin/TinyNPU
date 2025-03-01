@@ -14,6 +14,9 @@ module soc_system (
 		output wire [127:0] f2h_sdram0_readdata,      //           .readdata
 		output wire         f2h_sdram0_readdatavalid, //           .readdatavalid
 		input  wire         f2h_sdram0_read,          //           .read
+		input  wire [127:0] f2h_sdram0_writedata,     //           .writedata
+		input  wire [15:0]  f2h_sdram0_byteenable,    //           .byteenable
+		input  wire         f2h_sdram0_write,         //           .write
 		output wire         h2f_pio32_en_out,         //  h2f_pio32.en_out
 		output wire [31:0]  h2f_pio32_data_out,       //           .data_out
 		output wire         h2f_reset_reset_n,        //  h2f_reset.reset_n
@@ -109,6 +112,9 @@ module soc_system (
 		.f2h_sdram0_READDATA      (f2h_sdram0_readdata),          //                 .readdata
 		.f2h_sdram0_READDATAVALID (f2h_sdram0_readdatavalid),     //                 .readdatavalid
 		.f2h_sdram0_READ          (f2h_sdram0_read),              //                 .read
+		.f2h_sdram0_WRITEDATA     (f2h_sdram0_writedata),         //                 .writedata
+		.f2h_sdram0_BYTEENABLE    (f2h_sdram0_byteenable),        //                 .byteenable
+		.f2h_sdram0_WRITE         (f2h_sdram0_write),             //                 .write
 		.h2f_axi_clk              (sys_clk_clk),                  //    h2f_axi_clock.clk
 		.h2f_AWID                 (hps_0_h2f_axi_master_awid),    //   h2f_axi_master.awid
 		.h2f_AWADDR               (hps_0_h2f_axi_master_awaddr),  //                 .awaddr

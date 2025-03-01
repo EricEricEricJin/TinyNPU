@@ -54,6 +54,9 @@ module soc_system_hps_0 #(
 		output wire [127:0] f2h_sdram0_READDATA,      //                 .readdata
 		output wire         f2h_sdram0_READDATAVALID, //                 .readdatavalid
 		input  wire         f2h_sdram0_READ,          //                 .read
+		input  wire [127:0] f2h_sdram0_WRITEDATA,     //                 .writedata
+		input  wire [15:0]  f2h_sdram0_BYTEENABLE,    //                 .byteenable
+		input  wire         f2h_sdram0_WRITE,         //                 .write
 		input  wire         f2h_sdram0_clk,           // f2h_sdram0_clock.clk
 		output wire [14:0]  mem_a,                    //           memory.mem_a
 		output wire [2:0]   mem_ba,                   //                 .mem_ba
@@ -144,6 +147,9 @@ module soc_system_hps_0 #(
 		.f2h_sdram0_READDATA      (f2h_sdram0_READDATA),      //                 .readdata
 		.f2h_sdram0_READDATAVALID (f2h_sdram0_READDATAVALID), //                 .readdatavalid
 		.f2h_sdram0_READ          (f2h_sdram0_READ),          //                 .read
+		.f2h_sdram0_WRITEDATA     (f2h_sdram0_WRITEDATA),     //                 .writedata
+		.f2h_sdram0_BYTEENABLE    (f2h_sdram0_BYTEENABLE),    //                 .byteenable
+		.f2h_sdram0_WRITE         (f2h_sdram0_WRITE),         //                 .write
 		.f2h_sdram0_clk           (f2h_sdram0_clk)            // f2h_sdram0_clock.clk
 	);
 

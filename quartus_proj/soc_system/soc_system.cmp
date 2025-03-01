@@ -10,6 +10,9 @@
 			f2h_sdram0_readdata      : out   std_logic_vector(127 downto 0);                    -- readdata
 			f2h_sdram0_readdatavalid : out   std_logic;                                         -- readdatavalid
 			f2h_sdram0_read          : in    std_logic                      := 'X';             -- read
+			f2h_sdram0_writedata     : in    std_logic_vector(127 downto 0) := (others => 'X'); -- writedata
+			f2h_sdram0_byteenable    : in    std_logic_vector(15 downto 0)  := (others => 'X'); -- byteenable
+			f2h_sdram0_write         : in    std_logic                      := 'X';             -- write
 			h2f_pio32_en_out         : out   std_logic;                                         -- en_out
 			h2f_pio32_data_out       : out   std_logic_vector(31 downto 0);                     -- data_out
 			h2f_reset_reset_n        : out   std_logic;                                         -- reset_n
