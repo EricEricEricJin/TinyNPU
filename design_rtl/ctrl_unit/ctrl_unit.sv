@@ -29,6 +29,15 @@ module ctrl_unit (
 
 );
 
+// fetched register
+logic [176 * 8 - 1 : 0] reg_buf;
+
+// Three types of operations:
+// READ->WRITE
+// READ->SDRAM_STORE
+// SDRAM_LOAD->WRITE
+
+
 typedef enum logic[2 : 0] { 
     TYPE_M = 3'b00,  
     TYPE_V = 3'b01,  

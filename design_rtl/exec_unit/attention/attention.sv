@@ -1,3 +1,5 @@
+
+
 `default_nettype none
 
 module attention #(
@@ -7,10 +9,18 @@ module attention #(
     input wire clk,
     input wire rst_n,
 
+    input wire load_input,
+    input wire [$clog2(M) - 1 : 0] input_idx,
+    input wire start,
+
+
+
+    // to wrapper
+    input wire [N * 8 - 1 : 0] bias_u, bias_v,
+
     // parameters
     input wire [15 : 0] sqrt_d_fp16,
 
-    input wire start,
 
     // Q is one line input
     input wire [N * 8 - 1 : 0] Q_in,
@@ -23,9 +33,38 @@ module attention #(
     output logic [$clog2(M) - 1 : 0] V_ram_addr, 
 
     // Output is one line of one head!
-    output logic [N * 8 - 1 : 0] QKV_out
-    output logic out_valid 
+    // output logic [N * 8 - 1 : 0] QKV_out
+    output logic out_valid,
+    output logic [$clog2(M) - 1 : 0] out_idx,
+    output logic [8 * N - 1 : 0]    out_data
 );
+
+
+// Q, K, V, P buffer
+ram_MxN i_ram_Q (
+
+);
+
+ram_MxN i_ram_K (
+    .address
+    .clock
+    .data
+    .we
+    .q
+);
+
+ram_MxN i_ram_V (
+
+);
+
+ram_MxN i_ram_P (
+
+);
+
+// todo
+// 
+
+
 
 logic addr_j_clr, addr_j_inc;
 logic qkv_i_clr, qkv_i_acc;
@@ -120,7 +159,7 @@ always_ff @( posedge clk, negedge rst_n ) begin
 end
 
 // State Machine
-typedef enum logic [1 : 0] { IDLE, CALC_CELL, STORE_CELL } state_t;
+typedef enum logic [1 : 0] { IDLE, CALC_QK, CALC_SOFTMAX, CALC_ATT } state_t;       // more cycles for ( / sqrt d) ready?
 state_t state, nxt_state;
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
