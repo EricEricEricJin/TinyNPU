@@ -9,8 +9,8 @@ module rf_ram #(
 
     // act as a normal Block RAM
     input wire [ADDR_W - 1 : 0] rf_addr,
-    input wire [ADDR_W - 1 : 0] rf_d, 
-    input wire [ADDR_W - 1 : 0] rf_q,
+    input wire [DATA_W - 1 : 0] rf_d, 
+    input wire [DATA_W - 1 : 0] rf_q,
     input wire rf_we, rf_re,
 
     // << memory mapped IOs >>

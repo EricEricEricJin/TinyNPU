@@ -10,7 +10,7 @@ module rf_mv #(
 
     // to ram
     output logic [ADDR_W - 1 : 0] ram_addr,
-    output logic ram_we,
+    output logic ram_we, ram_re,
     output wire [WIDTH - 1 : 0] ram_d,
     input wire [WIDTH - 1 : 0] ram_q,
     
@@ -65,6 +65,8 @@ end
 
 always_comb begin
     ram_we = 0;
+    ram_re = 0;
+
     ram_addr = src_addr_ff;
     ram_d_ld = 0;
 
@@ -75,6 +77,7 @@ always_comb begin
     case (state)
         IDLE: begin
             if (mv_start) begin
+                ram_re = 1;
                 nxt_state = LOAD;
             end
         end 
@@ -94,4 +97,4 @@ end
 
 endmodule
 
-`default_nettype wire 
+`default_nettype wire
