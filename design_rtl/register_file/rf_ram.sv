@@ -11,7 +11,7 @@ module rf_ram #(
     input wire [ADDR_W - 1 : 0] rf_addr,
     input wire [ADDR_W - 1 : 0] rf_d, 
     input wire [ADDR_W - 1 : 0] rf_q,
-    input wire rf_we,
+    input wire rf_we, rf_re,
 
     // << memory mapped IOs >>
 
@@ -26,15 +26,15 @@ module rf_ram #(
     input wire  [N - 1 : 0]  layernorm_Y_data [0 : 3]    // to LayerNorm
 
     // to Attention
-    // output wire [N - 1 : 0]         att_Q_data, att_K_data, att_V_data,
-    // output wire [$clog2(M) - 1 : 0] att_Q_addr, att_K_addr, att_V_addr,
-    // output wire                     att_Q_ld, att_K_ld, att_V_ld,
+    output wire [N - 1 : 0]         att_Q_data, att_K_data, att_V_data,
+    output wire [$clog2(M) - 1 : 0] att_Q_addr, att_K_addr, att_V_addr,
+    output wire                     att_Q_ld, att_K_ld, att_V_ld,
+    
+    output wire att_out_read,
+    input wire [N - 1 : 0]          att_out_data,
+    input wire                      att_out_valid,
 
 
-    // // to attention
-    // output wire [$clog2(M) - 1 : 0] att_out_addr,
-    // input wire [N - 1 : 0]          att_out_data,
-    // input wire                      att_out_valid,
 
     
     // todo: to SiLU 
@@ -44,7 +44,7 @@ module rf_ram #(
 
 // << The real BRAM >>
 logic [7 : 0] ram_addr;
-logic ram_we;
+logic ram_we, ram_re;
 logic [DATA_W - 1 : 0] ram_d;
 logic [DATA_W - 1 : 0] ram_q;
 
@@ -83,15 +83,32 @@ typedef enum logic [ADDR_W - 1 : 0] {
     ADDR_STMM_2_X = 9'h102,
     ADDR_STMM_3_X = 9'h103,
 
+    ADDR_STMM_0_Y = 9'h108,
+    ADDR_STMM_1_Y = 9'h109,
+    ADDR_STMM_2_Y = 9'h10a,
+    ADDR_STMM_3_Y = 9'h10b,
+
     ADDR_LN_0_X = 9'h110,
     ADDR_LN_1_X = 9'h111,
     ADDR_LN_2_X = 9'h112,
     ADDR_LN_3_X = 9'h113,
 
+    ADDR_LN_0_Y = 9'h118,
+    ADDR_LN_1_Y = 9'h119,
+    ADDR_LN_2_Y = 9'h11a,
+    ADDR_LN_3_Y = 9'h11b,
+
     ADDR_SILU_0_X = 9'h120,
     ADDR_SILU_1_X = 9'h121,
     ADDR_SILU_2_X = 9'h122,
     ADDR_SILU_3_X = 9'h123,
+
+
+    ADDR_SILU_0_Y = 9'h128,
+    ADDR_SILU_1_Y = 9'h129,
+    ADDR_SILU_2_Y = 9'h12a,
+    ADDR_SILU_3_Y = 9'h12b,
+
 
     ADDR_ATT_0_Q = 9'h130,
     ADDR_ATT_1_Q = 9'h131,
@@ -111,7 +128,7 @@ always_comb begin
         layernorm_X_ld[i] = 0;
 
     if (rf_we) begin
-        case (rf_add)
+        case (rf_addr)
             ADDR_STMM_0_X:  stmm_X_ld[0] = 1;
             ADDR_STMM_1_X:  stmm_X_ld[1] = 1;
             ADDR_STMM_2_X:  stmm_X_ld[2] = 1;
@@ -125,17 +142,33 @@ always_comb begin
     end
 end
 
+// determine read signals
+always_comb begin
+    // set all to zero by default 
+    att_out_read = 0;
+
+
+    ram_re = 0;
+
+    if (rf_re) begin
+        case (rf_addr)
+            ADDR_ATT_0_Y:  att_out_read = 1;
+            default:       ram_re = 1;
+        endcase
+    end
+end
+
 // determine rf_q
 always_comb begin
     case (rf_addr_ff)
-        ADDR_STMM_0_X:  rf_q = stmm_Y_data[0];
-        ADDR_STMM_1_X:  rf_q = stmm_Y_data[1];
-        ADDR_STMM_2_X:  rf_q = stmm_Y_data[2];
-        ADDR_STMM_3_X:  rf_q = stmm_Y_data[3];
-        ADDR_LN_0_X:    rf_q = layernorm_Y_data[0];
-        ADDR_LN_1_X:    rf_q = layernorm_Y_data[1];
-        ADDR_LN_2_X:    rf_q = layernorm_Y_data[2];
-        ADDR_LN_3_X:    rf_q = layernorm_Y_data[3];
+        ADDR_STMM_0_Y:  rf_q = stmm_Y_data[0];
+        ADDR_STMM_1_Y:  rf_q = stmm_Y_data[1];
+        ADDR_STMM_2_Y:  rf_q = stmm_Y_data[2];
+        ADDR_STMM_3_Y:  rf_q = stmm_Y_data[3];
+        ADDR_LN_0_Y:    rf_q = layernorm_Y_data[0];
+        ADDR_LN_1_Y:    rf_q = layernorm_Y_data[1];
+        ADDR_LN_2_Y:    rf_q = layernorm_Y_data[2];
+        ADDR_LN_3_Y:    rf_q = layernorm_Y_data[3];
         default:        rf_q = ram_q;
     endcase
 end
