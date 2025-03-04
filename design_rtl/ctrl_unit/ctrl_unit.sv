@@ -6,26 +6,11 @@ module ctrl_unit (
     // connect to IO
     input wire [31 : 0] h2f_io,
     input wire h2f_write,
+
     output logic [31 : 0] f2h_io,
 
-    // connect to BRAM
-    output wire xram_addr_sel,   // by fetcher or sth
-    // todo 
-
-    // load and store to external
-    output logic [24 : 0] bram_addr,
-
-    // execute 
-    output wire [4 : 0] fun,
-    output wire [7 : 0] ra1, ra2, wa,
-    
-    output wire start_ex, start_fetch_param;
-    // output wire [31 : 0] ex_start_bits,
-
-    output wire x1_ld, x2_ld,
-
-    // connect to state signals
-    input wire [31 : 0] done_signals
+    output wire [31 : 0] eu_fetch,
+    output wire [31 : 0] eu_exec
 
 );
 
