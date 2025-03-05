@@ -17,10 +17,11 @@ module ctrl_unit #(
     output logic isrunning,
 
     // connect to mover
-    output logic                        move_start,
-    output logic [RF_ADDR_W - 1 : 0]    move_src_addr, 
-    output logic [RF_ADDR_W - 1 : 0]    move_dst_addr,
-    output logic [7 : 0]                move_line_num,
+    // output logic                        move_start,
+    // output logic [RF_ADDR_W - 1 : 0]    move_src_addr, 
+    // output logic [RF_ADDR_W - 1 : 0]    move_dst_addr,
+    // output logic [7 : 0]                move_line_num,
+    rf_move_intf rf_move,
 
     // connect to load-storer
     // output logic                        load_start, 
@@ -28,7 +29,7 @@ module ctrl_unit #(
     // output logic [RF_ADDR_W - 1 : 0]    ldst_rf_addr,
     // output logic [31 : 0]               ldst_sdram_addr,
     // output logic [7 : 0]                ldst_line_num,
-    rf_ldst_intf ldst,
+    rf_ldst_intf rf_ldst,
 
     // connect to EU
     output logic [31 : 0] eu_fetch,
@@ -53,14 +54,17 @@ inst_decode i_inst_decode (
     // .ldst_rf_addr       (ldst_rf_addr),
     // .ldst_sdram_addr    (ldst_sdram_addr),
     // .ldst_line_num      (ldst_line_num),
-    .ldst_rf_addr       (ldst.rf_addr),
-    .ldst_sdram_addr    (ldst.sdram_addr),
-    .ldst_line_num      (ldst.line_num),
+    .ldst_rf_addr       (rf_ldst.rf_addr),
+    .ldst_sdram_addr    (rf_ldst.sdram_addr),
+    .ldst_line_num      (rf_ldst.line_num),
 
 
-    .move_src_addr      (move_src_addr),
-    .move_dst_addr      (move_dst_addr),
-    .move_line_num      (move_line_num),
+    // .move_src_addr      (move_src_addr),
+    // .move_dst_addr      (move_dst_addr),
+    // .move_line_num      (move_line_num),
+    .move_src_addr     (rf_move.src_addr),
+    .move_dst_addr     (rf_move.dst_addr),
+    .move_line_num     (rf_move.line_num),
 
     .eu_unit            (eu_unit),
     .eu_fetch_addr      (eu_fetch_addr)
@@ -83,11 +87,12 @@ always_comb begin
 
     // load_start = 0;
     // store_start = 0;
-    ldst.load_start = 0;
-    ldst.store_start = 0;
+    rf_ldst.load_start = 0;
+    rf_ldst.store_start = 0;
 
-    move_start = 0;
-    
+    // move_start = 0;
+    rf_move.start = 0;
+
     eu_exec = '0;
     eu_fetch = '0;
 
@@ -110,10 +115,11 @@ always_comb begin
         default: begin  // ISSUE
             // load_start = load;
             // store_start = store;
-            ldst.load_start = load;
-            ldst.store_start = store;
+            rf_ldst.load_start = load;
+            rf_ldst.store_start = store;
 
-            move_start = move;
+            // move_start = move;
+            rf_move.start = move;
 
             unique0 if (exec)
                 eu_exec = eu_unit_onehot;

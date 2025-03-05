@@ -2,62 +2,29 @@
 
 module rf_ram #(
     parameter int M = 256,
-    parameter int DATA_W = 176*8,
-    parameter int ADDR_W = 10
+    parameter int RF_DATA_W = 176*8,
+    parameter int RF_ADDR_W = 10,
+    parameter int EU_NUM = 8
 ) (
     input wire clk,
 
-    // act as a normal Block RAM
-    input wire [ADDR_W - 1 : 0] rf_addr,
-    input wire [DATA_W - 1 : 0] rf_d, 
-    input wire [DATA_W - 1 : 0] rf_q,
-    input wire rf_we, rf_re,
+    bram_intf ram,
 
-    // << memory mapped IOs >>
-
-    // to four StMMs
-    output logic [DATA_W - 1 : 0] stmm_X_data [0 : 3],
-    output logic                  stmm_X_ld   [0 : 3],
-    input wire  [DATA_W - 1 : 0]  stmm_Y_data [0 : 3],
-
-    // to LayerNorm
-    output logic [N - 1 : 0] layernorm_X_data [0 : 3],
-    output logic             layernorm_X_ld   [0 : 3], 
-    input wire  [N - 1 : 0]  layernorm_Y_data [0 : 3]    // to LayerNorm
-
-    // to Attention
-    output wire [N - 1 : 0]         att_Q_data, att_K_data, att_V_data,
-    output wire [$clog2(M) - 1 : 0] att_Q_addr, att_K_addr, att_V_addr,
-    output wire                     att_Q_ld, att_K_ld, att_V_ld,
-    
-    output wire att_out_read,
-    input wire [N - 1 : 0]          att_out_data,
-    input wire                      att_out_valid,
-
-
-
-    
-    // todo: to SiLU 
-
+    rmio_intf rmio [0 : EUNUM - 1]
 
 );
 
 // << The real BRAM >>
-logic [8 : 0] ram_addr;     // 512 lines
-logic ram_we, ram_re;
-logic [DATA_W - 1 : 0] ram_d;
-logic [DATA_W - 1 : 0] ram_q;
-
-assign ram_addr = rf_addr[8 : 0];
-
+bram_intf #(.ADDR_W (9), .DATA_W (RF_DATA_W) ) real_ram();
 ram_512x1408 i_real_ram (
     .clock      (clk),
-    .address    (ram_addr),
-    .we         (ram_we),
-    .data       (ram_d),
-    .q          (ram_q)
+    .address    (real_ram.addr),
+    .we         (real_ram.we),
+    .data       (real_ram.data),
+    .q          (real_ram.q)
 );
 
+assign ram_addr = rf_addr[8 : 0];
 
 // << Flip addr to keep sync with bram >>
 logic [ADDR_W - 1 : 0] rf_addr_ff;
@@ -103,12 +70,10 @@ typedef enum logic [ADDR_W - 1 : 0] {
     ADDR_SILU_2_X = 10'h222,
     ADDR_SILU_3_X = 10'h223,
 
-
     ADDR_SILU_0_Y = 10'h228,
     ADDR_SILU_1_Y = 10'h229,
     ADDR_SILU_2_Y = 10'h22a,
     ADDR_SILU_3_Y = 10'h22b,
-
 
     ADDR_ATT_0_Q = 10'h230,
     ADDR_ATT_1_Q = 10'h231,

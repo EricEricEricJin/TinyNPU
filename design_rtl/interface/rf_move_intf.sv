@@ -15,4 +15,4 @@ modport rf_move ( input start, src_addr, dst_addr, line_num );
 
 endinterface
 
-`default_nettype wire 
+`default_nettype wire

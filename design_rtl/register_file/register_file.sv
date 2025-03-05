@@ -1,8 +1,8 @@
 `default_nettype none
 
-module rf_wrapper #(
+module register_file #(
     parameter int ADDR_W = 10,
-    parameter int DATA_W = 176*8,
+    parameter int DATA_W = 176*8
 ) (
     input wire clk, rst_n,
     
@@ -68,6 +68,7 @@ always_comb begin
     endcase
 end
 
+
 // << RF RAM >>
 rf_ram i_rf_ram (
     .clk        (clk),
@@ -87,7 +88,6 @@ rf_ram i_rf_ram (
     .layernorm_X_ld   (layernorm_X_ld),
     .layernorm_Y_data (layernorm_Y_data),
 );
-
 
 
 // << Mover >>

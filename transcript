@@ -216,3 +216,247 @@ run -a
 # ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(97)
 #    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
 # Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 97
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/eric/Documents/Conformer-FPGA-New/TinyNPU/simulation/ctrl_unit_sim/wave.do
+quit -sim 
+# End time: 17:35:04 on Mar 05,2025, Elapsed time: 0:31:48
+# Errors: 0, Warnings: 1
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_move.sv          design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:35:09 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_move.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# ** Error: (vlog-7) Failed to open design unit file "design_rtl/interface/rf_move.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 17:35:09 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 25
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:35:34 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling package pkg_plexer_funcs
+# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(65): near ".": syntax error, unexpected '.'.
+# End time: 17:35:34 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 25
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:35:50 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling package pkg_plexer_funcs
+# -- Compiling package ctrl_unit_sv_unit
+# -- Importing package pkg_plexer_funcs
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module cu_sim_tb
+# 
+# Top level modules:
+# 	cu_sim_tb
+# End time: 17:35:50 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/ctrl_unit_sim/elaborate.tcl
+# cu_sim_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
+# Start time: 17:35:53 on Mar 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.cu_sim_tb(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.pkg_plexer_funcs(fast)
+# Loading work.ctrl_unit_sv_unit(fast)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+add wave -position insertpoint  \
+sim:/cu_sim_tb/RF_ADDR_W \
+sim:/cu_sim_tb/clk \
+sim:/cu_sim_tb/rst_n \
+sim:/cu_sim_tb/h2f_io \
+sim:/cu_sim_tb/h2f_write \
+sim:/cu_sim_tb/isrunning \
+sim:/cu_sim_tb/eu_fetch \
+sim:/cu_sim_tb/eu_exec \
+sim:/cu_sim_tb/eu_fetch_addr
+add wave -position insertpoint  \
+sim:/cu_sim_tb/i_rf_move_intf/RF_ADDR_W \
+sim:/cu_sim_tb/i_rf_move_intf/LINE_NUM_W \
+sim:/cu_sim_tb/i_rf_move_intf/start \
+sim:/cu_sim_tb/i_rf_move_intf/src_addr \
+sim:/cu_sim_tb/i_rf_move_intf/dst_addr \
+sim:/cu_sim_tb/i_rf_move_intf/line_num
+add wave -position insertpoint  \
+sim:/cu_sim_tb/i_rf_ldst_intf/RF_ADDR_W \
+sim:/cu_sim_tb/i_rf_ldst_intf/LINE_NUM_W \
+sim:/cu_sim_tb/i_rf_ldst_intf/SDRAM_ADDR_W \
+sim:/cu_sim_tb/i_rf_ldst_intf/load_start \
+sim:/cu_sim_tb/i_rf_ldst_intf/store_start \
+sim:/cu_sim_tb/i_rf_ldst_intf/rf_addr \
+sim:/cu_sim_tb/i_rf_ldst_intf/sdram_addr \
+sim:/cu_sim_tb/i_rf_ldst_intf/line_num
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/eric/Documents/Conformer-FPGA-New/TinyNPU/simulation/ctrl_unit_sim/wave.do
+run -a
+# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(98)
+#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
+# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 98
+quit -sim 
+# End time: 19:19:30 on Mar 05,2025, Elapsed time: 1:43:37
+# Errors: 0, Warnings: 1
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 19:19:34 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling package pkg_plexer_funcs
+# -- Compiling package ctrl_unit_sv_unit
+# -- Importing package pkg_plexer_funcs
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module cu_sim_tb
+# 
+# Top level modules:
+# 	cu_sim_tb
+# End time: 19:19:34 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/ctrl_unit_sim/elaborate.tcl
+# cu_sim_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
+# Start time: 19:19:36 on Mar 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.cu_sim_tb(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.pkg_plexer_funcs(fast)
+# Loading work.ctrl_unit_sv_unit(fast)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+do simulation/ctrl_unit_sim/wave.do
+run -a
+# test param =      114514
+# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(100)
+#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
+# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 100
+quit -siom
+# unknown switch: -siom
+quit -siim
+# unknown switch: -siim
+quit -sim
+# End time: 19:20:37 on Mar 05,2025, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 1
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 19:20:42 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling package pkg_plexer_funcs
+# -- Compiling package ctrl_unit_sv_unit
+# -- Importing package pkg_plexer_funcs
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module cu_sim_tb
+# 
+# Top level modules:
+# 	cu_sim_tb
+# End time: 19:20:42 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/ctrl_unit_sim/elaborate.tcl
+# cu_sim_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
+# Start time: 19:20:44 on Mar 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.cu_sim_tb(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.pkg_plexer_funcs(fast)
+# Loading work.ctrl_unit_sv_unit(fast)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+run -a
+# test param =          10
+# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(100)
+#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
+# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 100
+quit -sim
+# End time: 19:21:54 on Mar 05,2025, Elapsed time: 0:01:10
+# Errors: 0, Warnings: 1
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 19:21:56 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling package pkg_plexer_funcs
+# -- Compiling package ctrl_unit_sv_unit
+# -- Importing package pkg_plexer_funcs
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module cu_sim_tb
+# 
+# Top level modules:
+# 	cu_sim_tb
+# End time: 19:21:56 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/ctrl_unit_sim/elaborate.tcl
+# cu_sim_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
+# Start time: 19:21:57 on Mar 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.cu_sim_tb(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.pkg_plexer_funcs(fast)
+# Loading work.ctrl_unit_sv_unit(fast)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+run -a
+# test param =     114514
+# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(100)
+#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
+# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 100
