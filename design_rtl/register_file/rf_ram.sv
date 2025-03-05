@@ -3,47 +3,67 @@
 module rf_ram #(
     parameter int M = 256,
     parameter int RF_DATA_W = 176*8,
-    parameter int RF_ADDR_W = 10,
-    parameter int EU_NUM = 8
+    parameter int RF_ADDR_W = 10
 ) (
     input wire clk,
 
     bram_intf ram,
 
-    rmio_intf rmio [0 : EUNUM - 1]
+    rmio_intf rmio_stmm         [0 : 3],
+    rmio_intf rmio_layernorm    [0 : 3],
+    rmio_intf rmio_silu         [0 : 3],
+    rmio_intf rmio_att          [0 : 3]
 
 );
 
-// << The real BRAM >>
-bram_intf #(.ADDR_W (9), .DATA_W (RF_DATA_W) ) real_ram();
+//////////////////////////////
+// The real BRAM
+//////////////////////////////
+localparam int REAL_RAM_ADDR_W = 9;
+
+bram_intf #(.ADDR_W (REAL_RAM_ADDR_W), .DATA_W (RF_DATA_W) ) real_ram();
+
 ram_512x1408 i_real_ram (
     .clock      (clk),
     .address    (real_ram.addr),
-    .we         (real_ram.we),
     .data       (real_ram.data),
+    .rden       (real_ram.re),
+    .wren       (real_ram.we),
     .q          (real_ram.q)
 );
 
-assign ram_addr = rf_addr[8 : 0];
+assign real_ram.addr = ram.addr[REAL_RAM_ADDR_W - 1 : 0];
 
-// << Flip addr to keep sync with bram >>
-logic [ADDR_W - 1 : 0] rf_addr_ff;
+logic is_real_ram_addr;
+assign is_real_ram_addr = ram.addr < 2**REAL_RAM_ADDR_W;
+
+//////////////////////////////
+// Flip addr to keep sync with bram
+//////////////////////////////
+logic [RF_ADDR_W - 1 : 0] addr_ff;
 always_ff @( posedge clk ) begin
-    rf_addr_ff <= rf_addr;
+    addr_ff <= ram.addr;
 end
 
-// Connect ram_d and all MM output into rf_d
+//////////////////////////////
+// Connect rmio input data and real_ram.d to ram.d
+//////////////////////////////
 always_comb begin
-    for (int i = 0; i < 4; i++)
-        stmm_X_data[i] = rf_d;
-
-    for (int i = 0; i < 4; i++)
-        layernorm_X_data[i] = rf_d;
-
-    ram_d = rf_d;
+    foreach (rmio_stmm[i])
+        rmio_stmm[i].input_data = ram.data;
+    foreach (rmio_layernorm[i])
+        rmio_layernorm[i].input_data = ram.data;
+    foreach (rmio_silu[i])
+        rmio_silu[i].input_data = ram.data;
+    foreach (rmio_att[i])
+        rmio_att[i].input_data = ram.data;
+    
+    real_ram.data = ram.data;
 end
 
-
+//////////////////////////////
+// Defination of all memory-mapped IO addresses
+//////////////////////////////
 typedef enum logic [ADDR_W - 1 : 0] { 
     ADDR_STMM_0_X = 10'h200,
     ADDR_STMM_1_X = 10'h201,
@@ -80,63 +100,162 @@ typedef enum logic [ADDR_W - 1 : 0] {
     ADDR_ATT_2_Q = 10'h232,
     ADDR_ATT_3_Q = 10'h233,
 
+    ADDR_ATT_0_K = 10'h230,
+    ADDR_ATT_1_K = 10'h231,
+    ADDR_ATT_2_K = 10'h232,
+    ADDR_ATT_3_K = 10'h233,
+
+    ADDR_ATT_0_V = 10'h230,
+    ADDR_ATT_1_V = 10'h231,
+    ADDR_ATT_2_V = 10'h232,
+    ADDR_ATT_3_V = 10'h233
+
 } addr_t;
 
-// determine ram_we and load signals
+//////////////////////////////
+// Determine write-enable and load signals
+//////////////////////////////
 always_comb begin
 
-    ram_we = 0;
-
+    // set all to zero by default
     for (int i = 0; i < 4; i++)
-        stmm_X_ld[i] = 0;
+        rmio_stmm[i].input_we = 0;
+    
     for (int i = 0; i < 4; i++)
-        layernorm_X_ld[i] = 0;
+        rmio_layernorm[i].input_we = 0;
+    
+    for (int i = 0; i < 4; i++)
+        rmio_silu[i].input_we = 0;
+    
+    for (int i = 0; i < 4; i++)
+        rmio_att[i].input_we = 3'b000;
+    
+    real_ram.we = 0;
 
     if (rf_we) begin
-        case (rf_addr)
-            ADDR_STMM_0_X:  stmm_X_ld[0] = 1;
-            ADDR_STMM_1_X:  stmm_X_ld[1] = 1;
-            ADDR_STMM_2_X:  stmm_X_ld[2] = 1;
-            ADDR_STMM_3_X:  stmm_X_ld[3] = 1;
-            ADDR_LN_0_X:    layernorm_X_ld[0] = 1;
-            ADDR_LN_1_X:    layernorm_X_ld[1] = 1;
-            ADDR_LN_2_X:    layernorm_X_ld[2] = 1;
-            ADDR_LN_3_X:    layernorm_X_ld[3] = 1;
-            default:        ram_we = 1;
+        case (ram.addr)
+            // === STMM ===
+            ADDR_STMM_0_X:  rmio_stmm[0].input_we = 1;
+            ADDR_STMM_1_X:  rmio_stmm[1].input_we = 1;
+            ADDR_STMM_2_X:  rmio_stmm[2].input_we = 1;
+            ADDR_STMM_3_X:  rmio_stmm[3].input_we = 1;
+
+            // === LAYER NORM ===
+            ADDR_LN_0_X:    rmio_layernorm[0].input_we = 1;
+            ADDR_LN_1_X:    rmio_layernorm[1].input_we = 1;
+            ADDR_LN_2_X:    rmio_layernorm[2].input_we = 1;
+            ADDR_LN_3_X:    rmio_layernorm[3].input_we = 1;
+
+            // === SILU ===
+            ADDR_SILU_0_X:  rmio_silu[0].input_we = 1;
+            ADDR_SILU_1_X:  rmio_silu[1].input_we = 1;
+            ADDR_SILU_2_X:  rmio_silu[2].input_we = 1;
+            ADDR_SILU_3_X:  rmio_silu[3].input_we = 1;
+
+            // === ATTENTION ===
+            ADDR_ATT_0_Q:  rmio_att[0].input_we = 3'b001;
+            ADDR_ATT_1_Q:  rmio_att[1].input_we = 3'b001;
+            ADDR_ATT_2_Q:  rmio_att[2].input_we = 3'b001;
+            ADDR_ATT_3_Q:  rmio_att[3].input_we = 3'b001;
+
+            ADDR_ATT_0_K:  rmio_att[0].input_we = 3'b010;
+            ADDR_ATT_1_K:  rmio_att[1].input_we = 3'b010;
+            ADDR_ATT_2_K:  rmio_att[2].input_we = 3'b010;
+            ADDR_ATT_3_K:  rmio_att[3].input_we = 3'b010;
+
+            ADDR_ATT_0_V:  rmio_att[0].input_we = 3'b100;
+            ADDR_ATT_1_V:  rmio_att[1].input_we = 3'b100;
+            ADDR_ATT_2_V:  rmio_att[2].input_we = 3'b100;
+            ADDR_ATT_3_V:  rmio_att[3].input_we = 3'b100;
+
+            default: if (is_real_ram_addr) real_ram.we = 1;
         endcase
     end
 end
 
-// determine read signals
+//////////////////////////////
+// Determine read signals and read data
+// Assert rmio.re for all EUs even not needed
+//////////////////////////////
 always_comb begin
-    // set all to zero by default 
-    att_out_read = 0;
+    
+    // set all read-enable to zero by default 
+    for (int i = 0; i < 4; i++)
+        rmio_stmm[i].output_re = 0;
+    for (int i = 0; i < 4; i++)
+        rmio_layernorm[i].output_re = 0;
+    for (int i = 0; i < 4; i++)
+        rmio_silu[i].output_re = 0;
+    for (int i = 0; i < 4; i++)
+        rmio_att[i].output_re = 0;
 
+    real_ram.re = 0;
 
-    ram_re = 0;
+    if (ram.re) begin
+        case (ram.addr)
+            // === STMM ===
+            ADDR_STMM_0_Y:  rmio_stmm[0].output_re = 1;
+            ADDR_STMM_1_Y:  rmio_stmm[1].output_re = 1;
+            ADDR_STMM_2_Y:  rmio_stmm[2].output_re = 1;
+            ADDR_STMM_3_Y:  rmio_stmm[3].output_re = 1;
 
-    if (rf_re) begin
-        case (rf_addr)
-            ADDR_ATT_0_Y:  att_out_read = 1;
-            default:       ram_re = 1;
+            // === LAYER NORM ===
+            ADDR_LN_0_Y:    rmio_layernorm[0].output_re = 1;
+            ADDR_LN_1_Y:    rmio_layernorm[1].output_re = 1;
+            ADDR_LN_2_Y:    rmio_layernorm[2].output_re = 1;
+            ADDR_LN_3_Y:    rmio_layernorm[3].output_re = 1;
+
+            // === SILU ===
+            ADDR_SILU_0_Y:  rmio_silu[0].output_re = 1;
+            ADDR_SILU_1_Y:  rmio_silu[1].output_re = 1;
+            ADDR_SILU_2_Y:  rmio_silu[2].output_re = 1;
+            ADDR_SILU_3_Y:  rmio_silu[3].output_re = 1;
+
+            // === ATTENTION ===
+            ADDR_ATT_0_Y:  rmio_att[0].output_re = 1;
+            ADDR_ATT_1_Y:  rmio_att[1].output_re = 1;
+            ADDR_ATT_2_Y:  rmio_att[2].output_re = 1;
+            ADDR_ATT_3_Y:  rmio_att[3].output_re = 1;
+
+            default: if (is_real_ram_addr) ram_re = 1;
         endcase
     end
 end
 
-// determine rf_q
+//////////////////////////////
+// determine ram.q based on the flip-floped addr
+//////////////////////////////
 always_comb begin
-    case (rf_addr_ff)
-        ADDR_STMM_0_Y:  rf_q = stmm_Y_data[0];
-        ADDR_STMM_1_Y:  rf_q = stmm_Y_data[1];
-        ADDR_STMM_2_Y:  rf_q = stmm_Y_data[2];
-        ADDR_STMM_3_Y:  rf_q = stmm_Y_data[3];
-        ADDR_LN_0_Y:    rf_q = layernorm_Y_data[0];
-        ADDR_LN_1_Y:    rf_q = layernorm_Y_data[1];
-        ADDR_LN_2_Y:    rf_q = layernorm_Y_data[2];
-        ADDR_LN_3_Y:    rf_q = layernorm_Y_data[3];
-        default:        rf_q = ram_q;
+    case (addr_ff)
+        // === STMM ===
+        ADDR_STMM_0_Y:  ram.q = rmio_stmm[0].output_data;
+        ADDR_STMM_1_Y:  ram.q = rmio_stmm[1].output_data;
+        ADDR_STMM_2_Y:  ram.q = rmio_stmm[2].output_data;
+        ADDR_STMM_3_Y:  ram.q = rmio_stmm[3].output_data;
+        
+        // === LAYER NORM ===
+        ADDR_LN_0_Y:    ram.q = rmio_layernorm[0].output_data;
+        ADDR_LN_1_Y:    ram.q = rmio_layernorm[1].output_data;
+        ADDR_LN_2_Y:    ram.q = rmio_layernorm[2].output_data;
+        ADDR_LN_3_Y:    ram.q = rmio_layernorm[3].output_data;
+        
+        // === SILU ===
+        ADDR_SILU_0_Y:  ram.q = rmio_silu[0].output_data;
+        ADDR_SILU_1_Y:  ram.q = rmio_silu[1].output_data;
+        ADDR_SILU_2_Y:  ram.q = rmio_silu[2].output_data;
+        ADDR_SILU_3_Y:  ram.q = rmio_silu[3].output_data;
+
+        // === ATTENTION ===
+        ADDR_ATT_0_Y:  ram.q = rmio_att[0].output_data;
+        ADDR_ATT_1_Y:  ram.q = rmio_att[1].output_data;
+        ADDR_ATT_2_Y:  ram.q = rmio_att[2].output_data;
+        ADDR_ATT_3_Y:  ram.q = rmio_att[3].output_data;
+
+        default:       ram.q = real_ram.q;  // no need if(...), dirty is OK.
     endcase
 end
+
+
 
 endmodule
 
