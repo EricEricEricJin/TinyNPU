@@ -1,7 +1,7 @@
 m255
 K4
 z2
-Z0 !s12c _opt
+Z0 !s12c _opt1
 Z1 !s99 nomlopt
 R0
 R1
@@ -15,23 +15,37 @@ R0
 R1
 R0
 R1
-R0
+Z2 !s12c _opt
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
 R1
 !s11f MIXED_VERSIONS
 13
@@ -40,26 +54,39 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 d/home/eric/Documents/Conformer-FPGA-New/TinyNPU
+Z3 d/home/eric/Documents/Conformer-FPGA-New/TinyNPU
 T_opt
 !s110 1740365637
 VU<A=ESK69_Jd]8ljXFz_j2
 04 10 4 work cpu_sim_tb fast 0
 =1-000ae431a4f1-67bbdf45-76bf3-46715
 R1
-!s12b OEM100
+Z4 !s12b OEM100
 !s124 OEM10U8 
-o-quiet -auto_acc_if_foreign -work work -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver +acc
-Z3 tCvgOpt 0
+Z5 o-quiet -auto_acc_if_foreign -work work -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver +acc
+Z6 tCvgOpt 0
 n@_opt
-OL;O;2023.3;77
+Z7 OL;O;2023.3;77
+R3
+T_opt1
+!s110 1741160144
+V>AjGJ2]`f[T4jEPgZ;fAT0
+04 9 4 work cu_sim_tb fast 0
+=1-000ae431a4f1-67c7fed0-a5bb8-c6d2
+R1
+R4
+!s124 OEM10U3 
+R5
+R6
+n@_opt1
+R7
 valu
-Z4 2design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_mem.sv|ip_cores/ram_32x256.v|simulation/cpu_sim/cpu_sim_tb.sv
-Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z6 DXx4 work 13 pkg_cpu_types 0 22 EGc?C=L`Z4JW2ZU]T@;^91
+Z8 2design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_mem.sv|ip_cores/ram_32x256.v|simulation/cpu_sim/cpu_sim_tb.sv
+Z9 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z10 DXx4 work 13 pkg_cpu_types 0 22 EGc?C=L`Z4JW2ZU]T@;^91
 DXx4 work 11 alu_sv_unit 0 22 4<@gmVZYS2d[cgl^U=X<00
-Z7 !s110 1740365636
-Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z11 !s110 1740365636
+Z12 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
@@ -67,25 +94,25 @@ r1
 IFcdT[iS=h?m1J]k1ANYb:0
 !s105 alu_sv_unit
 S1
-R2
-Z9 w1740131923
-Z10 8design_rtl/cpu/alu.sv
-Z11 Fdesign_rtl/cpu/alu.sv
+R3
+Z13 w1740131923
+Z14 8design_rtl/cpu/alu.sv
+Z15 Fdesign_rtl/cpu/alu.sv
 !i122 29
 L0 6 37
-Z12 OL;L;2023.3;77
+Z16 OL;L;2023.3;77
 31
-Z13 !s108 1740365636.000000
-Z14 !s107 simulation/cpu_sim/cpu_sim_tb.sv|ip_cores/ram_32x256.v|design_rtl/cpu/inst_mem.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/cpu_typedef.sv|
-Z15 !s90 -reportprogress|300|-sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_mem.sv|ip_cores/ram_32x256.v|simulation/cpu_sim/cpu_sim_tb.sv|
+Z17 !s108 1740365636.000000
+Z18 !s107 simulation/cpu_sim/cpu_sim_tb.sv|ip_cores/ram_32x256.v|design_rtl/cpu/inst_mem.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/cpu_typedef.sv|
+Z19 !s90 -reportprogress|300|-sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_mem.sv|ip_cores/ram_32x256.v|simulation/cpu_sim/cpu_sim_tb.sv|
 !i113 0
-Z16 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
-Xalu_sv_unit
-R4
-R5
+Z20 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R6
-R7
+Xalu_sv_unit
+R8
+R9
+R10
+R11
 V4<@gmVZYS2d[cgl^U=X<00
 r1
 !s85 0
@@ -94,27 +121,27 @@ r1
 I4<@gmVZYS2d[cgl^U=X<00
 !i103 1
 S1
-R2
-R9
-R10
-R11
-!i122 29
-L0 4 0
-R12
-31
+R3
 R13
 R14
 R15
-!i113 0
+!i122 29
+L0 4 0
 R16
-R3
-vbr_logic
-R4
-R5
+31
+R17
+R18
+R19
+!i113 0
+R20
 R6
-DXx4 work 16 br_logic_sv_unit 0 22 X@4O67T2T7=RR8i2WEKai0
-R7
+vbr_logic
 R8
+R9
+R10
+DXx4 work 16 br_logic_sv_unit 0 22 X@4O67T2T7=RR8i2WEKai0
+R11
+R12
 r1
 !s85 0
 !i10b 1
@@ -122,25 +149,25 @@ r1
 IiC7DTH5]dB0^<7YaVQ=1;0
 !s105 br_logic_sv_unit
 S1
-R2
-Z17 w1740210738
-Z18 8design_rtl/cpu/br_logic.sv
-Z19 Fdesign_rtl/cpu/br_logic.sv
+R3
+Z21 w1740210738
+Z22 8design_rtl/cpu/br_logic.sv
+Z23 Fdesign_rtl/cpu/br_logic.sv
 !i122 29
 L0 5 16
-R12
-31
-R13
-R14
-R15
-!i113 0
 R16
-R3
-Xbr_logic_sv_unit
-R4
-R5
+31
+R17
+R18
+R19
+!i113 0
+R20
 R6
-R7
+Xbr_logic_sv_unit
+R8
+R9
+R10
+R11
 VX@4O67T2T7=RR8i2WEKai0
 r1
 !s85 0
@@ -149,27 +176,27 @@ r1
 IX@4O67T2T7=RR8i2WEKai0
 !i103 1
 S1
-R2
+R3
+R21
+R22
+R23
+!i122 29
+Z24 L0 3 0
+R16
+31
 R17
 R18
 R19
-!i122 29
-Z20 L0 3 0
-R12
-31
-R13
-R14
-R15
 !i113 0
-R16
-R3
-vcpu
-R4
-R5
+R20
 R6
-DXx4 work 11 cpu_sv_unit 0 22 ID[zME;C<aW=C_F9HL3mQ3
-R7
+vcpu
 R8
+R9
+R10
+DXx4 work 11 cpu_sv_unit 0 22 ID[zME;C<aW=C_F9HL3mQ3
+R11
+R12
 r1
 !s85 0
 !i10b 1
@@ -177,26 +204,26 @@ r1
 InbT9o^dC;_zlY^n]^=;nm1
 !s105 cpu_sv_unit
 S1
-R2
-Z21 w1740364232
-Z22 8design_rtl/cpu/cpu.sv
-Z23 Fdesign_rtl/cpu/cpu.sv
-!i122 29
-Z24 L0 5 189
-R12
-31
-R13
-R14
-R15
-!i113 0
-R16
 R3
+Z25 w1740364232
+Z26 8design_rtl/cpu/cpu.sv
+Z27 Fdesign_rtl/cpu/cpu.sv
+!i122 29
+L0 5 189
+R16
+31
+R17
+R18
+R19
+!i113 0
+R20
+R6
 vcpu_sim_tb
-R4
-R5
-DXx4 work 18 cpu_sim_tb_sv_unit 0 22 ]Qd`Dm`<Z0fJm][5P578Z2
-R7
 R8
+R9
+DXx4 work 18 cpu_sim_tb_sv_unit 0 22 ]Qd`Dm`<Z0fJm][5P578Z2
+R11
+R12
 r1
 !s85 0
 !i10b 1
@@ -204,24 +231,24 @@ r1
 IGiXOZz3=?=glc:8`iAMjd0
 !s105 cpu_sim_tb_sv_unit
 S1
-R2
-Z25 w1740364655
-Z26 8simulation/cpu_sim/cpu_sim_tb.sv
-Z27 Fsimulation/cpu_sim/cpu_sim_tb.sv
+R3
+Z28 w1740364655
+Z29 8simulation/cpu_sim/cpu_sim_tb.sv
+Z30 Fsimulation/cpu_sim/cpu_sim_tb.sv
 !i122 29
 L0 35 114
-R12
-31
-R13
-R14
-R15
-!i113 0
 R16
-R3
+31
+R17
+R18
+R19
+!i113 0
+R20
+R6
 Xcpu_sim_tb_sv_unit
-R4
-R5
-R7
+R8
+R9
+R11
 V]Qd`Dm`<Z0fJm][5P578Z2
 r1
 !s85 0
@@ -230,25 +257,25 @@ r1
 I]Qd`Dm`<Z0fJm][5P578Z2
 !i103 1
 S1
-R2
-R25
-R26
-R27
-!i122 29
-R20
-R12
-31
-R13
-R14
-R15
-!i113 0
-R16
 R3
-Xcpu_sv_unit
-R4
-R5
+R28
+R29
+R30
+!i122 29
+R24
+R16
+31
+R17
+R18
+R19
+!i113 0
+R20
 R6
-R7
+Xcpu_sv_unit
+R8
+R9
+R10
+R11
 VID[zME;C<aW=C_F9HL3mQ3
 r1
 !s85 0
@@ -257,53 +284,130 @@ r1
 IID[zME;C<aW=C_F9HL3mQ3
 !i103 1
 S1
-R2
-R21
-R22
-R23
-!i122 29
-R20
-R12
-31
-R13
-R14
-R15
-!i113 0
-R16
 R3
-vinst_decode
-R4
-R5
+R25
+R26
+R27
+!i122 29
+R24
+R16
+31
+R17
+R18
+R19
+!i113 0
+R20
 R6
-DXx4 work 19 inst_decode_sv_unit 0 22 nYgl2DJhIRNYKMoaGMHo?0
-R7
-R8
+vctrl_unit
+Z31 2design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv
+R9
+Z32 DXx4 work 16 pkg_plexer_funcs 0 22 MG>fHi1B^5dL9LU0fnnER3
+DXx4 work 17 ctrl_unit_sv_unit 0 22 >5HZ5GW31HS8M^6`Oj^kV0
+Z33 !s110 1741160143
+R12
 r1
 !s85 0
 !i10b 1
-!s100 ZOiA8T^<IIXO9MLzCT0?F2
-IfHe5YoQ6_CK;I14P5@LgJ2
-!s105 inst_decode_sv_unit
+!s100 g0z0L>ga5AO?JVj^fKNQU1
+IVnMKNkz43GD2TgmMfUT?V2
+!s105 ctrl_unit_sv_unit
 S1
-R2
-Z28 w1740365426
-Z29 8design_rtl/cpu/inst_decode.sv
-Z30 Fdesign_rtl/cpu/inst_decode.sv
-!i122 29
-R24
-R12
-31
-R13
-R14
-R15
-!i113 0
-R16
 R3
-Xinst_decode_sv_unit
-R4
-R5
+Z34 w1741159979
+Z35 8design_rtl/ctrl_unit/ctrl_unit.sv
+Z36 Fdesign_rtl/ctrl_unit/ctrl_unit.sv
+!i122 46
+L0 5 113
+R16
+31
+Z37 !s108 1741160143.000000
+Z38 !s107 simulation/ctrl_unit_sim/cu_sim_tb.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/support/plexer_funcs.sv|
+Z39 !s90 -reportprogress|300|-sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv|
+!i113 0
+R20
 R6
-R7
+Xctrl_unit_sv_unit
+R31
+R9
+R32
+R33
+V>5HZ5GW31HS8M^6`Oj^kV0
+r1
+!s85 0
+!i10b 1
+!s100 j:NCo9XI?gjTVmW1Hi=TW1
+I>5HZ5GW31HS8M^6`Oj^kV0
+!i103 1
+S1
+R3
+R34
+R35
+R36
+!i122 46
+R24
+R16
+31
+R37
+R38
+R39
+!i113 0
+R20
+R6
+vcu_sim_tb
+R31
+R9
+R33
+!i10b 1
+!s100 NmZN7[n=@<h9Y]Nj]NI[U3
+I<1?HT=::QO5LUS<@GVMES0
+S1
+R3
+w1741160134
+8simulation/ctrl_unit_sim/cu_sim_tb.sv
+Fsimulation/ctrl_unit_sim/cu_sim_tb.sv
+!i122 46
+L0 1 100
+R12
+R16
+r1
+!s85 0
+31
+R37
+R38
+R39
+!i113 0
+R20
+R6
+vinst_decode
+R31
+R9
+R33
+!i10b 1
+!s100 ]BVgLK^[?N6zT3K=T5oIE0
+Iza;8oG3moY3Q5[5be79<51
+S1
+R3
+w1741159541
+8design_rtl/ctrl_unit/inst_decode.sv
+Fdesign_rtl/ctrl_unit/inst_decode.sv
+!i122 46
+L0 3 96
+R12
+R16
+r1
+!s85 0
+31
+R37
+R38
+R39
+!i113 0
+R20
+R6
+Xinst_decode_sv_unit
+R8
+R9
+R10
+R11
 VnYgl2DJhIRNYKMoaGMHo?0
 r1
 !s85 0
@@ -312,117 +416,167 @@ r1
 InYgl2DJhIRNYKMoaGMHo?0
 !i103 1
 S1
-R2
-R28
-R29
-R30
-!i122 29
-R20
-R12
-31
-R13
-R14
-R15
-!i113 0
-R16
 R3
+w1740365426
+8design_rtl/cpu/inst_decode.sv
+Fdesign_rtl/cpu/inst_decode.sv
+!i122 29
+R24
+R16
+31
+R17
+R18
+R19
+!i113 0
+R20
+R6
 vinst_mem
-R4
-R5
-R7
+R8
+R9
+R11
 !i10b 1
 !s100 b6UnHS8>=Nd:O9PJ?gCM=3
 I@YR97[91Af9UEh@FgLdm@0
 S1
-R2
+R3
 w1740363967
 8design_rtl/cpu/inst_mem.sv
 Fdesign_rtl/cpu/inst_mem.sv
 !i122 29
 L0 3 20
-R8
 R12
+R16
 r1
 !s85 0
 31
-R13
-R14
-R15
+R17
+R18
+R19
 !i113 0
-R16
-R3
+R20
+R6
 Xpkg_cpu_types
-R4
-R5
-R7
+R8
+R9
+R11
 !i10b 1
 !s100 L_0EoQ]RSCL;cnnZAJ<K=2
 IEGc?C=L`Z4JW2ZU]T@;^91
 S1
-R2
+R3
 w1740233287
 8design_rtl/cpu/cpu_typedef.sv
 Fdesign_rtl/cpu/cpu_typedef.sv
 !i122 29
-R20
+R24
 VEGc?C=L`Z4JW2ZU]T@;^91
-R12
+R16
 r1
 !s85 0
 31
-R13
-R14
-R15
+R17
+R18
+R19
 !i113 0
-R16
+R20
+R6
+Xpkg_plexer_funcs
+R31
+R9
+R33
+!i10b 1
+!s100 ^7_?]Dbz^7dflVlNzHzBn0
+IMG>fHi1B^5dL9LU0fnnER3
+S1
 R3
+w1741159971
+Z40 8design_rtl/support/plexer_funcs.sv
+Z41 Fdesign_rtl/support/plexer_funcs.sv
+!i122 46
+R24
+VMG>fHi1B^5dL9LU0fnnER3
+R16
+r1
+!s85 0
+31
+R37
+R38
+R39
+!i113 0
+R20
+R6
+Xplexer_funcs_sv_unit
+R9
+!s110 1741157867
+VADC^<O=1Fi>70SA5HT^a30
+r1
+!s85 0
+!i10b 1
+!s100 mG@Z2zBZaN69ZRG:8UR;40
+IADC^<O=1Fi>70SA5HT^a30
+!i103 1
+S1
+R3
+w1741157859
+R40
+R41
+!i122 31
+R24
+R16
+31
+!s108 1741157867.000000
+R38
+R39
+!i113 0
+R20
+R6
 vram_32x256
-R4
-R5
-R7
+R8
+R9
+R11
 !i10b 1
 !s100 e0a0in?WWW_D:;8zW;fRn2
 IiNiFRn7ahl1eQ;QDFH66M2
 S1
-R2
+R3
 w1740019605
 8ip_cores/ram_32x256.v
 Fip_cores/ram_32x256.v
 !i122 29
 L0 40 65
-R8
 R12
+R16
 r1
 !s85 0
 31
-R13
-R14
-R15
+R17
+R18
+R19
 !i113 0
-R16
-R3
+R20
+R6
 vrf32
-R4
-R5
-R7
+R8
+R9
+R11
 !i10b 1
 !s100 deM8DVGg^AcB:`i>Wn_c>3
 IQBA]4;5LlG093Rm^LOZZK2
 S1
-R2
+R3
 w1740365630
 8design_rtl/cpu/rf32.sv
 Fdesign_rtl/cpu/rf32.sv
 !i122 29
 L0 3 28
-R8
 R12
+R16
 r1
 !s85 0
 31
-R13
-R14
-R15
+R17
+R18
+R19
 !i113 0
-R16
-R3
+R20
+R6

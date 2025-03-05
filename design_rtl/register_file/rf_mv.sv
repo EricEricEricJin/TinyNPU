@@ -17,6 +17,7 @@ module rf_mv #(
     // to master
     input wire mv_start,
     input wire [ADDR_W - 1 : 0] src_addr, dst_addr,
+    input wire [7 : 0] mv_line_num,
     output wire mv_done
 );
 

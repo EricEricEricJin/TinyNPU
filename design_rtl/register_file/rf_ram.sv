@@ -3,7 +3,7 @@
 module rf_ram #(
     parameter int M = 256,
     parameter int DATA_W = 176*8,
-    parameter int ADDR_W = 9
+    parameter int ADDR_W = 10
 ) (
     input wire clk,
 
@@ -43,14 +43,14 @@ module rf_ram #(
 );
 
 // << The real BRAM >>
-logic [7 : 0] ram_addr;
+logic [8 : 0] ram_addr;     // 512 lines
 logic ram_we, ram_re;
 logic [DATA_W - 1 : 0] ram_d;
 logic [DATA_W - 1 : 0] ram_q;
 
-assign ram_addr = rf_addr[7 : 0];
+assign ram_addr = rf_addr[8 : 0];
 
-ram_256x1408 i_real_ram (
+ram_512x1408 i_real_ram (
     .clock      (clk),
     .address    (ram_addr),
     .we         (ram_we),
@@ -78,42 +78,42 @@ end
 
 
 typedef enum logic [ADDR_W - 1 : 0] { 
-    ADDR_STMM_0_X = 9'h100,
-    ADDR_STMM_1_X = 9'h101,
-    ADDR_STMM_2_X = 9'h102,
-    ADDR_STMM_3_X = 9'h103,
+    ADDR_STMM_0_X = 10'h200,
+    ADDR_STMM_1_X = 10'h201,
+    ADDR_STMM_2_X = 10'h202,
+    ADDR_STMM_3_X = 10'h203,
 
-    ADDR_STMM_0_Y = 9'h108,
-    ADDR_STMM_1_Y = 9'h109,
-    ADDR_STMM_2_Y = 9'h10a,
-    ADDR_STMM_3_Y = 9'h10b,
+    ADDR_STMM_0_Y = 10'h208,
+    ADDR_STMM_1_Y = 10'h209,
+    ADDR_STMM_2_Y = 10'h20a,
+    ADDR_STMM_3_Y = 10'h20b,
 
-    ADDR_LN_0_X = 9'h110,
-    ADDR_LN_1_X = 9'h111,
-    ADDR_LN_2_X = 9'h112,
-    ADDR_LN_3_X = 9'h113,
+    ADDR_LN_0_X = 10'h210,
+    ADDR_LN_1_X = 10'h211,
+    ADDR_LN_2_X = 10'h212,
+    ADDR_LN_3_X = 10'h213,
 
-    ADDR_LN_0_Y = 9'h118,
-    ADDR_LN_1_Y = 9'h119,
-    ADDR_LN_2_Y = 9'h11a,
-    ADDR_LN_3_Y = 9'h11b,
+    ADDR_LN_0_Y = 10'h218,
+    ADDR_LN_1_Y = 10'h219,
+    ADDR_LN_2_Y = 10'h21a,
+    ADDR_LN_3_Y = 10'h21b,
 
-    ADDR_SILU_0_X = 9'h120,
-    ADDR_SILU_1_X = 9'h121,
-    ADDR_SILU_2_X = 9'h122,
-    ADDR_SILU_3_X = 9'h123,
-
-
-    ADDR_SILU_0_Y = 9'h128,
-    ADDR_SILU_1_Y = 9'h129,
-    ADDR_SILU_2_Y = 9'h12a,
-    ADDR_SILU_3_Y = 9'h12b,
+    ADDR_SILU_0_X = 10'h220,
+    ADDR_SILU_1_X = 10'h221,
+    ADDR_SILU_2_X = 10'h222,
+    ADDR_SILU_3_X = 10'h223,
 
 
-    ADDR_ATT_0_Q = 9'h130,
-    ADDR_ATT_1_Q = 9'h131,
-    ADDR_ATT_2_Q = 9'h132,
-    ADDR_ATT_3_Q = 9'h133,
+    ADDR_SILU_0_Y = 10'h228,
+    ADDR_SILU_1_Y = 10'h229,
+    ADDR_SILU_2_Y = 10'h22a,
+    ADDR_SILU_3_Y = 10'h22b,
+
+
+    ADDR_ATT_0_Q = 10'h230,
+    ADDR_ATT_1_Q = 10'h231,
+    ADDR_ATT_2_Q = 10'h232,
+    ADDR_ATT_3_Q = 10'h233,
 
 } addr_t;
 

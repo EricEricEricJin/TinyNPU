@@ -3,7 +3,6 @@
 `default_nettype none
 
 module rf_ldst #(
-    parameter int SDRAM_ADDR_W = 25,
     parameter int RF_ADDR_W = 9,
     parameter int SDRAM_DATA_W = 128,
     parameter int RF_DATA_W = 176*8
@@ -21,7 +20,7 @@ module rf_ldst #(
     input wire [DATA_W - 1 : 0] rf_q,
 
     // to master
-    input wire [SDRAM_ADDR_W - 1 : 0]   ldst_sdram_addr,
+    input wire [31 : 0]   ldst_sdram_addr,
     input wire [RF_ADDR_W - 1 : 0]      ldst_rf_addr,
     input wire [7 : 0]  ldst_line_num,
     input wire          load_start, store_start,

@@ -1,50 +1,70 @@
 `default_nettype none
 
-module ctrl_unit (
+import pkg_plexer_funcs::*;
+
+module ctrl_unit #(
+    parameter int RF_ADDR_W = 10
+) (
     input wire clk, rst_n,
 
-    // connect to IO
+    // connect to AvMM IO
     input wire [31 : 0] h2f_io,
-    input wire h2f_write,
+    input wire          h2f_write,
 
-    output logic [31 : 0] f2h_io,
+    // state 
+    output logic isrunning,
 
-    output wire [31 : 0] eu_fetch,
-    output wire [31 : 0] eu_exec
+    // connect to mover
+    output logic                        move_start,
+    output logic [RF_ADDR_W - 1 : 0]    move_src_addr, 
+    output logic [RF_ADDR_W - 1 : 0]    move_dst_addr,
+    output logic [7 : 0]                move_line_num,
+
+    // connect to load-storer
+    output logic [31 : 0]               ldst_sdram_addr,
+    output logic [RF_ADDR_W - 1 : 0]    ldst_rf_addr,
+    output logic [7 : 0]                ldst_line_num,
+    output logic                        load_start, 
+    output logic                        store_start,
+
+    // connect to EU
+    output logic [31 : 0] eu_fetch,
+    output logic [31 : 0] eu_exec,
+    output logic [31 : 0] eu_fetch_addr
 
 );
 
-// fetched register
-logic [176 * 8 - 1 : 0] reg_buf;
+// inst decoder
+logic load, store, move, fetch, exec;
+logic [4 : 0]   eu_unit;
 
-// Three types of operations:
-// READ->WRITE
-// READ->SDRAM_STORE
-// SDRAM_LOAD->WRITE
+inst_decode i_inst_decode (
+    .inst               (h2f_io),
 
+    .load               (load),
+    .store              (store),
+    .move               (move),
+    .fetch              (fetch),
+    .exec               (exec),
 
-typedef enum logic[2 : 0] { 
-    TYPE_M = 3'b00,  
-    TYPE_V = 3'b01,  
-    TYPE_M2V = 3'b10,
-    TYPE_V2M = 3'b10,
-    TYPE_LD
-    TYPE_SD
-    TYPE_LP
-} inst_type_t;
+    .ldst_rf_addr       (ldst_rf_addr),
+    .ldst_sdram_addr    (ldst_sdram_addr),
+    .ldst_line_num      (ldst_line_num),
 
-logic [1 : 0] op;
-logic [4 : 0] fun_unit;
-logic [24 : 0] sdram_addr;
-logic [7 : 0] ra1, ra2, wa;
-logic dual_input;
+    .move_src_addr      (move_src_addr),
+    .move_dst_addr      (move_dst_addr),
+    .move_line_num      (move_line_num),
 
-assign {op, fun_unit, sdram_addr} = h2f_io;
-assign {ra1, ra2, wa} = h2f_io[23 : 0];
-assign dual_inpumemt = h2f_io[24];
+    .eu_unit            (eu_unit),
+    .eu_fetch_addr      (eu_fetch_addr)
+);
 
-typedef enum logic [3 : 0] { IDLE, DECODE, XRAM_LD, XRAM_ST, FU_FETCH_PARAM, EX_X1_LD, EX_X2_LD, EX_START } state_t;
+logic [31 : 0] eu_unit_onehot;
+assign eu_unit_onehot = PlexerFunctions #(.N(32)) :: decoder (eu_unit);
+
+typedef enum logic [1 : 0] { IDLE, DECODE, ISSUE } state_t;
 state_t state, nxt_state;
+
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
         state <= IDLE;
@@ -53,57 +73,40 @@ always_ff @( posedge clk, negedge rst_n ) begin
 end
 
 always_comb begin
+
+    load_start = 0;
+    store_start = 0;
+    move_start = 0;
+    
+    eu_exec = '0;
+    eu_fetch = '0;
+
+    isrunning = 1;
+
     nxt_state = state;
 
     case (state)
         IDLE: begin
+            isrunning = 0;
+
             if (h2f_write)
                 nxt_state = DECODE;
         end
+        
         DECODE: begin
-            case (op)
-                OP_XRAM_LD: begin
-                    // todo
-                end
-                OP_XRAM_ST: begin
-                    // todo
-                end
-                OP_FU_FETCH: begin
-                    start_fetch_param = 1;
-                    nxt_state = IDLE;
-                end
-                default: begin  // FU_EX
-                    start_ex = 1;
-                    nxt_state = IDLE;
-                end 
-            endcase
-            bram_addr = ra1;
+            nxt_state = ISSUE;
         end
-        XRAM_LD: begin
-            // todo
-            nxt_state = IDLE;
-        end
-        XRAM_ST: begin
-            // todo
-            nxt_state = IDLE;
-        end
-        EX_X1_LD: begin
-            if (dual_input) begin
-                // todo
-                x1_ld = 1;
-                xram_addr = ra2;
-                nxt_state = EX_X2_LD;
-            end
-            else begin
-                nxt_state = EX_START;
-            end
-        end
-        EX_X2_LD: begin
-            x2_ld = 1;
-            nxt_state = EX_START;
-        end
-        default:  begin // EX_START
-            start = 1; 
+        
+        default: begin  // ISSUE
+            load_start = load;
+            store_start = store;
+            move_start = move;
+
+            unique0 if (exec)
+                eu_exec = eu_unit_onehot;
+            else if (fetch)
+                eu_fetch = eu_unit_onehot;
+            
             nxt_state = IDLE;
         end
     endcase
