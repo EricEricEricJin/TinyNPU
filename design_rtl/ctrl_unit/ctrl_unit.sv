@@ -2,6 +2,8 @@
 
 import pkg_plexer_funcs::*;
 
+// import pkg_rf_ldst_intf::*;
+
 module ctrl_unit #(
     parameter int RF_ADDR_W = 10
 ) (
@@ -21,11 +23,12 @@ module ctrl_unit #(
     output logic [7 : 0]                move_line_num,
 
     // connect to load-storer
-    output logic [31 : 0]               ldst_sdram_addr,
-    output logic [RF_ADDR_W - 1 : 0]    ldst_rf_addr,
-    output logic [7 : 0]                ldst_line_num,
-    output logic                        load_start, 
-    output logic                        store_start,
+    // output logic                        load_start, 
+    // output logic                        store_start,
+    // output logic [RF_ADDR_W - 1 : 0]    ldst_rf_addr,
+    // output logic [31 : 0]               ldst_sdram_addr,
+    // output logic [7 : 0]                ldst_line_num,
+    rf_ldst_intf ldst,
 
     // connect to EU
     output logic [31 : 0] eu_fetch,
@@ -47,9 +50,13 @@ inst_decode i_inst_decode (
     .fetch              (fetch),
     .exec               (exec),
 
-    .ldst_rf_addr       (ldst_rf_addr),
-    .ldst_sdram_addr    (ldst_sdram_addr),
-    .ldst_line_num      (ldst_line_num),
+    // .ldst_rf_addr       (ldst_rf_addr),
+    // .ldst_sdram_addr    (ldst_sdram_addr),
+    // .ldst_line_num      (ldst_line_num),
+    .ldst_rf_addr       (ldst.rf_addr),
+    .ldst_sdram_addr    (ldst.sdram_addr),
+    .ldst_line_num      (ldst.line_num),
+
 
     .move_src_addr      (move_src_addr),
     .move_dst_addr      (move_dst_addr),
@@ -74,8 +81,11 @@ end
 
 always_comb begin
 
-    load_start = 0;
-    store_start = 0;
+    // load_start = 0;
+    // store_start = 0;
+    ldst.load_start = 0;
+    ldst.store_start = 0;
+
     move_start = 0;
     
     eu_exec = '0;
@@ -98,8 +108,11 @@ always_comb begin
         end
         
         default: begin  // ISSUE
-            load_start = load;
-            store_start = store;
+            // load_start = load;
+            // store_start = store;
+            ldst.load_start = load;
+            ldst.store_start = store;
+
             move_start = move;
 
             unique0 if (exec)

@@ -15,6 +15,8 @@ R0
 R1
 R0
 R1
+R0
+R1
 Z2 !s12c _opt
 R1
 R2
@@ -69,13 +71,13 @@ n@_opt
 Z7 OL;O;2023.3;77
 R3
 T_opt1
-!s110 1741160144
-V>AjGJ2]`f[T4jEPgZ;fAT0
+!s110 1741165396
+Vbz]BajPM?HP2AmIXA?cYV1
 04 9 4 work cu_sim_tb fast 0
-=1-000ae431a4f1-67c7fed0-a5bb8-c6d2
+=1-000ae431a4f1-67c81354-4247c-e8ac
 R1
 R4
-!s124 OEM10U3 
+!s124 OEM10U4 
 R5
 R6
 n@_opt1
@@ -299,30 +301,30 @@ R19
 R20
 R6
 vctrl_unit
-Z31 2design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv
+Z31 2design_rtl/interface/rf_ldst_intf.sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv
 R9
 Z32 DXx4 work 16 pkg_plexer_funcs 0 22 MG>fHi1B^5dL9LU0fnnER3
-DXx4 work 17 ctrl_unit_sv_unit 0 22 >5HZ5GW31HS8M^6`Oj^kV0
-Z33 !s110 1741160143
+DXx4 work 17 ctrl_unit_sv_unit 0 22 1eIEL0ib@=knSbT`TdE5b2
+Z33 !s110 1741165386
 R12
 r1
 !s85 0
 !i10b 1
-!s100 g0z0L>ga5AO?JVj^fKNQU1
-IVnMKNkz43GD2TgmMfUT?V2
+!s100 81NMof5]PW<2E30O0fd>J2
+I40UcM:>XfA2;URn>ndBjz1
 !s105 ctrl_unit_sv_unit
 S1
 R3
-Z34 w1741159979
+Z34 w1741165217
 Z35 8design_rtl/ctrl_unit/ctrl_unit.sv
 Z36 Fdesign_rtl/ctrl_unit/ctrl_unit.sv
-!i122 46
-L0 5 113
+!i122 50
+L0 7 124
 R16
 31
-Z37 !s108 1741160143.000000
-Z38 !s107 simulation/ctrl_unit_sim/cu_sim_tb.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/support/plexer_funcs.sv|
-Z39 !s90 -reportprogress|300|-sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv|
+Z37 !s108 1741165386.000000
+Z38 !s107 simulation/ctrl_unit_sim/cu_sim_tb.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/support/plexer_funcs.sv|design_rtl/interface/rf_ldst_intf.sv|
+Z39 !s90 -reportprogress|300|-sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv|
 !i113 0
 R20
 R6
@@ -331,19 +333,19 @@ R31
 R9
 R32
 R33
-V>5HZ5GW31HS8M^6`Oj^kV0
+V1eIEL0ib@=knSbT`TdE5b2
 r1
 !s85 0
 !i10b 1
-!s100 j:NCo9XI?gjTVmW1Hi=TW1
-I>5HZ5GW31HS8M^6`Oj^kV0
+!s100 VHCO[1N=gzoWb^LK;iRTH2
+I1eIEL0ib@=knSbT`TdE5b2
 !i103 1
 S1
 R3
 R34
 R35
 R36
-!i122 46
+!i122 50
 R24
 R16
 31
@@ -358,15 +360,15 @@ R31
 R9
 R33
 !i10b 1
-!s100 NmZN7[n=@<h9Y]Nj]NI[U3
-I<1?HT=::QO5LUS<@GVMES0
+!s100 8cQO<ao:Q2NH9Fz_hJDJ50
+INIHT;`R;;FJD`Q5Azb:OA1
 S1
 R3
-w1741160134
+w1741165384
 8simulation/ctrl_unit_sim/cu_sim_tb.sv
 Fsimulation/ctrl_unit_sim/cu_sim_tb.sv
-!i122 46
-L0 1 100
+!i122 50
+L0 3 101
 R12
 R16
 r1
@@ -390,7 +392,7 @@ R3
 w1741159541
 8design_rtl/ctrl_unit/inst_decode.sv
 Fdesign_rtl/ctrl_unit/inst_decode.sv
-!i122 46
+!i122 50
 L0 3 96
 R12
 R16
@@ -492,7 +494,7 @@ R3
 w1741159971
 Z40 8design_rtl/support/plexer_funcs.sv
 Z41 Fdesign_rtl/support/plexer_funcs.sv
-!i122 46
+!i122 50
 R24
 VMG>fHi1B^5dL9LU0fnnER3
 R16
@@ -525,8 +527,8 @@ R24
 R16
 31
 !s108 1741157867.000000
-R38
-R39
+!s107 simulation/ctrl_unit_sim/cu_sim_tb.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/support/plexer_funcs.sv|
+!s90 -reportprogress|300|-sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv|
 !i113 0
 R20
 R6
@@ -577,6 +579,31 @@ r1
 R17
 R18
 R19
+!i113 0
+R20
+R6
+Yrf_ldst_intf
+R31
+R9
+R33
+!i10b 1
+!s100 9DP]@7BDASj4jlAFXiVoX3
+I5fHXzC`Fc<XVWi]2i=L0a0
+S1
+R3
+w1741165199
+8design_rtl/interface/rf_ldst_intf.sv
+Fdesign_rtl/interface/rf_ldst_intf.sv
+!i122 50
+L0 5 0
+R12
+R16
+r1
+!s85 0
+31
+R37
+R38
+R39
 !i113 0
 R20
 R6

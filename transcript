@@ -12,569 +12,156 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-ls
-# design_rtl
-# doc
-# ip_cores
-# quartus_proj
-# simulation
-# transcript
-# vsim.wlf
-# wave.do
-# work
 pwd
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:53:16 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling module ctrl_unit
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(5): near ")": syntax error, unexpected ')'.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 14:53:16 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 22
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+do simulation/ctrl_unit_sim/cu_sim_tb.sv
+# ** Error: /usr/bin/import: /opt/intelFPGA_lite/23.1std/questa_fse/gcc-10.3.0-linux_x86_64/lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /lib/x86_64-linux-gnu/libicuuc.so.74)
+# Error in macro ./simulation/ctrl_unit_sim/cu_sim_tb.sv line 1
+# /usr/bin/import: /opt/intelFPGA_lite/23.1std/questa_fse/gcc-10.3.0-linux_x86_64/lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /lib/x86_64-linux-gnu/libicuuc.so.74)
 #     while executing
-# "vlog -sv {*}$SRC_FILES"
+# "exec </dev/null /usr/bin/import pkg_rf_ldst_intf::*"
+#     ("uplevel" body line 1)
+#     invoked from within
+# "uplevel 1 exec $redir $new [lrange $args 1 end]"
+#     (procedure "::unknown" line 80)
+#     invoked from within
+# "import pkg_rf_ldst_intf::*"
 do simulation/ctrl_unit_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:53:28 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling module ctrl_unit
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(31): near "output": syntax error, unexpected output, expecting ')'.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 14:53:28 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 22
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:53:39 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling module ctrl_unit
-# ** Error (suppressible): design_rtl/ctrl_unit/ctrl_unit.sv(40): (vlog-2388) 'ldst_rf_addr' already declared in this scope (ctrl_unit) at design_rtl/ctrl_unit/ctrl_unit.sv(24).
-# ** Error (suppressible): design_rtl/ctrl_unit/ctrl_unit.sv(41): (vlog-2388) 'ldst_sdram_addr' already declared in this scope (ctrl_unit) at design_rtl/ctrl_unit/ctrl_unit.sv(23).
-# ** Error (suppressible): design_rtl/ctrl_unit/ctrl_unit.sv(42): (vlog-2388) 'ldst_line_num' already declared in this scope (ctrl_unit) at design_rtl/ctrl_unit/ctrl_unit.sv(25).
-# ** Error: design_rtl/ctrl_unit/ctrl_unit.sv(72): (vlog-2730) Undefined variable: 'PlexerFunctions'.
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(72): near "#": syntax error, unexpected '#', expecting ';' or ','.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 14:53:39 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 6, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 22
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:56:21 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling module ctrl_unit
-# ** Error: design_rtl/ctrl_unit/ctrl_unit.sv(63): (vlog-2730) Undefined variable: 'PlexerFunctions'.
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(63): near "#": syntax error, unexpected '#', expecting ';' or ','.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 14:56:21 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 22
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:56:58 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# ** Error: (vlog-13053) design_rtl/support/plexer_funcs.sv(7): near "'i": Illegal base specifier in numeric constant.
-# ** Error: (vlog-13069) design_rtl/support/plexer_funcs.sv(7): near "'i": syntax error, unexpected BASE.
-# ** Error: (vlog-13057) design_rtl/support/plexer_funcs.sv(7): near "[end of file]": Expecting numeric digits.
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 14:56:58 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:57:40 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package plexer_funcs_sv_unit
-# -- Compiling module ctrl_unit
-# ** Error: design_rtl/ctrl_unit/ctrl_unit.sv(63): (vlog-2730) Undefined variable: 'PlexerFunctions'.
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(63): near "#": syntax error, unexpected '#', expecting ';' or ','.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 14:57:40 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:57:47 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package plexer_funcs_sv_unit
-# -- Compiling module ctrl_unit
-# ** Error: design_rtl/ctrl_unit/ctrl_unit.sv(63): (vlog-2730) Undefined variable: 'PlexerFunctions'.
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(63): near "#": syntax error, unexpected '#', expecting ';' or ','.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 14:57:47 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:01:08 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# ** Error: (vlog-13069) design_rtl/support/plexer_funcs.sv(5): near "virtual": syntax error, unexpected virtual, expecting ';'.
-# -- Compiling module ctrl_unit
-# ** Error: design_rtl/ctrl_unit/ctrl_unit.sv(65): (vlog-2730) Undefined variable: 'PlexerFunctions'.
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(65): near "#": syntax error, unexpected '#', expecting ';' or ','.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 15:01:08 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:01:09 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# ** Error: (vlog-13069) design_rtl/support/plexer_funcs.sv(5): near "virtual": syntax error, unexpected virtual, expecting ';'.
-# -- Compiling module ctrl_unit
-# ** Error: design_rtl/ctrl_unit/ctrl_unit.sv(65): (vlog-2730) Undefined variable: 'PlexerFunctions'.
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(65): near "#": syntax error, unexpected '#', expecting ';' or ','.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 15:01:09 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:01:23 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
+# Start time: 16:54:48 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling package pkg_rf_ldst_intf
+# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "rf_ldst_intf": syntax error, unexpected IDENTIFIER, expecting class.
+# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "#": syntax error, unexpected '#'.
 # -- Importing package pkg_plexer_funcs
 # -- Compiling module ctrl_unit
-# ** Error (suppressible): design_rtl/ctrl_unit/ctrl_unit.sv(58): (vlog-2892) Net type of 'move_line_num' was not explicitly declared.
-# End time: 15:01:23 on Mar 05,2025, Elapsed time: 0:00:00
+# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(31): near ";": syntax error, unexpected ';', expecting ')'.
+# -- Compiling module inst_decode
+# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "(": syntax error, unexpected '('.
+# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(1): (vlog-13006) Could not find the package (pkg_rf_ldst_intf).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 16:54:48 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 16:58:29 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling package pkg_rf_ldst_intf
+# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "rf_ldst_intf": syntax error, unexpected IDENTIFIER, expecting class.
+# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "#": syntax error, unexpected '#'.
+# -- Importing package pkg_plexer_funcs
+# -- Compiling module ctrl_unit
+# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(31): near ";": syntax error, unexpected ';', expecting ')'.
+# -- Compiling module inst_decode
+# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "(": syntax error, unexpected '('.
+# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(1): (vlog-13006) Could not find the package (pkg_rf_ldst_intf).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 16:58:29 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:00:10 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_ldst_intf
+# -- Compiling package pkg_plexer_funcs
+# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(31): near ";": syntax error, unexpected ';', expecting ')'.
+# End time: 17:00:10 on Mar 05,2025, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0
 # ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
+# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 24
 # /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
 #     while executing
 # "vlog -sv {*}$SRC_FILES"
 do simulation/ctrl_unit_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:01:43 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# Start time: 17:00:18 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_ldst_intf
 # -- Compiling package pkg_plexer_funcs
 # -- Compiling package ctrl_unit_sv_unit
 # -- Importing package pkg_plexer_funcs
 # -- Compiling module ctrl_unit
 # -- Compiling module inst_decode
-# ** Error: (vlog-13038) design_rtl/ctrl_unit/inst_decode.sv(27): near ")": Missing port in ansi port list.
 # -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 15:01:43 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
+# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(25): 'rf_ldst_intf' is an unknown type.
+# Or did you omit the '()' for an instantiation?
+# End time: 17:00:18 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
 # ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
+# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 24
 # /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
 #     while executing
 # "vlog -sv {*}$SRC_FILES"
 do simulation/ctrl_unit_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:01:56 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# Start time: 17:02:39 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_ldst_intf
 # -- Compiling package pkg_plexer_funcs
 # -- Compiling package ctrl_unit_sv_unit
 # -- Importing package pkg_plexer_funcs
 # -- Compiling module ctrl_unit
 # -- Compiling module inst_decode
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/inst_decode.sv(50): near "}": syntax error, unexpected '}', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
 # -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(55): (vlog-2110) Illegal reference to net "clk".
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(56): (vlog-2110) Illegal reference to net "rst_n".
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(58): (vlog-2110) Illegal reference to net "rst_n".
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(89): (vlog-2110) Illegal reference to net "clk".
-# End time: 15:01:56 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 5, Warnings: 2
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:02:04 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# ** Warning: design_rtl/ctrl_unit/inst_decode.sv(53): (vlog-8386) An enum variable 'inst_op' of type 'op_t' may only be assigned the same enum typed variable or one of its values. Value 'inst[31:30]' requires an explicit cast.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(55): (vlog-2110) Illegal reference to net "clk".
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(56): (vlog-2110) Illegal reference to net "rst_n".
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(58): (vlog-2110) Illegal reference to net "rst_n".
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(89): (vlog-2110) Illegal reference to net "clk".
-# End time: 15:02:04 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 3
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 23
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:02:38 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# ** Warning: design_rtl/ctrl_unit/inst_decode.sv(53): (vlog-8386) An enum variable 'inst_op' of type 'op_t' may only be assigned the same enum typed variable or one of its values. Value 'inst[31:30]' requires an explicit cast.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(65): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(71): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # 
 # Top level modules:
 # 	cu_sim_tb
-# End time: 15:02:38 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 3
+# End time: 17:02:39 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/ctrl_unit_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:03:06 on Mar 05,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
+# -- Compiling interface rf_ldst_intf
+# -- Compiling package pkg_plexer_funcs
+# -- Compiling package ctrl_unit_sv_unit
+# -- Importing package pkg_plexer_funcs
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module cu_sim_tb
+# 
+# Top level modules:
+# 	cu_sim_tb
+# End time: 17:03:06 on Mar 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 do simulation/ctrl_unit_sim/elaborate.tcl
 # cu_sim_tb
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
 # vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:02:45 on Mar 05,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(30): (vopt-2912) Port 'mv_src_addr' not found in module 'ctrl_unit' (7th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(30): (vopt-2912) Port 'mv_dst_addr' not found in module 'ctrl_unit' (8th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(30): (vopt-2912) Port 'mv_line_num' not found in module 'ctrl_unit' (9th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(30): (vopt-2912) Port 'mv_done' not found in module 'ctrl_unit' (10th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(30): (vopt-2912) Port 'ldst_done' not found in module 'ctrl_unit' (16th connection).
-# Optimization failed
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=5, Warnings=1.
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./simulation/ctrl_unit_sim/elaborate.tcl PAUSED at line 11
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:06:46 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# ** Warning: design_rtl/ctrl_unit/inst_decode.sv(53): (vlog-8386) An enum variable 'inst_op' of type 'op_t' may only be assigned the same enum typed variable or one of its values. Value 'inst[31:30]' requires an explicit cast.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(64): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(70): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:06:46 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 3
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:02:45 on Mar 05,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(29): (vopt-2912) Port 'mv_start' not found in module 'ctrl_unit' (6th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(29): (vopt-2912) Port 'mv_src_addr' not found in module 'ctrl_unit' (7th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(29): (vopt-2912) Port 'mv_dst_addr' not found in module 'ctrl_unit' (8th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(29): (vopt-2912) Port 'mv_line_num' not found in module 'ctrl_unit' (9th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(29): (vopt-2912) Port 'mv_done' not found in module 'ctrl_unit' (10th connection).
-# ** Error (suppressible): simulation/ctrl_unit_sim/cu_sim_tb.sv(29): (vopt-2912) Port 'ldst_done' not found in module 'ctrl_unit' (16th connection).
-# Optimization failed
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=11, Warnings=2.
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./simulation/ctrl_unit_sim/elaborate.tcl PAUSED at line 11
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:07:21 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# ** Warning: design_rtl/ctrl_unit/inst_decode.sv(53): (vlog-8386) An enum variable 'inst_op' of type 'op_t' may only be assigned the same enum typed variable or one of its values. Value 'inst[31:30]' requires an explicit cast.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(62): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(68): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:07:21 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 3
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:02:45 on Mar 05,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=11, Warnings=3.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-# ** Warning: (vsim-8386) Illegal assignment to type 'enum reg[1:0] cu_sim_tb.i_ctrl_unit.i_inst_decode.op_t' from type 'reg[31:30]': An enum variable may only be assigned the same enum typed variable or one of its values.
-#    Time: 0 ps  Iteration: 0  Instance: /cu_sim_tb/i_ctrl_unit/i_inst_decode File: design_rtl/ctrl_unit/inst_decode.sv Line: 53
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(85)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 85
-add wave -position insertpoint  \
-sim:/cu_sim_tb/i_ctrl_unit/RF_ADDR_W \
-sim:/cu_sim_tb/i_ctrl_unit/clk \
-sim:/cu_sim_tb/i_ctrl_unit/rst_n \
-sim:/cu_sim_tb/i_ctrl_unit/h2f_io \
-sim:/cu_sim_tb/i_ctrl_unit/h2f_write \
-sim:/cu_sim_tb/i_ctrl_unit/isrunning \
-sim:/cu_sim_tb/i_ctrl_unit/move_start \
-sim:/cu_sim_tb/i_ctrl_unit/move_src_addr \
-sim:/cu_sim_tb/i_ctrl_unit/move_dst_addr \
-sim:/cu_sim_tb/i_ctrl_unit/move_line_num \
-sim:/cu_sim_tb/i_ctrl_unit/ldst_sdram_addr \
-sim:/cu_sim_tb/i_ctrl_unit/ldst_rf_addr \
-sim:/cu_sim_tb/i_ctrl_unit/ldst_line_num \
-sim:/cu_sim_tb/i_ctrl_unit/load_start \
-sim:/cu_sim_tb/i_ctrl_unit/store_start \
-sim:/cu_sim_tb/i_ctrl_unit/eu_fetch \
-sim:/cu_sim_tb/i_ctrl_unit/eu_exec \
-sim:/cu_sim_tb/i_ctrl_unit/eu_fetch_addr \
-sim:/cu_sim_tb/i_ctrl_unit/load \
-sim:/cu_sim_tb/i_ctrl_unit/store \
-sim:/cu_sim_tb/i_ctrl_unit/move \
-sim:/cu_sim_tb/i_ctrl_unit/fetch \
-sim:/cu_sim_tb/i_ctrl_unit/exec \
-sim:/cu_sim_tb/i_ctrl_unit/eu_unit \
-sim:/cu_sim_tb/i_ctrl_unit/eu_unit_onehot \
-sim:/cu_sim_tb/i_ctrl_unit/state \
-sim:/cu_sim_tb/i_ctrl_unit/nxt_state
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-# ** Warning: (vsim-8386) Illegal assignment to type 'enum reg[1:0] cu_sim_tb.i_ctrl_unit.i_inst_decode.op_t' from type 'reg[31:30]': An enum variable may only be assigned the same enum typed variable or one of its values.
-#    Time: 0 ps  Iteration: 0  Instance: /cu_sim_tb/i_ctrl_unit/i_inst_decode File: design_rtl/ctrl_unit/inst_decode.sv Line: 53
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(85)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 85
-add wave -position insertpoint  \
-sim:/cu_sim_tb/RF_ADDR_W \
-sim:/cu_sim_tb/clk \
-sim:/cu_sim_tb/rst_n \
-sim:/cu_sim_tb/h2f_io \
-sim:/cu_sim_tb/h2f_write \
-sim:/cu_sim_tb/isrunning \
-sim:/cu_sim_tb/move_start \
-sim:/cu_sim_tb/move_src_addr \
-sim:/cu_sim_tb/move_dst_addr \
-sim:/cu_sim_tb/move_line_num \
-sim:/cu_sim_tb/ldst_sdram_addr \
-sim:/cu_sim_tb/ldst_rf_addr \
-sim:/cu_sim_tb/ldst_line_num \
-sim:/cu_sim_tb/load_start \
-sim:/cu_sim_tb/store_start \
-sim:/cu_sim_tb/eu_fetch \
-sim:/cu_sim_tb/eu_exec \
-sim:/cu_sim_tb/eu_fetch_addr
-restart -f 
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-# ** Warning: (vsim-8386) Illegal assignment to type 'enum reg[1:0] cu_sim_tb.i_ctrl_unit.i_inst_decode.op_t' from type 'reg[31:30]': An enum variable may only be assigned the same enum typed variable or one of its values.
-#    Time: 0 ps  Iteration: 0  Instance: /cu_sim_tb/i_ctrl_unit/i_inst_decode File: design_rtl/ctrl_unit/inst_decode.sv Line: 53
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(85)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 85
-quit -sim 
-# End time: 15:09:44 on Mar 05,2025, Elapsed time: 0:06:59
-# Errors: 0, Warnings: 2
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:09:49 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# ** Warning: design_rtl/ctrl_unit/inst_decode.sv(53): (vlog-8386) An enum variable 'inst_op' of type 'op_t' may only be assigned the same enum typed variable or one of its values. Value 'inst[31:30]' requires an explicit cast.
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(65): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(71): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:09:49 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 3
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:10:22 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(65): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(71): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:10:22 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:10:26 on Mar 05,2025
+# Start time: 17:03:16 on Mar 05,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.cu_sim_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
 # Loading work.pkg_plexer_funcs(fast)
 # Loading work.ctrl_unit_sv_unit(fast)
 # Loading work.ctrl_unit(fast)
@@ -590,322 +177,42 @@ sim:/cu_sim_tb/move_start \
 sim:/cu_sim_tb/move_src_addr \
 sim:/cu_sim_tb/move_dst_addr \
 sim:/cu_sim_tb/move_line_num \
-sim:/cu_sim_tb/ldst_sdram_addr \
-sim:/cu_sim_tb/ldst_rf_addr \
-sim:/cu_sim_tb/ldst_line_num \
-sim:/cu_sim_tb/load_start \
-sim:/cu_sim_tb/store_start \
 sim:/cu_sim_tb/eu_fetch \
 sim:/cu_sim_tb/eu_exec \
 sim:/cu_sim_tb/eu_fetch_addr
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(88)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 88
 add wave -position insertpoint  \
-sim:/cu_sim_tb/i_ctrl_unit/RF_ADDR_W \
-sim:/cu_sim_tb/i_ctrl_unit/clk \
-sim:/cu_sim_tb/i_ctrl_unit/rst_n \
-sim:/cu_sim_tb/i_ctrl_unit/h2f_io \
-sim:/cu_sim_tb/i_ctrl_unit/h2f_write \
-sim:/cu_sim_tb/i_ctrl_unit/isrunning \
-sim:/cu_sim_tb/i_ctrl_unit/move_start \
-sim:/cu_sim_tb/i_ctrl_unit/move_src_addr \
-sim:/cu_sim_tb/i_ctrl_unit/move_dst_addr \
-sim:/cu_sim_tb/i_ctrl_unit/move_line_num \
-sim:/cu_sim_tb/i_ctrl_unit/ldst_sdram_addr \
-sim:/cu_sim_tb/i_ctrl_unit/ldst_rf_addr \
-sim:/cu_sim_tb/i_ctrl_unit/ldst_line_num \
-sim:/cu_sim_tb/i_ctrl_unit/load_start \
-sim:/cu_sim_tb/i_ctrl_unit/store_start \
-sim:/cu_sim_tb/i_ctrl_unit/eu_fetch \
-sim:/cu_sim_tb/i_ctrl_unit/eu_exec \
-sim:/cu_sim_tb/i_ctrl_unit/eu_fetch_addr \
-sim:/cu_sim_tb/i_ctrl_unit/load \
-sim:/cu_sim_tb/i_ctrl_unit/store \
-sim:/cu_sim_tb/i_ctrl_unit/move \
-sim:/cu_sim_tb/i_ctrl_unit/fetch \
-sim:/cu_sim_tb/i_ctrl_unit/exec \
-sim:/cu_sim_tb/i_ctrl_unit/eu_unit \
-sim:/cu_sim_tb/i_ctrl_unit/eu_unit_onehot \
-sim:/cu_sim_tb/i_ctrl_unit/state \
-sim:/cu_sim_tb/i_ctrl_unit/nxt_state \
-sim:/cu_sim_tb/i_ctrl_unit/#implicit-wire#0
-# (vsim-4027) Logging is not supported for Packed Array item: /cu_sim_tb/i_ctrl_unit/#implicit-wire#0
-restart -f 
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(88)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 88
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/eric/Documents/Conformer-FPGA-New/simulation/ctrl_unit_sim/wave.do
-ls
-# design_rtl
-# doc
-# ip_cores
-# quartus_proj
-# simulation
-# transcript
-# vsim.wlf
-# wave.do
-# work
-quit -sim 
-# End time: 15:16:07 on Mar 05,2025, Elapsed time: 0:05:41
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:16:12 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(65): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(71): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:16:12 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:16:34 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-do simulation/ctrl_unit_sim/wave.do
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(88)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 88
-# Causality operation skipped due to absence of debug database file
-quiqquit -quit -s
-# invalid command name "quiqquit"
-quit -sim
-# End time: 15:20:41 on Mar 05,2025, Elapsed time: 0:04:07
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:20:45 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(65): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: simulation/ctrl_unit_sim/cu_sim_tb.sv(71): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:20:45 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:20:53 on Mar 05,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-do simulation/ctrl_unit_sim/wave.do
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(88)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 88
-quit -sim
-# End time: 15:23:02 on Mar 05,2025, Elapsed time: 0:02:09
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:23:05 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:23:05 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:23:07 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-do simulation/ctrl_unit_sim/wave.do
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(88)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 88
-quit -sim 
-# End time: 15:26:09 on Mar 05,2025, Elapsed time: 0:03:02
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:26:12 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:26:12 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:26:14 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-do simulation/ctrl_unit_sim/wave.do
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(88)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 88
-quit -sim 
-# End time: 15:33:06 on Mar 05,2025, Elapsed time: 0:06:52
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:33:08 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:33:08 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:33:13 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-do simulation/ctrl_unit_sim/wave.do
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(88)
-#    Time: 550 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 88
-quit -sim 
-# End time: 15:35:40 on Mar 05,2025, Elapsed time: 0:02:27
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 15:35:43 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 15:35:43 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 15:35:44 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-do simulation/ctrl_unit_sim/wave.do
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(94)
+sim:/cu_sim_tb/ldst/RF_ADDR_W \
+sim:/cu_sim_tb/ldst/LINE_NUM_W \
+sim:/cu_sim_tb/ldst/SDRAM_ADDR_W \
+sim:/cu_sim_tb/ldst/load_start \
+sim:/cu_sim_tb/ldst/store_start \
+sim:/cu_sim_tb/ldst/rf_addr \
+sim:/cu_sim_tb/ldst/sdram_addr \
+sim:/cu_sim_tb/ldst/line_num
+add wave -position insertpoint  \
+sim:/cu_sim_tb/RF_ADDR_W \
+sim:/cu_sim_tb/clk \
+sim:/cu_sim_tb/rst_n \
+sim:/cu_sim_tb/h2f_io \
+sim:/cu_sim_tb/h2f_write \
+sim:/cu_sim_tb/isrunning \
+sim:/cu_sim_tb/move_start \
+sim:/cu_sim_tb/move_src_addr \
+sim:/cu_sim_tb/move_dst_addr \
+sim:/cu_sim_tb/move_line_num \
+sim:/cu_sim_tb/eu_fetch \
+sim:/cu_sim_tb/eu_exec \
+sim:/cu_sim_tb/eu_fetch_addr
+add wave -position insertpoint  \
+sim:/cu_sim_tb/ldst/RF_ADDR_W \
+sim:/cu_sim_tb/ldst/LINE_NUM_W \
+sim:/cu_sim_tb/ldst/SDRAM_ADDR_W \
+sim:/cu_sim_tb/ldst/load_start \
+sim:/cu_sim_tb/ldst/store_start \
+sim:/cu_sim_tb/ldst/rf_addr \
+sim:/cu_sim_tb/ldst/sdram_addr \
+sim:/cu_sim_tb/ldst/line_num
+run -a 
+# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(97)
 #    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 94
-quit -sim 
-# End time: 15:36:35 on Mar 05,2025, Elapsed time: 0:00:51
-# Errors: 0, Warnings: 1
-qyut 
-# invalid command name "qyut"
-quit 
+# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 97

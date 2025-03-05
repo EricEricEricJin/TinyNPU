@@ -9,23 +9,25 @@ module rf_ldst #(
 )(
     input wire clk, rst_n,
 
-    // to SDRAM
+    // Connect to Avalon SDRAM
     sdram_intf sdram,
 
-    // to RF 
+    // Connect to control unit 
+    input wire                      load_start, 
+    input wire                      store_start,
+    input wire [RF_ADDR_W - 1 : 0]  rf_addr,
+    input wire [31 : 0]             sdram_addr,
+    input wire [7 : 0]              line_num,
+    
+    // Connect to RF Ram
     output wire [ADDR_W - 1 : 0] rf_addr,
-    output wire [DATA_W - 1 : 0] rf_d, 
-    output wire rf_we, 
+    output wire [DATA_W - 1 : 0] rf_d,
+    output wire rf_we,
     output wire rf_re,
     input wire [DATA_W - 1 : 0] rf_q,
 
-    // to master
-    input wire [31 : 0]   ldst_sdram_addr,
-    input wire [RF_ADDR_W - 1 : 0]      ldst_rf_addr,
-    input wire [7 : 0]  ldst_line_num,
-    input wire          load_start, store_start,
-    output logic        ldst_done
-
+    // Running state
+    output logic                    done
 );
 
 // addr ff

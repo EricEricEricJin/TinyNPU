@@ -2,7 +2,8 @@
 
 set PROJ_PATH /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
 
-set SRC_FILES { design_rtl/support/plexer_funcs.sv  \
+set SRC_FILES { design_rtl/interface/rf_ldst_intf.sv  \
+                design_rtl/support/plexer_funcs.sv  \
                 design_rtl/ctrl_unit/ctrl_unit.sv   \
                 design_rtl/ctrl_unit/inst_decode.sv \
                 simulation/ctrl_unit_sim/cu_sim_tb.sv }

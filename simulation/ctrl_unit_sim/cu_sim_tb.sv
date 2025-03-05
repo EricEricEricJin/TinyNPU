@@ -1,3 +1,5 @@
+// import pkg_rf_ldst_intf::*;
+
 module cu_sim_tb;
 
 localparam int RF_ADDR_W = 10;
@@ -15,16 +17,16 @@ logic [RF_ADDR_W - 1 : 0]   move_dst_addr;
 logic [7 : 0]               move_line_num;
 
 
-logic [31 : 0]              ldst_sdram_addr;
-logic [RF_ADDR_W - 1 : 0]   ldst_rf_addr;
-logic [7 : 0]               ldst_line_num;
-logic                       load_start;
-logic                       store_start;
+// logic [31 : 0]              ldst_sdram_addr;
+// logic [RF_ADDR_W - 1 : 0]   ldst_rf_addr;
+// logic [7 : 0]               ldst_line_num;
+// logic                       load_start;
+// logic                       store_start;
+rf_ldst_intf #( .RF_ADDR_W(RF_ADDR_W), .LINE_NUM_W(8) ) ldst();
 
 logic [31 : 0] eu_fetch;
 logic [31 : 0] eu_exec;
 logic [31 : 0] eu_fetch_addr;
-
 
 ctrl_unit #( .RF_ADDR_W (10) ) i_ctrl_unit (
     .clk            (clk),
@@ -40,11 +42,12 @@ ctrl_unit #( .RF_ADDR_W (10) ) i_ctrl_unit (
     .move_dst_addr    (move_dst_addr),
     .move_line_num    (move_line_num),
 
-    .ldst_sdram_addr(ldst_sdram_addr),
-    .ldst_rf_addr   (ldst_rf_addr),
-    .ldst_line_num  (ldst_line_num),
-    .load_start     (load_start),
-    .store_start    (store_start),
+    // .ldst_sdram_addr(ldst_sdram_addr),
+    // .ldst_rf_addr   (ldst_rf_addr),
+    // .ldst_line_num  (ldst_line_num),
+    // .load_start     (load_start),
+    // .store_start    (store_start),
+    .ldst           (ldst.rf_ldst),
 
     .eu_fetch       (eu_fetch),
     .eu_exec        (eu_exec),

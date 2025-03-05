@@ -1,28 +1,37 @@
 `default_nettype none
 
 module rf_wrapper #(
-    
+    parameter int ADDR_W = 10,
+    parameter int DATA_W = 176*8,
 ) (
     input wire clk, rst_n,
     
-    // Connect to control signals
-    input wire mv_start,
-    input wire [ADDR_W - 1 : 0] mv_src_addr, mv_dst_addr,
-    output logic mv_done,
-
     // Connect to Avalon SDRAM
-    // todo
+    sdram_intf sdram,
+    
+    // Connect to control unit
+    input wire                  move_start,
+    input wire [ADDR_W - 1 : 0] move_src_addr, 
+    input wire [ADDR_W - 1 : 0] move_dst_addr,
+    input wire [7 : 0]          move_line_num,
 
-    // Connect to exec units
+    input wire                  load_start,
+    input wire                  store_start,
+    input wire [ADDR_W - 1 : 0] ldst_rf_addr,
+    input wire [31 : 0]         ldst_sdram_addr,
+    input wire [7 : 0]          ldst_line_num,    
+
+    // Connect to exec units RMIO
     output logic [DATA_W - 1 : 0] stmm_X_data [0 : 3],
     output logic                  stmm_X_ld   [0 : 3],
-    input wire  [DATA_W - 1 : 0]  stmm_Y_data [0 : 3],
+    input  wire  [DATA_W - 1 : 0] stmm_Y_data [0 : 3],
 
-    // to LayerNorm
     output logic [N - 1 : 0] layernorm_X_data [0 : 3],
     output logic             layernorm_X_ld   [0 : 3], 
-    input wire  [N - 1 : 0]  layernorm_Y_data [0 : 3]    // to LayerNorm
+    input wire  [N - 1 : 0]  layernorm_Y_data [0 : 3],
 
+    // Running state
+    output logic                move_done,
 
 );
 
