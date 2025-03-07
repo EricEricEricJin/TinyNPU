@@ -1,18 +1,19 @@
 `default_nettype none
 
 module rf_ram #(
-    parameter int M = 256,
     parameter int RF_DATA_W = 176*8,
     parameter int RF_ADDR_W = 10
 ) (
-    input wire clk,
+    input wire clk,         // no need reset
 
+    // === Export BRAM interface ===
     bram_intf ram,
 
+    // === RMIOs ===
     rmio_intf rmio_stmm         [0 : 3],
     rmio_intf rmio_layernorm    [0 : 3],
     rmio_intf rmio_silu         [0 : 3],
-    rmio_intf rmio_att          [0 : 3]
+    rmio_intf rmio_att          [0 : 0]
 
 );
 
@@ -48,23 +49,25 @@ end
 //////////////////////////////
 // Connect rmio input data and real_ram.d to ram.d
 //////////////////////////////
-always_comb begin
-    foreach (rmio_stmm[i])
-        rmio_stmm[i].input_data = ram.data;
-    foreach (rmio_layernorm[i])
-        rmio_layernorm[i].input_data = ram.data;
-    foreach (rmio_silu[i])
-        rmio_silu[i].input_data = ram.data;
-    foreach (rmio_att[i])
-        rmio_att[i].input_data = ram.data;
+genvar i;
+generate
+    for (i = 0; i < 4; i++) begin
+        assign rmio_stmm[i].input_data = ram.data;
+        assign rmio_layernorm[i].input_data = ram.data;
+        assign rmio_silu[i].input_data = ram.data;
+    end
     
-    real_ram.data = ram.data;
-end
+endgenerate
+
+// Only one ATT
+assign rmio_att[0].input_data = ram.data;
+
+assign real_ram.data = ram.data;
 
 //////////////////////////////
 // Defination of all memory-mapped IO addresses
 //////////////////////////////
-typedef enum logic [ADDR_W - 1 : 0] { 
+typedef enum logic [RF_ADDR_W - 1 : 0] { 
     ADDR_STMM_0_X = 10'h200,
     ADDR_STMM_1_X = 10'h201,
     ADDR_STMM_2_X = 10'h202,
@@ -96,20 +99,10 @@ typedef enum logic [ADDR_W - 1 : 0] {
     ADDR_SILU_3_Y = 10'h22b,
 
     ADDR_ATT_0_Q = 10'h230,
-    ADDR_ATT_1_Q = 10'h231,
-    ADDR_ATT_2_Q = 10'h232,
-    ADDR_ATT_3_Q = 10'h233,
-
-    ADDR_ATT_0_K = 10'h230,
-    ADDR_ATT_1_K = 10'h231,
-    ADDR_ATT_2_K = 10'h232,
-    ADDR_ATT_3_K = 10'h233,
-
-    ADDR_ATT_0_V = 10'h230,
-    ADDR_ATT_1_V = 10'h231,
-    ADDR_ATT_2_V = 10'h232,
-    ADDR_ATT_3_V = 10'h233
-
+    ADDR_ATT_0_K = 10'h231,
+    ADDR_ATT_0_V = 10'h232,
+    ADDR_ATT_0_Y = 10'h238
+    
 } addr_t;
 
 //////////////////////////////
@@ -117,22 +110,29 @@ typedef enum logic [ADDR_W - 1 : 0] {
 //////////////////////////////
 always_comb begin
 
-    // set all to zero by default
-    for (int i = 0; i < 4; i++)
-        rmio_stmm[i].input_we = 0;
+    rmio_stmm[0].input_we = 0;
+    rmio_stmm[1].input_we = 0; 
+    rmio_stmm[2].input_we = 0;
+    rmio_stmm[3].input_we = 0;
     
-    for (int i = 0; i < 4; i++)
-        rmio_layernorm[i].input_we = 0;
+    rmio_layernorm[0].input_we = 0;
+    rmio_layernorm[1].input_we = 0;
+    rmio_layernorm[2].input_we = 0;
+    rmio_layernorm[3].input_we = 0;
     
-    for (int i = 0; i < 4; i++)
-        rmio_silu[i].input_we = 0;
+    rmio_silu[0].input_we = 0;
+    rmio_silu[1].input_we = 0;
+    rmio_silu[2].input_we = 0;
+    rmio_silu[3].input_we = 0;
     
-    for (int i = 0; i < 4; i++)
-        rmio_att[i].input_we = 3'b000;
-    
+    rmio_att[0].input_we = 3'b000;
+    // rmio_att[1].input_we = 3'b000;
+    // rmio_att[2].input_we = 3'b000;
+    // rmio_att[3].input_we = 3'b000;
+
     real_ram.we = 0;
 
-    if (rf_we) begin
+    if (ram.we) begin
         case (ram.addr)
             // === STMM ===
             ADDR_STMM_0_X:  rmio_stmm[0].input_we = 1;
@@ -154,23 +154,24 @@ always_comb begin
 
             // === ATTENTION ===
             ADDR_ATT_0_Q:  rmio_att[0].input_we = 3'b001;
-            ADDR_ATT_1_Q:  rmio_att[1].input_we = 3'b001;
-            ADDR_ATT_2_Q:  rmio_att[2].input_we = 3'b001;
-            ADDR_ATT_3_Q:  rmio_att[3].input_we = 3'b001;
+            // ADDR_ATT_1_Q:  rmio_att[1].input_we = 3'b001;
+            // ADDR_ATT_2_Q:  rmio_att[2].input_we = 3'b001;
+            // ADDR_ATT_3_Q:  rmio_att[3].input_we = 3'b001;
 
             ADDR_ATT_0_K:  rmio_att[0].input_we = 3'b010;
-            ADDR_ATT_1_K:  rmio_att[1].input_we = 3'b010;
-            ADDR_ATT_2_K:  rmio_att[2].input_we = 3'b010;
-            ADDR_ATT_3_K:  rmio_att[3].input_we = 3'b010;
+            // ADDR_ATT_1_K:  rmio_att[1].input_we = 3'b010;
+            // ADDR_ATT_2_K:  rmio_att[2].input_we = 3'b010;
+            // ADDR_ATT_3_K:  rmio_att[3].input_we = 3'b010;
 
             ADDR_ATT_0_V:  rmio_att[0].input_we = 3'b100;
-            ADDR_ATT_1_V:  rmio_att[1].input_we = 3'b100;
-            ADDR_ATT_2_V:  rmio_att[2].input_we = 3'b100;
-            ADDR_ATT_3_V:  rmio_att[3].input_we = 3'b100;
+            // ADDR_ATT_1_V:  rmio_att[1].input_we = 3'b100;
+            // ADDR_ATT_2_V:  rmio_att[2].input_we = 3'b100;
+            // ADDR_ATT_3_V:  rmio_att[3].input_we = 3'b100;
 
             default: if (is_real_ram_addr) real_ram.we = 1;
         endcase
     end
+
 end
 
 //////////////////////////////
@@ -180,14 +181,25 @@ end
 always_comb begin
     
     // set all read-enable to zero by default 
-    for (int i = 0; i < 4; i++)
-        rmio_stmm[i].output_re = 0;
-    for (int i = 0; i < 4; i++)
-        rmio_layernorm[i].output_re = 0;
-    for (int i = 0; i < 4; i++)
-        rmio_silu[i].output_re = 0;
-    for (int i = 0; i < 4; i++)
-        rmio_att[i].output_re = 0;
+    rmio_stmm[0].output_re = 0;
+    rmio_stmm[1].output_re = 0;
+    rmio_stmm[2].output_re = 0;
+    rmio_stmm[3].output_re = 0;
+
+    rmio_layernorm[0].output_re = 0;
+    rmio_layernorm[1].output_re = 0;
+    rmio_layernorm[2].output_re = 0;
+    rmio_layernorm[3].output_re = 0;
+
+    rmio_silu[0].output_re = 0;
+    rmio_silu[1].output_re = 0;
+    rmio_silu[2].output_re = 0;
+    rmio_silu[3].output_re = 0;
+
+    rmio_att[0].output_re = 0;
+    // rmio_att[1].output_re = 0;
+    // rmio_att[2].output_re = 0;
+    // rmio_att[3].output_re = 0;
 
     real_ram.re = 0;
 
@@ -213,11 +225,11 @@ always_comb begin
 
             // === ATTENTION ===
             ADDR_ATT_0_Y:  rmio_att[0].output_re = 1;
-            ADDR_ATT_1_Y:  rmio_att[1].output_re = 1;
-            ADDR_ATT_2_Y:  rmio_att[2].output_re = 1;
-            ADDR_ATT_3_Y:  rmio_att[3].output_re = 1;
+            // ADDR_ATT_1_Y:  rmio_att[1].output_re = 1;
+            // ADDR_ATT_2_Y:  rmio_att[2].output_re = 1;
+            // ADDR_ATT_3_Y:  rmio_att[3].output_re = 1;
 
-            default: if (is_real_ram_addr) ram_re = 1;
+            default: if (is_real_ram_addr) real_ram.re = 1;
         endcase
     end
 end
@@ -247,9 +259,9 @@ always_comb begin
 
         // === ATTENTION ===
         ADDR_ATT_0_Y:  ram.q = rmio_att[0].output_data;
-        ADDR_ATT_1_Y:  ram.q = rmio_att[1].output_data;
-        ADDR_ATT_2_Y:  ram.q = rmio_att[2].output_data;
-        ADDR_ATT_3_Y:  ram.q = rmio_att[3].output_data;
+        // ADDR_ATT_1_Y:  ram.q = rmio_att[1].output_data;
+        // ADDR_ATT_2_Y:  ram.q = rmio_att[2].output_data;
+        // ADDR_ATT_3_Y:  ram.q = rmio_att[3].output_data;
 
         default:       ram.q = real_ram.q;  // no need if(...), dirty is OK.
     endcase

@@ -14,439 +14,253 @@
 # //
 pwd
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU
-do simulation/ctrl_unit_sim/cu_sim_tb.sv
-# ** Error: /usr/bin/import: /opt/intelFPGA_lite/23.1std/questa_fse/gcc-10.3.0-linux_x86_64/lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /lib/x86_64-linux-gnu/libicuuc.so.74)
-# Error in macro ./simulation/ctrl_unit_sim/cu_sim_tb.sv line 1
-# /usr/bin/import: /opt/intelFPGA_lite/23.1std/questa_fse/gcc-10.3.0-linux_x86_64/lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /lib/x86_64-linux-gnu/libicuuc.so.74)
-#     while executing
-# "exec </dev/null /usr/bin/import pkg_rf_ldst_intf::*"
-#     ("uplevel" body line 1)
-#     invoked from within
-# "uplevel 1 exec $redir $new [lrange $args 1 end]"
-#     (procedure "::unknown" line 80)
-#     invoked from within
-# "import pkg_rf_ldst_intf::*"
-do simulation/ctrl_unit_sim/compile.tcl
+do simulation/rf_ram_sim
+# Cannot open macro file: simulation/rf_ram_sim
+do simulation/rf_ram_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:54:48 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_rf_ldst_intf
-# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "rf_ldst_intf": syntax error, unexpected IDENTIFIER, expecting class.
-# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "#": syntax error, unexpected '#'.
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(31): near ";": syntax error, unexpected ';', expecting ')'.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "(": syntax error, unexpected '('.
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(1): (vlog-13006) Could not find the package (pkg_rf_ldst_intf).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
-# End time: 16:54:48 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 5, Warnings: 0
+# Start time: 03:42:52 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: design_rtl/register_file/rf_ram.sv(68): (vlog-2730) Undefined variable: 'ADDR_W'.
+# ** Error: design_rtl/register_file/rf_ram.sv(136): (vlog-2730) Undefined variable: 'rf_we'.
+# ** Error: design_rtl/register_file/rf_ram.sv(216): (vlog-2730) Undefined variable: 'ADDR_ATT_0_Y'.
+# ** Error: design_rtl/register_file/rf_ram.sv(217): (vlog-2730) Undefined variable: 'ADDR_ATT_1_Y'.
+# ** Error: design_rtl/register_file/rf_ram.sv(218): (vlog-2730) Undefined variable: 'ADDR_ATT_2_Y'.
+# ** Error: design_rtl/register_file/rf_ram.sv(219): (vlog-2730) Undefined variable: 'ADDR_ATT_3_Y'.
+# ** Error: design_rtl/register_file/rf_ram.sv(221): (vlog-2730) Undefined variable: 'ram_re'.
+# ** Error: design_rtl/register_file/rf_ram.sv(250): (vlog-2730) Undefined variable: 'ADDR_ATT_0_Y'.
+# ** Error: design_rtl/register_file/rf_ram.sv(251): (vlog-2730) Undefined variable: 'ADDR_ATT_1_Y'.
+# ** Error: design_rtl/register_file/rf_ram.sv(252): (vlog-2730) Undefined variable: 'ADDR_ATT_2_Y'.
+# ** Error: design_rtl/register_file/rf_ram.sv(253): (vlog-2730) Undefined variable: 'ADDR_ATT_3_Y'.
+# -- Compiling module rf_ram_tb
+# End time: 03:42:52 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 11, Warnings: 0
 # ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 24
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 23
 # /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
 #     while executing
 # "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
+do simulation/rf_ram_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:58:29 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling package pkg_rf_ldst_intf
-# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "rf_ldst_intf": syntax error, unexpected IDENTIFIER, expecting class.
-# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "#": syntax error, unexpected '#'.
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(31): near ";": syntax error, unexpected ';', expecting ')'.
-# -- Compiling module inst_decode
-# ** Error: (vlog-13069) design_rtl/interface/rf_ldst_intf.sv(5): near "(": syntax error, unexpected '('.
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(1): (vlog-13006) Could not find the package (pkg_rf_ldst_intf).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
-# End time: 16:58:29 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 5, Warnings: 0
-# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 24
-# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 17:00:10 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(31): near ";": syntax error, unexpected ';', expecting ')'.
-# End time: 17:00:10 on Mar 05,2025, Elapsed time: 0:00:00
+# Start time: 03:45:18 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: design_rtl/register_file/rf_ram.sv(226): (vlog-2730) Undefined variable: 'ram_re'.
+# -- Compiling module rf_ram_tb
+# End time: 03:45:18 on Mar 08,2025, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0
 # ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 24
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 23
 # /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
 #     while executing
 # "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
+do simulation/rf_ram_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 17:00:18 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# ** Error: simulation/ctrl_unit_sim/cu_sim_tb.sv(25): 'rf_ldst_intf' is an unknown type.
-# Or did you omit the '()' for an instantiation?
-# End time: 17:00:18 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
+# Start time: 03:45:49 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: design_rtl/register_file/rf_ram.sv(53): (vlog-13118) Number of dimensions specified in foreach loop are more than array dimensions.
+# ** Error: design_rtl/register_file/rf_ram.sv(55): (vlog-13118) Number of dimensions specified in foreach loop are more than array dimensions.
+# ** Error: design_rtl/register_file/rf_ram.sv(57): (vlog-13118) Number of dimensions specified in foreach loop are more than array dimensions.
+# ** Error: design_rtl/register_file/rf_ram.sv(59): (vlog-13118) Number of dimensions specified in foreach loop are more than array dimensions.
+# ** Error: design_rtl/register_file/rf_ram.sv(54): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(56): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(58): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(60): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(128): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(131): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(134): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(137): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(190): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(192): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(194): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(196): Nonconstant index into instance array 'rmio_att'.
+# -- Compiling module rf_ram_tb
+# End time: 03:45:49 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 16, Warnings: 0
 # ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 24
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 23
 # /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
 #     while executing
 # "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
+do simulation/rf_ram_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 17:02:39 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 17:02:39 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_ldst_intf.sv   design_rtl/support/plexer_funcs.sv   design_rtl/ctrl_unit/ctrl_unit.sv    design_rtl/ctrl_unit/inst_decode.sv  simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 17:03:06 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 17:03:06 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 17:03:16 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.rf_ldst_intf(fast__1)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-add wave -position insertpoint  \
-sim:/cu_sim_tb/RF_ADDR_W \
-sim:/cu_sim_tb/clk \
-sim:/cu_sim_tb/rst_n \
-sim:/cu_sim_tb/h2f_io \
-sim:/cu_sim_tb/h2f_write \
-sim:/cu_sim_tb/isrunning \
-sim:/cu_sim_tb/move_start \
-sim:/cu_sim_tb/move_src_addr \
-sim:/cu_sim_tb/move_dst_addr \
-sim:/cu_sim_tb/move_line_num \
-sim:/cu_sim_tb/eu_fetch \
-sim:/cu_sim_tb/eu_exec \
-sim:/cu_sim_tb/eu_fetch_addr
-add wave -position insertpoint  \
-sim:/cu_sim_tb/ldst/RF_ADDR_W \
-sim:/cu_sim_tb/ldst/LINE_NUM_W \
-sim:/cu_sim_tb/ldst/SDRAM_ADDR_W \
-sim:/cu_sim_tb/ldst/load_start \
-sim:/cu_sim_tb/ldst/store_start \
-sim:/cu_sim_tb/ldst/rf_addr \
-sim:/cu_sim_tb/ldst/sdram_addr \
-sim:/cu_sim_tb/ldst/line_num
-add wave -position insertpoint  \
-sim:/cu_sim_tb/RF_ADDR_W \
-sim:/cu_sim_tb/clk \
-sim:/cu_sim_tb/rst_n \
-sim:/cu_sim_tb/h2f_io \
-sim:/cu_sim_tb/h2f_write \
-sim:/cu_sim_tb/isrunning \
-sim:/cu_sim_tb/move_start \
-sim:/cu_sim_tb/move_src_addr \
-sim:/cu_sim_tb/move_dst_addr \
-sim:/cu_sim_tb/move_line_num \
-sim:/cu_sim_tb/eu_fetch \
-sim:/cu_sim_tb/eu_exec \
-sim:/cu_sim_tb/eu_fetch_addr
-add wave -position insertpoint  \
-sim:/cu_sim_tb/ldst/RF_ADDR_W \
-sim:/cu_sim_tb/ldst/LINE_NUM_W \
-sim:/cu_sim_tb/ldst/SDRAM_ADDR_W \
-sim:/cu_sim_tb/ldst/load_start \
-sim:/cu_sim_tb/ldst/store_start \
-sim:/cu_sim_tb/ldst/rf_addr \
-sim:/cu_sim_tb/ldst/sdram_addr \
-sim:/cu_sim_tb/ldst/line_num
-run -a 
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(97)
-#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 97
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/eric/Documents/Conformer-FPGA-New/TinyNPU/simulation/ctrl_unit_sim/wave.do
-quit -sim 
-# End time: 17:35:04 on Mar 05,2025, Elapsed time: 0:31:48
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_move.sv          design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 17:35:09 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_move.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# ** Error: (vlog-7) Failed to open design unit file "design_rtl/interface/rf_move.sv" in read mode.
-# No such file or directory. (errno = ENOENT)
-# End time: 17:35:09 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
+# Start time: 03:47:17 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: design_rtl/register_file/rf_ram.sv(55): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(56): (vlog-13118) Number of dimensions specified in foreach loop are more than array dimensions.
+# ** Error: design_rtl/register_file/rf_ram.sv(58): (vlog-13118) Number of dimensions specified in foreach loop are more than array dimensions.
+# ** Error: design_rtl/register_file/rf_ram.sv(60): (vlog-13118) Number of dimensions specified in foreach loop are more than array dimensions.
+# ** Error: design_rtl/register_file/rf_ram.sv(57): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(59): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(61): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(129): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(132): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(135): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(138): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(191): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(193): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(195): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(197): Nonconstant index into instance array 'rmio_att'.
+# -- Compiling module rf_ram_tb
+# End time: 03:47:17 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 0
 # ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 25
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 23
 # /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
 #     while executing
 # "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
+do simulation/rf_ram_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 17:35:34 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_move_intf
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# ** Error: (vlog-13069) design_rtl/ctrl_unit/ctrl_unit.sv(65): near ".": syntax error, unexpected '.'.
-# End time: 17:35:34 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
+# Start time: 03:49:08 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: design_rtl/register_file/rf_ram.sv(54): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(56): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(58): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(60): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(128): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(131): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(134): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(137): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(190): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(192): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(194): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(196): Nonconstant index into instance array 'rmio_att'.
+# -- Compiling module rf_ram_tb
+# End time: 03:49:08 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
 # ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./simulation/ctrl_unit_sim/compile.tcl line 25
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 23
 # /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
 #     while executing
 # "vlog -sv {*}$SRC_FILES"
-do simulation/ctrl_unit_sim/compile.tcl
+do simulation/rf_ram_sim/compile.tcl
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
 #   
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 17:35:50 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_move_intf
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
+# Start time: 03:49:52 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: design_rtl/register_file/rf_ram.sv(139): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(142): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(145): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(148): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(201): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(203): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(205): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(207): Nonconstant index into instance array 'rmio_att'.
+# -- Compiling module rf_ram_tb
+# End time: 03:49:52 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 23
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:52:09 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: design_rtl/register_file/rf_ram.sv(150): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(153): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(156): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(159): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(212): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(214): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(216): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(218): Nonconstant index into instance array 'rmio_att'.
+# -- Compiling module rf_ram_tb
+# End time: 03:52:09 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 23
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:53:03 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: design_rtl/register_file/rf_ram.sv(126): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(129): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(132): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(135): Nonconstant index into instance array 'rmio_att'.
+# ** Error: design_rtl/register_file/rf_ram.sv(188): Nonconstant index into instance array 'rmio_stmm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(190): Nonconstant index into instance array 'rmio_layernorm'.
+# ** Error: design_rtl/register_file/rf_ram.sv(192): Nonconstant index into instance array 'rmio_silu'.
+# ** Error: design_rtl/register_file/rf_ram.sv(194): Nonconstant index into instance array 'rmio_att'.
+# -- Compiling module rf_ram_tb
+# End time: 03:53:03 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 23
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:01:32 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
 # 
 # Top level modules:
-# 	cu_sim_tb
-# End time: 17:35:50 on Mar 05,2025, Elapsed time: 0:00:00
+# 	rf_ram_tb
+# End time: 04:01:32 on Mar 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
+do simulation/rf_ram_sim/elaborate.tcl
 # cu_sim_tb
 # /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
 # vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 17:35:53 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.rf_move_intf(fast__1)
-# Loading work.rf_ldst_intf(fast__1)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-add wave -position insertpoint  \
-sim:/cu_sim_tb/RF_ADDR_W \
-sim:/cu_sim_tb/clk \
-sim:/cu_sim_tb/rst_n \
-sim:/cu_sim_tb/h2f_io \
-sim:/cu_sim_tb/h2f_write \
-sim:/cu_sim_tb/isrunning \
-sim:/cu_sim_tb/eu_fetch \
-sim:/cu_sim_tb/eu_exec \
-sim:/cu_sim_tb/eu_fetch_addr
-add wave -position insertpoint  \
-sim:/cu_sim_tb/i_rf_move_intf/RF_ADDR_W \
-sim:/cu_sim_tb/i_rf_move_intf/LINE_NUM_W \
-sim:/cu_sim_tb/i_rf_move_intf/start \
-sim:/cu_sim_tb/i_rf_move_intf/src_addr \
-sim:/cu_sim_tb/i_rf_move_intf/dst_addr \
-sim:/cu_sim_tb/i_rf_move_intf/line_num
-add wave -position insertpoint  \
-sim:/cu_sim_tb/i_rf_ldst_intf/RF_ADDR_W \
-sim:/cu_sim_tb/i_rf_ldst_intf/LINE_NUM_W \
-sim:/cu_sim_tb/i_rf_ldst_intf/SDRAM_ADDR_W \
-sim:/cu_sim_tb/i_rf_ldst_intf/load_start \
-sim:/cu_sim_tb/i_rf_ldst_intf/store_start \
-sim:/cu_sim_tb/i_rf_ldst_intf/rf_addr \
-sim:/cu_sim_tb/i_rf_ldst_intf/sdram_addr \
-sim:/cu_sim_tb/i_rf_ldst_intf/line_num
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/eric/Documents/Conformer-FPGA-New/TinyNPU/simulation/ctrl_unit_sim/wave.do
-run -a
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(98)
-#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 98
-quit -sim 
-# End time: 19:19:30 on Mar 05,2025, Elapsed time: 1:43:37
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:19:34 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_move_intf
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 19:19:34 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 19:19:36 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.rf_move_intf(fast__1)
-# Loading work.rf_ldst_intf(fast__1)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-do simulation/ctrl_unit_sim/wave.do
-run -a
-# test param =      114514
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(100)
-#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 100
-quit -siom
-# unknown switch: -siom
-quit -siim
-# unknown switch: -siim
-quit -sim
-# End time: 19:20:37 on Mar 05,2025, Elapsed time: 0:01:01
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:20:42 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_move_intf
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 19:20:42 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 19:20:44 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.cu_sim_tb(fast)
-# Loading work.rf_move_intf(fast__1)
-# Loading work.rf_ldst_intf(fast__1)
-# Loading work.pkg_plexer_funcs(fast)
-# Loading work.ctrl_unit_sv_unit(fast)
-# Loading work.ctrl_unit(fast)
-# Loading work.inst_decode(fast)
-run -a
-# test param =          10
-# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(100)
-#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
-# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 100
-quit -sim
-# End time: 19:21:54 on Mar 05,2025, Elapsed time: 0:01:10
-# Errors: 0, Warnings: 1
-do simulation/ctrl_unit_sim/compile.tcl
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-#  design_rtl/interface/rf_move_intf.sv     design_rtl/interface/rf_ldst_intf.sv     design_rtl/support/plexer_funcs.sv       design_rtl/ctrl_unit/ctrl_unit.sv        design_rtl/ctrl_unit/inst_decode.sv      simulation/ctrl_unit_sim/cu_sim_tb.sv 
-#   
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:21:56 on Mar 05,2025
-# vlog -reportprogress 300 -sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/support/plexer_funcs.sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv simulation/ctrl_unit_sim/cu_sim_tb.sv 
-# -- Compiling interface rf_move_intf
-# -- Compiling interface rf_ldst_intf
-# -- Compiling package pkg_plexer_funcs
-# -- Compiling package ctrl_unit_sv_unit
-# -- Importing package pkg_plexer_funcs
-# -- Compiling module ctrl_unit
-# -- Compiling module inst_decode
-# -- Compiling module cu_sim_tb
-# 
-# Top level modules:
-# 	cu_sim_tb
-# End time: 19:21:56 on Mar 05,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do simulation/ctrl_unit_sim/elaborate.tcl
-# cu_sim_tb
-# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
-# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
-# Start time: 19:21:57 on Mar 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Start time: 04:01:39 on Mar 08,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
 # Loading sv_std.std
 # Loading work.cu_sim_tb(fast)
 # Loading work.rf_move_intf(fast__1)
@@ -460,3 +274,724 @@ run -a
 # ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(100)
 #    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
 # Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 100
+quit -sim 
+# End time: 04:02:03 on Mar 08,2025, Elapsed time: 0:00:24
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:02:06 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:02:06 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# cu_sim_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
+# Start time: 04:02:08 on Mar 08,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.cu_sim_tb(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.pkg_plexer_funcs(fast)
+# Loading work.ctrl_unit_sv_unit(fast)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+run -a
+# test param =     114514
+# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(100)
+#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
+# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 100
+quit -sim 
+# End time: 04:02:40 on Mar 08,2025, Elapsed time: 0:00:32
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:03:01 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:03:01 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# cu_sim_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
+# Start time: 04:03:04 on Mar 08,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.cu_sim_tb(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.pkg_plexer_funcs(fast)
+# Loading work.ctrl_unit_sv_unit(fast)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+run -a
+# test param =     114514
+# ** Note: $stop    : simulation/ctrl_unit_sim/cu_sim_tb.sv(100)
+#    Time: 660 ps  Iteration: 1  Instance: /cu_sim_tb
+# Break in Module cu_sim_tb at simulation/ctrl_unit_sim/cu_sim_tb.sv line 100
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# ** Error: Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 13
+# Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+#     while executing
+# "cd $PROJ_PATH"
+pwd
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# ** Error: Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 13
+# Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+#     while executing
+# "cd $PROJ_PATH"
+quit -sim
+# End time: 04:03:44 on Mar 08,2025, Elapsed time: 0:00:40
+# Errors: 2, Warnings: 0
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:03:45 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:03:45 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# cu_sim_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver cu_sim_tb 
+# Start time: 04:03:55 on Mar 08,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.cu_sim_tb(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.pkg_plexer_funcs(fast)
+# Loading work.ctrl_unit_sv_unit(fast)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# ** Error: Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 13
+# Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+#     while executing
+# "cd $PROJ_PATH"
+quit -sim
+# End time: 04:04:27 on Mar 08,2025, Elapsed time: 0:00:32
+# Errors: 1, Warnings: 0
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:04:29 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:04:29 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:04:31 on Mar 08,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error: design_rtl/register_file/rf_ram.sv(27): Module 'ram_512x1408' is not defined.
+#  For instance 'i_real_ram' at path 'rf_ram_tb.i_rf_ram'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ram_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:05:30 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:05:30 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:04:31 on Mar 08,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(124): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(125): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(126): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(127): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(129): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(130): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(131): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(132): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(134): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(135): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(136): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(137): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(139): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(140): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(141): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(142): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(149): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(150): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(151): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(152): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(155): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(156): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(157): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(158): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(161): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(162): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(163): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(164): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(167): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(168): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(169): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(170): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(172): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(173): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(174): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(175): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(177): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(178): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(179): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(180): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(195): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(196): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(197): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(198): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(200): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(201): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(202): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(203): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(205): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(206): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(207): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(208): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(210): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(211): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(212): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(213): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(220): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(221): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(222): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(223): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(226): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(227): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(228): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(229): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(232): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(233): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(234): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(235): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(238): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(239): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(240): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(241): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=74, Warnings=2.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ram_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:07:13 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:07:13 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:04:31 on Mar 08,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(124): (vopt-2997) Cannot assign a packed type 'reg' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(125): (vopt-2997) Cannot assign a packed type 'reg' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(126): (vopt-2997) Cannot assign a packed type 'reg' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(127): (vopt-2997) Cannot assign a packed type 'reg' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(129): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(130): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(131): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(132): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(134): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(135): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(136): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(137): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(139): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(140): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(141): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(142): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(149): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(150): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(151): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(152): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(155): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(156): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(157): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(158): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(161): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(162): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(163): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(164): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(167): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(168): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(169): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(170): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(172): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(173): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(174): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(175): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(177): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(178): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(179): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(180): (vopt-2997) Cannot assign a packed type 'bit[2:0]' to an unpacked type 'reg $[0:2]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(195): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(196): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(197): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(198): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(200): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(201): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(202): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(203): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(205): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(206): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(207): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(208): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(210): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(211): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(212): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(213): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(220): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(221): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(222): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(223): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(226): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(227): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(228): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(229): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(232): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(233): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(234): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(235): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(238): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(239): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(240): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# ** Error (suppressible): design_rtl/register_file/rf_ram.sv(241): (vopt-2997) Cannot assign a packed type 'bit signed[31:0]' to an unpacked type 'reg $[0:0]'.
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=147, Warnings=3.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ram_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:08:03 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:08:03 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:04:31 on Mar 08,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=147, Warnings=4.
+# Loading sv_std.std
+# Loading work.rf_ram_tb(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'rf_ram_tb' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /rf_ram_tb/i_rf_ram/i_real_ram File: ip_cores/ram_512x1408.v
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ram_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:09:08 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:09:08 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:04:31 on Mar 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=148, Warnings=5.
+# Loading sv_std.std
+# Loading work.rf_ram_tb(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+# Read data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012345678
+# ** Note: $stop    : simulation/rf_ram_sim/rf_ram_tb.sv(56)
+#    Time: 35 ns  Iteration: 1  Instance: /rf_ram_tb
+# Break in Module rf_ram_tb at simulation/rf_ram_sim/rf_ram_tb.sv line 56
+quit -sim 
+# End time: 04:22:22 on Mar 08,2025, Elapsed time: 0:17:51
+# Errors: 148, Warnings: 5
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:22:25 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# ** Error: (vlog-13069) design_rtl/register_file/rf_ram.sv(106): near "}": syntax error, unexpected '}', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# End time: 04:22:25 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 24
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:22:38 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:22:38 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:22:40 on Mar 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/rf_ram_sim/rf_ram_tb.sv(62): (vopt-7063) Failed to find 'display' in hierarchical name 'display'.
+#         Region: rf_ram_tb
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ram_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:22:51 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:22:51 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:22:40 on Mar 08,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=2.
+# Loading sv_std.std
+# Loading work.rf_ram_tb(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+# Read data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012345678
+# rmio_att.input_data = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011451419, we = 001
+# ** Note: $stop    : simulation/rf_ram_sim/rf_ram_tb.sv(68)
+#    Time: 37500 ps  Iteration: 1  Instance: /rf_ram_tb
+# Break in Module rf_ram_tb at simulation/rf_ram_sim/rf_ram_tb.sv line 68
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# ** Error: Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+# Error in macro ./simulation/rf_ram_sim/compile.tcl line 14
+# Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+#     while executing
+# "cd $PROJ_PATH"
+quit -sim 
+# End time: 04:26:35 on Mar 08,2025, Elapsed time: 0:03:55
+# Errors: 2, Warnings: 2
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:26:37 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:26:37 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:26:40 on Mar 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ram_tb(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+# Read data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012345678
+# rmio_att.input_data = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011451419, we = 001
+# rmio_stmm[0].re = 0
+# output_data = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012345678
+# ** Note: $stop    : simulation/rf_ram_sim/rf_ram_tb.sv(76)
+#    Time: 40 ns  Iteration: 1  Instance: /rf_ram_tb
+# Break in Module rf_ram_tb at simulation/rf_ram_sim/rf_ram_tb.sv line 76
+quit -sim 
+# End time: 04:27:16 on Mar 08,2025, Elapsed time: 0:00:36
+# Errors: 0, Warnings: 1
+
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:27:18 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:27:18 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:27:20 on Mar 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ram_tb(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+# Read data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012345678
+# rmio_att.input_data = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011451419, we = 001
+# rmio_stmm[0].re = 1
+# output_data = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012345678
+# ** Note: $stop    : simulation/rf_ram_sim/rf_ram_tb.sv(76)
+#    Time: 40 ns  Iteration: 1  Instance: /rf_ram_tb
+# Break in Module rf_ram_tb at simulation/rf_ram_sim/rf_ram_tb.sv line 76
+quit -sim
+# End time: 04:29:51 on Mar 08,2025, Elapsed time: 0:02:31
+# Errors: 0, Warnings: 1
+do simulation/rf_ram_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/bram_intf.sv        design_rtl/interface/rmio_intf.sv        design_rtl/register_file/rf_ram.sv       simulation/rf_ram_sim/rf_ram_tb.sv       ip_cores/ram_512x1408.v 
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 04:29:53 on Mar 08,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/bram_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv simulation/rf_ram_sim/rf_ram_tb.sv ip_cores/ram_512x1408.v 
+# -- Compiling interface bram_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_tb
+# -- Compiling module ram_512x1408
+# 
+# Top level modules:
+# 	rf_ram_tb
+# End time: 04:29:53 on Mar 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ram_sim/elaborate.tcl
+# rf_ram_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ram_tb 
+# Start time: 04:29:54 on Mar 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ram_tb(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+# Read data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012345678
+# rmio_att.input_data = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011451419, we = 001
+# rmio_stmm[0].re = 1
+# output_data = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000087775544
+# ** Note: $stop    : simulation/rf_ram_sim/rf_ram_tb.sv(76)
+#    Time: 40 ns  Iteration: 1  Instance: /rf_ram_tb
+# Break in Module rf_ram_tb at simulation/rf_ram_sim/rf_ram_tb.sv line 76

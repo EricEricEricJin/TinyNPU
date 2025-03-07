@@ -5,14 +5,13 @@
 interface rmio_intf #(
     parameter int INPUT_NUM = 1, 
     parameter int OUTPUT_NUM = 1,
-    parameter int DATA_W = 176*8,
-    parameter int ADDR_W = 10
+    parameter int DATA_W = 176*8
 );
 
-logic [DATA_W - 1 : 0] input_data;
-logic                  input_we     [0 : INPUT_NUM - 1]; 
-logic [DATA_W - 1 : 0] output_data;
-logic                  output_re    [0 : OUTPUT_NUM - 1];
+logic [DATA_W - 1 : 0]      input_data;
+logic [0 : INPUT_NUM - 1]   input_we; 
+logic [DATA_W - 1 : 0]      output_data;
+logic [0 : OUTPUT_NUM - 1]  output_re;
 
 modport EU (
     input  input_data, input_we, output_re,
