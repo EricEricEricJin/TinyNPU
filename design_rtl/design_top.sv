@@ -13,13 +13,9 @@ module design_top (
 );
 
 // CPU
-cpu i_cpu (
-    .clk        (clk),
-    .rst_n      (rst_n),
-    .inst_addr  (inst_addr)
-    // todo
-);
-    
+
+
+
 endmodule
 
 `default_nettype wire 

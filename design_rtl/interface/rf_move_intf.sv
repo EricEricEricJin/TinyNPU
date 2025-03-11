@@ -9,6 +9,8 @@ logic                       start;
 logic [RF_ADDR_W - 1 : 0]   src_addr;
 logic [RF_ADDR_W - 1 : 0]   dst_addr;
 logic [LINE_NUM_W - 1 : 0]  line_num;
+logic                       src_freeze;
+logic                       dst_freeze;
 
 modport ctrl_unit ( output start, src_addr, dst_addr, line_num );
 modport rf_move ( input start, src_addr, dst_addr, line_num );

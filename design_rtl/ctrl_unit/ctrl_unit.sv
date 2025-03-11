@@ -64,6 +64,8 @@ inst_decode i_inst_decode (
     // .move_line_num      (move_line_num),
     .move_src_addr     (rf_move.src_addr),
     .move_dst_addr     (rf_move.dst_addr),
+    .move_src_freeze   (rf_move.src_freeze),
+    .move_dst_freeze   (rf_move.dst_freeze),
     .move_line_num     (rf_move.line_num),
 
     .eu_unit            (eu_unit),

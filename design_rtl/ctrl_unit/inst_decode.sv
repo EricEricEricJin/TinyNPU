@@ -12,18 +12,20 @@ module inst_decode #(
     output logic exec,         // command this exec unit to start execute
 
     // connect to ldst
-    output logic [RF_ADDR_W - 1 : 0] ldst_rf_addr,
-    output logic [31 : 0] ldst_sdram_addr,  // already bit-extended
-    output logic [7 : 0] ldst_line_num,
+    output logic [RF_ADDR_W - 1 : 0]    ldst_rf_addr,
+    output logic [31 : 0]               ldst_sdram_addr,  // already bit-extended
+    output logic [7 : 0]                ldst_line_num,
 
     // connect to rf mover
-    output logic [RF_ADDR_W - 1 : 0] move_src_addr, 
-    output logic [RF_ADDR_W - 1 : 0] move_dst_addr,
-    output logic [7 : 0] move_line_num,
+    output logic [RF_ADDR_W - 1 : 0]    move_src_addr, 
+    output logic [RF_ADDR_W - 1 : 0]    move_dst_addr,
+    output logic [7 : 0]                move_line_num,
+    output logic                        move_src_freeze,
+    output logic                        move_dst_freeze,
 
     // connect to all fetch operations
-    output wire [4 : 0] eu_unit, // the exec unit index
-    output logic [31 : 0] eu_fetch_addr
+    output wire [4 : 0]     eu_unit, // the exec unit index
+    output logic [31 : 0]   eu_fetch_addr
 );
 
 // LDST: 2^13 * 176 = 176KB
@@ -60,6 +62,8 @@ assign ldst_line_num = inst[7 : 0];
 // Move
 assign move_src_addr = inst[29 : 20];
 assign move_dst_addr = inst[19 : 10];
+assign move_src_freeze = inst[9];
+assign move_dst_freeze = inst[8];
 assign move_line_num = inst[7 : 0];
 
 // Exec Unit command
