@@ -18,11 +18,11 @@ module sdram_slave_bfm #(
 
 logic [31 : 0] mem [0 : RD_MEM_SIZE / 4 - 1];
 
-initial begin
-    int fd;
-    int i;
 
-    // open file 
+task read_file_to_mem();
+    int i;
+    // open file
+    int fd;
     fd = $fopen(RD_MEM_FILE, "rb");
     if (fd == 0) begin
         $display("Error: cannot open file %s", RD_MEM_FILE);
@@ -36,24 +36,32 @@ initial begin
         end
     end    
 
-    $display("%d words read from %s to addr %d.", i, RD_MEM_FILE, RD_MEM_OFFSET);
-end
+    $display("%d words read from %s to addr %d.", i, RD_MEM_FILE, RD_MEM_OFFSET);    
+endtask
+
+
 
 logic [31 : 0] address;
 logic [10 : 0] burstcount;
 
 // process read
-always @(negedge clk) begin
+always @(negedge clk, negedge rst_n) begin
+
     int i, j, k;
     logic [SDRAM_W - 1 : 0] readdata;
 
-    if (sdram.read) begin
+    if (sdram.read && rst_n) begin
         // wait request for some time 
+
+        $display("Read operation start, waiting...");
+        
         sdram.waitrequest = 1;
         repeat($urandom_range(10, 100)) @(negedge clk);
         address = (sdram.address - RD_MEM_OFFSET) / 4;
         burstcount = sdram.burstcount;
         sdram.waitrequest = 0;
+
+        $display("Read wait done. address: %h, burstcount: %d", address, burstcount);
 
         // read from memory
         for (i = 0; i < burstcount; i++) begin
@@ -65,11 +73,12 @@ always @(negedge clk) begin
             // wait for some time
             repeat($urandom_range(10, 100)) @(negedge clk);
 
-            // set read valid 
+            // set read valid
             sdram.readdata = readdata;
             sdram.readdatavalid = 1;
             @(negedge clk) sdram.readdatavalid = 0;
         end
+        $display("Read operation done.");
     end
     else begin
         sdram.readdata = 'x;
@@ -80,8 +89,9 @@ end
 
 
 // process write
-always @(negedge clk) begin
-    if (sdram.write) begin
+always @(negedge clk, negedge rst_n) begin
+
+    if (sdram.write && rst_n) begin
         
         $display("Write operation start, waiting...");
 
@@ -92,7 +102,7 @@ always @(negedge clk) begin
         burstcount = sdram.burstcount;
         sdram.waitrequest = 0;
 
-        $display("Wait done. address: %h, burstcount: %d", address, burstcount);
+        $display("Write wait done. address: %h, burstcount: %d", address, burstcount);
 
         // write to memory
         for (int i = 0; i < burstcount; ) begin

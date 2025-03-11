@@ -1360,3 +1360,2735 @@ run -a
 # ** Note: $stop    : simulation/sdram_bfm/sdram_bfm_test.sv(68)
 #    Time: 5950 ps  Iteration: 1  Instance: /sdram_bfm_test
 # Break in Module sdram_bfm_test at simulation/sdram_bfm/sdram_bfm_test.sv line 68
+quit -sim
+# End time: 11:33:11 on Mar 11,2025, Elapsed time: 0:48:34
+# Errors: 0, Warnings: 1
+pw
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU
+pwd
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:33:22 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:33:22 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(33): (vopt-2732) Module parameter 'ADDR_W' not found for override.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(33): (vopt-2732) Module parameter 'DATA_W' not found for override.
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:34:23 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:34:23 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(33): (vopt-2732) Module parameter 'ADDR_W' not found for override.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(33): (vopt-2732) Module parameter 'DATA_W' not found for override.
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=4, Warnings=2.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:34:52 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:34:52 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(27): (vopt-7063) Failed to find 'i_rf_ldst_intf' in hierarchical name 'i_rf_ldst_intf.rf_ldst'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(54): (vopt-7063) Failed to find 'sdram' in hierarchical name 'i_sdram_intf.sdram'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(62): (vopt-7063) Failed to find 'i_rf_ldst_intf' in hierarchical name 'i_rf_ldst_intf.load_start'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(63): (vopt-7063) Failed to find 'i_rf_ldst_intf' in hierarchical name 'i_rf_ldst_intf.store_start'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(67): (vopt-7063) Failed to find 'i_rf_ldst_intf' in hierarchical name 'i_rf_ldst_intf.rf_addr'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(68): (vopt-7063) Failed to find 'i_rf_ldst_intf' in hierarchical name 'i_rf_ldst_intf.sdram_addr'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(69): (vopt-7063) Failed to find 'i_rf_ldst_intf' in hierarchical name 'i_rf_ldst_intf.line_num'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(72): (vopt-7063) Failed to find 'i_rf_ldst_intf' in hierarchical name 'i_rf_ldst_intf.done'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(38): (vopt-7063) Failed to find 'ldst_sdram_addr' in hierarchical name 'rf_ldst.ldst_sdram_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(39): (vopt-7063) Failed to find 'ldst_rf_addr' in hierarchical name 'rf_ldst.ldst_rf_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(40): (vopt-7063) Failed to find 'ldst_line_num' in hierarchical name 'rf_ldst.ldst_line_num'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(104): (vopt-7063) Failed to find 'burstcnt' in hierarchical name 'sdram.burstcnt'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=17, Warnings=3.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:35:34 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:35:34 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(54): (vopt-7063) Failed to find 'sdram' in hierarchical name 'i_sdram_intf.sdram'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(72): (vopt-7063) Failed to find 'done' in hierarchical name 'i_rf_ldst_intf.done'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(38): (vopt-7063) Failed to find 'ldst_sdram_addr' in hierarchical name 'rf_ldst.ldst_sdram_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(39): (vopt-7063) Failed to find 'ldst_rf_addr' in hierarchical name 'rf_ldst.ldst_rf_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(40): (vopt-7063) Failed to find 'ldst_line_num' in hierarchical name 'rf_ldst.ldst_line_num'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(104): (vopt-7063) Failed to find 'burstcnt' in hierarchical name 'sdram.burstcnt'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=24, Warnings=4.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(54): (vopt-7063) Failed to find 'sdram' in hierarchical name 'i_sdram_intf.sdram'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(72): (vopt-7063) Failed to find 'done' in hierarchical name 'i_rf_ldst_intf.done'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(38): (vopt-7063) Failed to find 'ldst_sdram_addr' in hierarchical name 'rf_ldst.ldst_sdram_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(39): (vopt-7063) Failed to find 'ldst_rf_addr' in hierarchical name 'rf_ldst.ldst_rf_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(40): (vopt-7063) Failed to find 'ldst_line_num' in hierarchical name 'rf_ldst.ldst_line_num'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(104): (vopt-7063) Failed to find 'burstcnt' in hierarchical name 'sdram.burstcnt'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=31, Warnings=5.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:36:19 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:36:19 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(72): (vopt-7063) Failed to find 'done' in hierarchical name 'i_rf_ldst_intf.done'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(38): (vopt-7063) Failed to find 'ldst_sdram_addr' in hierarchical name 'rf_ldst.ldst_sdram_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(39): (vopt-7063) Failed to find 'ldst_rf_addr' in hierarchical name 'rf_ldst.ldst_rf_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(40): (vopt-7063) Failed to find 'ldst_line_num' in hierarchical name 'rf_ldst.ldst_line_num'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(104): (vopt-7063) Failed to find 'burstcnt' in hierarchical name 'sdram.burstcnt'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=37, Warnings=6.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/rf_ldst_sim/rf_ldst_tb.sv(72): (vopt-7063) Failed to find 'done' in hierarchical name 'i_rf_ldst_intf.done'.
+#         Region: rf_ldst_tb
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(38): (vopt-7063) Failed to find 'ldst_sdram_addr' in hierarchical name 'rf_ldst.ldst_sdram_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(39): (vopt-7063) Failed to find 'ldst_rf_addr' in hierarchical name 'rf_ldst.ldst_rf_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(40): (vopt-7063) Failed to find 'ldst_line_num' in hierarchical name 'rf_ldst.ldst_line_num'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(104): (vopt-7063) Failed to find 'burstcnt' in hierarchical name 'sdram.burstcnt'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=43, Warnings=7.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:36:47 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:36:47 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(38): (vopt-7063) Failed to find 'ldst_sdram_addr' in hierarchical name 'rf_ldst.ldst_sdram_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(39): (vopt-7063) Failed to find 'ldst_rf_addr' in hierarchical name 'rf_ldst.ldst_rf_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(40): (vopt-7063) Failed to find 'ldst_line_num' in hierarchical name 'rf_ldst.ldst_line_num'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(104): (vopt-7063) Failed to find 'burstcnt' in hierarchical name 'sdram.burstcnt'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=48, Warnings=8.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(38): (vopt-7063) Failed to find 'ldst_sdram_addr' in hierarchical name 'rf_ldst.ldst_sdram_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(39): (vopt-7063) Failed to find 'ldst_rf_addr' in hierarchical name 'rf_ldst.ldst_rf_addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(40): (vopt-7063) Failed to find 'ldst_line_num' in hierarchical name 'rf_ldst.ldst_line_num'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(104): (vopt-7063) Failed to find 'burstcnt' in hierarchical name 'sdram.burstcnt'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=53, Warnings=9.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:31 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:37:31 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(104): (vopt-7063) Failed to find 'burstcnt' in hierarchical name 'sdram.burstcnt'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=55, Warnings=10.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:38:02 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:38:02 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(105): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=56, Warnings=11.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:38:24 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:38:24 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(109): (vopt-7063) Failed to find 'address' in hierarchical name 'rf_ram.address'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(198): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=58, Warnings=12.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:39:03 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:39:03 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): design_rtl/register_file/rf_ldst.sv(198): (vopt-7063) Failed to find 'addr' in hierarchical name 'sdram.addr'.
+#         Region: rf_ldst_tb.i_rf_ldst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=59, Warnings=13.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:39:16 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:39:16 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=59, Warnings=14.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+# ** Error (suppressible): (vsim-12003) Variable '/rf_ldst_tb/i_sdram_intf/address' written by continuous and procedural assignments. See design_rtl/register_file/rf_ldst.sv(198).
+#    Time: 0 ps  Iteration: 0  Instance: /rf_ldst_tb/i_rf_ldst File: design_rtl/register_file/rf_ldst.sv Line: 105
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:39:41 on Mar 11,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 11:39:41 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 11:33:39 on Mar 11,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=60, Warnings=15.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Load done
+# Wait done. address: 00004000, burstcount:   11
+# Break key hit
+quit -sim 
+# End time: 00:10:33 on Mar 12,2025, Elapsed time: 12:36:54
+# Errors: 60, Warnings: 15
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 00:10:35 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 00:10:35 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 00:10:37 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+add wave -position insertpoint  \
+sim:/rf_ldst_tb/i_rf_ldst/RF_ADDR_W \
+sim:/rf_ldst_tb/i_rf_ldst/LINE_NUM_W \
+sim:/rf_ldst_tb/i_rf_ldst/SDRAM_DATA_W \
+sim:/rf_ldst_tb/i_rf_ldst/RF_DATA_W \
+sim:/rf_ldst_tb/i_rf_ldst/clk \
+sim:/rf_ldst_tb/i_rf_ldst/rst_n \
+sim:/rf_ldst_tb/i_rf_ldst/done \
+sim:/rf_ldst_tb/i_rf_ldst/line_nxt \
+sim:/rf_ldst_tb/i_rf_ldst/sdram_addr \
+sim:/rf_ldst_tb/i_rf_ldst/rf_addr \
+sim:/rf_ldst_tb/i_rf_ldst/line_cnt \
+sim:/rf_ldst_tb/i_rf_ldst/rf_ram_q_unpacked \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_packed \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_ld_from_sdram \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_ld_from_rf \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx_inc \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx_clr \
+sim:/rf_ldst_tb/i_rf_ldst/state \
+sim:/rf_ldst_tb/i_rf_ldst/nxt_state
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Load done
+# Wait done. address: 00004000, burstcount:   11
+# Break key hit
+# Break in Module altsyncram_body at /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/../intel/verilog/src/altera_mf.v line 50117
+quit -sim 
+# End time: 00:20:22 on Mar 12,2025, Elapsed time: 0:09:45
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 00:21:26 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 00:21:26 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 00:21:27 on Mar 12,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+add wave -position insertpoint  \
+sim:/rf_ldst_tb/i_sdram_intf/SDRAM_DATA_W \
+sim:/rf_ldst_tb/i_sdram_intf/SDRAM_ADDR_W \
+sim:/rf_ldst_tb/i_sdram_intf/address \
+sim:/rf_ldst_tb/i_sdram_intf/burstcount \
+sim:/rf_ldst_tb/i_sdram_intf/waitrequest \
+sim:/rf_ldst_tb/i_sdram_intf/readdata \
+sim:/rf_ldst_tb/i_sdram_intf/readdatavalid \
+sim:/rf_ldst_tb/i_sdram_intf/read \
+sim:/rf_ldst_tb/i_sdram_intf/writedata \
+sim:/rf_ldst_tb/i_sdram_intf/byteenable \
+sim:/rf_ldst_tb/i_sdram_intf/write
+add wave -position insertpoint  \
+sim:/rf_ldst_tb/i_rf_ldst/RF_ADDR_W \
+sim:/rf_ldst_tb/i_rf_ldst/LINE_NUM_W \
+sim:/rf_ldst_tb/i_rf_ldst/SDRAM_DATA_W \
+sim:/rf_ldst_tb/i_rf_ldst/RF_DATA_W \
+sim:/rf_ldst_tb/i_rf_ldst/clk \
+sim:/rf_ldst_tb/i_rf_ldst/rst_n \
+sim:/rf_ldst_tb/i_rf_ldst/done \
+sim:/rf_ldst_tb/i_rf_ldst/line_nxt \
+sim:/rf_ldst_tb/i_rf_ldst/sdram_addr \
+sim:/rf_ldst_tb/i_rf_ldst/rf_addr \
+sim:/rf_ldst_tb/i_rf_ldst/line_cnt \
+sim:/rf_ldst_tb/i_rf_ldst/rf_ram_q_unpacked \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_packed \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_ld_from_sdram \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_ld_from_rf \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx_inc \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx_clr \
+sim:/rf_ldst_tb/i_rf_ldst/state \
+sim:/rf_ldst_tb/i_rf_ldst/nxt_state
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Load done
+# Wait done. address: 00004000, burstcount:   11
+# Break key hit
+# Break in Module altsyncram_body at /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/../intel/verilog/src/altera_mf.v line 50117
+quit -sim 
+# End time: 02:15:58 on Mar 12,2025, Elapsed time: 1:54:31
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:16:01 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 02:16:01 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 02:16:03 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+add wave -position insertpoint  \
+sim:/rf_ldst_tb/i_sdram_intf/SDRAM_DATA_W \
+sim:/rf_ldst_tb/i_sdram_intf/SDRAM_ADDR_W \
+sim:/rf_ldst_tb/i_sdram_intf/address \
+sim:/rf_ldst_tb/i_sdram_intf/burstcount \
+sim:/rf_ldst_tb/i_sdram_intf/waitrequest \
+sim:/rf_ldst_tb/i_sdram_intf/readdata \
+sim:/rf_ldst_tb/i_sdram_intf/readdatavalid \
+sim:/rf_ldst_tb/i_sdram_intf/read \
+sim:/rf_ldst_tb/i_sdram_intf/writedata \
+sim:/rf_ldst_tb/i_sdram_intf/byteenable \
+sim:/rf_ldst_tb/i_sdram_intf/write
+add wave -position insertpoint  \
+sim:/rf_ldst_tb/i_rf_ldst_intf/RF_ADDR_W \
+sim:/rf_ldst_tb/i_rf_ldst_intf/LINE_NUM_W \
+sim:/rf_ldst_tb/i_rf_ldst_intf/SDRAM_ADDR_W \
+sim:/rf_ldst_tb/i_rf_ldst_intf/load_start \
+sim:/rf_ldst_tb/i_rf_ldst_intf/store_start \
+sim:/rf_ldst_tb/i_rf_ldst_intf/rf_addr \
+sim:/rf_ldst_tb/i_rf_ldst_intf/sdram_addr \
+sim:/rf_ldst_tb/i_rf_ldst_intf/line_num \
+sim:/rf_ldst_tb/i_rf_ldst_intf/rf_addr_freeze
+add wave -position insertpoint  \
+sim:/rf_ldst_tb/i_rf_ldst/RF_ADDR_W \
+sim:/rf_ldst_tb/i_rf_ldst/LINE_NUM_W \
+sim:/rf_ldst_tb/i_rf_ldst/SDRAM_DATA_W \
+sim:/rf_ldst_tb/i_rf_ldst/RF_DATA_W \
+sim:/rf_ldst_tb/i_rf_ldst/clk \
+sim:/rf_ldst_tb/i_rf_ldst/rst_n \
+sim:/rf_ldst_tb/i_rf_ldst/done \
+sim:/rf_ldst_tb/i_rf_ldst/line_nxt \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_ld_from_sdram \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_ld_from_rf \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx_inc \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx_clr \
+sim:/rf_ldst_tb/i_rf_ldst/sdram_addr \
+sim:/rf_ldst_tb/i_rf_ldst/rf_addr \
+sim:/rf_ldst_tb/i_rf_ldst/line_cnt \
+sim:/rf_ldst_tb/i_rf_ldst/rf_addr_freeze \
+sim:/rf_ldst_tb/i_rf_ldst/rf_ram_q_unpacked \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_packed \
+sim:/rf_ldst_tb/i_rf_ldst/line_buf_idx \
+sim:/rf_ldst_tb/i_rf_ldst/state \
+sim:/rf_ldst_tb/i_rf_ldst/nxt_state
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Load done
+# Wait done. address: 00004000, burstcount:   11
+# Break key hit
+# Simulation stop requested.
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/eric/Documents/Conformer-FPGA-New/TinyNPU/simulation/rf_ldst_sim/wave.do
+quit -sim 
+# End time: 02:45:43 on Mar 12,2025, Elapsed time: 0:29:40
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:45:46 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 02:45:46 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 02:45:50 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+do simulation/rf_ldst_sim/wave.do
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Load done
+# Wait done. address: 00004000, burstcount:   11
+# Break key hit
+# Break in Module sdram_slave_bfm at simulation/sdram_bfm/sdram_slave_bfm.sv line 99
+quit -sim 
+# End time: 02:49:56 on Mar 12,2025, Elapsed time: 0:04:06
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:49:58 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 02:49:58 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 02:50:00 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Load done
+# Wait done. address: 00000000, burstcount:   11
+# Store done
+# ** Note: $stop    : simulation/rf_ldst_sim/rf_ldst_tb.sv(84)
+#    Time: 13728750 ps  Iteration: 3  Instance: /rf_ldst_tb
+# Break in Module rf_ldst_tb at simulation/rf_ldst_sim/rf_ldst_tb.sv line 84
+do simulation/rf_ldst_sim/wave.do
+restart -f 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a 
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Load done
+# Wait done. address: 00000000, burstcount:   11
+# Store done
+# ** Note: $stop    : simulation/rf_ldst_sim/rf_ldst_tb.sv(84)
+#    Time: 13728750 ps  Iteration: 3  Instance: /rf_ldst_tb
+# Break in Module rf_ldst_tb at simulation/rf_ldst_sim/rf_ldst_tb.sv line 84
+quit -sim 
+# End time: 02:54:06 on Mar 12,2025, Elapsed time: 0:04:06
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:54:09 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 02:54:10 on Mar 12,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 02:54:11 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/sdram_bfm/sdram_slave_bfm.sv(38): (vopt-7063) Failed to find 'i' in hierarchical name 'i'.
+#         Region: rf_ldst_tb.i_sdram_slave_bfm
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/rf_ldst_sim/elaborate.tcl PAUSED at line 11
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:54:38 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 02:54:38 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 02:54:11 on Mar 12,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=2.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+do simulation/rf_ldst_sim/wave.do
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Load done
+# Wait done. address: 00000000, burstcount:   11
+# Store done
+# Writing memory to file simulation/rf_ldst_sim/wt_mem.bin...
+# rf_ldst_tb words written to file simulation/rf_ldst_sim/wt_mem.bin.
+# ** Note: $stop    : simulation/rf_ldst_sim/rf_ldst_tb.sv(89)
+#    Time: 12868750 ps  Iteration: 3  Instance: /rf_ldst_tb
+# Break in Module rf_ldst_tb at simulation/rf_ldst_sim/rf_ldst_tb.sv line 89
+quit -sim 
+# End time: 02:58:01 on Mar 12,2025, Elapsed time: 0:03:50
+# Errors: 1, Warnings: 2
+
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:58:04 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 02:58:04 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 02:58:07 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+do simulation/rf_ldst_sim/wave.do
+run -a 
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Wait done. address: 00000000, burstcount:   11
+# Break key hit
+# Break in Module sdram_slave_bfm at simulation/sdram_bfm/sdram_slave_bfm.sv line 48
+quit -sim 
+# End time: 03:01:04 on Mar 12,2025, Elapsed time: 0:02:57
+# Errors: 0, Warnings: 1
+]
+# invalid command name "]"
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:01:07 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 03:01:07 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 03:01:09 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+do simulation/rf_ldst_sim/wave.do
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Wait done. address: 00000000, burstcount:   11
+# Break key hit
+# Simulation stop requested.
+quit -sim 
+# End time: 03:03:23 on Mar 12,2025, Elapsed time: 0:02:14
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:03:25 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 03:03:25 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 03:03:26 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Wait done. address: 00000000, burstcount:   11
+# Load done
+# byte 0000001c bit 00000000 data 00000000
+# byte 0000001c bit 00000008 data 00000008
+# byte 0000001c bit 00000010 data 00000010
+# byte 0000001c bit 00000018 data 00000018
+# byte 0000001d bit 00000000 data 00000020
+# byte 0000001d bit 00000008 data 00000028
+# byte 0000001d bit 00000010 data 00000030
+# byte 0000001d bit 00000018 data 00000038
+# byte 0000001e bit 00000000 data 00000040
+# byte 0000001e bit 00000008 data 00000048
+# byte 0000001e bit 00000010 data 00000050
+# byte 0000001e bit 00000018 data 00000058
+# byte 0000001f bit 00000000 data 00000060
+# byte 0000001f bit 00000008 data 00000068
+# byte 0000001f bit 00000010 data 00000070
+# byte 0000001f bit 00000018 data 00000078
+# byte 00000020 bit 00000000 data 00000000
+# byte 00000020 bit 00000008 data 00000008
+# byte 00000020 bit 00000010 data 00000010
+# byte 00000020 bit 00000018 data 00000018
+# byte 00000021 bit 00000000 data 00000020
+# byte 00000021 bit 00000008 data 00000028
+# byte 00000021 bit 00000010 data 00000030
+# byte 00000021 bit 00000018 data 00000038
+# byte 00000022 bit 00000000 data 00000040
+# byte 00000022 bit 00000008 data 00000048
+# byte 00000022 bit 00000010 data 00000050
+# byte 00000022 bit 00000018 data 00000058
+# byte 00000023 bit 00000000 data 00000060
+# byte 00000023 bit 00000008 data 00000068
+# byte 00000023 bit 00000010 data 00000070
+# byte 00000023 bit 00000018 data 00000078
+# byte 00000024 bit 00000000 data 00000000
+# byte 00000024 bit 00000008 data 00000008
+# byte 00000024 bit 00000010 data 00000010
+# byte 00000024 bit 00000018 data 00000018
+# byte 00000025 bit 00000000 data 00000020
+# byte 00000025 bit 00000008 data 00000028
+# byte 00000025 bit 00000010 data 00000030
+# byte 00000025 bit 00000018 data 00000038
+# byte 00000026 bit 00000000 data 00000040
+# byte 00000026 bit 00000008 data 00000048
+# byte 00000026 bit 00000010 data 00000050
+# byte 00000026 bit 00000018 data 00000058
+# byte 00000027 bit 00000000 data 00000060
+# byte 00000027 bit 00000008 data 00000068
+# byte 00000027 bit 00000010 data 00000070
+# byte 00000027 bit 00000018 data 00000078
+# byte 00000028 bit 00000000 data 00000000
+# byte 00000028 bit 00000008 data 00000008
+# byte 00000028 bit 00000010 data 00000010
+# byte 00000028 bit 00000018 data 00000018
+# byte 00000029 bit 00000000 data 00000020
+# byte 00000029 bit 00000008 data 00000028
+# byte 00000029 bit 00000010 data 00000030
+# byte 00000029 bit 00000018 data 00000038
+# byte 0000002a bit 00000000 data 00000040
+# byte 0000002a bit 00000008 data 00000048
+# byte 0000002a bit 00000010 data 00000050
+# byte 0000002a bit 00000018 data 00000058
+# byte 0000002b bit 00000000 data 00000060
+# byte 0000002b bit 00000008 data 00000068
+# byte 0000002b bit 00000010 data 00000070
+# byte 0000002b bit 00000018 data 00000078
+# byte 0000002c bit 00000000 data 00000000
+# byte 0000002c bit 00000008 data 00000008
+# byte 0000002c bit 00000010 data 00000010
+# byte 0000002c bit 00000018 data 00000018
+# byte 0000002d bit 00000000 data 00000020
+# byte 0000002d bit 00000008 data 00000028
+# byte 0000002d bit 00000010 data 00000030
+# byte 0000002d bit 00000018 data 00000038
+# byte 0000002e bit 00000000 data 00000040
+# byte 0000002e bit 00000008 data 00000048
+# byte 0000002e bit 00000010 data 00000050
+# byte 0000002e bit 00000018 data 00000058
+# byte 0000002f bit 00000000 data 00000060
+# byte 0000002f bit 00000008 data 00000068
+# byte 0000002f bit 00000010 data 00000070
+# byte 0000002f bit 00000018 data 00000078
+# byte 00000030 bit 00000000 data 00000000
+# byte 00000030 bit 00000008 data 00000008
+# byte 00000030 bit 00000010 data 00000010
+# byte 00000030 bit 00000018 data 00000018
+# byte 00000031 bit 00000000 data 00000020
+# byte 00000031 bit 00000008 data 00000028
+# byte 00000031 bit 00000010 data 00000030
+# byte 00000031 bit 00000018 data 00000038
+# byte 00000032 bit 00000000 data 00000040
+# byte 00000032 bit 00000008 data 00000048
+# byte 00000032 bit 00000010 data 00000050
+# byte 00000032 bit 00000018 data 00000058
+# byte 00000033 bit 00000000 data 00000060
+# byte 00000033 bit 00000008 data 00000068
+# byte 00000033 bit 00000010 data 00000070
+# byte 00000033 bit 00000018 data 00000078
+# byte 00000034 bit 00000000 data 00000000
+# byte 00000034 bit 00000008 data 00000008
+# byte 00000034 bit 00000010 data 00000010
+# byte 00000034 bit 00000018 data 00000018
+# byte 00000035 bit 00000000 data 00000020
+# byte 00000035 bit 00000008 data 00000028
+# byte 00000035 bit 00000010 data 00000030
+# byte 00000035 bit 00000018 data 00000038
+# byte 00000036 bit 00000000 data 00000040
+# byte 00000036 bit 00000008 data 00000048
+# byte 00000036 bit 00000010 data 00000050
+# byte 00000036 bit 00000018 data 00000058
+# byte 00000037 bit 00000000 data 00000060
+# byte 00000037 bit 00000008 data 00000068
+# byte 00000037 bit 00000010 data 00000070
+# byte 00000037 bit 00000018 data 00000078
+# byte 00000038 bit 00000000 data 00000000
+# byte 00000038 bit 00000008 data 00000008
+# byte 00000038 bit 00000010 data 00000010
+# byte 00000038 bit 00000018 data 00000018
+# byte 00000039 bit 00000000 data 00000020
+# byte 00000039 bit 00000008 data 00000028
+# byte 00000039 bit 00000010 data 00000030
+# byte 00000039 bit 00000018 data 00000038
+# byte 0000003a bit 00000000 data 00000040
+# byte 0000003a bit 00000008 data 00000048
+# byte 0000003a bit 00000010 data 00000050
+# byte 0000003a bit 00000018 data 00000058
+# byte 0000003b bit 00000000 data 00000060
+# byte 0000003b bit 00000008 data 00000068
+# byte 0000003b bit 00000010 data 00000070
+# byte 0000003b bit 00000018 data 00000078
+# byte 0000003c bit 00000000 data 00000000
+# byte 0000003c bit 00000008 data 00000008
+# byte 0000003c bit 00000010 data 00000010
+# byte 0000003c bit 00000018 data 00000018
+# byte 0000003d bit 00000000 data 00000020
+# byte 0000003d bit 00000008 data 00000028
+# byte 0000003d bit 00000010 data 00000030
+# byte 0000003d bit 00000018 data 00000038
+# byte 0000003e bit 00000000 data 00000040
+# byte 0000003e bit 00000008 data 00000048
+# byte 0000003e bit 00000010 data 00000050
+# byte 0000003e bit 00000018 data 00000058
+# byte 0000003f bit 00000000 data 00000060
+# byte 0000003f bit 00000008 data 00000068
+# byte 0000003f bit 00000010 data 00000070
+# byte 0000003f bit 00000018 data 00000078
+# byte 00000040 bit 00000000 data 00000000
+# byte 00000040 bit 00000008 data 00000008
+# byte 00000040 bit 00000010 data 00000010
+# byte 00000040 bit 00000018 data 00000018
+# byte 00000041 bit 00000000 data 00000020
+# byte 00000041 bit 00000008 data 00000028
+# byte 00000041 bit 00000010 data 00000030
+# byte 00000041 bit 00000018 data 00000038
+# byte 00000042 bit 00000000 data 00000040
+# byte 00000042 bit 00000008 data 00000048
+# byte 00000042 bit 00000010 data 00000050
+# byte 00000042 bit 00000018 data 00000058
+# byte 00000043 bit 00000000 data 00000060
+# byte 00000043 bit 00000008 data 00000068
+# byte 00000043 bit 00000010 data 00000070
+# byte 00000043 bit 00000018 data 00000078
+# byte 00000044 bit 00000000 data 00000000
+# byte 00000044 bit 00000008 data 00000008
+# byte 00000044 bit 00000010 data 00000010
+# byte 00000044 bit 00000018 data 00000018
+# byte 00000045 bit 00000000 data 00000020
+# byte 00000045 bit 00000008 data 00000028
+# byte 00000045 bit 00000010 data 00000030
+# byte 00000045 bit 00000018 data 00000038
+# byte 00000046 bit 00000000 data 00000040
+# byte 00000046 bit 00000008 data 00000048
+# byte 00000046 bit 00000010 data 00000050
+# byte 00000046 bit 00000018 data 00000058
+# byte 00000047 bit 00000000 data 00000060
+# byte 00000047 bit 00000008 data 00000068
+# byte 00000047 bit 00000010 data 00000070
+# byte 00000047 bit 00000018 data 00000078
+# Write operation done.
+# Write operation start, waiting...
+# Wait done. address: 00004000, burstcount:   11
+# Break key hit
+# Simulation stop requested.
+do simulation/rf_ldst_sim/wave.do
+restart -f 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Wait done. address: 00000000, burstcount:   11
+# Load done
+# byte 0000001c bit 00000000 data 00000000
+# byte 0000001c bit 00000008 data 00000008
+# byte 0000001c bit 00000010 data 00000010
+# byte 0000001c bit 00000018 data 00000018
+# byte 0000001d bit 00000000 data 00000020
+# byte 0000001d bit 00000008 data 00000028
+# byte 0000001d bit 00000010 data 00000030
+# byte 0000001d bit 00000018 data 00000038
+# byte 0000001e bit 00000000 data 00000040
+# byte 0000001e bit 00000008 data 00000048
+# byte 0000001e bit 00000010 data 00000050
+# byte 0000001e bit 00000018 data 00000058
+# byte 0000001f bit 00000000 data 00000060
+# byte 0000001f bit 00000008 data 00000068
+# byte 0000001f bit 00000010 data 00000070
+# byte 0000001f bit 00000018 data 00000078
+# byte 00000020 bit 00000000 data 00000000
+# byte 00000020 bit 00000008 data 00000008
+# byte 00000020 bit 00000010 data 00000010
+# byte 00000020 bit 00000018 data 00000018
+# byte 00000021 bit 00000000 data 00000020
+# byte 00000021 bit 00000008 data 00000028
+# byte 00000021 bit 00000010 data 00000030
+# byte 00000021 bit 00000018 data 00000038
+# byte 00000022 bit 00000000 data 00000040
+# byte 00000022 bit 00000008 data 00000048
+# byte 00000022 bit 00000010 data 00000050
+# byte 00000022 bit 00000018 data 00000058
+# byte 00000023 bit 00000000 data 00000060
+# byte 00000023 bit 00000008 data 00000068
+# byte 00000023 bit 00000010 data 00000070
+# byte 00000023 bit 00000018 data 00000078
+# byte 00000024 bit 00000000 data 00000000
+# byte 00000024 bit 00000008 data 00000008
+# byte 00000024 bit 00000010 data 00000010
+# byte 00000024 bit 00000018 data 00000018
+# byte 00000025 bit 00000000 data 00000020
+# byte 00000025 bit 00000008 data 00000028
+# byte 00000025 bit 00000010 data 00000030
+# byte 00000025 bit 00000018 data 00000038
+# byte 00000026 bit 00000000 data 00000040
+# byte 00000026 bit 00000008 data 00000048
+# byte 00000026 bit 00000010 data 00000050
+# byte 00000026 bit 00000018 data 00000058
+# byte 00000027 bit 00000000 data 00000060
+# byte 00000027 bit 00000008 data 00000068
+# byte 00000027 bit 00000010 data 00000070
+# byte 00000027 bit 00000018 data 00000078
+# byte 00000028 bit 00000000 data 00000000
+# byte 00000028 bit 00000008 data 00000008
+# byte 00000028 bit 00000010 data 00000010
+# byte 00000028 bit 00000018 data 00000018
+# byte 00000029 bit 00000000 data 00000020
+# byte 00000029 bit 00000008 data 00000028
+# byte 00000029 bit 00000010 data 00000030
+# byte 00000029 bit 00000018 data 00000038
+# byte 0000002a bit 00000000 data 00000040
+# byte 0000002a bit 00000008 data 00000048
+# byte 0000002a bit 00000010 data 00000050
+# byte 0000002a bit 00000018 data 00000058
+# byte 0000002b bit 00000000 data 00000060
+# byte 0000002b bit 00000008 data 00000068
+# byte 0000002b bit 00000010 data 00000070
+# byte 0000002b bit 00000018 data 00000078
+# byte 0000002c bit 00000000 data 00000000
+# byte 0000002c bit 00000008 data 00000008
+# byte 0000002c bit 00000010 data 00000010
+# byte 0000002c bit 00000018 data 00000018
+# byte 0000002d bit 00000000 data 00000020
+# byte 0000002d bit 00000008 data 00000028
+# byte 0000002d bit 00000010 data 00000030
+# byte 0000002d bit 00000018 data 00000038
+# byte 0000002e bit 00000000 data 00000040
+# byte 0000002e bit 00000008 data 00000048
+# byte 0000002e bit 00000010 data 00000050
+# byte 0000002e bit 00000018 data 00000058
+# byte 0000002f bit 00000000 data 00000060
+# byte 0000002f bit 00000008 data 00000068
+# byte 0000002f bit 00000010 data 00000070
+# byte 0000002f bit 00000018 data 00000078
+# byte 00000030 bit 00000000 data 00000000
+# byte 00000030 bit 00000008 data 00000008
+# byte 00000030 bit 00000010 data 00000010
+# byte 00000030 bit 00000018 data 00000018
+# byte 00000031 bit 00000000 data 00000020
+# byte 00000031 bit 00000008 data 00000028
+# byte 00000031 bit 00000010 data 00000030
+# byte 00000031 bit 00000018 data 00000038
+# byte 00000032 bit 00000000 data 00000040
+# byte 00000032 bit 00000008 data 00000048
+# byte 00000032 bit 00000010 data 00000050
+# byte 00000032 bit 00000018 data 00000058
+# byte 00000033 bit 00000000 data 00000060
+# byte 00000033 bit 00000008 data 00000068
+# byte 00000033 bit 00000010 data 00000070
+# byte 00000033 bit 00000018 data 00000078
+# byte 00000034 bit 00000000 data 00000000
+# byte 00000034 bit 00000008 data 00000008
+# byte 00000034 bit 00000010 data 00000010
+# byte 00000034 bit 00000018 data 00000018
+# byte 00000035 bit 00000000 data 00000020
+# byte 00000035 bit 00000008 data 00000028
+# byte 00000035 bit 00000010 data 00000030
+# byte 00000035 bit 00000018 data 00000038
+# byte 00000036 bit 00000000 data 00000040
+# byte 00000036 bit 00000008 data 00000048
+# byte 00000036 bit 00000010 data 00000050
+# byte 00000036 bit 00000018 data 00000058
+# byte 00000037 bit 00000000 data 00000060
+# byte 00000037 bit 00000008 data 00000068
+# byte 00000037 bit 00000010 data 00000070
+# byte 00000037 bit 00000018 data 00000078
+# byte 00000038 bit 00000000 data 00000000
+# byte 00000038 bit 00000008 data 00000008
+# byte 00000038 bit 00000010 data 00000010
+# byte 00000038 bit 00000018 data 00000018
+# byte 00000039 bit 00000000 data 00000020
+# byte 00000039 bit 00000008 data 00000028
+# byte 00000039 bit 00000010 data 00000030
+# byte 00000039 bit 00000018 data 00000038
+# byte 0000003a bit 00000000 data 00000040
+# byte 0000003a bit 00000008 data 00000048
+# byte 0000003a bit 00000010 data 00000050
+# byte 0000003a bit 00000018 data 00000058
+# byte 0000003b bit 00000000 data 00000060
+# byte 0000003b bit 00000008 data 00000068
+# byte 0000003b bit 00000010 data 00000070
+# byte 0000003b bit 00000018 data 00000078
+# byte 0000003c bit 00000000 data 00000000
+# byte 0000003c bit 00000008 data 00000008
+# byte 0000003c bit 00000010 data 00000010
+# byte 0000003c bit 00000018 data 00000018
+# byte 0000003d bit 00000000 data 00000020
+# byte 0000003d bit 00000008 data 00000028
+# byte 0000003d bit 00000010 data 00000030
+# byte 0000003d bit 00000018 data 00000038
+# byte 0000003e bit 00000000 data 00000040
+# byte 0000003e bit 00000008 data 00000048
+# byte 0000003e bit 00000010 data 00000050
+# byte 0000003e bit 00000018 data 00000058
+# byte 0000003f bit 00000000 data 00000060
+# byte 0000003f bit 00000008 data 00000068
+# byte 0000003f bit 00000010 data 00000070
+# byte 0000003f bit 00000018 data 00000078
+# byte 00000040 bit 00000000 data 00000000
+# byte 00000040 bit 00000008 data 00000008
+# byte 00000040 bit 00000010 data 00000010
+# byte 00000040 bit 00000018 data 00000018
+# byte 00000041 bit 00000000 data 00000020
+# byte 00000041 bit 00000008 data 00000028
+# byte 00000041 bit 00000010 data 00000030
+# byte 00000041 bit 00000018 data 00000038
+# byte 00000042 bit 00000000 data 00000040
+# byte 00000042 bit 00000008 data 00000048
+# byte 00000042 bit 00000010 data 00000050
+# byte 00000042 bit 00000018 data 00000058
+# byte 00000043 bit 00000000 data 00000060
+# byte 00000043 bit 00000008 data 00000068
+# byte 00000043 bit 00000010 data 00000070
+# byte 00000043 bit 00000018 data 00000078
+# byte 00000044 bit 00000000 data 00000000
+# byte 00000044 bit 00000008 data 00000008
+# byte 00000044 bit 00000010 data 00000010
+# byte 00000044 bit 00000018 data 00000018
+# byte 00000045 bit 00000000 data 00000020
+# byte 00000045 bit 00000008 data 00000028
+# byte 00000045 bit 00000010 data 00000030
+# byte 00000045 bit 00000018 data 00000038
+# byte 00000046 bit 00000000 data 00000040
+# byte 00000046 bit 00000008 data 00000048
+# byte 00000046 bit 00000010 data 00000050
+# byte 00000046 bit 00000018 data 00000058
+# byte 00000047 bit 00000000 data 00000060
+# byte 00000047 bit 00000008 data 00000068
+# byte 00000047 bit 00000010 data 00000070
+# byte 00000047 bit 00000018 data 00000078
+# Write operation done.
+# Write operation start, waiting...
+# Wait done. address: 00004000, burstcount:   11
+# Break key hit
+# Simulation stop requested.
+quit -sim 
+# End time: 03:06:30 on Mar 12,2025, Elapsed time: 0:03:04
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:06:33 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 03:06:33 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 03:06:36 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+do simulation/rf_ldst_sim/wave.do
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Wait done. address: 00000000, burstcount:   11
+# Load done
+# byte 0000001c bit 00000000 data 00000000
+# byte 0000001c bit 00000008 data 00000008
+# byte 0000001c bit 00000010 data 00000010
+# byte 0000001c bit 00000018 data 00000018
+# byte 0000001d bit 00000000 data 00000020
+# byte 0000001d bit 00000008 data 00000028
+# byte 0000001d bit 00000010 data 00000030
+# byte 0000001d bit 00000018 data 00000038
+# byte 0000001e bit 00000000 data 00000040
+# byte 0000001e bit 00000008 data 00000048
+# byte 0000001e bit 00000010 data 00000050
+# byte 0000001e bit 00000018 data 00000058
+# byte 0000001f bit 00000000 data 00000060
+# byte 0000001f bit 00000008 data 00000068
+# byte 0000001f bit 00000010 data 00000070
+# byte 0000001f bit 00000018 data 00000078
+# byte 00000020 bit 00000000 data 00000000
+# byte 00000020 bit 00000008 data 00000008
+# byte 00000020 bit 00000010 data 00000010
+# byte 00000020 bit 00000018 data 00000018
+# byte 00000021 bit 00000000 data 00000020
+# byte 00000021 bit 00000008 data 00000028
+# byte 00000021 bit 00000010 data 00000030
+# byte 00000021 bit 00000018 data 00000038
+# byte 00000022 bit 00000000 data 00000040
+# byte 00000022 bit 00000008 data 00000048
+# byte 00000022 bit 00000010 data 00000050
+# byte 00000022 bit 00000018 data 00000058
+# byte 00000023 bit 00000000 data 00000060
+# byte 00000023 bit 00000008 data 00000068
+# byte 00000023 bit 00000010 data 00000070
+# byte 00000023 bit 00000018 data 00000078
+# byte 00000024 bit 00000000 data 00000000
+# byte 00000024 bit 00000008 data 00000008
+# byte 00000024 bit 00000010 data 00000010
+# byte 00000024 bit 00000018 data 00000018
+# byte 00000025 bit 00000000 data 00000020
+# byte 00000025 bit 00000008 data 00000028
+# byte 00000025 bit 00000010 data 00000030
+# byte 00000025 bit 00000018 data 00000038
+# byte 00000026 bit 00000000 data 00000040
+# byte 00000026 bit 00000008 data 00000048
+# byte 00000026 bit 00000010 data 00000050
+# byte 00000026 bit 00000018 data 00000058
+# byte 00000027 bit 00000000 data 00000060
+# byte 00000027 bit 00000008 data 00000068
+# byte 00000027 bit 00000010 data 00000070
+# byte 00000027 bit 00000018 data 00000078
+# byte 00000028 bit 00000000 data 00000000
+# byte 00000028 bit 00000008 data 00000008
+# byte 00000028 bit 00000010 data 00000010
+# byte 00000028 bit 00000018 data 00000018
+# byte 00000029 bit 00000000 data 00000020
+# byte 00000029 bit 00000008 data 00000028
+# byte 00000029 bit 00000010 data 00000030
+# byte 00000029 bit 00000018 data 00000038
+# byte 0000002a bit 00000000 data 00000040
+# byte 0000002a bit 00000008 data 00000048
+# byte 0000002a bit 00000010 data 00000050
+# byte 0000002a bit 00000018 data 00000058
+# byte 0000002b bit 00000000 data 00000060
+# byte 0000002b bit 00000008 data 00000068
+# byte 0000002b bit 00000010 data 00000070
+# byte 0000002b bit 00000018 data 00000078
+# byte 0000002c bit 00000000 data 00000000
+# byte 0000002c bit 00000008 data 00000008
+# byte 0000002c bit 00000010 data 00000010
+# byte 0000002c bit 00000018 data 00000018
+# byte 0000002d bit 00000000 data 00000020
+# byte 0000002d bit 00000008 data 00000028
+# byte 0000002d bit 00000010 data 00000030
+# byte 0000002d bit 00000018 data 00000038
+# byte 0000002e bit 00000000 data 00000040
+# byte 0000002e bit 00000008 data 00000048
+# byte 0000002e bit 00000010 data 00000050
+# byte 0000002e bit 00000018 data 00000058
+# byte 0000002f bit 00000000 data 00000060
+# byte 0000002f bit 00000008 data 00000068
+# byte 0000002f bit 00000010 data 00000070
+# byte 0000002f bit 00000018 data 00000078
+# byte 00000030 bit 00000000 data 00000000
+# byte 00000030 bit 00000008 data 00000008
+# byte 00000030 bit 00000010 data 00000010
+# byte 00000030 bit 00000018 data 00000018
+# byte 00000031 bit 00000000 data 00000020
+# byte 00000031 bit 00000008 data 00000028
+# byte 00000031 bit 00000010 data 00000030
+# byte 00000031 bit 00000018 data 00000038
+# byte 00000032 bit 00000000 data 00000040
+# byte 00000032 bit 00000008 data 00000048
+# byte 00000032 bit 00000010 data 00000050
+# byte 00000032 bit 00000018 data 00000058
+# byte 00000033 bit 00000000 data 00000060
+# byte 00000033 bit 00000008 data 00000068
+# byte 00000033 bit 00000010 data 00000070
+# byte 00000033 bit 00000018 data 00000078
+# byte 00000034 bit 00000000 data 00000000
+# byte 00000034 bit 00000008 data 00000008
+# byte 00000034 bit 00000010 data 00000010
+# byte 00000034 bit 00000018 data 00000018
+# byte 00000035 bit 00000000 data 00000020
+# byte 00000035 bit 00000008 data 00000028
+# byte 00000035 bit 00000010 data 00000030
+# byte 00000035 bit 00000018 data 00000038
+# byte 00000036 bit 00000000 data 00000040
+# byte 00000036 bit 00000008 data 00000048
+# byte 00000036 bit 00000010 data 00000050
+# byte 00000036 bit 00000018 data 00000058
+# byte 00000037 bit 00000000 data 00000060
+# byte 00000037 bit 00000008 data 00000068
+# byte 00000037 bit 00000010 data 00000070
+# byte 00000037 bit 00000018 data 00000078
+# byte 00000038 bit 00000000 data 00000000
+# byte 00000038 bit 00000008 data 00000008
+# byte 00000038 bit 00000010 data 00000010
+# byte 00000038 bit 00000018 data 00000018
+# byte 00000039 bit 00000000 data 00000020
+# byte 00000039 bit 00000008 data 00000028
+# byte 00000039 bit 00000010 data 00000030
+# byte 00000039 bit 00000018 data 00000038
+# byte 0000003a bit 00000000 data 00000040
+# byte 0000003a bit 00000008 data 00000048
+# byte 0000003a bit 00000010 data 00000050
+# byte 0000003a bit 00000018 data 00000058
+# byte 0000003b bit 00000000 data 00000060
+# byte 0000003b bit 00000008 data 00000068
+# byte 0000003b bit 00000010 data 00000070
+# byte 0000003b bit 00000018 data 00000078
+# byte 0000003c bit 00000000 data 00000000
+# byte 0000003c bit 00000008 data 00000008
+# byte 0000003c bit 00000010 data 00000010
+# byte 0000003c bit 00000018 data 00000018
+# byte 0000003d bit 00000000 data 00000020
+# byte 0000003d bit 00000008 data 00000028
+# byte 0000003d bit 00000010 data 00000030
+# byte 0000003d bit 00000018 data 00000038
+# byte 0000003e bit 00000000 data 00000040
+# byte 0000003e bit 00000008 data 00000048
+# byte 0000003e bit 00000010 data 00000050
+# byte 0000003e bit 00000018 data 00000058
+# byte 0000003f bit 00000000 data 00000060
+# byte 0000003f bit 00000008 data 00000068
+# byte 0000003f bit 00000010 data 00000070
+# byte 0000003f bit 00000018 data 00000078
+# byte 00000040 bit 00000000 data 00000000
+# byte 00000040 bit 00000008 data 00000008
+# byte 00000040 bit 00000010 data 00000010
+# byte 00000040 bit 00000018 data 00000018
+# byte 00000041 bit 00000000 data 00000020
+# byte 00000041 bit 00000008 data 00000028
+# byte 00000041 bit 00000010 data 00000030
+# byte 00000041 bit 00000018 data 00000038
+# byte 00000042 bit 00000000 data 00000040
+# byte 00000042 bit 00000008 data 00000048
+# byte 00000042 bit 00000010 data 00000050
+# byte 00000042 bit 00000018 data 00000058
+# byte 00000043 bit 00000000 data 00000060
+# byte 00000043 bit 00000008 data 00000068
+# byte 00000043 bit 00000010 data 00000070
+# byte 00000043 bit 00000018 data 00000078
+# byte 00000044 bit 00000000 data 00000000
+# byte 00000044 bit 00000008 data 00000008
+# byte 00000044 bit 00000010 data 00000010
+# byte 00000044 bit 00000018 data 00000018
+# byte 00000045 bit 00000000 data 00000020
+# byte 00000045 bit 00000008 data 00000028
+# byte 00000045 bit 00000010 data 00000030
+# byte 00000045 bit 00000018 data 00000038
+# byte 00000046 bit 00000000 data 00000040
+# byte 00000046 bit 00000008 data 00000048
+# byte 00000046 bit 00000010 data 00000050
+# byte 00000046 bit 00000018 data 00000058
+# byte 00000047 bit 00000000 data 00000060
+# byte 00000047 bit 00000008 data 00000068
+# byte 00000047 bit 00000010 data 00000070
+# byte 00000047 bit 00000018 data 00000078
+# Write operation done.
+# Write operation start, waiting...
+# Store done
+# Writing memory to file simulation/rf_ldst_sim/wt_mem.bin...
+# rf_ldst_tb words written to file simulation/rf_ldst_sim/wt_mem.bin.
+# ** Note: $stop    : simulation/rf_ldst_sim/rf_ldst_tb.sv(93)
+#    Time: 12903750 ps  Iteration: 3  Instance: /rf_ldst_tb
+# Break in Module rf_ldst_tb at simulation/rf_ldst_sim/rf_ldst_tb.sv line 93
+quit -sim
+# End time: 03:10:58 on Mar 12,2025, Elapsed time: 0:04:22
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:11:01 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 03:11:01 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 03:11:03 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+do simulation/rf_ldst_sim/wave.do
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Wait done. address: 00000000, burstcount:   11
+# Read operation done.
+# Read operation done.
+# Read operation done.
+# Read operation done.
+# Read operation done.
+# Read operation done.
+# Read operation done.
+# Read operation done.
+# Load done
+# byte 0000001c bit 00000000 data 00000000
+# byte 0000001c bit 00000008 data 00000008
+# byte 0000001c bit 00000010 data 00000010
+# byte 0000001c bit 00000018 data 00000018
+# byte 0000001d bit 00000000 data 00000020
+# byte 0000001d bit 00000008 data 00000028
+# byte 0000001d bit 00000010 data 00000030
+# byte 0000001d bit 00000018 data 00000038
+# byte 0000001e bit 00000000 data 00000040
+# byte 0000001e bit 00000008 data 00000048
+# byte 0000001e bit 00000010 data 00000050
+# byte 0000001e bit 00000018 data 00000058
+# byte 0000001f bit 00000000 data 00000060
+# byte 0000001f bit 00000008 data 00000068
+# byte 0000001f bit 00000010 data 00000070
+# byte 0000001f bit 00000018 data 00000078
+# byte 00000020 bit 00000000 data 00000000
+# byte 00000020 bit 00000008 data 00000008
+# byte 00000020 bit 00000010 data 00000010
+# byte 00000020 bit 00000018 data 00000018
+# byte 00000021 bit 00000000 data 00000020
+# byte 00000021 bit 00000008 data 00000028
+# byte 00000021 bit 00000010 data 00000030
+# byte 00000021 bit 00000018 data 00000038
+# byte 00000022 bit 00000000 data 00000040
+# byte 00000022 bit 00000008 data 00000048
+# byte 00000022 bit 00000010 data 00000050
+# byte 00000022 bit 00000018 data 00000058
+# byte 00000023 bit 00000000 data 00000060
+# byte 00000023 bit 00000008 data 00000068
+# byte 00000023 bit 00000010 data 00000070
+# byte 00000023 bit 00000018 data 00000078
+# byte 00000024 bit 00000000 data 00000000
+# byte 00000024 bit 00000008 data 00000008
+# byte 00000024 bit 00000010 data 00000010
+# byte 00000024 bit 00000018 data 00000018
+# byte 00000025 bit 00000000 data 00000020
+# byte 00000025 bit 00000008 data 00000028
+# byte 00000025 bit 00000010 data 00000030
+# byte 00000025 bit 00000018 data 00000038
+# byte 00000026 bit 00000000 data 00000040
+# byte 00000026 bit 00000008 data 00000048
+# byte 00000026 bit 00000010 data 00000050
+# byte 00000026 bit 00000018 data 00000058
+# byte 00000027 bit 00000000 data 00000060
+# byte 00000027 bit 00000008 data 00000068
+# byte 00000027 bit 00000010 data 00000070
+# byte 00000027 bit 00000018 data 00000078
+# byte 00000028 bit 00000000 data 00000000
+# byte 00000028 bit 00000008 data 00000008
+# byte 00000028 bit 00000010 data 00000010
+# byte 00000028 bit 00000018 data 00000018
+# byte 00000029 bit 00000000 data 00000020
+# byte 00000029 bit 00000008 data 00000028
+# byte 00000029 bit 00000010 data 00000030
+# byte 00000029 bit 00000018 data 00000038
+# byte 0000002a bit 00000000 data 00000040
+# byte 0000002a bit 00000008 data 00000048
+# byte 0000002a bit 00000010 data 00000050
+# byte 0000002a bit 00000018 data 00000058
+# byte 0000002b bit 00000000 data 00000060
+# byte 0000002b bit 00000008 data 00000068
+# byte 0000002b bit 00000010 data 00000070
+# byte 0000002b bit 00000018 data 00000078
+# byte 0000002c bit 00000000 data 00000000
+# byte 0000002c bit 00000008 data 00000008
+# byte 0000002c bit 00000010 data 00000010
+# byte 0000002c bit 00000018 data 00000018
+# byte 0000002d bit 00000000 data 00000020
+# byte 0000002d bit 00000008 data 00000028
+# byte 0000002d bit 00000010 data 00000030
+# byte 0000002d bit 00000018 data 00000038
+# byte 0000002e bit 00000000 data 00000040
+# byte 0000002e bit 00000008 data 00000048
+# byte 0000002e bit 00000010 data 00000050
+# byte 0000002e bit 00000018 data 00000058
+# byte 0000002f bit 00000000 data 00000060
+# byte 0000002f bit 00000008 data 00000068
+# byte 0000002f bit 00000010 data 00000070
+# byte 0000002f bit 00000018 data 00000078
+# byte 00000030 bit 00000000 data 00000000
+# byte 00000030 bit 00000008 data 00000008
+# byte 00000030 bit 00000010 data 00000010
+# byte 00000030 bit 00000018 data 00000018
+# byte 00000031 bit 00000000 data 00000020
+# byte 00000031 bit 00000008 data 00000028
+# byte 00000031 bit 00000010 data 00000030
+# byte 00000031 bit 00000018 data 00000038
+# byte 00000032 bit 00000000 data 00000040
+# byte 00000032 bit 00000008 data 00000048
+# byte 00000032 bit 00000010 data 00000050
+# byte 00000032 bit 00000018 data 00000058
+# byte 00000033 bit 00000000 data 00000060
+# byte 00000033 bit 00000008 data 00000068
+# byte 00000033 bit 00000010 data 00000070
+# byte 00000033 bit 00000018 data 00000078
+# byte 00000034 bit 00000000 data 00000000
+# byte 00000034 bit 00000008 data 00000008
+# byte 00000034 bit 00000010 data 00000010
+# byte 00000034 bit 00000018 data 00000018
+# byte 00000035 bit 00000000 data 00000020
+# byte 00000035 bit 00000008 data 00000028
+# byte 00000035 bit 00000010 data 00000030
+# byte 00000035 bit 00000018 data 00000038
+# byte 00000036 bit 00000000 data 00000040
+# byte 00000036 bit 00000008 data 00000048
+# byte 00000036 bit 00000010 data 00000050
+# byte 00000036 bit 00000018 data 00000058
+# byte 00000037 bit 00000000 data 00000060
+# byte 00000037 bit 00000008 data 00000068
+# byte 00000037 bit 00000010 data 00000070
+# byte 00000037 bit 00000018 data 00000078
+# byte 00000038 bit 00000000 data 00000000
+# byte 00000038 bit 00000008 data 00000008
+# byte 00000038 bit 00000010 data 00000010
+# byte 00000038 bit 00000018 data 00000018
+# byte 00000039 bit 00000000 data 00000020
+# byte 00000039 bit 00000008 data 00000028
+# byte 00000039 bit 00000010 data 00000030
+# byte 00000039 bit 00000018 data 00000038
+# byte 0000003a bit 00000000 data 00000040
+# byte 0000003a bit 00000008 data 00000048
+# byte 0000003a bit 00000010 data 00000050
+# byte 0000003a bit 00000018 data 00000058
+# byte 0000003b bit 00000000 data 00000060
+# byte 0000003b bit 00000008 data 00000068
+# byte 0000003b bit 00000010 data 00000070
+# byte 0000003b bit 00000018 data 00000078
+# byte 0000003c bit 00000000 data 00000000
+# byte 0000003c bit 00000008 data 00000008
+# byte 0000003c bit 00000010 data 00000010
+# byte 0000003c bit 00000018 data 00000018
+# byte 0000003d bit 00000000 data 00000020
+# byte 0000003d bit 00000008 data 00000028
+# byte 0000003d bit 00000010 data 00000030
+# byte 0000003d bit 00000018 data 00000038
+# byte 0000003e bit 00000000 data 00000040
+# byte 0000003e bit 00000008 data 00000048
+# byte 0000003e bit 00000010 data 00000050
+# byte 0000003e bit 00000018 data 00000058
+# byte 0000003f bit 00000000 data 00000060
+# byte 0000003f bit 00000008 data 00000068
+# byte 0000003f bit 00000010 data 00000070
+# byte 0000003f bit 00000018 data 00000078
+# byte 00000040 bit 00000000 data 00000000
+# byte 00000040 bit 00000008 data 00000008
+# byte 00000040 bit 00000010 data 00000010
+# byte 00000040 bit 00000018 data 00000018
+# byte 00000041 bit 00000000 data 00000020
+# byte 00000041 bit 00000008 data 00000028
+# byte 00000041 bit 00000010 data 00000030
+# byte 00000041 bit 00000018 data 00000038
+# byte 00000042 bit 00000000 data 00000040
+# byte 00000042 bit 00000008 data 00000048
+# byte 00000042 bit 00000010 data 00000050
+# byte 00000042 bit 00000018 data 00000058
+# byte 00000043 bit 00000000 data 00000060
+# byte 00000043 bit 00000008 data 00000068
+# byte 00000043 bit 00000010 data 00000070
+# byte 00000043 bit 00000018 data 00000078
+# byte 00000044 bit 00000000 data 00000000
+# byte 00000044 bit 00000008 data 00000008
+# byte 00000044 bit 00000010 data 00000010
+# byte 00000044 bit 00000018 data 00000018
+# byte 00000045 bit 00000000 data 00000020
+# byte 00000045 bit 00000008 data 00000028
+# byte 00000045 bit 00000010 data 00000030
+# byte 00000045 bit 00000018 data 00000038
+# byte 00000046 bit 00000000 data 00000040
+# byte 00000046 bit 00000008 data 00000048
+# byte 00000046 bit 00000010 data 00000050
+# byte 00000046 bit 00000018 data 00000058
+# byte 00000047 bit 00000000 data 00000060
+# byte 00000047 bit 00000008 data 00000068
+# byte 00000047 bit 00000010 data 00000070
+# byte 00000047 bit 00000018 data 00000078
+# Write operation done.
+# Write operation start, waiting...
+# Store done
+# Writing memory to file simulation/rf_ldst_sim/wt_mem.bin...
+# rf_ldst_tb words written to file simulation/rf_ldst_sim/wt_mem.bin.
+# ** Note: $stop    : simulation/rf_ldst_sim/rf_ldst_tb.sv(93)
+#    Time: 12903750 ps  Iteration: 3  Instance: /rf_ldst_tb
+# Break in Module rf_ldst_tb at simulation/rf_ldst_sim/rf_ldst_tb.sv line 93
+quit -sim 
+# End time: 03:13:38 on Mar 12,2025, Elapsed time: 0:02:35
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:13:40 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 03:13:40 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 03:13:41 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+do simulation/rf_ldst_sim/wave.do
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Write operation start, waiting...
+# Read operation start, waiting...
+# Write wait done. address: 00000000, burstcount:   11
+# Read wait done. address: 00000000, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000004, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000008, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 0000000c, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000010, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000014, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000018, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 0000001c, burstcount:   11
+# Read operation done.
+# Load done
+# byte 0000001c bit 00000000 data 00000000
+# byte 0000001c bit 00000008 data 00000008
+# byte 0000001c bit 00000010 data 00000010
+# byte 0000001c bit 00000018 data 00000018
+# byte 0000001d bit 00000000 data 00000020
+# byte 0000001d bit 00000008 data 00000028
+# byte 0000001d bit 00000010 data 00000030
+# byte 0000001d bit 00000018 data 00000038
+# byte 0000001e bit 00000000 data 00000040
+# byte 0000001e bit 00000008 data 00000048
+# byte 0000001e bit 00000010 data 00000050
+# byte 0000001e bit 00000018 data 00000058
+# byte 0000001f bit 00000000 data 00000060
+# byte 0000001f bit 00000008 data 00000068
+# byte 0000001f bit 00000010 data 00000070
+# byte 0000001f bit 00000018 data 00000078
+# byte 00000020 bit 00000000 data 00000000
+# byte 00000020 bit 00000008 data 00000008
+# byte 00000020 bit 00000010 data 00000010
+# byte 00000020 bit 00000018 data 00000018
+# byte 00000021 bit 00000000 data 00000020
+# byte 00000021 bit 00000008 data 00000028
+# byte 00000021 bit 00000010 data 00000030
+# byte 00000021 bit 00000018 data 00000038
+# byte 00000022 bit 00000000 data 00000040
+# byte 00000022 bit 00000008 data 00000048
+# byte 00000022 bit 00000010 data 00000050
+# byte 00000022 bit 00000018 data 00000058
+# byte 00000023 bit 00000000 data 00000060
+# byte 00000023 bit 00000008 data 00000068
+# byte 00000023 bit 00000010 data 00000070
+# byte 00000023 bit 00000018 data 00000078
+# byte 00000024 bit 00000000 data 00000000
+# byte 00000024 bit 00000008 data 00000008
+# byte 00000024 bit 00000010 data 00000010
+# byte 00000024 bit 00000018 data 00000018
+# byte 00000025 bit 00000000 data 00000020
+# byte 00000025 bit 00000008 data 00000028
+# byte 00000025 bit 00000010 data 00000030
+# byte 00000025 bit 00000018 data 00000038
+# byte 00000026 bit 00000000 data 00000040
+# byte 00000026 bit 00000008 data 00000048
+# byte 00000026 bit 00000010 data 00000050
+# byte 00000026 bit 00000018 data 00000058
+# byte 00000027 bit 00000000 data 00000060
+# byte 00000027 bit 00000008 data 00000068
+# byte 00000027 bit 00000010 data 00000070
+# byte 00000027 bit 00000018 data 00000078
+# byte 00000028 bit 00000000 data 00000000
+# byte 00000028 bit 00000008 data 00000008
+# byte 00000028 bit 00000010 data 00000010
+# byte 00000028 bit 00000018 data 00000018
+# byte 00000029 bit 00000000 data 00000020
+# byte 00000029 bit 00000008 data 00000028
+# byte 00000029 bit 00000010 data 00000030
+# byte 00000029 bit 00000018 data 00000038
+# byte 0000002a bit 00000000 data 00000040
+# byte 0000002a bit 00000008 data 00000048
+# byte 0000002a bit 00000010 data 00000050
+# byte 0000002a bit 00000018 data 00000058
+# byte 0000002b bit 00000000 data 00000060
+# byte 0000002b bit 00000008 data 00000068
+# byte 0000002b bit 00000010 data 00000070
+# byte 0000002b bit 00000018 data 00000078
+# byte 0000002c bit 00000000 data 00000000
+# byte 0000002c bit 00000008 data 00000008
+# byte 0000002c bit 00000010 data 00000010
+# byte 0000002c bit 00000018 data 00000018
+# byte 0000002d bit 00000000 data 00000020
+# byte 0000002d bit 00000008 data 00000028
+# byte 0000002d bit 00000010 data 00000030
+# byte 0000002d bit 00000018 data 00000038
+# byte 0000002e bit 00000000 data 00000040
+# byte 0000002e bit 00000008 data 00000048
+# byte 0000002e bit 00000010 data 00000050
+# byte 0000002e bit 00000018 data 00000058
+# byte 0000002f bit 00000000 data 00000060
+# byte 0000002f bit 00000008 data 00000068
+# byte 0000002f bit 00000010 data 00000070
+# byte 0000002f bit 00000018 data 00000078
+# byte 00000030 bit 00000000 data 00000000
+# byte 00000030 bit 00000008 data 00000008
+# byte 00000030 bit 00000010 data 00000010
+# byte 00000030 bit 00000018 data 00000018
+# byte 00000031 bit 00000000 data 00000020
+# byte 00000031 bit 00000008 data 00000028
+# byte 00000031 bit 00000010 data 00000030
+# byte 00000031 bit 00000018 data 00000038
+# byte 00000032 bit 00000000 data 00000040
+# byte 00000032 bit 00000008 data 00000048
+# byte 00000032 bit 00000010 data 00000050
+# byte 00000032 bit 00000018 data 00000058
+# byte 00000033 bit 00000000 data 00000060
+# byte 00000033 bit 00000008 data 00000068
+# byte 00000033 bit 00000010 data 00000070
+# byte 00000033 bit 00000018 data 00000078
+# byte 00000034 bit 00000000 data 00000000
+# byte 00000034 bit 00000008 data 00000008
+# byte 00000034 bit 00000010 data 00000010
+# byte 00000034 bit 00000018 data 00000018
+# byte 00000035 bit 00000000 data 00000020
+# byte 00000035 bit 00000008 data 00000028
+# byte 00000035 bit 00000010 data 00000030
+# byte 00000035 bit 00000018 data 00000038
+# byte 00000036 bit 00000000 data 00000040
+# byte 00000036 bit 00000008 data 00000048
+# byte 00000036 bit 00000010 data 00000050
+# byte 00000036 bit 00000018 data 00000058
+# byte 00000037 bit 00000000 data 00000060
+# byte 00000037 bit 00000008 data 00000068
+# byte 00000037 bit 00000010 data 00000070
+# byte 00000037 bit 00000018 data 00000078
+# byte 00000038 bit 00000000 data 00000000
+# byte 00000038 bit 00000008 data 00000008
+# byte 00000038 bit 00000010 data 00000010
+# byte 00000038 bit 00000018 data 00000018
+# byte 00000039 bit 00000000 data 00000020
+# byte 00000039 bit 00000008 data 00000028
+# byte 00000039 bit 00000010 data 00000030
+# byte 00000039 bit 00000018 data 00000038
+# byte 0000003a bit 00000000 data 00000040
+# byte 0000003a bit 00000008 data 00000048
+# byte 0000003a bit 00000010 data 00000050
+# byte 0000003a bit 00000018 data 00000058
+# byte 0000003b bit 00000000 data 00000060
+# byte 0000003b bit 00000008 data 00000068
+# byte 0000003b bit 00000010 data 00000070
+# byte 0000003b bit 00000018 data 00000078
+# byte 0000003c bit 00000000 data 00000000
+# byte 0000003c bit 00000008 data 00000008
+# byte 0000003c bit 00000010 data 00000010
+# byte 0000003c bit 00000018 data 00000018
+# byte 0000003d bit 00000000 data 00000020
+# byte 0000003d bit 00000008 data 00000028
+# byte 0000003d bit 00000010 data 00000030
+# byte 0000003d bit 00000018 data 00000038
+# byte 0000003e bit 00000000 data 00000040
+# byte 0000003e bit 00000008 data 00000048
+# byte 0000003e bit 00000010 data 00000050
+# byte 0000003e bit 00000018 data 00000058
+# byte 0000003f bit 00000000 data 00000060
+# byte 0000003f bit 00000008 data 00000068
+# byte 0000003f bit 00000010 data 00000070
+# byte 0000003f bit 00000018 data 00000078
+# byte 00000040 bit 00000000 data 00000000
+# byte 00000040 bit 00000008 data 00000008
+# byte 00000040 bit 00000010 data 00000010
+# byte 00000040 bit 00000018 data 00000018
+# byte 00000041 bit 00000000 data 00000020
+# byte 00000041 bit 00000008 data 00000028
+# byte 00000041 bit 00000010 data 00000030
+# byte 00000041 bit 00000018 data 00000038
+# byte 00000042 bit 00000000 data 00000040
+# byte 00000042 bit 00000008 data 00000048
+# byte 00000042 bit 00000010 data 00000050
+# byte 00000042 bit 00000018 data 00000058
+# byte 00000043 bit 00000000 data 00000060
+# byte 00000043 bit 00000008 data 00000068
+# byte 00000043 bit 00000010 data 00000070
+# byte 00000043 bit 00000018 data 00000078
+# byte 00000044 bit 00000000 data 00000000
+# byte 00000044 bit 00000008 data 00000008
+# byte 00000044 bit 00000010 data 00000010
+# byte 00000044 bit 00000018 data 00000018
+# byte 00000045 bit 00000000 data 00000020
+# byte 00000045 bit 00000008 data 00000028
+# byte 00000045 bit 00000010 data 00000030
+# byte 00000045 bit 00000018 data 00000038
+# byte 00000046 bit 00000000 data 00000040
+# byte 00000046 bit 00000008 data 00000048
+# byte 00000046 bit 00000010 data 00000050
+# byte 00000046 bit 00000018 data 00000058
+# byte 00000047 bit 00000000 data 00000060
+# byte 00000047 bit 00000008 data 00000068
+# byte 00000047 bit 00000010 data 00000070
+# byte 00000047 bit 00000018 data 00000078
+# Write operation done.
+# Write operation start, waiting...
+# Store done
+# Writing memory to file simulation/rf_ldst_sim/wt_mem.bin...
+# rf_ldst_tb words written to file simulation/rf_ldst_sim/wt_mem.bin.
+# ** Note: $stop    : simulation/rf_ldst_sim/rf_ldst_tb.sv(93)
+#    Time: 12903750 ps  Iteration: 3  Instance: /rf_ldst_tb
+# Break in Module rf_ldst_tb at simulation/rf_ldst_sim/rf_ldst_tb.sv line 93
+# Causality operation skipped due to absence of debug database file
+quit -sim 
+# End time: 03:24:07 on Mar 12,2025, Elapsed time: 0:10:26
+# Errors: 0, Warnings: 1
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:24:09 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# ** Error: simulation/sdram_bfm/sdram_slave_bfm.sv(56): Illegal declaration after the statement near line '50'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: (vlog-13069) simulation/sdram_bfm/sdram_slave_bfm.sv(86): near "else": syntax error, unexpected else.
+# ** Error: (vlog-13069) simulation/sdram_bfm/sdram_slave_bfm.sv(88): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: simulation/sdram_bfm/sdram_slave_bfm.sv(101): (vlog-13161) unexpected '$display', expecting elaboration system task $fatal/$error/$warning/$info.
+# ** Error: (vlog-13069) simulation/sdram_bfm/sdram_slave_bfm.sv(104): near ".": syntax error, unexpected '.', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: simulation/sdram_bfm/sdram_slave_bfm.sv(106): (vlog-13205) Syntax error found in the scope following 'address'. Is there a missing '::'?
+# ** Error: simulation/rf_ldst_sim/rf_ldst_tb.sv(2): Compiler directive "`default_nettype" is not allowed inside a design element.
+# -- Compiling module rf_ldst_tb
+# ** Error: simulation/rf_ldst_sim/rf_ldst_tb.sv(100): Compiler directive "`default_nettype" is not allowed inside a design element.
+# End time: 03:24:09 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# ** Error: /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+# Error in macro ./simulation/rf_ldst_sim/compile.tcl line 28
+# /opt/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv {*}$SRC_FILES"
+do simulation/rf_ldst_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+#  design_rtl/interface/sdram_intf.sv           design_rtl/interface/bram_intf.sv            design_rtl/interface/rf_ldst_intf.sv         design_rtl/interface/rmio_intf.sv            ip_cores/ram_512x1408.v                      design_rtl/register_file/rf_ram.sv           design_rtl/register_file/rf_ldst.sv          simulation/sdram_bfm/sdram_slave_bfm.sv      simulation/rf_ldst_sim/rf_ldst_tb.sv        
+#   
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 03:25:19 on Mar 12,2025
+# vlog -reportprogress 300 -sv design_rtl/interface/sdram_intf.sv design_rtl/interface/bram_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rmio_intf.sv ip_cores/ram_512x1408.v design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ldst.sv simulation/sdram_bfm/sdram_slave_bfm.sv simulation/rf_ldst_sim/rf_ldst_tb.sv 
+# -- Compiling interface sdram_read_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface bram_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rmio_intf
+# -- Compiling module ram_512x1408
+# -- Compiling module rf_ram
+# -- Compiling module rf_ldst
+# -- Compiling module sdram_slave_bfm
+# -- Compiling module rf_ldst_tb
+# 
+# Top level modules:
+# 	rf_ldst_tb
+# End time: 03:25:19 on Mar 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/rf_ldst_sim/elaborate.tcl
+# rf_ldst_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver rf_ldst_tb 
+# Start time: 03:25:21 on Mar 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.rf_ldst_tb(fast)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.bram_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__2)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.sdram_slave_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+do simulation/rf_ldst_sim/wave.do
+run -a
+#      262144 words read from simulation/sdram_bfm/rd_mem.bin to addr   536870912.
+# Read operation start, waiting...
+# Read wait done. address: 00000000, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000004, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000008, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 0000000c, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000010, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000014, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 00000018, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 0000001c, burstcount:   11
+# Read operation done.
+# Load done
+# Write operation start, waiting...
+# Write wait done. address: 00004000, burstcount:   11
+# byte 00004000 bit 00000000 data 00000000
+# byte 00004000 bit 00000008 data 00000008
+# byte 00004000 bit 00000010 data 00000010
+# byte 00004000 bit 00000018 data 00000018
+# byte 00004001 bit 00000000 data 00000020
+# byte 00004001 bit 00000008 data 00000028
+# byte 00004001 bit 00000010 data 00000030
+# byte 00004001 bit 00000018 data 00000038
+# byte 00004002 bit 00000000 data 00000040
+# byte 00004002 bit 00000008 data 00000048
+# byte 00004002 bit 00000010 data 00000050
+# byte 00004002 bit 00000018 data 00000058
+# byte 00004003 bit 00000000 data 00000060
+# byte 00004003 bit 00000008 data 00000068
+# byte 00004003 bit 00000010 data 00000070
+# byte 00004003 bit 00000018 data 00000078
+# byte 00004004 bit 00000000 data 00000000
+# byte 00004004 bit 00000008 data 00000008
+# byte 00004004 bit 00000010 data 00000010
+# byte 00004004 bit 00000018 data 00000018
+# byte 00004005 bit 00000000 data 00000020
+# byte 00004005 bit 00000008 data 00000028
+# byte 00004005 bit 00000010 data 00000030
+# byte 00004005 bit 00000018 data 00000038
+# byte 00004006 bit 00000000 data 00000040
+# byte 00004006 bit 00000008 data 00000048
+# byte 00004006 bit 00000010 data 00000050
+# byte 00004006 bit 00000018 data 00000058
+# byte 00004007 bit 00000000 data 00000060
+# byte 00004007 bit 00000008 data 00000068
+# byte 00004007 bit 00000010 data 00000070
+# byte 00004007 bit 00000018 data 00000078
+# byte 00004008 bit 00000000 data 00000000
+# byte 00004008 bit 00000008 data 00000008
+# byte 00004008 bit 00000010 data 00000010
+# byte 00004008 bit 00000018 data 00000018
+# byte 00004009 bit 00000000 data 00000020
+# byte 00004009 bit 00000008 data 00000028
+# byte 00004009 bit 00000010 data 00000030
+# byte 00004009 bit 00000018 data 00000038
+# byte 0000400a bit 00000000 data 00000040
+# byte 0000400a bit 00000008 data 00000048
+# byte 0000400a bit 00000010 data 00000050
+# byte 0000400a bit 00000018 data 00000058
+# byte 0000400b bit 00000000 data 00000060
+# byte 0000400b bit 00000008 data 00000068
+# byte 0000400b bit 00000010 data 00000070
+# byte 0000400b bit 00000018 data 00000078
+# byte 0000400c bit 00000000 data 00000000
+# byte 0000400c bit 00000008 data 00000008
+# byte 0000400c bit 00000010 data 00000010
+# byte 0000400c bit 00000018 data 00000018
+# byte 0000400d bit 00000000 data 00000020
+# byte 0000400d bit 00000008 data 00000028
+# byte 0000400d bit 00000010 data 00000030
+# byte 0000400d bit 00000018 data 00000038
+# byte 0000400e bit 00000000 data 00000040
+# byte 0000400e bit 00000008 data 00000048
+# byte 0000400e bit 00000010 data 00000050
+# byte 0000400e bit 00000018 data 00000058
+# byte 0000400f bit 00000000 data 00000060
+# byte 0000400f bit 00000008 data 00000068
+# byte 0000400f bit 00000010 data 00000070
+# byte 0000400f bit 00000018 data 00000078
+# byte 00004010 bit 00000000 data 00000000
+# byte 00004010 bit 00000008 data 00000008
+# byte 00004010 bit 00000010 data 00000010
+# byte 00004010 bit 00000018 data 00000018
+# byte 00004011 bit 00000000 data 00000020
+# byte 00004011 bit 00000008 data 00000028
+# byte 00004011 bit 00000010 data 00000030
+# byte 00004011 bit 00000018 data 00000038
+# byte 00004012 bit 00000000 data 00000040
+# byte 00004012 bit 00000008 data 00000048
+# byte 00004012 bit 00000010 data 00000050
+# byte 00004012 bit 00000018 data 00000058
+# byte 00004013 bit 00000000 data 00000060
+# byte 00004013 bit 00000008 data 00000068
+# byte 00004013 bit 00000010 data 00000070
+# byte 00004013 bit 00000018 data 00000078
+# byte 00004014 bit 00000000 data 00000000
+# byte 00004014 bit 00000008 data 00000008
+# byte 00004014 bit 00000010 data 00000010
+# byte 00004014 bit 00000018 data 00000018
+# byte 00004015 bit 00000000 data 00000020
+# byte 00004015 bit 00000008 data 00000028
+# byte 00004015 bit 00000010 data 00000030
+# byte 00004015 bit 00000018 data 00000038
+# byte 00004016 bit 00000000 data 00000040
+# byte 00004016 bit 00000008 data 00000048
+# byte 00004016 bit 00000010 data 00000050
+# byte 00004016 bit 00000018 data 00000058
+# byte 00004017 bit 00000000 data 00000060
+# byte 00004017 bit 00000008 data 00000068
+# byte 00004017 bit 00000010 data 00000070
+# byte 00004017 bit 00000018 data 00000078
+# byte 00004018 bit 00000000 data 00000000
+# byte 00004018 bit 00000008 data 00000008
+# byte 00004018 bit 00000010 data 00000010
+# byte 00004018 bit 00000018 data 00000018
+# byte 00004019 bit 00000000 data 00000020
+# byte 00004019 bit 00000008 data 00000028
+# byte 00004019 bit 00000010 data 00000030
+# byte 00004019 bit 00000018 data 00000038
+# byte 0000401a bit 00000000 data 00000040
+# byte 0000401a bit 00000008 data 00000048
+# byte 0000401a bit 00000010 data 00000050
+# byte 0000401a bit 00000018 data 00000058
+# byte 0000401b bit 00000000 data 00000060
+# byte 0000401b bit 00000008 data 00000068
+# byte 0000401b bit 00000010 data 00000070
+# byte 0000401b bit 00000018 data 00000078
+# byte 0000401c bit 00000000 data 00000000
+# byte 0000401c bit 00000008 data 00000008
+# byte 0000401c bit 00000010 data 00000010
+# byte 0000401c bit 00000018 data 00000018
+# byte 0000401d bit 00000000 data 00000020
+# byte 0000401d bit 00000008 data 00000028
+# byte 0000401d bit 00000010 data 00000030
+# byte 0000401d bit 00000018 data 00000038
+# byte 0000401e bit 00000000 data 00000040
+# byte 0000401e bit 00000008 data 00000048
+# byte 0000401e bit 00000010 data 00000050
+# byte 0000401e bit 00000018 data 00000058
+# byte 0000401f bit 00000000 data 00000060
+# byte 0000401f bit 00000008 data 00000068
+# byte 0000401f bit 00000010 data 00000070
+# byte 0000401f bit 00000018 data 00000078
+# byte 00004020 bit 00000000 data 00000000
+# byte 00004020 bit 00000008 data 00000008
+# byte 00004020 bit 00000010 data 00000010
+# byte 00004020 bit 00000018 data 00000018
+# byte 00004021 bit 00000000 data 00000020
+# byte 00004021 bit 00000008 data 00000028
+# byte 00004021 bit 00000010 data 00000030
+# byte 00004021 bit 00000018 data 00000038
+# byte 00004022 bit 00000000 data 00000040
+# byte 00004022 bit 00000008 data 00000048
+# byte 00004022 bit 00000010 data 00000050
+# byte 00004022 bit 00000018 data 00000058
+# byte 00004023 bit 00000000 data 00000060
+# byte 00004023 bit 00000008 data 00000068
+# byte 00004023 bit 00000010 data 00000070
+# byte 00004023 bit 00000018 data 00000078
+# byte 00004024 bit 00000000 data 00000000
+# byte 00004024 bit 00000008 data 00000008
+# byte 00004024 bit 00000010 data 00000010
+# byte 00004024 bit 00000018 data 00000018
+# byte 00004025 bit 00000000 data 00000020
+# byte 00004025 bit 00000008 data 00000028
+# byte 00004025 bit 00000010 data 00000030
+# byte 00004025 bit 00000018 data 00000038
+# byte 00004026 bit 00000000 data 00000040
+# byte 00004026 bit 00000008 data 00000048
+# byte 00004026 bit 00000010 data 00000050
+# byte 00004026 bit 00000018 data 00000058
+# byte 00004027 bit 00000000 data 00000060
+# byte 00004027 bit 00000008 data 00000068
+# byte 00004027 bit 00000010 data 00000070
+# byte 00004027 bit 00000018 data 00000078
+# byte 00004028 bit 00000000 data 00000000
+# byte 00004028 bit 00000008 data 00000008
+# byte 00004028 bit 00000010 data 00000010
+# byte 00004028 bit 00000018 data 00000018
+# byte 00004029 bit 00000000 data 00000020
+# byte 00004029 bit 00000008 data 00000028
+# byte 00004029 bit 00000010 data 00000030
+# byte 00004029 bit 00000018 data 00000038
+# byte 0000402a bit 00000000 data 00000040
+# byte 0000402a bit 00000008 data 00000048
+# byte 0000402a bit 00000010 data 00000050
+# byte 0000402a bit 00000018 data 00000058
+# byte 0000402b bit 00000000 data 00000060
+# byte 0000402b bit 00000008 data 00000068
+# byte 0000402b bit 00000010 data 00000070
+# byte 0000402b bit 00000018 data 00000078
+# Write operation done.
+# Write operation start, waiting...
+# Store done
+# Writing memory to file simulation/rf_ldst_sim/wt_mem.bin...
+# rf_ldst_tb words written to file simulation/rf_ldst_sim/wt_mem.bin.
+# ** Note: $stop    : simulation/rf_ldst_sim/rf_ldst_tb.sv(93)
+#    Time: 12978750 ps  Iteration: 3  Instance: /rf_ldst_tb
+# Break in Module rf_ldst_tb at simulation/rf_ldst_sim/rf_ldst_tb.sv line 93

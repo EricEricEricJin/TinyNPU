@@ -1,7 +1,7 @@
 m255
 K4
 z2
-Z0 !s12c _opt1
+Z0 !s12c _opt2
 Z1 !s99 nomlopt
 R0
 R1
@@ -27,7 +27,9 @@ R0
 R1
 R0
 R1
-Z2 !s12c _opt
+R0
+R1
+Z2 !s12c _opt1
 R1
 R2
 R1
@@ -47,7 +49,13 @@ R2
 R1
 R2
 R1
-Z3 !s12c _opt2
+R2
+R1
+R2
+R1
+R2
+R1
+Z3 !s12c _opt
 R1
 R3
 R1
@@ -63,7 +71,9 @@ R3
 R1
 R3
 R1
-R0
+R3
+R1
+R3
 R1
 R0
 R1
@@ -81,12 +91,6 @@ R0
 R1
 R0
 R1
-R0
-R1
-R0
-R1
-R0
-R1
 R2
 R1
 R2
@@ -111,13 +115,37 @@ R2
 R1
 R2
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
 R1
 !s11f MIXED_VERSIONS
 13
@@ -152,19 +180,19 @@ R6
 R7
 n@_opt1
 R8
+R4
 T_opt2
-!s110 1741379394
-VfBfDgFTG1Im0^m_2d<O1B1
-04 9 4 work rf_ram_tb fast 0
-=1-000ae431a4f1-67cb5742-8cdc1-47461
+!s110 1741721122
+VXVfDk0ci^@YOhN544IXH22
+04 10 4 work rf_ldst_tb fast 0
+=1-000ae431a4f1-67d08e22-3015-af064
 R1
 R5
-!s124 OEM10U18 
+!s124 OEM10U22 
 R6
 R7
 n@_opt2
 R8
-R4
 valu
 Z9 2design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/alu.sv|design_rtl/cpu/br_logic.sv|design_rtl/cpu/cpu_typedef.sv|design_rtl/cpu/cpu.sv|design_rtl/cpu/inst_decode.sv|design_rtl/cpu/rf32.sv|design_rtl/cpu/inst_mem.sv|ip_cores/ram_32x256.v|simulation/cpu_sim/cpu_sim_tb.sv
 Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
@@ -276,9 +304,9 @@ R20
 R21
 R7
 Ybram_intf
-Z27 2design_rtl/interface/bram_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|simulation/rf_move_sim/rf_move_tb.sv|ip_cores/ram_512x1408.v
+Z27 2design_rtl/interface/sdram_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rmio_intf.sv|ip_cores/ram_512x1408.v|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ldst.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/rf_ldst_sim/rf_ldst_tb.sv
 R10
-Z28 !s110 1741503752
+Z28 !s110 1741721119
 !i10b 1
 !s100 jRIU9kJ:S?0a4GZ36SmZ30
 IZ5l:1GAjYN5465]GaiDJo0
@@ -287,16 +315,16 @@ R4
 w1741173157
 8design_rtl/interface/bram_intf.sv
 Fdesign_rtl/interface/bram_intf.sv
-!i122 106
+!i122 159
 R26
 R13
 R17
 r1
 !s85 0
 31
-Z29 !s108 1741503752.000000
-Z30 !s107 ip_cores/ram_512x1408.v|simulation/rf_move_sim/rf_move_tb.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/interface/rmio_intf.sv|design_rtl/interface/bram_intf.sv|
-Z31 !s90 -reportprogress|300|-sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|simulation/rf_move_sim/rf_move_tb.sv|ip_cores/ram_512x1408.v|
+Z29 !s108 1741721119.000000
+Z30 !s107 simulation/rf_ldst_sim/rf_ldst_tb.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_ram.sv|ip_cores/ram_512x1408.v|design_rtl/interface/rmio_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/sdram_intf.sv|
+Z31 !s90 -reportprogress|300|-sv|design_rtl/interface/sdram_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rmio_intf.sv|ip_cores/ram_512x1408.v|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ldst.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/rf_ldst_sim/rf_ldst_tb.sv|
 !i113 0
 R21
 R7
@@ -677,7 +705,7 @@ R4
 w1741174384
 8ip_cores/ram_512x1408.v
 Fip_cores/ram_512x1408.v
-!i122 106
+!i122 159
 L0 40 68
 R13
 R17
@@ -715,35 +743,85 @@ R20
 !i113 0
 R21
 R7
-Yrf_ldst_intf
-R38
+vrf_ldst
+R27
 R10
-R40
+R28
 !i10b 1
-!s100 ULoimZmGh7<NHNiI5e2bY2
-IO5nMdC^Jd<TOdT[hWASYN3
+!s100 ^:gQSSXTZVR07U:e6U?6D2
+I:KhY^1bCXaF4^0Ccj0gWZ0
 S1
 R4
-w1741166075
+w1741719661
+8design_rtl/register_file/rf_ldst.sv
+Fdesign_rtl/register_file/rf_ldst.sv
+!i122 159
+L0 4 223
+R13
+R17
+r1
+!s85 0
+31
+R29
+R30
+R31
+!i113 0
+R21
+R7
+Yrf_ldst_intf
+R27
+R10
+R28
+!i10b 1
+!s100 WRDVoFZHdNT@hLX7cJIhJ0
+I;2HCkAXRjRgKjb<NS]Wz=3
+S1
+R4
+w1741715952
 8design_rtl/interface/rf_ldst_intf.sv
 Fdesign_rtl/interface/rf_ldst_intf.sv
-!i122 55
+!i122 159
 R22
 R13
 R17
 r1
 !s85 0
 31
-R44
-R45
-R46
+R29
+R30
+R31
+!i113 0
+R21
+R7
+vrf_ldst_tb
+R27
+R10
+R28
+!i10b 1
+!s100 :Ga]IKjIDfGPYBTI[gA?m1
+I6EaD=nWHz7O`QiY`;mcWz2
+S1
+R4
+w1741721038
+8simulation/rf_ldst_sim/rf_ldst_tb.sv
+Fsimulation/rf_ldst_sim/rf_ldst_tb.sv
+!i122 159
+L0 4 95
+R13
+R17
+r1
+!s85 0
+31
+R29
+R30
+R31
 !i113 0
 R21
 R7
 vrf_move
-R27
+Z49 2design_rtl/interface/bram_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|simulation/rf_move_sim/rf_move_tb.sv|ip_cores/ram_512x1408.v
 R10
-R28
+Z50 !s110 1741503752
 !i10b 1
 !s100 zigAb>KlPfmnBRjmT6Mgm3
 I0f8OzMjC>6^@a`@CP?@K23
@@ -759,9 +837,9 @@ R17
 r1
 !s85 0
 31
-R29
-R30
-R31
+Z51 !s108 1741503752.000000
+Z52 !s107 ip_cores/ram_512x1408.v|simulation/rf_move_sim/rf_move_tb.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/interface/rmio_intf.sv|design_rtl/interface/bram_intf.sv|
+Z53 !s90 -reportprogress|300|-sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|simulation/rf_move_sim/rf_move_tb.sv|ip_cores/ram_512x1408.v|
 !i113 0
 R21
 R7
@@ -791,9 +869,9 @@ R46
 R21
 R7
 vrf_move_tb
-R27
+R49
 R10
-R28
+R50
 !i10b 1
 !s100 ?JPWNUNWHEK]nFL^lZ?@K2
 I2P7fKKUViCdD@TYC4N?mh2
@@ -809,9 +887,9 @@ R17
 r1
 !s85 0
 31
-R29
-R30
-R31
+R51
+R52
+R53
 !i113 0
 R21
 R7
@@ -827,7 +905,7 @@ R4
 w1741378956
 8design_rtl/register_file/rf_ram.sv
 Fdesign_rtl/register_file/rf_ram.sv
-!i122 106
+!i122 159
 L0 3 270
 R13
 R17
@@ -841,9 +919,9 @@ R31
 R21
 R7
 vrf_ram_mux
-R27
+R49
 R10
-R28
+R50
 !i10b 1
 !s100 _2>V9dR[`NDg_h_lEa<eG1
 I2cI0I_7G^BTgo[DJgXiYz2
@@ -859,9 +937,9 @@ R17
 r1
 !s85 0
 31
-R29
-R30
-R31
+R51
+R52
+R53
 !i113 0
 R21
 R7
@@ -902,7 +980,7 @@ R4
 w1741500375
 8design_rtl/interface/rmio_intf.sv
 Fdesign_rtl/interface/rmio_intf.sv
-!i122 106
+!i122 159
 L0 5 0
 R13
 R17
@@ -916,9 +994,9 @@ R31
 R21
 R7
 vsdram_bfm_test
-Z49 2design_rtl/interface/sdram_intf.sv|simulation/sdram_bfm/sdram_bfm_test.sv|simulation/sdram_bfm/sdram_slave_bfm.sv
+2design_rtl/interface/sdram_intf.sv|simulation/sdram_bfm/sdram_bfm_test.sv|simulation/sdram_bfm/sdram_slave_bfm.sv
 R10
-Z50 !s110 1741661075
+!s110 1741661075
 !i10b 1
 !s100 <<komZWTfKXM]jZ0ok?j:2
 I<m5K<Fn5jM:1Ac<`gTF`j3
@@ -934,16 +1012,16 @@ R17
 r1
 !s85 0
 31
-Z51 !s108 1741661074.000000
-Z52 !s107 simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/sdram_bfm/sdram_bfm_test.sv|design_rtl/interface/sdram_intf.sv|
-Z53 !s90 -reportprogress|300|-sv|design_rtl/interface/sdram_intf.sv|simulation/sdram_bfm/sdram_bfm_test.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|
+!s108 1741661074.000000
+!s107 simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/sdram_bfm/sdram_bfm_test.sv|design_rtl/interface/sdram_intf.sv|
+!s90 -reportprogress|300|-sv|design_rtl/interface/sdram_intf.sv|simulation/sdram_bfm/sdram_bfm_test.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|
 !i113 0
 R21
 R7
 Ysdram_intf
-R49
+R27
 R10
-R50
+R28
 !i10b 1
 !s100 IRR_jZ<`IfKob@KLF_^H?1
 I]F1FH?nJV6dklmF[UPfnB0
@@ -952,23 +1030,23 @@ R4
 Z54 w1741166730
 Z55 8design_rtl/interface/sdram_intf.sv
 Z56 Fdesign_rtl/interface/sdram_intf.sv
-!i122 132
+!i122 159
 L0 28 0
 R13
 R17
 r1
 !s85 0
 31
-R51
-R52
-R53
+R29
+R30
+R31
 !i113 0
 R21
 R7
 Ysdram_read_intf
-R49
+R27
 R10
-R50
+R28
 !i10b 1
 !s100 FHT_f@0zbeLjncUYQLE=Z3
 I9cEhl=[WFSQ3ZLXYiQDiG2
@@ -977,41 +1055,41 @@ R4
 R54
 R55
 R56
-!i122 132
+!i122 159
 R22
 R13
 R17
 r1
 !s85 0
 31
-R51
-R52
-R53
+R29
+R30
+R31
 !i113 0
 R21
 R7
 vsdram_slave_bfm
-R49
+R27
 R10
-R50
+R28
 !i10b 1
-!s100 2>cQ005S^S?a5ZcQMKlP21
-I_HE0OSF;ZO@OlBBA:;3;@0
+!s100 PG@?G9llQF9<B^lD5hPoo3
+Iknh^WB>=NUVHb_^h>Ob5E3
 S1
 R4
-w1741661066
+w1741721116
 8simulation/sdram_bfm/sdram_slave_bfm.sv
 Fsimulation/sdram_bfm/sdram_slave_bfm.sv
-!i122 132
-L0 4 137
+!i122 159
+L0 4 147
 R13
 R17
 r1
 !s85 0
 31
-R51
-R52
-R53
+R29
+R30
+R31
 !i113 0
 R21
 R7

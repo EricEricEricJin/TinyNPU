@@ -19,30 +19,37 @@ module rf_ldst #(
 );
 
 
-logic line_nxt;
+logic line_nxt, line_clr;
+logic line_buf_ld_from_sdram, line_buf_ld_from_rf;
+logic line_buf_idx_inc, line_buf_idx_clr;
+
 
 ////////////////////////
 // Line and address counter 
 ////////////////////////
-logic [31 : 0] sdram_addr;
-logic [RF_ADDR_W - 1 : 0] rf_addr;
-logic [LINE_NUM_W - 1 : 0] line_cnt;
+logic [31 : 0]              sdram_addr;
+logic [RF_ADDR_W - 1 : 0]   rf_addr;
+logic [LINE_NUM_W - 1 : 0]  line_cnt;
+logic rf_addr_freeze;
 
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n) begin
         sdram_addr <= '0;
         rf_addr <= '0;
         line_cnt <= '0;
+        rf_addr_freeze <= 0;
     end
-    else if (rf_ldst.load_start || rf_ldst.store_start) begin
-        sdram_addr <= rf_ldst.ldst_sdram_addr;
-        rf_addr <= rf_ldst.ldst_rf_addr;
-        line_cnt <= rf_ldst.ldst_line_num;  
+    else if (line_clr) begin
+        sdram_addr <= rf_ldst.sdram_addr;
+        rf_addr <= rf_ldst.rf_addr;
+        line_cnt <= rf_ldst.line_num;  
+        rf_addr_freeze <= rf_ldst.rf_addr_freeze;
     end
     else if (line_nxt) begin
         sdram_addr <= sdram_addr + 32'h10;
-        rf_addr <= rf_addr + 1;
         line_cnt <= line_cnt - 1;
+        if (rf_addr_freeze)
+            rf_addr <= rf_addr + 1;
     end
 end
 
@@ -69,10 +76,7 @@ generate
     end
 endgenerate
 
-logic line_buf_ld_from_sdram, line_buf_ld_from_rf;
-
 logic [$clog2(RF_DATA_W / SDRAM_DATA_W) - 1 : 0] line_buf_idx;
-logic line_buf_idx_inc, line_buf_idx_clr;
 
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
@@ -101,8 +105,8 @@ end
 ////////////////////////
 // Connect SDRAM and RF_Ram constant signals
 ////////////////////////
-assign sdram.burstcnt = RF_DATA_W / SDRAM_DATA_W;
-assign sdram.addr = sdram_addr;
+assign sdram.burstcount = RF_DATA_W / SDRAM_DATA_W;
+assign sdram.address = sdram_addr;
 assign sdram.byteenable = '1;
 assign sdram.writedata = line_buf[line_buf_idx];
 
@@ -139,6 +143,8 @@ always_comb begin
     rf_ram.re = 0;
 
     line_nxt = 0;
+    line_clr = 0;
+
     line_buf_ld_from_sdram = 0;
     line_buf_ld_from_rf = 0;
     line_buf_idx_inc = 0;
@@ -146,15 +152,20 @@ always_comb begin
 
     done = 0;
 
+    nxt_state = state;
+
     case (state)
         IDLE: begin
             done = 1;
 
-            if (rf_ldst.load_start ) begin
+            line_clr = 1;
+            line_buf_idx_clr = 1;
+            
+            if (rf_ldst.load_start) begin
                 nxt_state = READ_SEND_ADDR;
             end
             else if (rf_ldst.store_start) begin
-                // rf_ram.re = 1;
+                rf_ram.re = 1;
                 nxt_state = READ_FROM_RF;
             end
         end
@@ -169,9 +180,10 @@ always_comb begin
             if (sdram.readdatavalid) begin
                 line_buf_ld_from_sdram = 1;
                 line_buf_idx_inc = 1;
-                if (line_buf_idx == RF_DATA_W / SDRAM_DATA_W - 1)
-                    nxt_state = WRITE_TO_RF;
             end
+            
+            if (line_buf_idx == RF_DATA_W / SDRAM_DATA_W)
+                nxt_state = WRITE_TO_RF;
         end
 
         WRITE_TO_RF: begin
@@ -182,20 +194,19 @@ always_comb begin
                 nxt_state = IDLE;
             end
             else begin
-                sdram.read = 1;
+                line_buf_idx_clr = 1;
+                // sdram.read = 1;
                 nxt_state = READ_SEND_ADDR;
             end
         end
 
         READ_FROM_RF: begin
-            
+            line_buf_ld_from_rf = 1;
             nxt_state = WRITE_SEND_ADDR;
         end
 
         WRITE_SEND_ADDR: begin
             // send addr
-
-            sdram.addr = sdram_addr;
             sdram.write = 1;
             if (!sdram.waitrequest)
                 nxt_state = WRITE_TO_SDRAM;

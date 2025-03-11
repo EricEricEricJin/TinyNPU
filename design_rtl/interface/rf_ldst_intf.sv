@@ -13,8 +13,10 @@ logic [RF_ADDR_W - 1 : 0] rf_addr;
 logic [SDRAM_ADDR_W - 1 : 0] sdram_addr;
 logic [LINE_NUM_W - 1 : 0] line_num;
 
-modport ctrl_unit ( output load_start, store_start, rf_addr, sdram_addr, line_num );
-modport rf_ldst ( input load_start, store_start, rf_addr, sdram_addr, line_num);
+logic rf_addr_freeze;
+
+modport ctrl_unit ( output load_start, store_start, rf_addr, sdram_addr, line_num, rf_addr_freeze );
+modport rf_ldst ( input load_start, store_start, rf_addr, sdram_addr, line_num, rf_addr_freeze );
 
 endinterface //rf_ldst_intf
 
