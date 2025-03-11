@@ -64,7 +64,6 @@ initial begin
 
     i_rf_ldst_intf.load_start = 0;
     i_rf_ldst_intf.store_start = 0;
-    i_rf_ldst_intf.rf_addr_freeze = 0;
 
     @(negedge clk) rst_n = 1;
 
