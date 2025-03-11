@@ -43,7 +43,7 @@ always_ff @( posedge clk, negedge rst_n ) begin
         line_cnt <= rf_ldst.line_num;  
     end
     else if (line_nxt) begin
-        sdram_addr <= sdram_addr + 32'h10;
+        sdram_addr <= sdram_addr + 32'hb0;  // 176 bytes
         line_cnt <= line_cnt - 1;
         rf_addr <= rf_addr + 1;
     end
@@ -185,13 +185,16 @@ always_comb begin
 
         WRITE_TO_RF: begin
             rf_ram.we = 1;
-            line_nxt = 1;
             line_buf_idx_clr = 1;
 
-            if (line_cnt == 1) 
-                nxt_state = IDLE;
-            else 
+            if (line_cnt == 1) begin
+                line_clr = 1;
+                nxt_state = IDLE;            
+            end
+            else begin
+                line_nxt = 1;
                 nxt_state = READ_SEND_ADDR;
+            end 
         end
 
         READ_FROM_RF: begin
@@ -204,6 +207,7 @@ always_comb begin
             // send addr
             sdram.write = 1;
             if (!sdram.waitrequest) begin
+                line_nxt = 1;
                 line_buf_idx_inc = 1;
                 nxt_state = WRITE_TO_SDRAM;
             end
@@ -213,25 +217,23 @@ always_comb begin
 
             if (line_buf_idx == RF_DATA_W / SDRAM_DATA_W) begin
                 line_buf_idx_clr = 1;
-                line_nxt = 1;
-
-                if (line_cnt == 1)
+                
+                if (line_cnt == 0) begin
+                    line_clr = 1;
                     nxt_state = IDLE;
+                end
                 else begin
                     rf_ram.re = 1;
                     nxt_state = READ_FROM_RF;
                 end
-            end
 
+            end
             else begin
                 line_buf_idx_inc = 1;
                 sdram.write = 1;                
             end
-
         end
-
     endcase
-
 end
 
 endmodule
