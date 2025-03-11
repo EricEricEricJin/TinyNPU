@@ -1,7 +1,7 @@
 m255
 K4
 z2
-Z0 !s12c _opt
+Z0 !s12c _opt1
 Z1 !s99 nomlopt
 R0
 R1
@@ -21,7 +21,13 @@ R0
 R1
 R0
 R1
-Z2 !s12c _opt2
+R0
+R1
+R0
+R1
+R0
+R1
+Z2 !s12c _opt
 R1
 R2
 R1
@@ -37,7 +43,11 @@ R2
 R1
 R2
 R1
-Z3 !s12c _opt1
+R2
+R1
+R2
+R1
+Z3 !s12c _opt2
 R1
 R3
 R1
@@ -53,14 +63,6 @@ R3
 R1
 R3
 R1
-R3
-R1
-R3
-R1
-R3
-R1
-R3
-R1
 R0
 R1
 R0
@@ -85,13 +87,37 @@ R0
 R1
 R0
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
 R1
 !s11f MIXED_VERSIONS
 13
@@ -113,19 +139,19 @@ Z6 o-quiet -auto_acc_if_foreign -work work -L work -L altera_ver -L lpm_ver -L s
 Z7 tCvgOpt 0
 n@_opt
 Z8 OL;O;2023.3;77
+R4
 T_opt1
-!s110 1741173718
-VAz_OlbcB?=ERGLhN7`RRe1
-04 9 4 work cu_sim_tb fast 0
-=1-000ae431a4f1-67c833d6-1a3e-1233c
+!s110 1741661077
+V;V`KHHIzRcflQN`SjDSe:3
+04 14 4 work sdram_bfm_test fast 0
+=1-000ae431a4f1-67cfa395-3fd96-8c0a1
 R1
 R5
-!s124 OEM10U5 
+!s124 OEM10U3 
 R6
 R7
 n@_opt1
 R8
-R4
 T_opt2
 !s110 1741379394
 VfBfDgFTG1Im0^m_2d<O1B1
@@ -886,6 +912,106 @@ r1
 R29
 R30
 R31
+!i113 0
+R21
+R7
+vsdram_bfm_test
+Z49 2design_rtl/interface/sdram_intf.sv|simulation/sdram_bfm/sdram_bfm_test.sv|simulation/sdram_bfm/sdram_slave_bfm.sv
+R10
+Z50 !s110 1741661075
+!i10b 1
+!s100 <<komZWTfKXM]jZ0ok?j:2
+I<m5K<Fn5jM:1Ac<`gTF`j3
+S1
+R4
+w1741660736
+8simulation/sdram_bfm/sdram_bfm_test.sv
+Fsimulation/sdram_bfm/sdram_bfm_test.sv
+!i122 132
+L0 1 73
+R13
+R17
+r1
+!s85 0
+31
+Z51 !s108 1741661074.000000
+Z52 !s107 simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/sdram_bfm/sdram_bfm_test.sv|design_rtl/interface/sdram_intf.sv|
+Z53 !s90 -reportprogress|300|-sv|design_rtl/interface/sdram_intf.sv|simulation/sdram_bfm/sdram_bfm_test.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|
+!i113 0
+R21
+R7
+Ysdram_intf
+R49
+R10
+R50
+!i10b 1
+!s100 IRR_jZ<`IfKob@KLF_^H?1
+I]F1FH?nJV6dklmF[UPfnB0
+S1
+R4
+Z54 w1741166730
+Z55 8design_rtl/interface/sdram_intf.sv
+Z56 Fdesign_rtl/interface/sdram_intf.sv
+!i122 132
+L0 28 0
+R13
+R17
+r1
+!s85 0
+31
+R51
+R52
+R53
+!i113 0
+R21
+R7
+Ysdram_read_intf
+R49
+R10
+R50
+!i10b 1
+!s100 FHT_f@0zbeLjncUYQLE=Z3
+I9cEhl=[WFSQ3ZLXYiQDiG2
+S1
+R4
+R54
+R55
+R56
+!i122 132
+R22
+R13
+R17
+r1
+!s85 0
+31
+R51
+R52
+R53
+!i113 0
+R21
+R7
+vsdram_slave_bfm
+R49
+R10
+R50
+!i10b 1
+!s100 2>cQ005S^S?a5ZcQMKlP21
+I_HE0OSF;ZO@OlBBA:;3;@0
+S1
+R4
+w1741661066
+8simulation/sdram_bfm/sdram_slave_bfm.sv
+Fsimulation/sdram_bfm/sdram_slave_bfm.sv
+!i122 132
+L0 4 137
+R13
+R17
+r1
+!s85 0
+31
+R51
+R52
+R53
 !i113 0
 R21
 R7

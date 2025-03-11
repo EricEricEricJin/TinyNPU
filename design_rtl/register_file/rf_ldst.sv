@@ -77,9 +77,9 @@ logic line_buf_idx_inc, line_buf_idx_clr;
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
         line_buf_idx <= '0;
-    else if (line_buf_clr)
+    else if (line_buf_idx_clr)
         line_buf_idx <= '0;
-    else if (line_buf_inc)
+    else if (line_buf_idx_inc)
         line_buf_idx <= line_buf_idx + 1;
 end
 
@@ -201,11 +201,10 @@ always_comb begin
                 nxt_state = WRITE_TO_SDRAM;
         end
 
-        // todo: add burstcnt to Write
         default: begin      // WRITE_TO_SDRAM
-            line_buf_inc = 1;
+            line_buf_idx_inc = 1;
             sdram.write = 1;
-            if (line_buf_addr == RF_DATA_W / SDRAM_DATA_W - 1)
+            if (line_buf_idx == RF_DATA_W / SDRAM_DATA_W - 1)
                 nxt_state = IDLE;
         end
 
