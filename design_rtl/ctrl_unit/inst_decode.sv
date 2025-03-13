@@ -1,7 +1,8 @@
 `default_nettype none
 
 module inst_decode #(
-    parameter int RF_ADDR_W = 10
+    parameter int RF_ADDR_W = 10,
+    parameter logic [14 : 0] SDRAM_OFFSET = 15'h1000
 ) (
     input wire [31 : 0] inst,
 
@@ -56,7 +57,7 @@ assign inst_op =  op_t'(inst[31 : 30]);
 
 // Load Store RF and SDRAM address
 assign ldst_rf_addr = inst[29 : 21];
-assign ldst_sdram_addr = {15'b0, inst[20 : 8], 4'b0};
+assign ldst_sdram_addr = {SDRAM_OFFSET, inst[20 : 8], 4'b0};
 assign ldst_line_num = inst[7 : 0];
 
 // Move

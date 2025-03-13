@@ -16,20 +16,11 @@ module ctrl_unit #(
     // state 
     output logic isrunning,
 
-    // connect to mover
-    // output logic                        move_start,
-    // output logic [RF_ADDR_W - 1 : 0]    move_src_addr, 
-    // output logic [RF_ADDR_W - 1 : 0]    move_dst_addr,
-    // output logic [7 : 0]                move_line_num,
-    rf_move_intf rf_move,
-
-    // connect to load-storer
-    // output logic                        load_start, 
-    // output logic                        store_start,
-    // output logic [RF_ADDR_W - 1 : 0]    ldst_rf_addr,
-    // output logic [31 : 0]               ldst_sdram_addr,
-    // output logic [7 : 0]                ldst_line_num,
-    rf_ldst_intf rf_ldst,
+    rf_move_intf rf_move,   // connect to mover
+    rf_ldst_intf rf_ldst,   // connect to load-storer
+    
+    output logic rf_ram_sel,          // select ram in rf_wrapper, 1: ldst, 0: move
+    
 
     // connect to EU
     output logic [31 : 0] eu_fetch,
@@ -37,6 +28,20 @@ module ctrl_unit #(
     output logic [31 : 0] eu_fetch_addr
 
 );
+
+////////////////////////
+// Ram sel FF
+////////////////////////
+logic set_ram_sel_move, set_ram_sel_ldst;
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n)
+        rf_ram_sel <= 0;
+    else if (set_ram_sel_move)
+        rf_ram_sel <= 0;
+    else if (set_ram_sel_ldst)
+        rf_ram_sel <= 1;
+end
+
 
 // inst decoder
 logic load, store, move, fetch, exec;
@@ -95,6 +100,9 @@ always_comb begin
     // move_start = 0;
     rf_move.start = 0;
 
+    set_ram_sel_ldst = 0;
+    set_ram_sel_move = 0;
+
     eu_exec = '0;
     eu_fetch = '0;
 
@@ -119,9 +127,10 @@ always_comb begin
             // store_start = store;
             rf_ldst.load_start = load;
             rf_ldst.store_start = store;
-
-            // move_start = move;
             rf_move.start = move;
+
+            set_ram_sel_ldst = load || store;
+            set_ram_sel_move = move;
 
             unique0 if (exec)
                 eu_exec = eu_unit_onehot;

@@ -59,9 +59,9 @@ always @(negedge clk, negedge rst_n) begin
         repeat($urandom_range(10, 100)) @(negedge clk);
         address = (sdram.address - RD_MEM_OFFSET) / 4;
         burstcount = sdram.burstcount;
+        $display("Read wait done. address: %h, burstcount: %d", sdram.address, sdram.burstcount);
         sdram.waitrequest = 0;
 
-        $display("Read wait done. address: %h, burstcount: %d", address, burstcount);
 
         // read from memory
         for (i = 0; i < burstcount; i++) begin
@@ -100,9 +100,8 @@ always @(negedge clk, negedge rst_n) begin
         repeat($urandom_range(10, 30)) @(negedge clk);
         address = (sdram.address - WT_MEM_OFFSET) / 4;
         burstcount = sdram.burstcount;
+        $display("Write wait done. address: %h, burstcount: %d", sdram.address, sdram.burstcount);
         sdram.waitrequest = 0;
-
-        $display("Write wait done. address: %h, burstcount: %d", address, burstcount);
 
         // write to memory
         for (int i = 0; i < burstcount; ) begin
@@ -111,7 +110,7 @@ always @(negedge clk, negedge rst_n) begin
                 for (int j = 0; j < SDRAM_W/32; j++) begin
                     for (int k = 0; k < 32/8; k++) begin
                         if (sdram.byteenable[j*(SDRAM_W/32) + k]) begin
-                            $display("byte %h bit %h data %h", address + i*4 + j, k*8, j*32 + k*8);
+                            // $display("byte %h bit %h data %h", address + i*4 + j, k*8, j*32 + k*8);
                             mem[address + i*4 + j][k*8 +: 8] = sdram.writedata[j*32 + k*8 +: 8];
                         end
                     end

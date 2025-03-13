@@ -4,7 +4,8 @@ module rf_wrapper #(
     parameter int ADDR_W = 10,
     parameter int DATA_W = 176*8
 ) (
-    input wire clk, rst_n,
+    input wire clk, 
+    input wire rst_n,
     
     // Connect to Avalon SDRAM
     sdram_intf sdram,
@@ -12,13 +13,17 @@ module rf_wrapper #(
     // Connect to control unit
     rf_move_intf i_rf_move_intf,
     rf_ldst_intf i_rf_ldst_intf,
+    input wire   ram_sel,
 
     // Connect to RF Ram RMIO
     rmio_intf   rmio_stmm       [0 : 3],
     rmio_intf   rmio_layernorm  [0 : 3],
     rmio_intf   rmio_silu       [0 : 3],
-    rmio_intf   rmio_att        [0 : 0]
+    rmio_intf   rmio_att        [0 : 0],
 
+    // Done signals
+    output logic move_done,
+    output logic ldst_done
 );
 
 ////////////////////////
@@ -34,8 +39,6 @@ localparam LINE_NUM_W = 11;
 bram_intf #(.ADDR_W(ADDR_W), .DATA_W(DATA_W)) i_rf_ram_intf_ram ();
 bram_intf #(.ADDR_W(ADDR_W), .DATA_W(DATA_W)) i_rf_ram_intf_ldst ();
 bram_intf #(.ADDR_W(ADDR_W), .DATA_W(DATA_W)) i_rf_ram_intf_move ();
-
-logic ram_sel;
 
 ////////////////////////
 // RF Ram Mux
@@ -90,7 +93,7 @@ rf_ldst #(
     .sdram      (sdram.ldst),
     .rf_ram     (i_rf_ram_intf_ldst.dut),
 
-    .done           ()
+    .done       (ldst_done)
 );
 
 
@@ -104,11 +107,8 @@ rf_move #( .ADDR_W (RF_ADDR_W), .LINE_NUM_W (LINE_NUM_W) ) i_rf_move (
     .ram        (i_rf_ram_intf_move.dut),
     .rf_move    (i_rf_move_intf.rf_move),
 
-    .done       ()
+    .done       (move_done)
 );
-
-// Bundle the `done` signals
-
 
 
 endmodule
