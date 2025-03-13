@@ -63,173 +63,79 @@ logic pll_locked;
 assign rst_n = ext_rst_n & pll_locked;
 
 
+logic [31 : 0] f2h_pio32, h2f_pio32;
+logic f2h_read, h2f_write;
+
+sdram_intf i_sdram_intf_bi_0 ();
+
 ////////////////////////
 // SoC
 ////////////////////////
-// logic [31 : 0]	sdram_address;
-// logic [10 : 0]	sdram_burstcnt;
-// logic sdram_waitreq;
-// logic sdram_readstart;
-// logic sdram_readvalid;
-// logic [SDRAM_W - 1 : 0] sdram_readdata;
-
-logic [31 : 0] f2h_pio32, h2f_pio32;
-
-sdram_read_wrapper_intf #( .SDRAM_W (SDRAM_W) ) i_sdram_read_wrapper_intf();
-sdram_read_intf         #( .SDRAM_W (SDRAM_W) )	i_sdram_read_intf();
-
-// new new
 soc_system u0 (
-	.ext_clk_clk              (<connected-to-ext_clk_clk>),              //    ext_clk.clk
-	.ext_rst_reset_n          (<connected-to-ext_rst_reset_n>),          //    ext_rst.reset_n
-
-	.f2h_pio32_en_out         (<connected-to-f2h_pio32_en_out>),         //  f2h_pio32.en_out
-	.f2h_pio32_data_in        (<connected-to-f2h_pio32_data_in>),        //           .data_in
+	.ext_clk_clk              (ext_clk),              //    ext_clk.clk
+	.ext_rst_reset_n          (ext_rst_n),          //    ext_rst.reset_n
 	
-	.f2h_sdram0_address       (<connected-to-f2h_sdram0_address>),       // f2h_sdram0.address
-	.f2h_sdram0_burstcount    (<connected-to-f2h_sdram0_burstcount>),    //           .burstcount
-	.f2h_sdram0_waitrequest   (<connected-to-f2h_sdram0_waitrequest>),   //           .waitrequest
-	.f2h_sdram0_readdata      (<connected-to-f2h_sdram0_readdata>),      //           .readdata
-	.f2h_sdram0_readdatavalid (<connected-to-f2h_sdram0_readdatavalid>), //           .readdatavalid
-	.f2h_sdram0_read          (<connected-to-f2h_sdram0_read>),          //           .read
-	.f2h_sdram0_writedata     (<connected-to-f2h_sdram0_writedata>),     //           .writedata
-	.f2h_sdram0_byteenable    (<connected-to-f2h_sdram0_byteenable>),    //           .byteenable
-	.f2h_sdram0_write         (<connected-to-f2h_sdram0_write>),         //           .write
-
-	.h2f_pio32_en_out         (<connected-to-h2f_pio32_en_out>),         //  h2f_pio32.en_out
-	.h2f_pio32_data_out       (<connected-to-h2f_pio32_data_out>),       //           .data_out
+	.f2h_pio32_en_out         (f2h_read),         //  f2h_pio32.en_out
+	.f2h_pio32_data_in        (f2h_pio32),        //           .data_in
 	
-	.h2f_reset_reset_n        (<connected-to-h2f_reset_reset_n>),        //  h2f_reset.reset_n
-
-	.memory_mem_a             (<connected-to-memory_mem_a>),             //     memory.mem_a
-	.memory_mem_ba            (<connected-to-memory_mem_ba>),            //           .mem_ba
-	.memory_mem_ck            (<connected-to-memory_mem_ck>),            //           .mem_ck
-	.memory_mem_ck_n          (<connected-to-memory_mem_ck_n>),          //           .mem_ck_n
-	.memory_mem_cke           (<connected-to-memory_mem_cke>),           //           .mem_cke
-	.memory_mem_cs_n          (<connected-to-memory_mem_cs_n>),          //           .mem_cs_n
-	.memory_mem_ras_n         (<connected-to-memory_mem_ras_n>),         //           .mem_ras_n
-	.memory_mem_cas_n         (<connected-to-memory_mem_cas_n>),         //           .mem_cas_n
-	.memory_mem_we_n          (<connected-to-memory_mem_we_n>),          //           .mem_we_n
-	.memory_mem_reset_n       (<connected-to-memory_mem_reset_n>),       //           .mem_reset_n
-	.memory_mem_dq            (<connected-to-memory_mem_dq>),            //           .mem_dq
-	.memory_mem_dqs           (<connected-to-memory_mem_dqs>),           //           .mem_dqs
-	.memory_mem_dqs_n         (<connected-to-memory_mem_dqs_n>),         //           .mem_dqs_n
-	.memory_mem_odt           (<connected-to-memory_mem_odt>),           //           .mem_odt
-	.memory_mem_dm            (<connected-to-memory_mem_dm>),            //           .mem_dm
-	.memory_oct_rzqin         (<connected-to-memory_oct_rzqin>),         //           .oct_rzqin
-
-	.pll_locked_export        (<connected-to-pll_locked_export>),        // pll_locked.export
-
-	.sys_clk_clk              (<connected-to-sys_clk_clk>),              //    sys_clk.clk
-	.sys_rst_reset_n          (<connected-to-sys_rst_reset_n>)           //    sys_rst.reset_n
-);
-
-
-
-
-// new
-
-soc_system u0 (
-	// AVMM F2H
-	.f2h_pio32_en_out         (),         //  f2h_pio32.en_out
-	.f2h_pio32_data_in        (f2h_pio32),         //           .data_in
-
-	// AVMM H2F
-	.h2f_pio32_en_out         (),         //  h2f_pio32.en_out
+	.f2h_sdram0_address       (i_sdram_intf_bi_0.address),       // f2h_sdram0.address
+	.f2h_sdram0_burstcount    (i_sdram_intf_bi_0.burstcount),    //           .burstcount
+	.f2h_sdram0_waitrequest   (i_sdram_intf_bi_0.waitrequest),   //           .waitrequest
+	.f2h_sdram0_readdata      (i_sdram_intf_bi_0.readdata),      //           .readdata
+	.f2h_sdram0_readdatavalid (i_sdram_intf_bi_0.readdatavalid), //           .readdatavalid
+	.f2h_sdram0_read          (i_sdram_intf_bi_0.read),          //           .read
+	.f2h_sdram0_writedata     (i_sdram_intf_bi_0.writedata),     //           .writedata
+	.f2h_sdram0_byteenable    (i_sdram_intf_bi_0.byteenable),    //           .byteenable
+	.f2h_sdram0_write         (i_sdram_intf_bi_0.write),         //           .write
+	
+	.h2f_pio32_en_out         (h2f_write),         //  h2f_pio32.en_out
 	.h2f_pio32_data_out       (h2f_pio32),       //           .data_out
 	
-	// connect to SDRAM master 
-	// .f2h_sdram0_address       (sdram_address),       // f2h_sdram0.address
-	// .f2h_sdram0_burstcount    (sdram_burstcnt),    //           .burstcount
-	// .f2h_sdram0_waitrequest   (sdram_waitreq),   //           .waitrequest
-	// .f2h_sdram0_readdata      (sdram_readdata),      //           .readdata
-	// .f2h_sdram0_readdatavalid (sdram_readvalid), //           .readdatavalid
-	// .f2h_sdram0_read          (sdram_readstart),          //           .read
-
-	// .f2h_sdram0_address       (i_sdram_read_intf.address),       // f2h_sdram0.address
-	// .f2h_sdram0_burstcount    (i_sdram_read_intf.burstcount),    //           .burstcount
-	// .f2h_sdram0_waitrequest   (i_sdram_read_intf.waitrequest),   //           .waitrequest
-	// .f2h_sdram0_readdata      (i_sdram_read_intf.readdata),      //           .readdata
-	// .f2h_sdram0_readdatavalid (i_sdram_read_intf.readdatavalid), //           .readdatavalid
-	// .f2h_sdram0_read          (i_sdram_read_intf.read),          //           .read
-	
-	.f2h_sdram0_address       (<connected-to-f2h_sdram0_address>),       // f2h_sdram0.address
-	.f2h_sdram0_burstcount    (<connected-to-f2h_sdram0_burstcount>),    //           .burstcount
-	.f2h_sdram0_waitrequest   (<connected-to-f2h_sdram0_waitrequest>),   //           .waitrequest
-	.f2h_sdram0_readdata      (<connected-to-f2h_sdram0_readdata>),      //           .readdata
-	.f2h_sdram0_readdatavalid (<connected-to-f2h_sdram0_readdatavalid>), //           .readdatavalid
-	.f2h_sdram0_read          (<connected-to-f2h_sdram0_read>),          //           .read
-	.f2h_sdram0_writedata     (<connected-to-f2h_sdram0_writedata>),     //           .writedata
-	.f2h_sdram0_byteenable    ('1),    //           .byteenable
-	.f2h_sdram0_write         (<connected-to-f2h_sdram0_write>),         //           .write
-
-
 	.h2f_reset_reset_n        (h2f_rst_n),        //  h2f_reset.reset_n
 	
-	// Connect to DDR3
-    .memory_mem_a            (HPS_DDR3_ADDR),           //          memory.mem_a
-    .memory_mem_ba           (HPS_DDR3_BA),           	//                .mem_ba
+    .memory_mem_a            (HPS_DDR3_ADDR),            //          memory.mem_a
+    .memory_mem_ba           (HPS_DDR3_BA),           //                .mem_ba
     .memory_mem_ck           (HPS_DDR3_CK_P),           //                .mem_ck
-    .memory_mem_ck_n         (HPS_DDR3_CK_N),         	//                .mem_ck_n
-    .memory_mem_cke          (HPS_DDR3_CKE),          	//                .mem_cke
-    .memory_mem_cs_n         (HPS_DDR3_CS_N),         	//                .mem_cs_n
-    .memory_mem_ras_n        (HPS_DDR3_RAS_N),        	//                .mem_ras_n
-    .memory_mem_cas_n        (HPS_DDR3_CAS_N),        	//                .mem_cas_n
-    .memory_mem_we_n         (HPS_DDR3_WE_N),         	//                .mem_we_n
-    .memory_mem_reset_n      (HPS_DDR3_RESET_N),      	//                .mem_reset_n
-    .memory_mem_dq           (HPS_DDR3_DQ),           	//                .mem_dq
+    .memory_mem_ck_n         (HPS_DDR3_CK_N),         //                .mem_ck_n
+    .memory_mem_cke          (HPS_DDR3_CKE),          //                .mem_cke
+    .memory_mem_cs_n         (HPS_DDR3_CS_N),         //                .mem_cs_n
+    .memory_mem_ras_n        (HPS_DDR3_RAS_N),        //                .mem_ras_n
+    .memory_mem_cas_n        (HPS_DDR3_CAS_N),        //                .mem_cas_n
+    .memory_mem_we_n         (HPS_DDR3_WE_N),         //                .mem_we_n
+    .memory_mem_reset_n      (HPS_DDR3_RESET_N),      //                .mem_reset_n
+    .memory_mem_dq           (HPS_DDR3_DQ),           //                .mem_dq
     .memory_mem_dqs          (HPS_DDR3_DQS_P),          //                .mem_dqs
-    .memory_mem_dqs_n        (HPS_DDR3_DQS_N),        	//                .mem_dqs_n
-    .memory_mem_odt          (HPS_DDR3_ODT),          	//                .mem_odt
-    .memory_mem_dm           (HPS_DDR3_DM),           	//                .mem_dm
-    .memory_oct_rzqin        (HPS_DDR3_RZQ),        	//                .oct_rzqin
-
-	.ext_rst_reset_n          (ext_rst_n),          //    ext_rst.reset_n
-	.ext_clk_clk              (ext_clk),              //    ext_clk.clk
-	
+    .memory_mem_dqs_n        (HPS_DDR3_DQS_N),        //                .mem_dqs_n
+    .memory_mem_odt          (HPS_DDR3_ODT),          //                .mem_odt
+    .memory_mem_dm           (HPS_DDR3_DM),           //                .mem_dm
+    .memory_oct_rzqin        (HPS_DDR3_RZQ),        //                .oct_rzqin
+    
 	.pll_locked_export        (pll_locked),        // pll_locked.export
 	
 	.sys_clk_clk              (clk),              //    sys_clk.clk
-	.sys_rst_reset_n          (rst_n)             //    sys_rst.reset_n
+	.sys_rst_reset_n          (rst_n)           //    sys_rst.reset_n
 );
 
-// sdram_read
-sdram_read #(.SDRAM_W (SDRAM_W)) i_sdram_read (
-	.clk			(clk),
-	.rst_n			(rst_n),
-
-	// .readdata		(sdram_readdata),
-	// .readdatavalid	(sdram_readvalid),
-	// .waitrequest	(sdram_waitreq),
-	// .read			(sdram_readstart),
-	// .address		(sdram_address),
-	// .burstcount		(sdram_burstcnt),
-	.avalon_intf	(i_sdram_read_intf.master),
-
-	// .read_addr		(),
-	// .read_cnt		(),
-	// .read_start		(1'b0),
-	// .out_valid		(),
-	// .out_idx		(),
-	// .out_data		()
-	.wrapper_intf	(i_sdram_read_wrapper_intf.slave)
-);
 
 ////////////////////////
-// Connect to DUT
+// Design Top
 ////////////////////////
 design_top i_design_top (
-	.clk			(clk),
-	.rst_n			(rst_n),
-	
-	.mem_read_intf	(i_sdram_read_wrapper_intf.master),
-	
-	.h2f_pio32		(h2f_pio32),
-	.f2h_pio32		(f2h_pio32)
+    .clk            (clk),   
+    .rst_n          (rst_n),
+
+    .i_sdram_intf   (i_sdram_intf_bi_0.ldst),
+    
+    .h2f_pio32      (h2f_pio32),
+    .h2f_write      (h2f_write),
+    
+    .f2h_pio32      (f2h_pio32),
+    .f2h_write      (f2h_write)
 );
 
-
-// counter to test clk and rst_n
+////////////////////////
+// counter to test alive
+////////////////////////
 logic [31 : 0] blink_cnt;
 logic [7 : 0] blink_leds;
 always_ff @( posedge clk, negedge rst_n ) begin

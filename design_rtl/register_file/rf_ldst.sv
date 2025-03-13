@@ -78,16 +78,25 @@ module rf_ldst #(
         else if (line_buf_idx_inc) line_buf_idx <= line_buf_idx + 1;
     end
 
+    // always_ff @(posedge clk, negedge rst_n) begin
+    //     if (!rst_n)
+    //         foreach (line_buf[i]) begin line_buf[i] <= '0; end
+    //     else if (line_buf_ld_from_rf)
+    //         foreach (line_buf[i]) begin line_buf[i] <= rf_ram_q_unpacked[i]; end
+    //     else if (line_buf_ld_from_sdram)
+    //         line_buf[line_buf_idx] <= sdram.readdata;
+    // end
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
-            foreach (line_buf[i]) line_buf[i] <= '0;
-        end else if (line_buf_ld_from_rf) begin
-            foreach (line_buf[i]) line_buf[i] <= rf_ram_q_unpacked[i];
+            for (int i = 0; i < RF_DATA_W / SDRAM_DATA_W; i++)
+                line_buf[i] <= '0;
+        end  else if (line_buf_ld_from_rf) begin
+            for (int i = 0; i < RF_DATA_W / SDRAM_DATA_W; i++)
+                line_buf[i] <= rf_ram_q_unpacked[i];
         end else if (line_buf_ld_from_sdram) begin
             line_buf[line_buf_idx] <= sdram.readdata;
         end
     end
-
 
     ////////////////////////
     // Connect SDRAM and RF_Ram constant signals

@@ -62,8 +62,8 @@ ctrl_unit #(.RF_ADDR_W (RF_ADDR_W) ) i_ctrl_unit (
 
     .isrunning      (cu_running),
 
-    .rf_move        (i_rf_move_intf.rf_move),
-    .rf_ldst        (i_rf_ldst_intf.rf_ldst),
+    .rf_move        (i_rf_move_intf.ctrl_unit),
+    .rf_ldst        (i_rf_ldst_intf.ctrl_unit),
     .rf_ram_sel     (rf_ram_sel),
 
     .eu_fetch       (eu_fetch),

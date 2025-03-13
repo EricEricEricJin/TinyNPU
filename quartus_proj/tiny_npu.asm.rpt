@@ -1,5 +1,5 @@
 Assembler report for tiny_npu
-Wed Feb 19 12:19:17 2025
+Fri Mar 14 02:14:34 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Feb 19 12:19:17 2025 ;
+; Assembler Status      ; Successful - Fri Mar 14 02:14:34 2025 ;
 ; Revision Name         ; tiny_npu                              ;
 ; Top-level Entity Name ; tiny_npu                              ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-----------------------+
 ; Option         ; Setting               ;
 +----------------+-----------------------+
-; JTAG usercode  ; 0x00B7B603            ;
-; Checksum       ; 0x00B7B603            ;
+; JTAG usercode  ; 0x02716DA1            ;
+; Checksum       ; 0x02716DA1            ;
 +----------------+-----------------------+
 
 
@@ -78,15 +78,17 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Feb 19 12:19:12 2025
+    Info: Processing started: Fri Mar 14 02:14:27 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off tiny_npu -c tiny_npu
+Warning (125092): Tcl Script File ../ip_cores/ram_32x256.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ../ip_cores/ram_32x256.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
-Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 551 megabytes
-    Info: Processing ended: Wed Feb 19 12:19:17 2025
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 602 megabytes
+    Info: Processing ended: Fri Mar 14 02:14:34 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 

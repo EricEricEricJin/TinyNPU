@@ -51,7 +51,7 @@ end
 //////////////////////////////
 genvar i;
 generate
-    for (i = 0; i < 4; i++) begin
+    for (i = 0; i < 4; i++) begin: blk_connect_rmio_in_data
         assign rmio_stmm[i].input_data = ram.data;
         assign rmio_layernorm[i].input_data = ram.data;
         assign rmio_silu[i].input_data = ram.data;

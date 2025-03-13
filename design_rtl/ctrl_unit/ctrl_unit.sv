@@ -1,6 +1,7 @@
 `default_nettype none
 
-import pkg_plexer_funcs::*;
+// import pkg_plexer_funcs::*;
+// `include "plexer_funcs.sv"
 
 // import pkg_rf_ldst_intf::*;
 
@@ -78,7 +79,11 @@ inst_decode i_inst_decode (
 );
 
 logic [31 : 0] eu_unit_onehot;
-assign eu_unit_onehot = PlexerFunctions #(.N(32)) :: decoder (eu_unit);
+// assign eu_unit_onehot = PlexerFunctions #(.N(32)) :: decoder (eu_unit);
+decoder #(.N(32)) i_eu_decoder (
+    .in     (eu_unit),
+    .out    (eu_unit_onehot)
+);
 
 typedef enum logic [1 : 0] { IDLE, DECODE, ISSUE } state_t;
 state_t state, nxt_state;
@@ -132,7 +137,9 @@ always_comb begin
             set_ram_sel_ldst = load || store;
             set_ram_sel_move = move;
 
-            unique0 if (exec)
+            // unique0 
+            // damn intel quartus... it supports nothing!!!
+            if (exec)
                 eu_exec = eu_unit_onehot;
             else if (fetch)
                 eu_fetch = eu_unit_onehot;

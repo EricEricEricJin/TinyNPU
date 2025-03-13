@@ -67,7 +67,7 @@ end
 rf_ram #( .RF_DATA_W(RF_DATA_W), .RF_ADDR_W(RF_ADDR_W) ) i_rf_ram (
     .clk            (clk),
 
-    .ram            (i_rf_ram_intf_ram),
+    .ram            (i_rf_ram_intf_ram.ram),
     
     .rmio_stmm      (rmio_stmm),
     .rmio_layernorm (rmio_layernorm),
