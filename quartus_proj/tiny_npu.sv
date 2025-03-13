@@ -48,19 +48,12 @@ localparam int SDRAM_W = 128;
 // Clock and reset 
 ////////////////////////
 
-// clock and reset from external circuit
-logic ext_clk;
 logic h2f_rst_n;
-logic ext_rst_n;
-assign ext_clk = FPGA_CLK1_50;
-assign ext_rst_n = h2f_rst_n & KEY[0];
+logic clk;
+logic rst_n;
 
-// system clk and rst_n
-logic clk;		// PLLed clock, 400MHz	
-logic rst_n;	// DUT reset_n
-logic pll_locked;
-
-assign rst_n = ext_rst_n & pll_locked;
+assign clk = FPGA_CLK1_50;
+assign rst_n = h2f_rst_n & KEY[0];
 
 
 logic [31 : 0] f2h_pio32, h2f_pio32;
@@ -72,12 +65,13 @@ sdram_intf i_sdram_intf_bi_0 ();
 // SoC
 ////////////////////////
 soc_system u0 (
-	.ext_clk_clk              (ext_clk),              //    ext_clk.clk
-	.ext_rst_reset_n          (ext_rst_n),          //    ext_rst.reset_n
-	
+    .clk_clk                  (clk),                  //        clk.clk
+    .reset_reset_n            (rst_n),            //      reset.reset_n
+        
 	.f2h_pio32_en_out         (f2h_read),         //  f2h_pio32.en_out
 	.f2h_pio32_data_in        (f2h_pio32),        //           .data_in
 	
+            
 	.f2h_sdram0_address       (i_sdram_intf_bi_0.address),       // f2h_sdram0.address
 	.f2h_sdram0_burstcount    (i_sdram_intf_bi_0.burstcount),    //           .burstcount
 	.f2h_sdram0_waitrequest   (i_sdram_intf_bi_0.waitrequest),   //           .waitrequest
@@ -87,12 +81,12 @@ soc_system u0 (
 	.f2h_sdram0_writedata     (i_sdram_intf_bi_0.writedata),     //           .writedata
 	.f2h_sdram0_byteenable    (i_sdram_intf_bi_0.byteenable),    //           .byteenable
 	.f2h_sdram0_write         (i_sdram_intf_bi_0.write),         //           .write
-	
+		
 	.h2f_pio32_en_out         (h2f_write),         //  h2f_pio32.en_out
 	.h2f_pio32_data_out       (h2f_pio32),       //           .data_out
 	
 	.h2f_reset_reset_n        (h2f_rst_n),        //  h2f_reset.reset_n
-	
+
     .memory_mem_a            (HPS_DDR3_ADDR),            //          memory.mem_a
     .memory_mem_ba           (HPS_DDR3_BA),           //                .mem_ba
     .memory_mem_ck           (HPS_DDR3_CK_P),           //                .mem_ck
@@ -109,11 +103,6 @@ soc_system u0 (
     .memory_mem_odt          (HPS_DDR3_ODT),          //                .mem_odt
     .memory_mem_dm           (HPS_DDR3_DM),           //                .mem_dm
     .memory_oct_rzqin        (HPS_DDR3_RZQ),        //                .oct_rzqin
-    
-	.pll_locked_export        (pll_locked),        // pll_locked.export
-	
-	.sys_clk_clk              (clk),              //    sys_clk.clk
-	.sys_rst_reset_n          (rst_n)           //    sys_rst.reset_n
 );
 
 
@@ -143,7 +132,7 @@ always_ff @( posedge clk, negedge rst_n ) begin
 		blink_leds <= 8'b1;
 		blink_cnt <= '0;
 	end
-	else if (blink_cnt == 32'd399_999_999) begin
+	else if (blink_cnt == 32'd49_999_999) begin
 		blink_leds <= {blink_leds[6 : 0], blink_leds[7]};
 		blink_cnt <= '0;
 	end

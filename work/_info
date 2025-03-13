@@ -21,6 +21,8 @@ R0
 R1
 R0
 R1
+R0
+R1
 Z2 !s12c _opt2
 R1
 R2
@@ -190,13 +192,13 @@ R1
 cModel Technology
 Z4 d/home/eric/Documents/Conformer-FPGA-New/TinyNPU
 T_opt
-!s110 1741867104
-V2nI0h4Vh^KbOTeeL6C?Aa3
+!s110 1741903581
+VOaP=W=>MSb5=>WVhE8D=U1
 04 6 4 work top_tb fast 0
-=1-000ae431a4f1-67d2c860-384ec-4574
+=2-000ae431a4f1-67d356dc-da56a-27885
 R1
 Z5 !s12b OEM100
-!s124 OEM10U30 
+!s124 OEM10U31 
 Z6 o-quiet -auto_acc_if_foreign -work work -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver +acc
 Z7 tCvgOpt 0
 n@_opt
@@ -338,9 +340,9 @@ R20
 R21
 R7
 Ybram_intf
-Z27 2design_rtl/interface/sdram_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rmio_intf.sv|ip_cores/ram_512x1408.v|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/design_top.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/top_sim/top_tb.sv
+Z27 2design_rtl/interface/sdram_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rmio_intf.sv|ip_cores/ram_512x1408.v|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/design_top.sv|design_rtl/support/plexer.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/top_sim/top_tb.sv
 R10
-Z28 !s110 1741867103
+Z28 !s110 1741903576
 !i10b 1
 !s100 jRIU9kJ:S?0a4GZ36SmZ30
 IZ5l:1GAjYN5465]GaiDJo0
@@ -349,16 +351,16 @@ R4
 w1741173157
 8design_rtl/interface/bram_intf.sv
 Fdesign_rtl/interface/bram_intf.sv
-!i122 187
+!i122 190
 R26
 R13
 R17
 r1
 !s85 0
 31
-Z29 !s108 1741867103.000000
-Z30 !s107 simulation/top_sim/top_tb.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|design_rtl/design_top.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_ram.sv|ip_cores/ram_512x1408.v|design_rtl/interface/rmio_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/sdram_intf.sv|
-Z31 !s90 -reportprogress|300|-sv|design_rtl/interface/sdram_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rmio_intf.sv|ip_cores/ram_512x1408.v|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/design_top.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/top_sim/top_tb.sv|
+Z29 !s108 1741903576.000000
+Z30 !s107 simulation/top_sim/top_tb.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|design_rtl/support/plexer.sv|design_rtl/design_top.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_ram.sv|ip_cores/ram_512x1408.v|design_rtl/interface/rmio_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/sdram_intf.sv|
+Z31 !s90 -reportprogress|300|-sv|design_rtl/interface/sdram_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rmio_intf.sv|ip_cores/ram_512x1408.v|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/design_top.sv|design_rtl/support/plexer.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/top_sim/top_tb.sv|
 !i113 0
 R21
 R7
@@ -473,24 +475,21 @@ R7
 vctrl_unit
 R27
 R10
-Z38 DXx4 work 16 pkg_plexer_funcs 0 22 MG>fHi1B^5dL9LU0fnnER3
-DXx4 work 17 ctrl_unit_sv_unit 0 22 h=<fF2C_CfT0nNegG?cU=0
 R28
-R13
-r1
-!s85 0
 !i10b 1
-!s100 >ld?5l]5JkI_TNnK5;f0C2
-I1@`hJ3^F1mZ7NDhYd7KzF2
-!s105 ctrl_unit_sv_unit
+!s100 Kf6fB<d5VH=La8l6X98e_0
+IWdR;]kIcF>8E7KK4]55Ok0
 S1
 R4
-Z39 w1741866846
-Z40 8design_rtl/ctrl_unit/ctrl_unit.sv
-Z41 Fdesign_rtl/ctrl_unit/ctrl_unit.sv
-!i122 187
-L0 7 141
+w1741902672
+Z38 8design_rtl/ctrl_unit/ctrl_unit.sv
+Z39 Fdesign_rtl/ctrl_unit/ctrl_unit.sv
+!i122 190
+L0 8 144
+R13
 R17
+r1
+!s85 0
 31
 R29
 R30
@@ -499,10 +498,10 @@ R31
 R21
 R7
 Xctrl_unit_sv_unit
-R27
+2design_rtl/interface/sdram_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rmio_intf.sv|ip_cores/ram_512x1408.v|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/design_top.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/top_sim/top_tb.sv
 R10
-R38
-R28
+DXx4 work 16 pkg_plexer_funcs 0 22 MG>fHi1B^5dL9LU0fnnER3
+!s110 1741867103
 Vh=<fF2C_CfT0nNegG?cU=0
 r1
 !s85 0
@@ -512,23 +511,23 @@ Ih=<fF2C_CfT0nNegG?cU=0
 !i103 1
 S1
 R4
+w1741866846
+R38
 R39
-R40
-R41
 !i122 187
 R26
 R17
 31
-R29
-R30
-R31
+!s108 1741867103.000000
+!s107 simulation/top_sim/top_tb.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|design_rtl/design_top.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_ram.sv|ip_cores/ram_512x1408.v|design_rtl/interface/rmio_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/sdram_intf.sv|
+!s90 -reportprogress|300|-sv|design_rtl/interface/sdram_intf.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rmio_intf.sv|ip_cores/ram_512x1408.v|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/design_top.sv|simulation/sdram_bfm/sdram_slave_bfm.sv|simulation/top_sim/top_tb.sv|
 !i113 0
 R21
 R7
 vcu_sim_tb
-Z42 2design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv
+Z40 2design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv
 R10
-Z43 !s110 1741173716
+Z41 !s110 1741173716
 !i10b 1
 !s100 B1M?n1HHo[6BNOSdTVE=U2
 I?E43S@WTGeAcH=cTN@?]D1
@@ -544,9 +543,34 @@ R17
 r1
 !s85 0
 31
-Z44 !s108 1741173716.000000
-Z45 !s107 simulation/ctrl_unit_sim/cu_sim_tb.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/support/plexer_funcs.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|
-Z46 !s90 -reportprogress|300|-sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv|
+Z42 !s108 1741173716.000000
+Z43 !s107 simulation/ctrl_unit_sim/cu_sim_tb.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/support/plexer_funcs.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|
+Z44 !s90 -reportprogress|300|-sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv|
+!i113 0
+R21
+R7
+vdecoder
+R27
+R10
+R28
+!i10b 1
+!s100 V;IY>Db6@3YGfnUT1j_T13
+I7JlzCHSSPTcUb]3_dh=<20
+S1
+R4
+Z45 w1741903575
+Z46 8design_rtl/support/plexer.sv
+Z47 Fdesign_rtl/support/plexer.sv
+!i122 190
+L0 20 11
+R13
+R17
+r1
+!s85 0
+31
+R29
+R30
+R31
 !i113 0
 R21
 R7
@@ -555,14 +579,14 @@ R27
 R10
 R28
 !i10b 1
-!s100 [5Y:Pbm1@P[Wc[m=YzD8M2
-I7?c=UKWm?dz=;BzkfQ8mU0
+!s100 VI^6JIf8ZF5d0Sc;C2OQe0
+IOK5UUM<DI2mZR]i9HEM8<3
 S1
 R4
-w1741866721
+w1741893338
 8design_rtl/design_top.sv
 Fdesign_rtl/design_top.sv
-!i122 187
+!i122 190
 L0 4 98
 R13
 R17
@@ -587,7 +611,7 @@ R4
 w1741867038
 8design_rtl/ctrl_unit/inst_decode.sv
 Fdesign_rtl/ctrl_unit/inst_decode.sv
-!i122 187
+!i122 190
 L0 3 101
 R13
 R17
@@ -678,17 +702,17 @@ R20
 R21
 R7
 Xpkg_plexer_funcs
-R42
+R40
 R10
-R43
+R41
 !i10b 1
 !s100 ^7_?]Dbz^7dflVlNzHzBn0
 IMG>fHi1B^5dL9LU0fnnER3
 S1
 R4
 w1741159971
-Z47 8design_rtl/support/plexer_funcs.sv
-Z48 Fdesign_rtl/support/plexer_funcs.sv
+Z48 8design_rtl/support/plexer_funcs.sv
+Z49 Fdesign_rtl/support/plexer_funcs.sv
 !i122 55
 R26
 VMG>fHi1B^5dL9LU0fnnER3
@@ -696,9 +720,9 @@ R17
 r1
 !s85 0
 31
+R42
+R43
 R44
-R45
-R46
 !i113 0
 R21
 R7
@@ -715,8 +739,8 @@ IADC^<O=1Fi>70SA5HT^a30
 S1
 R4
 w1741157859
-R47
 R48
+R49
 !i122 31
 R26
 R17
@@ -724,6 +748,31 @@ R17
 !s108 1741157867.000000
 !s107 simulation/ctrl_unit_sim/cu_sim_tb.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/support/plexer_funcs.sv|
 !s90 -reportprogress|300|-sv|design_rtl/support/plexer_funcs.sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|simulation/ctrl_unit_sim/cu_sim_tb.sv|
+!i113 0
+R21
+R7
+vpriority_encoder
+R27
+R10
+R28
+!i10b 1
+!s100 VP0jSeebJLD:<UGe8YJA70
+I<Kg]>>K]R[D77SL5X=51L0
+S1
+R4
+R45
+R46
+R47
+!i122 190
+L0 3 16
+R13
+R17
+r1
+!s85 0
+31
+R29
+R30
+R31
 !i113 0
 R21
 R7
@@ -764,7 +813,7 @@ R4
 w1741174384
 8ip_cores/ram_512x1408.v
 Fip_cores/ram_512x1408.v
-!i122 187
+!i122 190
 L0 40 68
 R13
 R17
@@ -807,15 +856,15 @@ R27
 R10
 R28
 !i10b 1
-!s100 7_SmH4nS9VK;IIg:`S0b]2
-ILPAGnoL]`V<QKPc8c4[iR2
+!s100 M=H@HQY0CMo1KOlB]d0N33
+Igb3NR9@j9XF25Yn7F<M6l2
 S1
 R4
-w1741777764
+w1741886689
 8design_rtl/register_file/rf_ldst.sv
 Fdesign_rtl/register_file/rf_ldst.sv
-!i122 187
-L0 4 220
+!i122 190
+L0 4 229
 R13
 R17
 r1
@@ -839,7 +888,7 @@ R4
 w1741777326
 8design_rtl/interface/rf_ldst_intf.sv
 Fdesign_rtl/interface/rf_ldst_intf.sv
-!i122 187
+!i122 190
 R22
 R13
 R17
@@ -889,7 +938,7 @@ R4
 w1741502827
 8design_rtl/register_file/rf_move.sv
 Fdesign_rtl/register_file/rf_move.sv
-!i122 187
+!i122 190
 L0 5 94
 R13
 R17
@@ -914,7 +963,7 @@ R4
 w1741867097
 8design_rtl/interface/rf_move_intf.sv
 Fdesign_rtl/interface/rf_move_intf.sv
-!i122 187
+!i122 190
 R26
 R13
 R17
@@ -928,9 +977,9 @@ R31
 R21
 R7
 vrf_move_tb
-Z49 2design_rtl/interface/bram_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|simulation/rf_move_sim/rf_move_tb.sv|ip_cores/ram_512x1408.v
+Z50 2design_rtl/interface/bram_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|simulation/rf_move_sim/rf_move_tb.sv|ip_cores/ram_512x1408.v
 R10
-Z50 !s110 1741503752
+Z51 !s110 1741503752
 !i10b 1
 !s100 ?JPWNUNWHEK]nFL^lZ?@K2
 I2P7fKKUViCdD@TYC4N?mh2
@@ -946,9 +995,9 @@ R17
 r1
 !s85 0
 31
-Z51 !s108 1741503752.000000
-Z52 !s107 ip_cores/ram_512x1408.v|simulation/rf_move_sim/rf_move_tb.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/interface/rmio_intf.sv|design_rtl/interface/bram_intf.sv|
-Z53 !s90 -reportprogress|300|-sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|simulation/rf_move_sim/rf_move_tb.sv|ip_cores/ram_512x1408.v|
+Z52 !s108 1741503752.000000
+Z53 !s107 ip_cores/ram_512x1408.v|simulation/rf_move_sim/rf_move_tb.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/interface/rmio_intf.sv|design_rtl/interface/bram_intf.sv|
+Z54 !s90 -reportprogress|300|-sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|simulation/rf_move_sim/rf_move_tb.sv|ip_cores/ram_512x1408.v|
 !i113 0
 R21
 R7
@@ -957,14 +1006,14 @@ R27
 R10
 R28
 !i10b 1
-!s100 BPa4``Bk_GgmLX>B791MW2
-IHzb[gXJ]fVF=H<h`a<RGH3
+!s100 >S_oB]J=UD`3kV8F>QOIB1
+I`@7aez3O4YaAi54^I:D7A3
 S1
 R4
-w1741378956
+w1741885992
 8design_rtl/register_file/rf_ram.sv
 Fdesign_rtl/register_file/rf_ram.sv
-!i122 187
+!i122 190
 L0 3 270
 R13
 R17
@@ -978,9 +1027,9 @@ R31
 R21
 R7
 vrf_ram_mux
-R49
-R10
 R50
+R10
+R51
 !i10b 1
 !s100 _2>V9dR[`NDg_h_lEa<eG1
 I2cI0I_7G^BTgo[DJgXiYz2
@@ -996,9 +1045,9 @@ R17
 r1
 !s85 0
 31
-R51
 R52
 R53
+R54
 !i113 0
 R21
 R7
@@ -1032,14 +1081,14 @@ R27
 R10
 R28
 !i10b 1
-!s100 BgVOC:;9C:MezD^HBT7i@2
-IS;eG:]PRMmbYKRe9jc6M10
+!s100 3zOIdM5N0?f@Dj?H>AI]W2
+IzU6WP?`dbMAiUgOa0D5Yf1
 S1
 R4
-w1741866699
+w1741889491
 8design_rtl/register_file/rf_wrapper.sv
 Fdesign_rtl/register_file/rf_wrapper.sv
-!i122 187
+!i122 190
 L0 3 112
 R13
 R17
@@ -1064,7 +1113,7 @@ R4
 w1741500375
 8design_rtl/interface/rmio_intf.sv
 Fdesign_rtl/interface/rmio_intf.sv
-!i122 187
+!i122 190
 L0 5 0
 R13
 R17
@@ -1111,10 +1160,10 @@ R28
 IPNz2__W:5E>h5jzBQM]JU0
 S1
 R4
-Z54 w1741777318
-Z55 8design_rtl/interface/sdram_intf.sv
-Z56 Fdesign_rtl/interface/sdram_intf.sv
-!i122 187
+Z55 w1741777318
+Z56 8design_rtl/interface/sdram_intf.sv
+Z57 Fdesign_rtl/interface/sdram_intf.sv
+!i122 190
 L0 22 0
 R13
 R17
@@ -1136,10 +1185,10 @@ R28
 IU>cT8RhBagSVG0k^?LFe;1
 S1
 R4
-R54
 R55
 R56
-!i122 187
+R57
+!i122 190
 R22
 R13
 R17
@@ -1164,7 +1213,7 @@ R4
 w1741865772
 8simulation/sdram_bfm/sdram_slave_bfm.sv
 Fsimulation/sdram_bfm/sdram_slave_bfm.sv
-!i122 187
+!i122 190
 L0 4 146
 R13
 R17
@@ -1189,7 +1238,7 @@ R4
 w1741866461
 8simulation/top_sim/top_tb.sv
 Fsimulation/top_sim/top_tb.sv
-!i122 187
+!i122 190
 L0 4 86
 R13
 R17

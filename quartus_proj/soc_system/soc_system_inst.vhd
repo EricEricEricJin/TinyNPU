@@ -1,7 +1,7 @@
 	component soc_system is
 		port (
-			ext_clk_clk              : in    std_logic                      := 'X';             -- clk
-			ext_rst_reset_n          : in    std_logic                      := 'X';             -- reset_n
+			clk_clk                  : in    std_logic                      := 'X';             -- clk
+			reset_reset_n            : in    std_logic                      := 'X';             -- reset_n
 			f2h_pio32_en_out         : out   std_logic;                                         -- en_out
 			f2h_pio32_data_in        : in    std_logic_vector(31 downto 0)  := (others => 'X'); -- data_in
 			f2h_sdram0_address       : in    std_logic_vector(27 downto 0)  := (others => 'X'); -- address
@@ -31,17 +31,14 @@
 			memory_mem_dqs_n         : inout std_logic_vector(3 downto 0)   := (others => 'X'); -- mem_dqs_n
 			memory_mem_odt           : out   std_logic;                                         -- mem_odt
 			memory_mem_dm            : out   std_logic_vector(3 downto 0);                      -- mem_dm
-			memory_oct_rzqin         : in    std_logic                      := 'X';             -- oct_rzqin
-			pll_locked_export        : out   std_logic;                                         -- export
-			sys_clk_clk              : out   std_logic;                                         -- clk
-			sys_rst_reset_n          : in    std_logic                      := 'X'              -- reset_n
+			memory_oct_rzqin         : in    std_logic                      := 'X'              -- oct_rzqin
 		);
 	end component soc_system;
 
 	u0 : component soc_system
 		port map (
-			ext_clk_clk              => CONNECTED_TO_ext_clk_clk,              --    ext_clk.clk
-			ext_rst_reset_n          => CONNECTED_TO_ext_rst_reset_n,          --    ext_rst.reset_n
+			clk_clk                  => CONNECTED_TO_clk_clk,                  --        clk.clk
+			reset_reset_n            => CONNECTED_TO_reset_reset_n,            --      reset.reset_n
 			f2h_pio32_en_out         => CONNECTED_TO_f2h_pio32_en_out,         --  f2h_pio32.en_out
 			f2h_pio32_data_in        => CONNECTED_TO_f2h_pio32_data_in,        --           .data_in
 			f2h_sdram0_address       => CONNECTED_TO_f2h_sdram0_address,       -- f2h_sdram0.address
@@ -71,9 +68,6 @@
 			memory_mem_dqs_n         => CONNECTED_TO_memory_mem_dqs_n,         --           .mem_dqs_n
 			memory_mem_odt           => CONNECTED_TO_memory_mem_odt,           --           .mem_odt
 			memory_mem_dm            => CONNECTED_TO_memory_mem_dm,            --           .mem_dm
-			memory_oct_rzqin         => CONNECTED_TO_memory_oct_rzqin,         --           .oct_rzqin
-			pll_locked_export        => CONNECTED_TO_pll_locked_export,        -- pll_locked.export
-			sys_clk_clk              => CONNECTED_TO_sys_clk_clk,              --    sys_clk.clk
-			sys_rst_reset_n          => CONNECTED_TO_sys_rst_reset_n           --    sys_rst.reset_n
+			memory_oct_rzqin         => CONNECTED_TO_memory_oct_rzqin          --           .oct_rzqin
 		);
 

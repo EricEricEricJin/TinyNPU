@@ -18,7 +18,7 @@ end
 endmodule
 
 module decoder #(parameter int N = 3) (
-    input [$clog2(N) - 1 : 0] in,
+    input wire [$clog2(N) - 1 : 0] in,
     output logic [N - 1 : 0] out
 );
 

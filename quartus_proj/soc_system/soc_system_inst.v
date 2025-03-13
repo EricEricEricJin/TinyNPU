@@ -1,6 +1,6 @@
 	soc_system u0 (
-		.ext_clk_clk              (<connected-to-ext_clk_clk>),              //    ext_clk.clk
-		.ext_rst_reset_n          (<connected-to-ext_rst_reset_n>),          //    ext_rst.reset_n
+		.clk_clk                  (<connected-to-clk_clk>),                  //        clk.clk
+		.reset_reset_n            (<connected-to-reset_reset_n>),            //      reset.reset_n
 		.f2h_pio32_en_out         (<connected-to-f2h_pio32_en_out>),         //  f2h_pio32.en_out
 		.f2h_pio32_data_in        (<connected-to-f2h_pio32_data_in>),        //           .data_in
 		.f2h_sdram0_address       (<connected-to-f2h_sdram0_address>),       // f2h_sdram0.address
@@ -30,9 +30,6 @@
 		.memory_mem_dqs_n         (<connected-to-memory_mem_dqs_n>),         //           .mem_dqs_n
 		.memory_mem_odt           (<connected-to-memory_mem_odt>),           //           .mem_odt
 		.memory_mem_dm            (<connected-to-memory_mem_dm>),            //           .mem_dm
-		.memory_oct_rzqin         (<connected-to-memory_oct_rzqin>),         //           .oct_rzqin
-		.pll_locked_export        (<connected-to-pll_locked_export>),        // pll_locked.export
-		.sys_clk_clk              (<connected-to-sys_clk_clk>),              //    sys_clk.clk
-		.sys_rst_reset_n          (<connected-to-sys_rst_reset_n>)           //    sys_rst.reset_n
+		.memory_oct_rzqin         (<connected-to-memory_oct_rzqin>)          //           .oct_rzqin
 	);
 

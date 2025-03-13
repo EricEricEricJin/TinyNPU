@@ -1,7 +1,6 @@
 	component soc_system is
 		port (
-			ext_clk_clk              : in    std_logic                      := 'X';             -- clk
-			ext_rst_reset_n          : in    std_logic                      := 'X';             -- reset_n
+			clk_clk                  : in    std_logic                      := 'X';             -- clk
 			f2h_pio32_en_out         : out   std_logic;                                         -- en_out
 			f2h_pio32_data_in        : in    std_logic_vector(31 downto 0)  := (others => 'X'); -- data_in
 			f2h_sdram0_address       : in    std_logic_vector(27 downto 0)  := (others => 'X'); -- address
@@ -32,9 +31,7 @@
 			memory_mem_odt           : out   std_logic;                                         -- mem_odt
 			memory_mem_dm            : out   std_logic_vector(3 downto 0);                      -- mem_dm
 			memory_oct_rzqin         : in    std_logic                      := 'X';             -- oct_rzqin
-			pll_locked_export        : out   std_logic;                                         -- export
-			sys_clk_clk              : out   std_logic;                                         -- clk
-			sys_rst_reset_n          : in    std_logic                      := 'X'              -- reset_n
+			reset_reset_n            : in    std_logic                      := 'X'              -- reset_n
 		);
 	end component soc_system;
 

@@ -4,8 +4,7 @@
 
 `timescale 1 ps / 1 ps
 module soc_system (
-		input  wire         ext_clk_clk,              //    ext_clk.clk
-		input  wire         ext_rst_reset_n,          //    ext_rst.reset_n
+		input  wire         clk_clk,                  //        clk.clk
 		output wire         f2h_pio32_en_out,         //  f2h_pio32.en_out
 		input  wire [31:0]  f2h_pio32_data_in,        //           .data_in
 		input  wire [27:0]  f2h_sdram0_address,       // f2h_sdram0.address
@@ -36,9 +35,7 @@ module soc_system (
 		output wire         memory_mem_odt,           //           .mem_odt
 		output wire [3:0]   memory_mem_dm,            //           .mem_dm
 		input  wire         memory_oct_rzqin,         //           .oct_rzqin
-		output wire         pll_locked_export,        // pll_locked.export
-		output wire         sys_clk_clk,              //    sys_clk.clk
-		input  wire         sys_rst_reset_n           //    sys_rst.reset_n
+		input  wire         reset_reset_n             //      reset.reset_n
 	);
 
 	wire   [1:0] hps_0_h2f_axi_master_awburst;                    // hps_0:h2f_AWBURST -> mm_interconnect_0:hps_0_h2f_axi_master_awburst
@@ -105,7 +102,7 @@ module soc_system (
 		.mem_dm                   (memory_mem_dm),                //                 .mem_dm
 		.oct_rzqin                (memory_oct_rzqin),             //                 .oct_rzqin
 		.h2f_rst_n                (h2f_reset_reset_n),            //        h2f_reset.reset_n
-		.f2h_sdram0_clk           (sys_clk_clk),                  // f2h_sdram0_clock.clk
+		.f2h_sdram0_clk           (clk_clk),                      // f2h_sdram0_clock.clk
 		.f2h_sdram0_ADDRESS       (f2h_sdram0_address),           //  f2h_sdram0_data.address
 		.f2h_sdram0_BURSTCOUNT    (f2h_sdram0_burstcount),        //                 .burstcount
 		.f2h_sdram0_WAITREQUEST   (f2h_sdram0_waitrequest),       //                 .waitrequest
@@ -115,7 +112,7 @@ module soc_system (
 		.f2h_sdram0_WRITEDATA     (f2h_sdram0_writedata),         //                 .writedata
 		.f2h_sdram0_BYTEENABLE    (f2h_sdram0_byteenable),        //                 .byteenable
 		.f2h_sdram0_WRITE         (f2h_sdram0_write),             //                 .write
-		.h2f_axi_clk              (sys_clk_clk),                  //    h2f_axi_clock.clk
+		.h2f_axi_clk              (clk_clk),                      //    h2f_axi_clock.clk
 		.h2f_AWID                 (hps_0_h2f_axi_master_awid),    //   h2f_axi_master.awid
 		.h2f_AWADDR               (hps_0_h2f_axi_master_awaddr),  //                 .awaddr
 		.h2f_AWLEN                (hps_0_h2f_axi_master_awlen),   //                 .awlen
@@ -155,28 +152,21 @@ module soc_system (
 	);
 
 	pio32_f2h pio32_f2h_0 (
-		.clk           (sys_clk_clk),                                    //   clock.clk
+		.clk           (clk_clk),                                        //   clock.clk
 		.read_data_out (mm_interconnect_0_pio32_f2h_0_slave_0_readdata), // slave_0.readdata
 		.read_en_in    (mm_interconnect_0_pio32_f2h_0_slave_0_read),     //        .read
-		.rst_n         (sys_rst_reset_n),                                //   reset.reset_n
+		.rst_n         (reset_reset_n),                                  //   reset.reset_n
 		.read_en_out   (f2h_pio32_en_out),                               // pio_f2h.en_out
 		.read_data_in  (f2h_pio32_data_in)                               //        .data_in
 	);
 
 	pio32_h2f pio32_h2f_0 (
-		.clk            (sys_clk_clk),                                     //   clock.clk
-		.rst_n          (sys_rst_reset_n),                                 //   reset.reset_n
+		.clk            (clk_clk),                                         //   clock.clk
+		.rst_n          (reset_reset_n),                                   //   reset.reset_n
 		.write_data_in  (mm_interconnect_0_pio32_h2f_0_slave_0_writedata), // slave_0.writedata
 		.write_en_in    (mm_interconnect_0_pio32_h2f_0_slave_0_write),     //        .write
 		.write_en_out   (h2f_pio32_en_out),                                // pio_h2f.en_out
 		.write_data_out (h2f_pio32_data_out)                               //        .data_out
-	);
-
-	soc_system_pll_50_to_400 pll_50_to_400 (
-		.refclk   (ext_clk_clk),       //  refclk.clk
-		.rst      (~ext_rst_reset_n),  //   reset.reset
-		.outclk_0 (sys_clk_clk),       // outclk0.clk
-		.locked   (pll_locked_export)  //  locked.export
 	);
 
 	soc_system_mm_interconnect_0 mm_interconnect_0 (
@@ -216,7 +206,7 @@ module soc_system (
 		.hps_0_h2f_axi_master_rlast                                       (hps_0_h2f_axi_master_rlast),                      //                                                           .rlast
 		.hps_0_h2f_axi_master_rvalid                                      (hps_0_h2f_axi_master_rvalid),                     //                                                           .rvalid
 		.hps_0_h2f_axi_master_rready                                      (hps_0_h2f_axi_master_rready),                     //                                                           .rready
-		.clock_bridge_0_out_clk_1_clk                                     (sys_clk_clk),                                     //                                   clock_bridge_0_out_clk_1.clk
+		.clk_50m_clk_clk                                                  (clk_clk),                                         //                                                clk_50m_clk.clk
 		.hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                  // hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
 		.pio32_h2f_0_reset_reset_bridge_in_reset_reset                    (rst_controller_001_reset_out_reset),              //                    pio32_h2f_0_reset_reset_bridge_in_reset.reset
 		.pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),              // pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset.reset
@@ -253,7 +243,7 @@ module soc_system (
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller (
 		.reset_in0      (~h2f_reset_reset_n),             // reset_in0.reset
-		.clk            (sys_clk_clk),                    //       clk.clk
+		.clk            (clk_clk),                        //       clk.clk
 		.reset_out      (rst_controller_reset_out_reset), // reset_out.reset
 		.reset_req      (),                               // (terminated)
 		.reset_req_in0  (1'b0),                           // (terminated)
@@ -315,8 +305,8 @@ module soc_system (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_001 (
-		.reset_in0      (~sys_rst_reset_n),                   // reset_in0.reset
-		.clk            (sys_clk_clk),                        //       clk.clk
+		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
+		.clk            (clk_clk),                            //       clk.clk
 		.reset_out      (rst_controller_001_reset_out_reset), // reset_out.reset
 		.reset_req      (),                                   // (terminated)
 		.reset_req_in0  (1'b0),                               // (terminated)

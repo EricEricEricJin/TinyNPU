@@ -21,7 +21,9 @@ module design_top (
     input  wire  [31 : 0] h2f_pio32,
     input  wire           h2f_write,
     output logic [31 : 0] f2h_pio32,
-    output logic          f2h_write
+    output logic          f2h_write,
+
+    output logic [7 : 0] LED
 );
 
 localparam int RF_ADDR_W = 10;
@@ -34,10 +36,12 @@ localparam int LINE_NUM_W = 11;
 ////////////////////////
 logic move_done, ldst_done, cu_running;
 // todo: add eu signals
-assign f2h_pio32 = {move_done, ldst_done, cu_running, 29'b0};
+// assign f2h_pio32 = {move_done, ldst_done, cu_running, 29'b0};
 
 rf_move_intf i_rf_move_intf ();
 rf_ldst_intf i_rf_ldst_intf ();
+
+assign f2h_pio32 = i_rf_ldst_intf.sdram_addr;
 
 logic [31:0] eu_fetch_addr;
 logic [31:0] eu_fetch;

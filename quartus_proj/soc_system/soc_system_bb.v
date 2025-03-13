@@ -1,7 +1,7 @@
 
 module soc_system (
-	ext_clk_clk,
-	ext_rst_reset_n,
+	clk_clk,
+	reset_reset_n,
 	f2h_pio32_en_out,
 	f2h_pio32_data_in,
 	f2h_sdram0_address,
@@ -31,13 +31,10 @@ module soc_system (
 	memory_mem_dqs_n,
 	memory_mem_odt,
 	memory_mem_dm,
-	memory_oct_rzqin,
-	pll_locked_export,
-	sys_clk_clk,
-	sys_rst_reset_n);	
+	memory_oct_rzqin);	
 
-	input		ext_clk_clk;
-	input		ext_rst_reset_n;
+	input		clk_clk;
+	input		reset_reset_n;
 	output		f2h_pio32_en_out;
 	input	[31:0]	f2h_pio32_data_in;
 	input	[27:0]	f2h_sdram0_address;
@@ -68,7 +65,4 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	output		pll_locked_export;
-	output		sys_clk_clk;
-	input		sys_rst_reset_n;
 endmodule

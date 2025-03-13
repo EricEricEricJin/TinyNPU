@@ -13,6 +13,7 @@ set SRC_FILES { design_rtl/interface/sdram_intf.sv          \
                 design_rtl/ctrl_unit/ctrl_unit.sv           \
                 design_rtl/ctrl_unit/inst_decode.sv         \
                 design_rtl/design_top.sv                    \
+                design_rtl/support/plexer.sv                \
                 simulation/sdram_bfm/sdram_slave_bfm.sv     \
                 simulation/top_sim/top_tb.sv        }
 

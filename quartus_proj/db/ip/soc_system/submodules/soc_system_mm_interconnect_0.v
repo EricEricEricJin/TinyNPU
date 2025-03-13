@@ -43,7 +43,7 @@ module soc_system_mm_interconnect_0 (
 		output wire        hps_0_h2f_axi_master_rlast,                                       //                                                           .rlast
 		output wire        hps_0_h2f_axi_master_rvalid,                                      //                                                           .rvalid
 		input  wire        hps_0_h2f_axi_master_rready,                                      //                                                           .rready
-		input  wire        clock_bridge_0_out_clk_1_clk,                                     //                                   clock_bridge_0_out_clk_1.clk
+		input  wire        clk_50m_clk_clk,                                                  //                                                clk_50m_clk.clk
 		input  wire        hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, // hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
 		input  wire        pio32_h2f_0_reset_reset_bridge_in_reset_reset,                    //                    pio32_h2f_0_reset_reset_bridge_in_reset.reset
 		input  wire        pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset, // pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset.reset
@@ -295,7 +295,7 @@ module soc_system_mm_interconnect_0 (
 		.AV_SETUP_WAIT_CYCLES           (0),
 		.AV_DATA_HOLD_CYCLES            (0)
 	) pio32_h2f_0_slave_0_translator (
-		.clk                    (clock_bridge_0_out_clk_1_clk),                                     //                      clk.clk
+		.clk                    (clk_50m_clk_clk),                                                  //                      clk.clk
 		.reset                  (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), //                    reset.reset
 		.uav_address            (pio32_h2f_0_slave_0_agent_m0_address),                             // avalon_universal_slave_0.address
 		.uav_burstcount         (pio32_h2f_0_slave_0_agent_m0_burstcount),                          //                         .burstcount
@@ -359,7 +359,7 @@ module soc_system_mm_interconnect_0 (
 		.AV_SETUP_WAIT_CYCLES           (0),
 		.AV_DATA_HOLD_CYCLES            (0)
 	) pio32_f2h_0_slave_0_translator (
-		.clk                    (clock_bridge_0_out_clk_1_clk),                                     //                      clk.clk
+		.clk                    (clk_50m_clk_clk),                                                  //                      clk.clk
 		.reset                  (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), //                    reset.reset
 		.uav_address            (pio32_f2h_0_slave_0_agent_m0_address),                             // avalon_universal_slave_0.address
 		.uav_burstcount         (pio32_f2h_0_slave_0_agent_m0_burstcount),                          //                         .burstcount
@@ -453,7 +453,7 @@ module soc_system_mm_interconnect_0 (
 		.ST_CHANNEL_W              (2),
 		.ID                        (0)
 	) hps_0_h2f_axi_master_agent (
-		.aclk                   (clock_bridge_0_out_clk_1_clk),                                      //              clk.clk
+		.aclk                   (clk_50m_clk_clk),                                                   //              clk.clk
 		.aresetn                (~hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), //        clk_reset.reset_n
 		.write_cp_valid         (hps_0_h2f_axi_master_agent_write_cp_valid),                         //         write_cp.valid
 		.write_cp_data          (hps_0_h2f_axi_master_agent_write_cp_data),                          //                 .data
@@ -563,7 +563,7 @@ module soc_system_mm_interconnect_0 (
 		.USE_WRITERESPONSE         (0),
 		.ECC_ENABLE                (0)
 	) pio32_h2f_0_slave_0_agent (
-		.clk                     (clock_bridge_0_out_clk_1_clk),                                     //             clk.clk
+		.clk                     (clk_50m_clk_clk),                                                  //             clk.clk
 		.reset                   (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), //       clk_reset.reset
 		.m0_address              (pio32_h2f_0_slave_0_agent_m0_address),                             //              m0.address
 		.m0_burstcount           (pio32_h2f_0_slave_0_agent_m0_burstcount),                          //                .burstcount
@@ -622,7 +622,7 @@ module soc_system_mm_interconnect_0 (
 		.USE_ALMOST_FULL_IF  (0),
 		.USE_ALMOST_EMPTY_IF (0)
 	) pio32_h2f_0_slave_0_agent_rsp_fifo (
-		.clk               (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk               (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset             (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.in_data           (pio32_h2f_0_slave_0_agent_rf_source_data),                         //        in.data
 		.in_valid          (pio32_h2f_0_slave_0_agent_rf_source_valid),                        //          .valid
@@ -663,7 +663,7 @@ module soc_system_mm_interconnect_0 (
 		.USE_ALMOST_FULL_IF  (0),
 		.USE_ALMOST_EMPTY_IF (0)
 	) pio32_h2f_0_slave_0_agent_rdata_fifo (
-		.clk               (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk               (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset             (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.in_data           (pio32_h2f_0_slave_0_agent_rdata_fifo_src_data),                    //        in.data
 		.in_valid          (pio32_h2f_0_slave_0_agent_rdata_fifo_src_valid),                   //          .valid
@@ -729,7 +729,7 @@ module soc_system_mm_interconnect_0 (
 		.USE_WRITERESPONSE         (0),
 		.ECC_ENABLE                (0)
 	) pio32_f2h_0_slave_0_agent (
-		.clk                     (clock_bridge_0_out_clk_1_clk),                                     //             clk.clk
+		.clk                     (clk_50m_clk_clk),                                                  //             clk.clk
 		.reset                   (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), //       clk_reset.reset
 		.m0_address              (pio32_f2h_0_slave_0_agent_m0_address),                             //              m0.address
 		.m0_burstcount           (pio32_f2h_0_slave_0_agent_m0_burstcount),                          //                .burstcount
@@ -788,7 +788,7 @@ module soc_system_mm_interconnect_0 (
 		.USE_ALMOST_FULL_IF  (0),
 		.USE_ALMOST_EMPTY_IF (0)
 	) pio32_f2h_0_slave_0_agent_rsp_fifo (
-		.clk               (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk               (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset             (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.in_data           (pio32_f2h_0_slave_0_agent_rf_source_data),                         //        in.data
 		.in_valid          (pio32_f2h_0_slave_0_agent_rf_source_valid),                        //          .valid
@@ -829,7 +829,7 @@ module soc_system_mm_interconnect_0 (
 		.USE_ALMOST_FULL_IF  (0),
 		.USE_ALMOST_EMPTY_IF (0)
 	) pio32_f2h_0_slave_0_agent_rdata_fifo (
-		.clk               (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk               (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset             (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.in_data           (pio32_f2h_0_slave_0_agent_rdata_fifo_src_data),                    //        in.data
 		.in_valid          (pio32_f2h_0_slave_0_agent_rdata_fifo_src_valid),                   //          .valid
@@ -862,7 +862,7 @@ module soc_system_mm_interconnect_0 (
 		.sink_data          (hps_0_h2f_axi_master_agent_write_cp_data),                         //          .data
 		.sink_startofpacket (hps_0_h2f_axi_master_agent_write_cp_startofpacket),                //          .startofpacket
 		.sink_endofpacket   (hps_0_h2f_axi_master_agent_write_cp_endofpacket),                  //          .endofpacket
-		.clk                (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset              (hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready          (router_src_ready),                                                 //       src.ready
 		.src_valid          (router_src_valid),                                                 //          .valid
@@ -878,7 +878,7 @@ module soc_system_mm_interconnect_0 (
 		.sink_data          (hps_0_h2f_axi_master_agent_read_cp_data),                          //          .data
 		.sink_startofpacket (hps_0_h2f_axi_master_agent_read_cp_startofpacket),                 //          .startofpacket
 		.sink_endofpacket   (hps_0_h2f_axi_master_agent_read_cp_endofpacket),                   //          .endofpacket
-		.clk                (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset              (hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready          (router_001_src_ready),                                             //       src.ready
 		.src_valid          (router_001_src_valid),                                             //          .valid
@@ -894,7 +894,7 @@ module soc_system_mm_interconnect_0 (
 		.sink_data          (pio32_h2f_0_slave_0_agent_rp_data),                                //          .data
 		.sink_startofpacket (pio32_h2f_0_slave_0_agent_rp_startofpacket),                       //          .startofpacket
 		.sink_endofpacket   (pio32_h2f_0_slave_0_agent_rp_endofpacket),                         //          .endofpacket
-		.clk                (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset              (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready          (router_002_src_ready),                                             //       src.ready
 		.src_valid          (router_002_src_valid),                                             //          .valid
@@ -910,7 +910,7 @@ module soc_system_mm_interconnect_0 (
 		.sink_data          (pio32_f2h_0_slave_0_agent_rp_data),                                //          .data
 		.sink_startofpacket (pio32_f2h_0_slave_0_agent_rp_startofpacket),                       //          .startofpacket
 		.sink_endofpacket   (pio32_f2h_0_slave_0_agent_rp_endofpacket),                         //          .endofpacket
-		.clk                (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset              (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready          (router_003_src_ready),                                             //       src.ready
 		.src_valid          (router_003_src_valid),                                             //          .valid
@@ -942,7 +942,7 @@ module soc_system_mm_interconnect_0 (
 		.SUPPORTS_NONPOSTED_WRITES (0),
 		.REORDER                   (0)
 	) hps_0_h2f_axi_master_wr_limiter (
-		.clk                    (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                    (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset                  (hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.cmd_sink_ready         (router_src_ready),                                                 //  cmd_sink.ready
 		.cmd_sink_valid         (router_src_valid),                                                 //          .valid
@@ -992,7 +992,7 @@ module soc_system_mm_interconnect_0 (
 		.SUPPORTS_NONPOSTED_WRITES (0),
 		.REORDER                   (0)
 	) hps_0_h2f_axi_master_rd_limiter (
-		.clk                    (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                    (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset                  (hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.cmd_sink_ready         (router_001_src_ready),                                             //  cmd_sink.ready
 		.cmd_sink_valid         (router_001_src_valid),                                             //          .valid
@@ -1054,7 +1054,7 @@ module soc_system_mm_interconnect_0 (
 		.BURSTWRAP_CONST_VALUE     (0),
 		.ADAPTER_VERSION           ("13.1")
 	) pio32_h2f_0_slave_0_burst_adapter (
-		.clk                   (clock_bridge_0_out_clk_1_clk),                                     //       cr0.clk
+		.clk                   (clk_50m_clk_clk),                                                  //       cr0.clk
 		.reset                 (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // cr0_reset.reset
 		.sink0_valid           (cmd_mux_src_valid),                                                //     sink0.valid
 		.sink0_data            (cmd_mux_src_data),                                                 //          .data
@@ -1104,7 +1104,7 @@ module soc_system_mm_interconnect_0 (
 		.BURSTWRAP_CONST_VALUE     (0),
 		.ADAPTER_VERSION           ("13.1")
 	) pio32_f2h_0_slave_0_burst_adapter (
-		.clk                   (clock_bridge_0_out_clk_1_clk),                                     //       cr0.clk
+		.clk                   (clk_50m_clk_clk),                                                  //       cr0.clk
 		.reset                 (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // cr0_reset.reset
 		.sink0_valid           (cmd_mux_001_src_valid),                                            //     sink0.valid
 		.sink0_data            (cmd_mux_001_src_data),                                             //          .data
@@ -1121,7 +1121,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_cmd_demux cmd_demux (
-		.clk                (clock_bridge_0_out_clk_1_clk),                                     //        clk.clk
+		.clk                (clk_50m_clk_clk),                                                  //        clk.clk
 		.reset              (hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), //  clk_reset.reset
 		.sink_ready         (hps_0_h2f_axi_master_wr_limiter_cmd_src_ready),                    //       sink.ready
 		.sink_channel       (hps_0_h2f_axi_master_wr_limiter_cmd_src_channel),                  //           .channel
@@ -1144,7 +1144,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_cmd_demux cmd_demux_001 (
-		.clk                (clock_bridge_0_out_clk_1_clk),                                     //        clk.clk
+		.clk                (clk_50m_clk_clk),                                                  //        clk.clk
 		.reset              (hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), //  clk_reset.reset
 		.sink_ready         (hps_0_h2f_axi_master_rd_limiter_cmd_src_ready),                    //       sink.ready
 		.sink_channel       (hps_0_h2f_axi_master_rd_limiter_cmd_src_channel),                  //           .channel
@@ -1167,7 +1167,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_cmd_mux cmd_mux (
-		.clk                 (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                 (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset               (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready           (cmd_mux_src_ready),                                                //       src.ready
 		.src_valid           (cmd_mux_src_valid),                                                //          .valid
@@ -1190,7 +1190,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_cmd_mux cmd_mux_001 (
-		.clk                 (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                 (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset               (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready           (cmd_mux_001_src_ready),                                            //       src.ready
 		.src_valid           (cmd_mux_001_src_valid),                                            //          .valid
@@ -1213,7 +1213,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_rsp_demux rsp_demux (
-		.clk                (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset              (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.sink_ready         (router_002_src_ready),                                             //      sink.ready
 		.sink_channel       (router_002_src_channel),                                           //          .channel
@@ -1236,7 +1236,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_rsp_demux rsp_demux_001 (
-		.clk                (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset              (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.sink_ready         (router_003_src_ready),                                             //      sink.ready
 		.sink_channel       (router_003_src_channel),                                           //          .channel
@@ -1259,7 +1259,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_rsp_mux rsp_mux (
-		.clk                 (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                 (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset               (hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready           (rsp_mux_src_ready),                                                //       src.ready
 		.src_valid           (rsp_mux_src_valid),                                                //          .valid
@@ -1282,7 +1282,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_rsp_mux rsp_mux_001 (
-		.clk                 (clock_bridge_0_out_clk_1_clk),                                     //       clk.clk
+		.clk                 (clk_50m_clk_clk),                                                  //       clk.clk
 		.reset               (hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready           (rsp_mux_001_src_ready),                                            //       src.ready
 		.src_valid           (rsp_mux_001_src_valid),                                            //          .valid
@@ -1322,7 +1322,7 @@ module soc_system_mm_interconnect_0 (
 		.outUseReady     (1),
 		.outReadyLatency (0)
 	) avalon_st_adapter (
-		.in_clk_0_clk   (clock_bridge_0_out_clk_1_clk),                                     // in_clk_0.clk
+		.in_clk_0_clk   (clk_50m_clk_clk),                                                  // in_clk_0.clk
 		.in_rst_0_reset (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // in_rst_0.reset
 		.in_0_data      (pio32_h2f_0_slave_0_agent_rdata_fifo_out_data),                    //     in_0.data
 		.in_0_valid     (pio32_h2f_0_slave_0_agent_rdata_fifo_out_valid),                   //         .valid
@@ -1351,7 +1351,7 @@ module soc_system_mm_interconnect_0 (
 		.outUseReady     (1),
 		.outReadyLatency (0)
 	) avalon_st_adapter_001 (
-		.in_clk_0_clk   (clock_bridge_0_out_clk_1_clk),                                     // in_clk_0.clk
+		.in_clk_0_clk   (clk_50m_clk_clk),                                                  // in_clk_0.clk
 		.in_rst_0_reset (pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset), // in_rst_0.reset
 		.in_0_data      (pio32_f2h_0_slave_0_agent_rdata_fifo_out_data),                    //     in_0.data
 		.in_0_valid     (pio32_f2h_0_slave_0_agent_rdata_fifo_out_valid),                   //         .valid

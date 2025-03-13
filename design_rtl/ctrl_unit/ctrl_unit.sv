@@ -124,18 +124,15 @@ always_comb begin
         end
         
         DECODE: begin
+            set_ram_sel_ldst = load || store;   // connect RAM 1 cycle in advance
+            set_ram_sel_move = move;
             nxt_state = ISSUE;
         end
         
         default: begin  // ISSUE
-            // load_start = load;
-            // store_start = store;
             rf_ldst.load_start = load;
             rf_ldst.store_start = store;
             rf_move.start = move;
-
-            set_ram_sel_ldst = load || store;
-            set_ram_sel_move = move;
 
             // unique0 
             // damn intel quartus... it supports nothing!!!
