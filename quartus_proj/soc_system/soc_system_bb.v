@@ -1,18 +1,17 @@
 
 module soc_system (
+	avmm_sdram_wrapper_0_read_read_start,
+	avmm_sdram_wrapper_0_read_read_data,
+	avmm_sdram_wrapper_0_read_read_valid,
+	avmm_sdram_wrapper_0_rw_rw_cnt,
+	avmm_sdram_wrapper_0_rw_rw_done,
+	avmm_sdram_wrapper_0_rw_rw_addr,
+	avmm_sdram_wrapper_0_write_write_data,
+	avmm_sdram_wrapper_0_write_write_nxt,
+	avmm_sdram_wrapper_0_write_write_start,
 	clk_clk,
-	reset_reset_n,
 	f2h_pio32_en_out,
 	f2h_pio32_data_in,
-	f2h_sdram0_address,
-	f2h_sdram0_burstcount,
-	f2h_sdram0_waitrequest,
-	f2h_sdram0_readdata,
-	f2h_sdram0_readdatavalid,
-	f2h_sdram0_read,
-	f2h_sdram0_writedata,
-	f2h_sdram0_byteenable,
-	f2h_sdram0_write,
 	h2f_pio32_en_out,
 	h2f_pio32_data_out,
 	h2f_reset_reset_n,
@@ -31,21 +30,21 @@ module soc_system (
 	memory_mem_dqs_n,
 	memory_mem_odt,
 	memory_mem_dm,
-	memory_oct_rzqin);	
+	memory_oct_rzqin,
+	reset_reset_n);	
 
+	input		avmm_sdram_wrapper_0_read_read_start;
+	output	[127:0]	avmm_sdram_wrapper_0_read_read_data;
+	output		avmm_sdram_wrapper_0_read_read_valid;
+	input	[10:0]	avmm_sdram_wrapper_0_rw_rw_cnt;
+	output		avmm_sdram_wrapper_0_rw_rw_done;
+	input	[31:0]	avmm_sdram_wrapper_0_rw_rw_addr;
+	input	[127:0]	avmm_sdram_wrapper_0_write_write_data;
+	output		avmm_sdram_wrapper_0_write_write_nxt;
+	input		avmm_sdram_wrapper_0_write_write_start;
 	input		clk_clk;
-	input		reset_reset_n;
 	output		f2h_pio32_en_out;
 	input	[31:0]	f2h_pio32_data_in;
-	input	[27:0]	f2h_sdram0_address;
-	input	[7:0]	f2h_sdram0_burstcount;
-	output		f2h_sdram0_waitrequest;
-	output	[127:0]	f2h_sdram0_readdata;
-	output		f2h_sdram0_readdatavalid;
-	input		f2h_sdram0_read;
-	input	[127:0]	f2h_sdram0_writedata;
-	input	[15:0]	f2h_sdram0_byteenable;
-	input		f2h_sdram0_write;
 	output		h2f_pio32_en_out;
 	output	[31:0]	h2f_pio32_data_out;
 	output		h2f_reset_reset_n;
@@ -65,4 +64,5 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
+	input		reset_reset_n;
 endmodule

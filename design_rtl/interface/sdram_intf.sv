@@ -1,49 +1,34 @@
 `default_nettype none
 
-// Read-only, for parameter fetching
-interface sdram_read_intf #(
-    parameter int SDRAM_DATA_W = 128,
-    parameter int SDRAM_ADDR_W = 32
-);
-  logic [SDRAM_ADDR_W - 1 : 0] address;
-  logic [SDRAM_ADDR_W - 1 : 0] burstcount;
-  logic                        waitrequest;
-  logic [SDRAM_DATA_W - 1 : 0] readdata;
-  logic                        readdatavalid;
-  logic                        read;
-
-  modport fetcher(input waitrequest, readdata, readdatavalid, output address, burstcount, read);
-
-  modport avmm_slave(input address, burstcount, read, output waitrequest, readdata, readdatavalid);
-endinterface
-
-
-// RW, for LDST
 interface sdram_intf #(
-    parameter int SDRAM_DATA_W = 128,
-    parameter int SDRAM_ADDR_W = 32
+    parameter int SDRAM_DATA_W = 128
 );
-  logic [SDRAM_ADDR_W - 1 : 0] address;
-  logic [              10 : 0] burstcount;
-  logic                        waitrequest;
-  logic [SDRAM_DATA_W - 1 : 0] readdata;
-  logic                        readdatavalid;
-  logic                        read;
-  logic [SDRAM_DATA_W - 1 : 0] writedata;
-  logic [              15 : 0] byteenable;
-  logic                        write;
 
-  modport ldst(
-      input waitrequest, readdata, readdatavalid,
-      output address, burstcount, read, writedata, byteenable, write
-  );
+// ----------------- for read and write -----------------
+logic [31:0]                  rw_addr;
+logic [10:0]                  rw_cnt;
+logic                         rw_done;
 
-  modport avmm_slave(
-      input address, burstcount, read, writedata, byteenable, write,
-      output waitrequest, readdata, readdatavalid
-  );
+// ----------------- for read -----------------
+logic                         read_start;
+logic                         read_valid;
+logic [SDRAM_DATA_W - 1 : 0]  read_data;
+
+// ----------------- for write -----------------
+logic                         write_start;
+logic                         write_nxt;
+logic [SDRAM_DATA_W - 1 : 0]  write_data;
+
+modport ldst(
+    output rw_addr, rw_cnt, read_start, write_start, write_data,
+    input rw_done, read_valid, read_data, write_nxt
+);
+
+modport avmm_slave(
+    input rw_addr, rw_cnt, read_start, write_start, write_data,
+    output rw_done, read_valid, read_data, write_nxt
+);
+
 endinterface
-
-
 
 `default_nettype wire

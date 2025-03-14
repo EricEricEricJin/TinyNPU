@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element avmm_sdram_wrapper_0
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
    element clk_50m
    {
       datum _sortIndex
@@ -158,16 +166,26 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface
+   name="avmm_sdram_wrapper_0_read"
+   internal="avmm_sdram_wrapper_0.read"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="avmm_sdram_wrapper_0_rw"
+   internal="avmm_sdram_wrapper_0.rw"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="avmm_sdram_wrapper_0_write"
+   internal="avmm_sdram_wrapper_0.write"
+   type="conduit"
+   dir="end" />
  <interface name="clk" internal="clk_50m.clk_in" type="clock" dir="end" />
  <interface
    name="f2h_pio32"
    internal="pio32_f2h_0.pio_f2h"
    type="conduit"
-   dir="end" />
- <interface
-   name="f2h_sdram0"
-   internal="hps_0.f2h_sdram0_data"
-   type="avalon"
    dir="end" />
  <interface
    name="h2f_pio32"
@@ -179,6 +197,13 @@
  <interface name="hps_0_f2h_dma_req0" internal="hps_0.f2h_dma_req0" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface name="reset" internal="clk_50m.clk_in_reset" type="reset" dir="end" />
+ <module
+   name="avmm_sdram_wrapper_0"
+   kind="avmm_sdram_wrapper"
+   version="1.0"
+   enabled="1">
+  <parameter name="SDRAM_DATA_W" value="128" />
+ </module>
  <module name="clk_50m" kind="clock_source" version="23.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -736,6 +761,15 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
+   kind="avalon"
+   version="23.1"
+   start="avmm_sdram_wrapper_0.m0"
+   end="hps_0.f2h_sdram0_data">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
    kind="clock"
    version="23.1"
    start="clk_50m.clk"
@@ -745,6 +779,11 @@
    version="23.1"
    start="clk_50m.clk"
    end="pio32_f2h_0.clock" />
+ <connection
+   kind="clock"
+   version="23.1"
+   start="clk_50m.clk"
+   end="avmm_sdram_wrapper_0.clock" />
  <connection
    kind="clock"
    version="23.1"
@@ -765,6 +804,11 @@
    version="23.1"
    start="clk_50m.clk_reset"
    end="pio32_f2h_0.reset" />
+ <connection
+   kind="reset"
+   version="23.1"
+   start="clk_50m.clk_reset"
+   end="avmm_sdram_wrapper_0.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>

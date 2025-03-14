@@ -67,25 +67,27 @@ sdram_intf i_sdram_intf_bi_0 ();
 soc_system u0 (
     .clk_clk                  (clk),                  //        clk.clk
     .reset_reset_n            (rst_n),            //      reset.reset_n
-        
+	.h2f_reset_reset_n        (h2f_rst_n),        //  h2f_reset.reset_n
+
+
 	.f2h_pio32_en_out         (f2h_read),         //  f2h_pio32.en_out
 	.f2h_pio32_data_in        (f2h_pio32),        //           .data_in
-	
-            
-	.f2h_sdram0_address       (i_sdram_intf_bi_0.address),       // f2h_sdram0.address
-	.f2h_sdram0_burstcount    (i_sdram_intf_bi_0.burstcount),    //           .burstcount
-	.f2h_sdram0_waitrequest   (i_sdram_intf_bi_0.waitrequest),   //           .waitrequest
-	.f2h_sdram0_readdata      (i_sdram_intf_bi_0.readdata),      //           .readdata
-	.f2h_sdram0_readdatavalid (i_sdram_intf_bi_0.readdatavalid), //           .readdatavalid
-	.f2h_sdram0_read          (i_sdram_intf_bi_0.read),          //           .read
-	.f2h_sdram0_writedata     (i_sdram_intf_bi_0.writedata),     //           .writedata
-	.f2h_sdram0_byteenable    (i_sdram_intf_bi_0.byteenable),    //           .byteenable
-	.f2h_sdram0_write         (i_sdram_intf_bi_0.write),         //           .write
-		
 	.h2f_pio32_en_out         (h2f_write),         //  h2f_pio32.en_out
 	.h2f_pio32_data_out       (h2f_pio32),       //           .data_out
+
+
+	.avmm_sdram_wrapper_0_read_read_start   (<connected-to-avmm_sdram_wrapper_0_read_read_start>),   //  avmm_sdram_wrapper_0_read.read_start
+	.avmm_sdram_wrapper_0_read_read_data    (<connected-to-avmm_sdram_wrapper_0_read_read_data>),    //                           .read_data
+	.avmm_sdram_wrapper_0_read_read_valid   (<connected-to-avmm_sdram_wrapper_0_read_read_valid>),   //                           .read_valid
+
+	.avmm_sdram_wrapper_0_rw_rw_cnt         (<connected-to-avmm_sdram_wrapper_0_rw_rw_cnt>),         //    avmm_sdram_wrapper_0_rw.rw_cnt
+	.avmm_sdram_wrapper_0_rw_rw_done        (<connected-to-avmm_sdram_wrapper_0_rw_rw_done>),        //                           .rw_done
+	.avmm_sdram_wrapper_0_rw_rw_addr        (<connected-to-avmm_sdram_wrapper_0_rw_rw_addr>),        //                           .rw_addr
+
+	.avmm_sdram_wrapper_0_write_write_data  (<connected-to-avmm_sdram_wrapper_0_write_write_data>),  // avmm_sdram_wrapper_0_write.write_data
+	.avmm_sdram_wrapper_0_write_write_nxt   (<connected-to-avmm_sdram_wrapper_0_write_write_nxt>),   //                           .write_nxt
+	.avmm_sdram_wrapper_0_write_write_start (<connected-to-avmm_sdram_wrapper_0_write_write_start>), //   
 	
-	.h2f_reset_reset_n        (h2f_rst_n),        //  h2f_reset.reset_n
 
     .memory_mem_a            (HPS_DDR3_ADDR),            //          memory.mem_a
     .memory_mem_ba           (HPS_DDR3_BA),           //                .mem_ba

@@ -1,37 +1,37 @@
 	component soc_system is
 		port (
-			clk_clk                  : in    std_logic                      := 'X';             -- clk
-			f2h_pio32_en_out         : out   std_logic;                                         -- en_out
-			f2h_pio32_data_in        : in    std_logic_vector(31 downto 0)  := (others => 'X'); -- data_in
-			f2h_sdram0_address       : in    std_logic_vector(27 downto 0)  := (others => 'X'); -- address
-			f2h_sdram0_burstcount    : in    std_logic_vector(7 downto 0)   := (others => 'X'); -- burstcount
-			f2h_sdram0_waitrequest   : out   std_logic;                                         -- waitrequest
-			f2h_sdram0_readdata      : out   std_logic_vector(127 downto 0);                    -- readdata
-			f2h_sdram0_readdatavalid : out   std_logic;                                         -- readdatavalid
-			f2h_sdram0_read          : in    std_logic                      := 'X';             -- read
-			f2h_sdram0_writedata     : in    std_logic_vector(127 downto 0) := (others => 'X'); -- writedata
-			f2h_sdram0_byteenable    : in    std_logic_vector(15 downto 0)  := (others => 'X'); -- byteenable
-			f2h_sdram0_write         : in    std_logic                      := 'X';             -- write
-			h2f_pio32_en_out         : out   std_logic;                                         -- en_out
-			h2f_pio32_data_out       : out   std_logic_vector(31 downto 0);                     -- data_out
-			h2f_reset_reset_n        : out   std_logic;                                         -- reset_n
-			memory_mem_a             : out   std_logic_vector(14 downto 0);                     -- mem_a
-			memory_mem_ba            : out   std_logic_vector(2 downto 0);                      -- mem_ba
-			memory_mem_ck            : out   std_logic;                                         -- mem_ck
-			memory_mem_ck_n          : out   std_logic;                                         -- mem_ck_n
-			memory_mem_cke           : out   std_logic;                                         -- mem_cke
-			memory_mem_cs_n          : out   std_logic;                                         -- mem_cs_n
-			memory_mem_ras_n         : out   std_logic;                                         -- mem_ras_n
-			memory_mem_cas_n         : out   std_logic;                                         -- mem_cas_n
-			memory_mem_we_n          : out   std_logic;                                         -- mem_we_n
-			memory_mem_reset_n       : out   std_logic;                                         -- mem_reset_n
-			memory_mem_dq            : inout std_logic_vector(31 downto 0)  := (others => 'X'); -- mem_dq
-			memory_mem_dqs           : inout std_logic_vector(3 downto 0)   := (others => 'X'); -- mem_dqs
-			memory_mem_dqs_n         : inout std_logic_vector(3 downto 0)   := (others => 'X'); -- mem_dqs_n
-			memory_mem_odt           : out   std_logic;                                         -- mem_odt
-			memory_mem_dm            : out   std_logic_vector(3 downto 0);                      -- mem_dm
-			memory_oct_rzqin         : in    std_logic                      := 'X';             -- oct_rzqin
-			reset_reset_n            : in    std_logic                      := 'X'              -- reset_n
+			avmm_sdram_wrapper_0_read_read_start   : in    std_logic                      := 'X';             -- read_start
+			avmm_sdram_wrapper_0_read_read_data    : out   std_logic_vector(127 downto 0);                    -- read_data
+			avmm_sdram_wrapper_0_read_read_valid   : out   std_logic;                                         -- read_valid
+			avmm_sdram_wrapper_0_rw_rw_cnt         : in    std_logic_vector(10 downto 0)  := (others => 'X'); -- rw_cnt
+			avmm_sdram_wrapper_0_rw_rw_done        : out   std_logic;                                         -- rw_done
+			avmm_sdram_wrapper_0_rw_rw_addr        : in    std_logic_vector(31 downto 0)  := (others => 'X'); -- rw_addr
+			avmm_sdram_wrapper_0_write_write_data  : in    std_logic_vector(127 downto 0) := (others => 'X'); -- write_data
+			avmm_sdram_wrapper_0_write_write_nxt   : out   std_logic;                                         -- write_nxt
+			avmm_sdram_wrapper_0_write_write_start : in    std_logic                      := 'X';             -- write_start
+			clk_clk                                : in    std_logic                      := 'X';             -- clk
+			f2h_pio32_en_out                       : out   std_logic;                                         -- en_out
+			f2h_pio32_data_in                      : in    std_logic_vector(31 downto 0)  := (others => 'X'); -- data_in
+			h2f_pio32_en_out                       : out   std_logic;                                         -- en_out
+			h2f_pio32_data_out                     : out   std_logic_vector(31 downto 0);                     -- data_out
+			h2f_reset_reset_n                      : out   std_logic;                                         -- reset_n
+			memory_mem_a                           : out   std_logic_vector(14 downto 0);                     -- mem_a
+			memory_mem_ba                          : out   std_logic_vector(2 downto 0);                      -- mem_ba
+			memory_mem_ck                          : out   std_logic;                                         -- mem_ck
+			memory_mem_ck_n                        : out   std_logic;                                         -- mem_ck_n
+			memory_mem_cke                         : out   std_logic;                                         -- mem_cke
+			memory_mem_cs_n                        : out   std_logic;                                         -- mem_cs_n
+			memory_mem_ras_n                       : out   std_logic;                                         -- mem_ras_n
+			memory_mem_cas_n                       : out   std_logic;                                         -- mem_cas_n
+			memory_mem_we_n                        : out   std_logic;                                         -- mem_we_n
+			memory_mem_reset_n                     : out   std_logic;                                         -- mem_reset_n
+			memory_mem_dq                          : inout std_logic_vector(31 downto 0)  := (others => 'X'); -- mem_dq
+			memory_mem_dqs                         : inout std_logic_vector(3 downto 0)   := (others => 'X'); -- mem_dqs
+			memory_mem_dqs_n                       : inout std_logic_vector(3 downto 0)   := (others => 'X'); -- mem_dqs_n
+			memory_mem_odt                         : out   std_logic;                                         -- mem_odt
+			memory_mem_dm                          : out   std_logic_vector(3 downto 0);                      -- mem_dm
+			memory_oct_rzqin                       : in    std_logic                      := 'X';             -- oct_rzqin
+			reset_reset_n                          : in    std_logic                      := 'X'              -- reset_n
 		);
 	end component soc_system;
 
