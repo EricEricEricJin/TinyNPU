@@ -6,20 +6,25 @@ state.LOAD 1 0 1
 state.STORE 1 1 0 
 
 State Machine - |tiny_npu|design_top:i_design_top|rf_wrapper:i_rf_wrapper|rf_ldst:i_rf_ldst|state
-Name state.WRITE_TO_SDRAM state.READ_FROM_RF state.WRITE_TO_RF state.READ_FROM_SDRAM state.WRITE_SEND_ADDR state.READ_SEND_ADDR state.IDLE 
-state.IDLE 0 0 0 0 0 0 0 
-state.READ_SEND_ADDR 0 0 0 0 0 1 1 
-state.WRITE_SEND_ADDR 0 0 0 0 1 0 1 
-state.READ_FROM_SDRAM 0 0 0 1 0 0 1 
-state.WRITE_TO_RF 0 0 1 0 0 0 1 
-state.READ_FROM_RF 0 1 0 0 0 0 1 
-state.WRITE_TO_SDRAM 1 0 0 0 0 0 1 
+Name state.READ_FROM_RF state.WRITE_TO_RF state.READ_FROM_SDRAM state.IDLE state.WRITE_TO_SDRAM 
+state.IDLE 0 0 0 0 0 
+state.READ_FROM_SDRAM 0 0 1 1 0 
+state.WRITE_TO_RF 0 1 0 1 0 
+state.READ_FROM_RF 1 0 0 1 0 
+state.WRITE_TO_SDRAM 0 0 0 1 1 
 
 State Machine - |tiny_npu|design_top:i_design_top|ctrl_unit:i_ctrl_unit|state
 Name state.IDLE state.ISSUE state.DECODE 
 state.IDLE 0 0 0 
 state.DECODE 1 0 1 
 state.ISSUE 1 1 0 
+
+State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
 
 State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_f2h_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
@@ -34,3 +39,11 @@ state.ST_IDLE 0 0 0 0
 state.ST_COMP_TRANS 1 0 0 1 
 state.ST_UNCOMP_TRANS 1 0 1 0 
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |tiny_npu|soc_system:u0|avmm_sdram_wrapper:avmm_sdram_wrapper_0|state
+Name state.WT_SEND_ADDR state.RECV_DATA state.RD_SEND_ADDR state.IDLE state.SEND_DATA 
+state.IDLE 0 0 0 0 0 
+state.RD_SEND_ADDR 0 0 1 1 0 
+state.RECV_DATA 0 1 0 1 0 
+state.WT_SEND_ADDR 1 0 0 1 0 
+state.SEND_DATA 0 0 0 1 1 

@@ -1,5 +1,5 @@
 Assembler report for tiny_npu
-Fri Mar 14 06:31:20 2025
+Mon Mar 17 03:19:22 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Mar 14 06:31:20 2025 ;
+; Assembler Status      ; Successful - Mon Mar 17 03:19:22 2025 ;
 ; Revision Name         ; tiny_npu                              ;
 ; Top-level Entity Name ; tiny_npu                              ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-----------------------+
 ; Option         ; Setting               ;
 +----------------+-----------------------+
-; JTAG usercode  ; 0x027311D3            ;
-; Checksum       ; 0x027311D3            ;
+; JTAG usercode  ; 0x027A3108            ;
+; Checksum       ; 0x027A3108            ;
 +----------------+-----------------------+
 
 
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Fri Mar 14 06:31:14 2025
+    Info: Processing started: Mon Mar 17 03:19:16 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off tiny_npu -c tiny_npu
 Warning (125092): Tcl Script File ../ip_cores/ram_32x256.qip not found
     Info (125063): set_global_assignment -name QIP_FILE ../ip_cores/ram_32x256.qip
@@ -86,9 +86,9 @@ Warning (18236): Number of processors has not been specified which may cause ove
 Info (115030): Assembler is generating device programming files
 Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
 Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 587 megabytes
-    Info: Processing ended: Fri Mar 14 06:31:20 2025
+    Info: Peak virtual memory: 606 megabytes
+    Info: Processing ended: Mon Mar 17 03:19:22 2025
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 

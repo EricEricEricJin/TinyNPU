@@ -76,18 +76,17 @@ soc_system u0 (
 	.h2f_pio32_data_out       (h2f_pio32),       //           .data_out
 
 
-	.avmm_sdram_wrapper_0_read_read_start   (<connected-to-avmm_sdram_wrapper_0_read_read_start>),   //  avmm_sdram_wrapper_0_read.read_start
-	.avmm_sdram_wrapper_0_read_read_data    (<connected-to-avmm_sdram_wrapper_0_read_read_data>),    //                           .read_data
-	.avmm_sdram_wrapper_0_read_read_valid   (<connected-to-avmm_sdram_wrapper_0_read_read_valid>),   //                           .read_valid
+	.avmm_sdram_wrapper_0_read_read_start   (i_sdram_intf_bi_0.read_start),   //  avmm_sdram_wrapper_0_read.read_start
+	.avmm_sdram_wrapper_0_read_read_data    (i_sdram_intf_bi_0.read_data),    //                           .read_data
+	.avmm_sdram_wrapper_0_read_read_valid   (i_sdram_intf_bi_0.read_valid),   //                           .read_valid
 
-	.avmm_sdram_wrapper_0_rw_rw_cnt         (<connected-to-avmm_sdram_wrapper_0_rw_rw_cnt>),         //    avmm_sdram_wrapper_0_rw.rw_cnt
-	.avmm_sdram_wrapper_0_rw_rw_done        (<connected-to-avmm_sdram_wrapper_0_rw_rw_done>),        //                           .rw_done
-	.avmm_sdram_wrapper_0_rw_rw_addr        (<connected-to-avmm_sdram_wrapper_0_rw_rw_addr>),        //                           .rw_addr
+	.avmm_sdram_wrapper_0_rw_rw_cnt         (i_sdram_intf_bi_0.rw_cnt),         //    avmm_sdram_wrapper_0_rw.rw_cnt
+	.avmm_sdram_wrapper_0_rw_rw_done        (i_sdram_intf_bi_0.rw_done),        //                           .rw_done
+	.avmm_sdram_wrapper_0_rw_rw_addr        (i_sdram_intf_bi_0.rw_addr),        //                           .rw_addr
 
-	.avmm_sdram_wrapper_0_write_write_data  (<connected-to-avmm_sdram_wrapper_0_write_write_data>),  // avmm_sdram_wrapper_0_write.write_data
-	.avmm_sdram_wrapper_0_write_write_nxt   (<connected-to-avmm_sdram_wrapper_0_write_write_nxt>),   //                           .write_nxt
-	.avmm_sdram_wrapper_0_write_write_start (<connected-to-avmm_sdram_wrapper_0_write_write_start>), //   
-	
+	.avmm_sdram_wrapper_0_write_write_data  (i_sdram_intf_bi_0.write_data),  // avmm_sdram_wrapper_0_write.write_data
+	.avmm_sdram_wrapper_0_write_write_nxt   (i_sdram_intf_bi_0.write_nxt),   //                           .write_nxt
+	.avmm_sdram_wrapper_0_write_write_start (i_sdram_intf_bi_0.write_start), //   
 
     .memory_mem_a            (HPS_DDR3_ADDR),            //          memory.mem_a
     .memory_mem_ba           (HPS_DDR3_BA),           //                .mem_ba
