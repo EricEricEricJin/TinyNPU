@@ -6,15 +6,15 @@ module stmm_wrapper #(
 ) (
     input wire clk, rst_n,
 
-    input wire start_fetch_param, start_ex,
+    rmio_intf i_rmio_intf,
+    sdram_read_intf i_sdram_read_intf,
+    eu_ctrl_intf i_eu_ctrl_intf,
 
-    input wire [N * 8 - 1 : 0] X_in,
-
-    // connect to SDRAM READ     
-
-    output wire done_fetch_param, done_ex,
-    output wire [N * 8 - 1 : 0] Y_out
+    output logic fetch_done,
+    output logic exec_done
 );
+
+
     
 localparam int P = N;
 localparam int DQ = 18;

@@ -44,6 +44,7 @@ rmio_intf #( .INPUT_NUM (1), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_silu       
 rmio_intf #( .INPUT_NUM (3), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_att        [1] ();
 
 logic rf_ram_sel;
+logic [4:0] sdram_read_sel;
 
 ////////////////////////
 // Control Unit
@@ -60,6 +61,8 @@ ctrl_unit #(.RF_ADDR_W (RF_ADDR_W) ) i_ctrl_unit (
     .rf_move        (i_rf_move_intf.ctrl_unit),
     .rf_ldst        (i_rf_ldst_intf.ctrl_unit),
     .rf_ram_sel     (rf_ram_sel),
+
+    .sdram_read_sel (sdram_read_sel),
 
     .eu_fetch       (eu_fetch),
     .eu_exec        (eu_exec),
@@ -85,6 +88,21 @@ rf_wrapper #( .ADDR_W(RF_ADDR_W), .DATA_W(RF_DATA_W) ) i_rf_wrapper (
 
     .move_done      (move_done),
     .ldst_done      (ldst_done)
+);
+
+
+// ------------------------------------------------
+
+sdram_read_intf #(.SDRAM_DATA_W(SDRAM_DATA_W)) i_sdram_read_intf_arr [31 : 0] ();
+
+////////////////////////
+// SDRAM Read Mux
+////////////////////////
+
+sdram_read_mux #( .NUM_PORTS (32) ) i_sdram_read_mux (
+    .sel (sdram_read_sel),
+    .i_sdram_read_intf_in (i_sdram_read_intf_arr),
+    .i_sdram_read_intf_out (i_sdram_read_intf)
 );
 
 ////////////////////////

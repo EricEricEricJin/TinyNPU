@@ -25,7 +25,8 @@ module inst_decode #(
     output logic                        move_dst_freeze,
 
     // connect to all fetch operations
-    output wire [4 : 0]     eu_unit, // the exec unit index
+    output wire [4 : 0]     eu_group_idx, // the group index
+    output wire [3 : 0]     eu_sub_idx,
     output logic [31 : 0]   eu_fetch_addr
 );
 
@@ -70,7 +71,11 @@ assign move_line_num = inst[7 : 0];
 // Exec Unit command
 logic eu_fun;
 assign eu_fun = inst[29];
-assign eu_unit = inst[28 : 24];
+
+// assign eu_unit = inst[28 : 24];
+assign eu_group = inst[28 : 24];
+assign ex_idx = inst[23 : 20];
+
 assign eu_fetch_addr = {4'b0, inst[23 : 0], 4'b0};
 
 // Command signals

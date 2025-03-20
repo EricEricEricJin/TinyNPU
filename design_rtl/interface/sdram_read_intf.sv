@@ -6,11 +6,11 @@ interface sdram_read_intf #(
 
 logic [31:0]                  read_addr;
 logic [10:0]                  read_cnt;
-logic                         read_done;
-
 logic                         read_start;
-logic                         read_valid;
+
 logic [SDRAM_DATA_W - 1 : 0]  read_data;
+logic                         read_valid;
+logic                         read_done;
 
 modport fetch (     // connect to fetcher
     output read_addr, read_cnt, read_start,

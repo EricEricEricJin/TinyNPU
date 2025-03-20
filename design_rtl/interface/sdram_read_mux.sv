@@ -19,9 +19,10 @@ generate
         assign read_addr_arr[i] = i_sdram_read_intf_in[i].read_addr;
         assign read_cnt_arr[i] = i_sdram_read_intf_in[i].read_cnt;
         assign read_start_arr[i] = i_sdram_read_intf_in[i].read_start;
-        assign i_sdram_read_intf_in[i].read_done = i_sdram_read_intf_out.read_done;
-        assign i_sdram_read_intf_in[i].read_valid = i_sdram_read_intf_out.read_valid;
+
         assign i_sdram_read_intf_in[i].read_data = i_sdram_read_intf_out.read_data;
+        assign i_sdram_read_intf_in[i].read_valid = i_sdram_read_intf_out.read_valid;
+        assign i_sdram_read_intf_in[i].read_done = i_sdram_read_intf_out.read_done;
     end
 endgenerate
 
