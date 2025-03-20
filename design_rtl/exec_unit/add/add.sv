@@ -14,7 +14,11 @@ module add #( parameter int N = 176 ) (
     input wire [N * 8 - 1 : 0] b,
 
     // ----------------------- outputs -----------------------
-    output logic [N * 8 - 1 : 0] c
+    output logic [N * 8 - 1 : 0] c,
+
+    // ------------------ Control Signals -------------------
+    input wire start,
+    output logic done
 );
 
 genvar i;

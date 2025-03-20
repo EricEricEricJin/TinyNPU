@@ -4,38 +4,44 @@
 
 `timescale 1 ps / 1 ps
 module soc_system (
-		input  wire         avmm_sdram_wrapper_0_read_read_start,   //  avmm_sdram_wrapper_0_read.read_start
-		output wire [127:0] avmm_sdram_wrapper_0_read_read_data,    //                           .read_data
-		output wire         avmm_sdram_wrapper_0_read_read_valid,   //                           .read_valid
-		input  wire [10:0]  avmm_sdram_wrapper_0_rw_rw_cnt,         //    avmm_sdram_wrapper_0_rw.rw_cnt
-		output wire         avmm_sdram_wrapper_0_rw_rw_done,        //                           .rw_done
-		input  wire [31:0]  avmm_sdram_wrapper_0_rw_rw_addr,        //                           .rw_addr
-		input  wire [127:0] avmm_sdram_wrapper_0_write_write_data,  // avmm_sdram_wrapper_0_write.write_data
-		output wire         avmm_sdram_wrapper_0_write_write_nxt,   //                           .write_nxt
-		input  wire         avmm_sdram_wrapper_0_write_write_start, //                           .write_start
-		input  wire         clk_clk,                                //                        clk.clk
-		output wire         f2h_pio32_en_out,                       //                  f2h_pio32.en_out
-		input  wire [31:0]  f2h_pio32_data_in,                      //                           .data_in
-		output wire         h2f_pio32_en_out,                       //                  h2f_pio32.en_out
-		output wire [31:0]  h2f_pio32_data_out,                     //                           .data_out
-		output wire         h2f_reset_reset_n,                      //                  h2f_reset.reset_n
-		output wire [14:0]  memory_mem_a,                           //                     memory.mem_a
-		output wire [2:0]   memory_mem_ba,                          //                           .mem_ba
-		output wire         memory_mem_ck,                          //                           .mem_ck
-		output wire         memory_mem_ck_n,                        //                           .mem_ck_n
-		output wire         memory_mem_cke,                         //                           .mem_cke
-		output wire         memory_mem_cs_n,                        //                           .mem_cs_n
-		output wire         memory_mem_ras_n,                       //                           .mem_ras_n
-		output wire         memory_mem_cas_n,                       //                           .mem_cas_n
-		output wire         memory_mem_we_n,                        //                           .mem_we_n
-		output wire         memory_mem_reset_n,                     //                           .mem_reset_n
-		inout  wire [31:0]  memory_mem_dq,                          //                           .mem_dq
-		inout  wire [3:0]   memory_mem_dqs,                         //                           .mem_dqs
-		inout  wire [3:0]   memory_mem_dqs_n,                       //                           .mem_dqs_n
-		output wire         memory_mem_odt,                         //                           .mem_odt
-		output wire [3:0]   memory_mem_dm,                          //                           .mem_dm
-		input  wire         memory_oct_rzqin,                       //                           .oct_rzqin
-		input  wire         reset_reset_n                           //                      reset.reset_n
+		input  wire         avmm_sdram_read_wrapper_0_read_read_start, // avmm_sdram_read_wrapper_0_read.read_start
+		input  wire [10:0]  avmm_sdram_read_wrapper_0_read_read_cnt,   //                               .read_cnt
+		output wire [127:0] avmm_sdram_read_wrapper_0_read_read_data,  //                               .read_data
+		input  wire [31:0]  avmm_sdram_read_wrapper_0_read_read_addr,  //                               .read_addr
+		output wire         avmm_sdram_read_wrapper_0_read_read_done,  //                               .read_done
+		output wire         avmm_sdram_read_wrapper_0_read_read_valid, //                               .read_valid
+		input  wire         avmm_sdram_wrapper_0_read_read_start,      //      avmm_sdram_wrapper_0_read.read_start
+		output wire [127:0] avmm_sdram_wrapper_0_read_read_data,       //                               .read_data
+		output wire         avmm_sdram_wrapper_0_read_read_valid,      //                               .read_valid
+		input  wire [10:0]  avmm_sdram_wrapper_0_rw_rw_cnt,            //        avmm_sdram_wrapper_0_rw.rw_cnt
+		output wire         avmm_sdram_wrapper_0_rw_rw_done,           //                               .rw_done
+		input  wire [31:0]  avmm_sdram_wrapper_0_rw_rw_addr,           //                               .rw_addr
+		input  wire [127:0] avmm_sdram_wrapper_0_write_write_data,     //     avmm_sdram_wrapper_0_write.write_data
+		output wire         avmm_sdram_wrapper_0_write_write_nxt,      //                               .write_nxt
+		input  wire         avmm_sdram_wrapper_0_write_write_start,    //                               .write_start
+		input  wire         clk_clk,                                   //                            clk.clk
+		output wire         f2h_pio32_en_out,                          //                      f2h_pio32.en_out
+		input  wire [31:0]  f2h_pio32_data_in,                         //                               .data_in
+		output wire         h2f_pio32_en_out,                          //                      h2f_pio32.en_out
+		output wire [31:0]  h2f_pio32_data_out,                        //                               .data_out
+		output wire         h2f_reset_reset_n,                         //                      h2f_reset.reset_n
+		output wire [14:0]  memory_mem_a,                              //                         memory.mem_a
+		output wire [2:0]   memory_mem_ba,                             //                               .mem_ba
+		output wire         memory_mem_ck,                             //                               .mem_ck
+		output wire         memory_mem_ck_n,                           //                               .mem_ck_n
+		output wire         memory_mem_cke,                            //                               .mem_cke
+		output wire         memory_mem_cs_n,                           //                               .mem_cs_n
+		output wire         memory_mem_ras_n,                          //                               .mem_ras_n
+		output wire         memory_mem_cas_n,                          //                               .mem_cas_n
+		output wire         memory_mem_we_n,                           //                               .mem_we_n
+		output wire         memory_mem_reset_n,                        //                               .mem_reset_n
+		inout  wire [31:0]  memory_mem_dq,                             //                               .mem_dq
+		inout  wire [3:0]   memory_mem_dqs,                            //                               .mem_dqs
+		inout  wire [3:0]   memory_mem_dqs_n,                          //                               .mem_dqs_n
+		output wire         memory_mem_odt,                            //                               .mem_odt
+		output wire [3:0]   memory_mem_dm,                             //                               .mem_dm
+		input  wire         memory_oct_rzqin,                          //                               .oct_rzqin
+		input  wire         reset_reset_n                              //                          reset.reset_n
 	);
 
 	wire    [1:0] hps_0_h2f_axi_master_awburst;                          // hps_0:h2f_AWBURST -> mm_interconnect_0:hps_0_h2f_axi_master_awburst
@@ -96,8 +102,39 @@ module soc_system (
 	wire          mm_interconnect_1_hps_0_f2h_sdram0_data_write;         // mm_interconnect_1:hps_0_f2h_sdram0_data_write -> hps_0:f2h_sdram0_WRITE
 	wire  [127:0] mm_interconnect_1_hps_0_f2h_sdram0_data_writedata;     // mm_interconnect_1:hps_0_f2h_sdram0_data_writedata -> hps_0:f2h_sdram0_WRITEDATA
 	wire    [7:0] mm_interconnect_1_hps_0_f2h_sdram0_data_burstcount;    // mm_interconnect_1:hps_0_f2h_sdram0_data_burstcount -> hps_0:f2h_sdram0_BURSTCOUNT
-	wire          rst_controller_reset_out_reset;                        // rst_controller:reset_out -> [avmm_sdram_wrapper_0:rst_n, mm_interconnect_0:pio32_h2f_0_reset_reset_bridge_in_reset_reset, mm_interconnect_0:pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_1:avmm_sdram_wrapper_0_reset_reset_bridge_in_reset_reset]
-	wire          rst_controller_001_reset_out_reset;                    // rst_controller_001:reset_out -> [mm_interconnect_0:hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset]
+	wire  [127:0] avmm_sdram_read_wrapper_0_m0_readdata;                 // mm_interconnect_2:avmm_sdram_read_wrapper_0_m0_readdata -> avmm_sdram_read_wrapper_0:readdata
+	wire          avmm_sdram_read_wrapper_0_m0_waitrequest;              // mm_interconnect_2:avmm_sdram_read_wrapper_0_m0_waitrequest -> avmm_sdram_read_wrapper_0:waitrequest
+	wire          avmm_sdram_read_wrapper_0_m0_read;                     // avmm_sdram_read_wrapper_0:read -> mm_interconnect_2:avmm_sdram_read_wrapper_0_m0_read
+	wire   [31:0] avmm_sdram_read_wrapper_0_m0_address;                  // avmm_sdram_read_wrapper_0:address -> mm_interconnect_2:avmm_sdram_read_wrapper_0_m0_address
+	wire          avmm_sdram_read_wrapper_0_m0_readdatavalid;            // mm_interconnect_2:avmm_sdram_read_wrapper_0_m0_readdatavalid -> avmm_sdram_read_wrapper_0:readdatavalid
+	wire   [10:0] avmm_sdram_read_wrapper_0_m0_burstcount;               // avmm_sdram_read_wrapper_0:burstcount -> mm_interconnect_2:avmm_sdram_read_wrapper_0_m0_burstcount
+	wire  [127:0] mm_interconnect_2_hps_0_f2h_sdram1_data_readdata;      // hps_0:f2h_sdram1_READDATA -> mm_interconnect_2:hps_0_f2h_sdram1_data_readdata
+	wire          mm_interconnect_2_hps_0_f2h_sdram1_data_waitrequest;   // hps_0:f2h_sdram1_WAITREQUEST -> mm_interconnect_2:hps_0_f2h_sdram1_data_waitrequest
+	wire   [27:0] mm_interconnect_2_hps_0_f2h_sdram1_data_address;       // mm_interconnect_2:hps_0_f2h_sdram1_data_address -> hps_0:f2h_sdram1_ADDRESS
+	wire          mm_interconnect_2_hps_0_f2h_sdram1_data_read;          // mm_interconnect_2:hps_0_f2h_sdram1_data_read -> hps_0:f2h_sdram1_READ
+	wire          mm_interconnect_2_hps_0_f2h_sdram1_data_readdatavalid; // hps_0:f2h_sdram1_READDATAVALID -> mm_interconnect_2:hps_0_f2h_sdram1_data_readdatavalid
+	wire    [7:0] mm_interconnect_2_hps_0_f2h_sdram1_data_burstcount;    // mm_interconnect_2:hps_0_f2h_sdram1_data_burstcount -> hps_0:f2h_sdram1_BURSTCOUNT
+	wire          rst_controller_reset_out_reset;                        // rst_controller:reset_out -> [avmm_sdram_read_wrapper_0:rst_n, avmm_sdram_wrapper_0:rst_n, mm_interconnect_0:pio32_h2f_0_reset_reset_bridge_in_reset_reset, mm_interconnect_0:pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_1:avmm_sdram_wrapper_0_reset_reset_bridge_in_reset_reset, mm_interconnect_2:avmm_sdram_read_wrapper_0_reset_reset_bridge_in_reset_reset]
+	wire          rst_controller_001_reset_out_reset;                    // rst_controller_001:reset_out -> [mm_interconnect_0:hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_2:hps_0_f2h_sdram1_data_translator_reset_reset_bridge_in_reset_reset]
+
+	sdram_read #(
+		.SDRAM_DATA_W (128)
+	) avmm_sdram_read_wrapper_0 (
+		.clk           (clk_clk),                                    // clock.clk
+		.readdata      (avmm_sdram_read_wrapper_0_m0_readdata),      //    m0.readdata
+		.readdatavalid (avmm_sdram_read_wrapper_0_m0_readdatavalid), //      .readdatavalid
+		.waitrequest   (avmm_sdram_read_wrapper_0_m0_waitrequest),   //      .waitrequest
+		.read          (avmm_sdram_read_wrapper_0_m0_read),          //      .read
+		.address       (avmm_sdram_read_wrapper_0_m0_address),       //      .address
+		.burstcount    (avmm_sdram_read_wrapper_0_m0_burstcount),    //      .burstcount
+		.rst_n         (~rst_controller_reset_out_reset),            // reset.reset_n
+		.read_start    (avmm_sdram_read_wrapper_0_read_read_start),  //  read.read_start
+		.read_cnt      (avmm_sdram_read_wrapper_0_read_read_cnt),    //      .read_cnt
+		.read_data     (avmm_sdram_read_wrapper_0_read_read_data),   //      .read_data
+		.read_addr     (avmm_sdram_read_wrapper_0_read_read_addr),   //      .read_addr
+		.read_done     (avmm_sdram_read_wrapper_0_read_read_done),   //      .read_done
+		.read_valid    (avmm_sdram_read_wrapper_0_read_read_valid)   //      .read_valid
+	);
 
 	avmm_sdram_wrapper #(
 		.SDRAM_DATA_W (128)
@@ -155,6 +192,13 @@ module soc_system (
 		.f2h_sdram0_WRITEDATA     (mm_interconnect_1_hps_0_f2h_sdram0_data_writedata),     //                 .writedata
 		.f2h_sdram0_BYTEENABLE    (mm_interconnect_1_hps_0_f2h_sdram0_data_byteenable),    //                 .byteenable
 		.f2h_sdram0_WRITE         (mm_interconnect_1_hps_0_f2h_sdram0_data_write),         //                 .write
+		.f2h_sdram1_clk           (clk_clk),                                               // f2h_sdram1_clock.clk
+		.f2h_sdram1_ADDRESS       (mm_interconnect_2_hps_0_f2h_sdram1_data_address),       //  f2h_sdram1_data.address
+		.f2h_sdram1_BURSTCOUNT    (mm_interconnect_2_hps_0_f2h_sdram1_data_burstcount),    //                 .burstcount
+		.f2h_sdram1_WAITREQUEST   (mm_interconnect_2_hps_0_f2h_sdram1_data_waitrequest),   //                 .waitrequest
+		.f2h_sdram1_READDATA      (mm_interconnect_2_hps_0_f2h_sdram1_data_readdata),      //                 .readdata
+		.f2h_sdram1_READDATAVALID (mm_interconnect_2_hps_0_f2h_sdram1_data_readdatavalid), //                 .readdatavalid
+		.f2h_sdram1_READ          (mm_interconnect_2_hps_0_f2h_sdram1_data_read),          //                 .read
 		.h2f_axi_clk              (clk_clk),                                               //    h2f_axi_clock.clk
 		.h2f_AWID                 (hps_0_h2f_axi_master_awid),                             //   h2f_axi_master.awid
 		.h2f_AWADDR               (hps_0_h2f_axi_master_awaddr),                           //                 .awaddr
@@ -281,6 +325,24 @@ module soc_system (
 		.hps_0_f2h_sdram0_data_byteenable                                   (mm_interconnect_1_hps_0_f2h_sdram0_data_byteenable),    //                                                             .byteenable
 		.hps_0_f2h_sdram0_data_readdatavalid                                (mm_interconnect_1_hps_0_f2h_sdram0_data_readdatavalid), //                                                             .readdatavalid
 		.hps_0_f2h_sdram0_data_waitrequest                                  (mm_interconnect_1_hps_0_f2h_sdram0_data_waitrequest)    //                                                             .waitrequest
+	);
+
+	soc_system_mm_interconnect_2 mm_interconnect_2 (
+		.clk_50m_clk_clk                                                    (clk_clk),                                               //                                                  clk_50m_clk.clk
+		.avmm_sdram_read_wrapper_0_reset_reset_bridge_in_reset_reset        (rst_controller_reset_out_reset),                        //        avmm_sdram_read_wrapper_0_reset_reset_bridge_in_reset.reset
+		.hps_0_f2h_sdram1_data_translator_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                    // hps_0_f2h_sdram1_data_translator_reset_reset_bridge_in_reset.reset
+		.avmm_sdram_read_wrapper_0_m0_address                               (avmm_sdram_read_wrapper_0_m0_address),                  //                                 avmm_sdram_read_wrapper_0_m0.address
+		.avmm_sdram_read_wrapper_0_m0_waitrequest                           (avmm_sdram_read_wrapper_0_m0_waitrequest),              //                                                             .waitrequest
+		.avmm_sdram_read_wrapper_0_m0_burstcount                            (avmm_sdram_read_wrapper_0_m0_burstcount),               //                                                             .burstcount
+		.avmm_sdram_read_wrapper_0_m0_read                                  (avmm_sdram_read_wrapper_0_m0_read),                     //                                                             .read
+		.avmm_sdram_read_wrapper_0_m0_readdata                              (avmm_sdram_read_wrapper_0_m0_readdata),                 //                                                             .readdata
+		.avmm_sdram_read_wrapper_0_m0_readdatavalid                         (avmm_sdram_read_wrapper_0_m0_readdatavalid),            //                                                             .readdatavalid
+		.hps_0_f2h_sdram1_data_address                                      (mm_interconnect_2_hps_0_f2h_sdram1_data_address),       //                                        hps_0_f2h_sdram1_data.address
+		.hps_0_f2h_sdram1_data_read                                         (mm_interconnect_2_hps_0_f2h_sdram1_data_read),          //                                                             .read
+		.hps_0_f2h_sdram1_data_readdata                                     (mm_interconnect_2_hps_0_f2h_sdram1_data_readdata),      //                                                             .readdata
+		.hps_0_f2h_sdram1_data_burstcount                                   (mm_interconnect_2_hps_0_f2h_sdram1_data_burstcount),    //                                                             .burstcount
+		.hps_0_f2h_sdram1_data_readdatavalid                                (mm_interconnect_2_hps_0_f2h_sdram1_data_readdatavalid), //                                                             .readdatavalid
+		.hps_0_f2h_sdram1_data_waitrequest                                  (mm_interconnect_2_hps_0_f2h_sdram1_data_waitrequest)    //                                                             .waitrequest
 	);
 
 	altera_reset_controller #(

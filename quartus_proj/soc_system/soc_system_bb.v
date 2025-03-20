@@ -1,5 +1,11 @@
 
 module soc_system (
+	avmm_sdram_read_wrapper_0_read_read_start,
+	avmm_sdram_read_wrapper_0_read_read_cnt,
+	avmm_sdram_read_wrapper_0_read_read_data,
+	avmm_sdram_read_wrapper_0_read_read_addr,
+	avmm_sdram_read_wrapper_0_read_read_done,
+	avmm_sdram_read_wrapper_0_read_read_valid,
 	avmm_sdram_wrapper_0_read_read_start,
 	avmm_sdram_wrapper_0_read_read_data,
 	avmm_sdram_wrapper_0_read_read_valid,
@@ -33,6 +39,12 @@ module soc_system (
 	memory_oct_rzqin,
 	reset_reset_n);	
 
+	input		avmm_sdram_read_wrapper_0_read_read_start;
+	input	[10:0]	avmm_sdram_read_wrapper_0_read_read_cnt;
+	output	[127:0]	avmm_sdram_read_wrapper_0_read_read_data;
+	input	[31:0]	avmm_sdram_read_wrapper_0_read_read_addr;
+	output		avmm_sdram_read_wrapper_0_read_read_done;
+	output		avmm_sdram_read_wrapper_0_read_read_valid;
 	input		avmm_sdram_wrapper_0_read_read_start;
 	output	[127:0]	avmm_sdram_wrapper_0_read_read_data;
 	output		avmm_sdram_wrapper_0_read_read_valid;

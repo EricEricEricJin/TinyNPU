@@ -1,3 +1,5 @@
+`default_nettype none
+
 module avmm_sdram_wrapper #(
     parameter int SDRAM_DATA_W = 128
 ) (
@@ -133,3 +135,5 @@ always_comb begin
     endcase
 end
 endmodule
+
+`default_nettype wire

@@ -2,6 +2,8 @@ Info: Starting: Create block symbol file (.bsf)
 Info: qsys-generate /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/soc_system.qsys --block-symbol-file --output-directory=/home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/soc_system --family="Cyclone V" --part=5CSEBA6U23I7
 Progress: Loading quartus_proj/soc_system.qsys
 Progress: Reading input file
+Progress: Adding avmm_sdram_read_wrapper_0 [avmm_sdram_read_wrapper 1.0]
+Progress: Parameterizing module avmm_sdram_read_wrapper_0
 Progress: Adding avmm_sdram_wrapper_0 [avmm_sdram_wrapper 1.0]
 Progress: Parameterizing module avmm_sdram_wrapper_0
 Progress: Adding clk_50m [clock_source 23.1]
@@ -26,6 +28,8 @@ Info: Starting: Create HDL design files for synthesis
 Info: qsys-generate /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/soc_system.qsys --synthesis=VERILOG --output-directory=/home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/soc_system/synthesis --family="Cyclone V" --part=5CSEBA6U23I7
 Progress: Loading quartus_proj/soc_system.qsys
 Progress: Reading input file
+Progress: Adding avmm_sdram_read_wrapper_0 [avmm_sdram_read_wrapper 1.0]
+Progress: Parameterizing module avmm_sdram_read_wrapper_0
 Progress: Adding avmm_sdram_wrapper_0 [avmm_sdram_wrapper 1.0]
 Progress: Parameterizing module avmm_sdram_wrapper_0
 Progress: Adding clk_50m [clock_source 23.1]
@@ -46,6 +50,9 @@ Warning: soc_system.hps_0: set_interface_assignment: Interface "hps_io" does not
 Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
 Info: Interconnect is inserted between master avmm_sdram_wrapper_0.m0 and slave hps_0.f2h_sdram0_data because the master has address signal 32 bit wide, but the slave is 28 bit wide.
 Info: Interconnect is inserted between master avmm_sdram_wrapper_0.m0 and slave hps_0.f2h_sdram0_data because the master has burstcount signal 11 bit wide, but the slave is 8 bit wide.
+Info: Interconnect is inserted between master avmm_sdram_read_wrapper_0.m0 and slave hps_0.f2h_sdram1_data because the master has address signal 32 bit wide, but the slave is 28 bit wide.
+Info: Interconnect is inserted between master avmm_sdram_read_wrapper_0.m0 and slave hps_0.f2h_sdram1_data because the master has burstcount signal 11 bit wide, but the slave is 8 bit wide.
+Info: avmm_sdram_read_wrapper_0: "soc_system" instantiated avmm_sdram_read_wrapper "avmm_sdram_read_wrapper_0"
 Info: avmm_sdram_wrapper_0: "soc_system" instantiated avmm_sdram_wrapper "avmm_sdram_wrapper_0"
 Info: hps_0: "Running  for module: hps_0"
 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
@@ -59,6 +66,8 @@ Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_1: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_2: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_2"
 Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
 Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
@@ -89,9 +98,11 @@ Info: Reusing file /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: soc_system: Done "soc_system" with 34 modules, 91 files
+Info: soc_system: Done "soc_system" with 38 modules, 95 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

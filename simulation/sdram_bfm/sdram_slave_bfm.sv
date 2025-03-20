@@ -1,6 +1,5 @@
 `default_nettype none
 
-
 module sdram_slave_bfm #(
     parameter int       SDRAM_W         = 128,
     parameter string    RD_MEM_FILE     = "rd_mem.bin",
@@ -10,14 +9,26 @@ module sdram_slave_bfm #(
     parameter int       WT_MEM_SIZE     = 1024*1024,
     parameter int       WT_MEM_OFFSET   = 512*1024*1024
 ) (
-    input wire      clk, 
-    input wire      rst_n,
-    sdram_intf      sdram
+    input  wire                     clk, 
+    input  wire                     rst_n,
+    
+    // ---------- SDRAM signals ----------
+    input  wire [31:0]             address,
+    input  wire [10:0]             burstcount,
+    output logic                    waitrequest,
+    output logic [SDRAM_W-1:0]     readdata,
+    output logic                    readdatavalid,
+    input  wire                     read,
+    input  wire [SDRAM_W-1:0]      writedata,
+    input  wire [15:0]             byteenable,
+    input  wire                     write
 );
 
+task wait_sometime();
+    repeat($urandom_range(7, 37)) @(negedge clk);
+endtask
 
 logic [31 : 0] mem [0 : RD_MEM_SIZE / 4 - 1];
-
 
 task read_file_to_mem();
     int i;
@@ -39,79 +50,68 @@ task read_file_to_mem();
     $display("%d words read from %s to addr %d.", i, RD_MEM_FILE, RD_MEM_OFFSET);    
 endtask
 
-
-
-logic [31 : 0] address;
-logic [10 : 0] burstcount;
+logic [31 : 0] address_reg;
+logic [10 : 0] burstcount_reg;
 
 // process read
 always @(negedge clk, negedge rst_n) begin
-
     int i, j, k;
-    logic [SDRAM_W - 1 : 0] readdata;
+    logic [SDRAM_W - 1 : 0] readdata_temp;
 
-    if (sdram.read && rst_n) begin
+    if (read && rst_n) begin
         // wait request for some time 
-
         $display("Read operation start, waiting...");
         
-        sdram.waitrequest = 1;
-        repeat($urandom_range(10, 100)) @(negedge clk);
-        address = (sdram.address - RD_MEM_OFFSET) / 4;
-        burstcount = sdram.burstcount;
-        $display("Read wait done. address: %h, burstcount: %d", sdram.address, sdram.burstcount);
-        sdram.waitrequest = 0;
-
+        waitrequest = 1;
+        wait_sometime();
+        address_reg = (address - RD_MEM_OFFSET) / 4;
+        burstcount_reg = burstcount;
+        $display("Read wait done. address: %h, burstcount: %d", address, burstcount);
+        waitrequest = 0;
 
         // read from memory
-        for (i = 0; i < burstcount; i++) begin
+        for (i = 0; i < burstcount_reg; i++) begin
             // read data  
             for (j = 0; j < 4; j++) begin
-                readdata[j*32 +: 32] = mem[address + i*4 + j];
+                readdata_temp[j*32 +: 32] = mem[address_reg + i*4 + j];
             end
 
-            // wait for some time
-            repeat($urandom_range(10, 100)) @(negedge clk);
+            wait_sometime();
 
             // set read valid
-            sdram.readdata = readdata;
-            sdram.readdatavalid = 1;
-            @(negedge clk) sdram.readdatavalid = 0;
+            readdata = readdata_temp;
+            readdatavalid = 1;
+            @(negedge clk) readdatavalid = 0;
         end
         $display("Read operation done.");
     end
     else begin
-        sdram.readdata = 'x;
-        sdram.readdatavalid = 0;
-        // sdram.waitrequest = 0;        
+        readdata = 'x;
+        readdatavalid = 0;
     end    
 end
 
-
 // process write
 always @(negedge clk, negedge rst_n) begin
-
-    if (sdram.write && rst_n) begin
-        
+    if (write && rst_n) begin
         $display("Write operation start, waiting...");
 
         // wait request for some time 
-        sdram.waitrequest = 1;
-        repeat($urandom_range(10, 30)) @(negedge clk);
-        address = (sdram.address - WT_MEM_OFFSET) / 4;
-        burstcount = sdram.burstcount;
-        $display("Write wait done. address: %h, burstcount: %d", sdram.address, sdram.burstcount);
-        sdram.waitrequest = 0;
+        waitrequest = 1;
+        wait_sometime();
+        address_reg = (address - WT_MEM_OFFSET) / 4;
+        burstcount_reg = burstcount;
+        $display("Write wait done. address: %h, burstcount: %d", address, burstcount);
+        waitrequest = 0;
 
         // write to memory
-        for (int i = 0; i < burstcount; ) begin
+        for (int i = 0; i < burstcount_reg; ) begin
             @(posedge clk);
-            if (sdram.write) begin
+            if (write) begin
                 for (int j = 0; j < SDRAM_W/32; j++) begin
                     for (int k = 0; k < 32/8; k++) begin
-                        if (sdram.byteenable[j*(SDRAM_W/32) + k]) begin
-                            // $display("byte %h bit %h data %h", address + i*4 + j, k*8, j*32 + k*8);
-                            mem[address + i*4 + j][k*8 +: 8] = sdram.writedata[j*32 + k*8 +: 8];
+                        if (byteenable[j*(SDRAM_W/32) + k]) begin
+                            mem[address_reg + i*4 + j][k*8 +: 8] = writedata[j*32 + k*8 +: 8];
                         end
                     end
                 end
@@ -145,8 +145,6 @@ task write_mem_to_file();
     $display("%i words written to file %s.", WT_MEM_FILE);
 endtask
 
-
 endmodule
-
 
 `default_nettype wire

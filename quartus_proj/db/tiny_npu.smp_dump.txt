@@ -19,6 +19,13 @@ state.IDLE 0 0 0
 state.DECODE 1 0 1 
 state.ISSUE 1 1 0 
 
+State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_merlin_burst_adapter:hps_0_f2h_sdram1_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
 State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 0 
@@ -47,3 +54,9 @@ state.RD_SEND_ADDR 0 0 1 1 0
 state.RECV_DATA 0 1 0 1 0 
 state.WT_SEND_ADDR 1 0 0 1 0 
 state.SEND_DATA 0 0 0 1 1 
+
+State Machine - |tiny_npu|soc_system:u0|sdram_read:avmm_sdram_read_wrapper_0|state
+Name state.IDLE state.RECV_DATA state.SEND_ADDR 
+state.IDLE 0 0 0 
+state.SEND_ADDR 1 0 1 
+state.RECV_DATA 1 1 0 

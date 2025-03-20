@@ -4,7 +4,7 @@ set PROJ_PATH /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
 
 set SRC_FILES { design_rtl/interface/bram_intf.sv       \
                 design_rtl/interface/rmio_intf.sv       \
-                design_rtl/register_file/rf_ram_mux.sv  \
+                design_rtl/interface/bram_mux.sv        \
                 design_rtl/register_file/rf_ram.sv      \
                 design_rtl/register_file/rf_move.sv     \
                 simulation/rf_move_sim/rf_move_tb.sv    \

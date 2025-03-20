@@ -1,5 +1,5 @@
 Flow report for tiny_npu
-Wed Mar 19 08:47:42 2025
+Thu Mar 20 11:17:14 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Wed Mar 19 08:47:14 2025          ;
+; Flow Status                     ; Successful - Thu Mar 20 11:17:14 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; tiny_npu                                       ;
 ; Top-level Entity Name           ; tiny_npu                                       ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEBA6U23I7                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 2,461 / 41,910 ( 6 % )                         ;
-; Total registers                 ; 2644                                           ;
+; Logic utilization (in ALMs)     ; 2,523 / 41,910 ( 6 % )                         ;
+; Total registers                 ; 2725                                           ;
 ; Total pins                      ; 89 / 314 ( 28 % )                              ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 720,896 / 5,662,720 ( 13 % )                   ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/19/2025 08:44:59 ;
+; Start date & time ; 03/20/2025 11:07:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tiny_npu            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+--------------------------------------------------------------------------+---------------+--------------------------------+------------+
 ; Assignment Name                       ; Value                                                                    ; Default Value ; Entity Name                    ; Section Id ;
 +---------------------------------------+--------------------------------------------------------------------------+---------------+--------------------------------+------------+
-; COMPILER_SIGNATURE_ID                 ; 66076473083265.174234509850923                                           ; --            ; --                             ; --         ;
+; COMPILER_SIGNATURE_ID                 ; 66076473083265.174244006853970                                           ; --            ; --                             ; --         ;
 ; ECO_REGENERATE_REPORT                 ; On                                                                       ; Off           ; --                             ; --         ;
 ; HPS_ISW_FILE                          ; soc_system/synthesis/submodules/sequencer/sequencer_defines.pre.h        ; --            ; soc_system_hps_0_hps_io_border ; --         ;
 ; HPS_ISW_FILE                          ; soc_system/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c   ; --            ; soc_system_hps_0_hps_io_border ; --         ;
@@ -122,7 +122,7 @@ https://fpgasoftware.intel.com/eula.
 ; POWER_PRESET_COOLING_SOLUTION         ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                    ; --            ; --                             ; --         ;
 ; SLD_FILE                              ; soc_system/synthesis/soc_system.regmap                                   ; --            ; --                             ; --         ;
 ; SLD_FILE                              ; soc_system/synthesis/soc_system.debuginfo                                ; --            ; --                             ; --         ;
-; SLD_INFO                              ; QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1741986769             ; --            ; soc_system                     ; --         ;
+; SLD_INFO                              ; QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1742350662             ; --            ; soc_system                     ; --         ;
 ; SOPCINFO_FILE                         ; soc_system/synthesis/../../soc_system.sopcinfo                           ; --            ; --                             ; --         ;
 ; SYNTHESIS_ONLY_QIP                    ; On                                                                       ; --            ; --                             ; --         ;
 ; USE_DLL_FREQUENCY_FOR_DQS_DELAY_CHAIN ; On                                                                       ; Off           ; --                             ; --         ;
@@ -134,11 +134,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:01     ; 1.0                     ; 1092 MB             ; 00:02:04                           ;
-; Fitter               ; 00:01:03     ; 1.3                     ; 2983 MB             ; 00:02:48                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 606 MB              ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:27     ; 1.7                     ; 1697 MB             ; 00:00:43                           ;
-; Total                ; 00:02:38     ; --                      ; --                  ; 00:05:42                           ;
+; Analysis & Synthesis ; 00:01:04     ; 1.0                     ; 1118 MB             ; 00:02:08                           ;
+; Fitter               ; 00:01:04     ; 1.3                     ; 2983 MB             ; 00:02:49                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 599 MB              ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:28     ; 1.7                     ; 1698 MB             ; 00:00:44                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 602 MB              ; 00:00:07                           ;
+; Total                ; 00:02:50     ; --                      ; --                  ; 00:05:55                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -151,6 +152,7 @@ https://fpgasoftware.intel.com/eula.
 ; Fitter               ; eric-Precision-3561 ; Ubuntu 24.04.2 ; 24         ; x86_64         ;
 ; Assembler            ; eric-Precision-3561 ; Ubuntu 24.04.2 ; 24         ; x86_64         ;
 ; Timing Analyzer      ; eric-Precision-3561 ; Ubuntu 24.04.2 ; 24         ; x86_64         ;
+; Assembler            ; eric-Precision-3561 ; Ubuntu 24.04.2 ; 24         ; x86_64         ;
 +----------------------+---------------------+----------------+------------+----------------+
 
 
@@ -161,6 +163,7 @@ quartus_map --read_settings_files=on --write_settings_files=off tiny_npu -c tiny
 quartus_fit --read_settings_files=off --write_settings_files=off tiny_npu -c tiny_npu
 quartus_asm --read_settings_files=off --write_settings_files=off tiny_npu -c tiny_npu
 quartus_sta tiny_npu -c tiny_npu
+quartus_asm --read_settings_files=on --write_settings_files=off tiny_npu -c tiny_npu
 
 
 

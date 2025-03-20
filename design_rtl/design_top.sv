@@ -5,17 +5,8 @@ module design_top (
     input wire clk,
     input wire rst_n,
 
-    // connect to sdram_read_wrapper
-    // output logic [ 31 : 0] sdram_address,
-    // output logic [ 10 : 0] sdram_burstcount,
-    // input  wire            sdram_waitrequest,
-    // input  wire  [127 : 0] sdram_readdata,
-    // input  wire            sdram_readdatavalid,
-    // output logic           sdram_read,
-    // output logic [127 : 0] sdram_writedata,
-    // output logic [ 15 : 0] sdram_byteenable,
-    // output logic           sdram_write,
     sdram_intf i_sdram_intf,
+    sdram_read_intf i_sdram_read_intf,
 
     // connect to MMIO
     input  wire  [31 : 0] h2f_pio32,
@@ -36,12 +27,12 @@ localparam int LINE_NUM_W = 11;
 ////////////////////////
 logic move_done, ldst_done, cu_running;
 // todo: add eu signals
-// assign f2h_pio32 = {move_done, ldst_done, cu_running, 29'b0};
+assign f2h_pio32 = {move_done, ldst_done, cu_running, 29'b0};
 
 rf_move_intf i_rf_move_intf ();
 rf_ldst_intf i_rf_ldst_intf ();
 
-assign f2h_pio32 = i_rf_ldst_intf.sdram_addr;
+// assign f2h_pio32 = i_rf_ldst_intf.sdram_addr;
 
 logic [31:0] eu_fetch_addr;
 logic [31:0] eu_fetch;

@@ -17,11 +17,16 @@ bram_intf i_ram_intf_tb();
 bram_intf i_ram_intf_move();
 logic ram_sel;
 
-rf_ram_mux i_ram_mux (
-    .dut0   (i_ram_intf_tb.ram),
-    .dut1   (i_ram_intf_move.ram),
-    .ram    (i_ram_intf_ram.dut),
-    .sel    (ram_sel)
+// rf_ram_mux i_ram_mux (
+//     .dut0   (i_ram_intf_tb.ram),
+//     .dut1   (i_ram_intf_move.ram),
+//     .ram    (i_ram_intf_ram.dut),
+//     .sel    (ram_sel)
+// );
+bram_mux #( .NUM_PORTS (2) ) i_ram_mux (
+    .sel (ram_sel),
+    .i_bram_intf_in ('{i_ram_intf_tb, i_ram_intf_move}),
+    .i_bram_intf_out (i_ram_intf_ram)
 );
 
 

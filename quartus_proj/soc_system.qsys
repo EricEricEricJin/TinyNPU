@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element avmm_sdram_read_wrapper_0
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
    element avmm_sdram_wrapper_0
    {
       datum _sortIndex
@@ -167,6 +175,11 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface
+   name="avmm_sdram_read_wrapper_0_read"
+   internal="avmm_sdram_read_wrapper_0.read"
+   type="conduit"
+   dir="end" />
+ <interface
    name="avmm_sdram_wrapper_0_read"
    internal="avmm_sdram_wrapper_0.read"
    type="conduit"
@@ -197,6 +210,13 @@
  <interface name="hps_0_f2h_dma_req0" internal="hps_0.f2h_dma_req0" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface name="reset" internal="clk_50m.clk_in_reset" type="reset" dir="end" />
+ <module
+   name="avmm_sdram_read_wrapper_0"
+   kind="avmm_sdram_read_wrapper"
+   version="1.0"
+   enabled="1">
+  <parameter name="SDRAM_DATA_W" value="128" />
+ </module>
  <module
    name="avmm_sdram_wrapper_0"
    kind="avmm_sdram_wrapper"
@@ -308,7 +328,7 @@
   <parameter name="EXTRA_SETTINGS" value="" />
   <parameter name="F2H_AXI_CLOCK_FREQ" value="100" />
   <parameter name="F2H_SDRAM0_CLOCK_FREQ" value="50000000" />
-  <parameter name="F2H_SDRAM1_CLOCK_FREQ" value="100" />
+  <parameter name="F2H_SDRAM1_CLOCK_FREQ" value="50000000" />
   <parameter name="F2H_SDRAM2_CLOCK_FREQ" value="100" />
   <parameter name="F2H_SDRAM3_CLOCK_FREQ" value="100" />
   <parameter name="F2H_SDRAM4_CLOCK_FREQ" value="100" />
@@ -320,8 +340,8 @@
   <parameter name="F2SCLK_SDRAMCLK_Enable" value="false" />
   <parameter name="F2SCLK_SDRAMCLK_FREQ" value="0" />
   <parameter name="F2SCLK_WARMRST_Enable" value="false" />
-  <parameter name="F2SDRAM_Type">Avalon-MM Bidirectional</parameter>
-  <parameter name="F2SDRAM_Width" value="128" />
+  <parameter name="F2SDRAM_Type">Avalon-MM Bidirectional,Avalon-MM Read-Only</parameter>
+  <parameter name="F2SDRAM_Width" value="128,128" />
   <parameter name="F2SINTERRUPT_Enable" value="false" />
   <parameter name="F2S_Width" value="0" />
   <parameter name="FIX_READ_LATENCY" value="8" />
@@ -770,6 +790,15 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
+   kind="avalon"
+   version="23.1"
+   start="avmm_sdram_read_wrapper_0.m0"
+   end="hps_0.f2h_sdram1_data">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
    kind="clock"
    version="23.1"
    start="clk_50m.clk"
@@ -788,7 +817,17 @@
    kind="clock"
    version="23.1"
    start="clk_50m.clk"
+   end="avmm_sdram_read_wrapper_0.clock" />
+ <connection
+   kind="clock"
+   version="23.1"
+   start="clk_50m.clk"
    end="hps_0.f2h_sdram0_clock" />
+ <connection
+   kind="clock"
+   version="23.1"
+   start="clk_50m.clk"
+   end="hps_0.f2h_sdram1_clock" />
  <connection
    kind="clock"
    version="23.1"
@@ -809,6 +848,11 @@
    version="23.1"
    start="clk_50m.clk_reset"
    end="avmm_sdram_wrapper_0.reset" />
+ <connection
+   kind="reset"
+   version="23.1"
+   start="clk_50m.clk_reset"
+   end="avmm_sdram_read_wrapper_0.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
