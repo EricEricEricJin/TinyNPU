@@ -5466,3 +5466,2617 @@ do simulation/all_fpga_sim/elaborate.tcl
 quit -sim 
 # End time: 15:23:35 on Mar 22,2025, Elapsed time: 1:16:40
 # Errors: 73, Warnings: 85
+do simulation/all_fpga_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# 
+#     design_rtl/ctrl_unit/*.sv              design_rtl/exec_unit/stmm/*.sv         design_rtl/exec_unit/*.sv              design_rtl/interface/*.sv               design_rtl/io/*.sv                      design_rtl/register_file/*.sv           design_rtl/support/*.sv                 design_rtl/design_top.sv                ip_cores/mult_int8.v                     ip_cores/ram_512x1408.v                  ip_cores/ram_176x1408.v                  simulation/all_fpga_sim/*.sv             
+#  
+#     ip_cores/fp16_to_int16_sim           ip_cores/int18_to_fp16_sim           ip_cores/mult_fp16_sim               
+# reading modelsim.ini
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:24:20 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/fp16_to_int16_sim/fp16_to_int16.vo 
+# -- Compiling module fp16_to_int16
+# 
+# Top level modules:
+# 	fp16_to_int16
+# End time: 15:24:20 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:24:20 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/int18_to_fp16_sim/int18_to_fp16.vo 
+# -- Compiling module int18_to_fp16
+# 
+# Top level modules:
+# 	int18_to_fp16
+# End time: 15:24:21 on Mar 22,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:24:21 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/mult_fp16_sim/mult_fp16.vo 
+# -- Compiling module mult_fp16
+# 
+# Top level modules:
+# 	mult_fp16
+# End time: 15:24:21 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# reading modelsim.ini
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:24:21 on Mar 22,2025
+# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv design_rtl/exec_unit/stmm/stmm.sv design_rtl/exec_unit/stmm/stmm_fetch.sv design_rtl/exec_unit/stmm/stmm_wrapper.sv design_rtl/exec_unit/stmm/vvm.sv design_rtl/exec_unit/eu_top.sv design_rtl/interface/bram_intf.sv design_rtl/interface/bram_mux.sv design_rtl/interface/eu_ctrl_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/interface/sdram_intf.sv design_rtl/interface/sdram_read_intf.sv design_rtl/interface/sdram_read_mux.sv design_rtl/io/avmm_sdram_read_wrapper.sv design_rtl/io/avmm_sdram_wrapper.sv design_rtl/io/pio32_f2h.sv design_rtl/io/pio32_h2f.sv design_rtl/register_file/rf_ldst.sv design_rtl/register_file/rf_move.sv design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ram_mux.sv design_rtl/register_file/rf_wrapper.sv design_rtl/support/plexer.sv design_rtl/support/plexer_funcs.sv design_rtl/support/saturate.sv design_rtl/support/sign_funcs.sv design_rtl/design_top.sv ip_cores/mult_int8.v ip_cores/ram_512x1408.v ip_cores/ram_176x1408.v simulation/all_fpga_sim/all_top_tb.sv simulation/all_fpga_sim/avmm_sdram_bfm.sv simulation/all_fpga_sim/hps_bfm.sv 
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module StMM
+# -- Compiling module stmm_fetch
+# -- Compiling module stmm_wrapper
+# -- Compiling module vvm
+# -- Compiling module eu_top
+# -- Compiling interface bram_intf
+# -- Compiling module bram_mux
+# -- Compiling interface eu_ctrl_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rmio_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface sdram_read_intf
+# -- Compiling module sdram_read_mux
+# -- Compiling module avmm_sdram_read_wrapper
+# -- Compiling module avmm_sdram_wrapper
+# -- Compiling module pio32_f2h
+# -- Compiling module pio32_h2f
+# -- Compiling module rf_ldst
+# -- Compiling module rf_move
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_mux
+# -- Compiling module rf_wrapper
+# -- Compiling module priority_encoder
+# -- Compiling module decoder
+# -- Compiling module saturate
+# -- Compiling package sign_funcs_sv_unit
+# -- Compiling module design_top
+# -- Compiling module mult_int8
+# -- Compiling module ram_512x1408
+# -- Compiling module ram_176x1408
+# -- Compiling module all_top_tb
+# -- Compiling module avmm_sdram_bfm
+# -- Compiling module hps_bfm
+# 
+# Top level modules:
+# 	pio32_f2h
+# 	pio32_h2f
+# 	rf_ram_mux
+# 	priority_encoder
+# 	mult_int8
+# 	all_top_tb
+# 	hps_bfm
+# End time: 15:24:21 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/all_fpga_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# 
+#     design_rtl/ctrl_unit/*.sv              design_rtl/exec_unit/stmm/*.sv         design_rtl/exec_unit/*.sv              design_rtl/interface/*.sv               design_rtl/io/*.sv                      design_rtl/register_file/*.sv           design_rtl/support/*.sv                 design_rtl/design_top.sv                ip_cores/mult_int8.v                     ip_cores/ram_512x1408.v                  ip_cores/ram_176x1408.v                  simulation/all_fpga_sim/*.sv             
+#  
+#     ip_cores/fp16_to_int16_sim           ip_cores/int18_to_fp16_sim           ip_cores/mult_fp16_sim               
+# reading modelsim.ini
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:31:22 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/fp16_to_int16_sim/fp16_to_int16.vo 
+# -- Compiling module fp16_to_int16
+# 
+# Top level modules:
+# 	fp16_to_int16
+# End time: 15:31:22 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:31:22 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/int18_to_fp16_sim/int18_to_fp16.vo 
+# -- Compiling module int18_to_fp16
+# 
+# Top level modules:
+# 	int18_to_fp16
+# End time: 15:31:22 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:31:22 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/mult_fp16_sim/mult_fp16.vo 
+# -- Compiling module mult_fp16
+# 
+# Top level modules:
+# 	mult_fp16
+# End time: 15:31:22 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# reading modelsim.ini
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:31:23 on Mar 22,2025
+# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv design_rtl/exec_unit/stmm/stmm.sv design_rtl/exec_unit/stmm/stmm_fetch.sv design_rtl/exec_unit/stmm/stmm_wrapper.sv design_rtl/exec_unit/stmm/vvm.sv design_rtl/exec_unit/eu_top.sv design_rtl/interface/bram_intf.sv design_rtl/interface/bram_mux.sv design_rtl/interface/eu_ctrl_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/interface/sdram_intf.sv design_rtl/interface/sdram_read_intf.sv design_rtl/interface/sdram_read_mux.sv design_rtl/io/avmm_sdram_read_wrapper.sv design_rtl/io/avmm_sdram_wrapper.sv design_rtl/io/pio32_f2h.sv design_rtl/io/pio32_h2f.sv design_rtl/register_file/rf_ldst.sv design_rtl/register_file/rf_move.sv design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ram_mux.sv design_rtl/register_file/rf_wrapper.sv design_rtl/support/plexer.sv design_rtl/support/plexer_funcs.sv design_rtl/support/saturate.sv design_rtl/support/sign_funcs.sv design_rtl/design_top.sv ip_cores/mult_int8.v ip_cores/ram_512x1408.v ip_cores/ram_176x1408.v simulation/all_fpga_sim/all_top_tb.sv simulation/all_fpga_sim/avmm_sdram_bfm.sv simulation/all_fpga_sim/hps_bfm.sv 
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module StMM
+# -- Compiling module stmm_fetch
+# -- Compiling module stmm_wrapper
+# -- Compiling module vvm
+# -- Compiling module eu_top
+# -- Compiling interface bram_intf
+# -- Compiling module bram_mux
+# -- Compiling interface eu_ctrl_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rmio_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface sdram_read_intf
+# -- Compiling module sdram_read_mux
+# -- Compiling module avmm_sdram_read_wrapper
+# -- Compiling module avmm_sdram_wrapper
+# -- Compiling module pio32_f2h
+# -- Compiling module pio32_h2f
+# -- Compiling module rf_ldst
+# -- Compiling module rf_move
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_mux
+# -- Compiling module rf_wrapper
+# -- Compiling module priority_encoder
+# -- Compiling module decoder
+# -- Compiling module saturate
+# -- Compiling package sign_funcs_sv_unit
+# -- Compiling module design_top
+# -- Compiling module mult_int8
+# -- Compiling module ram_512x1408
+# -- Compiling module ram_176x1408
+# -- Compiling module all_top_tb
+# -- Compiling module avmm_sdram_bfm
+# -- Compiling module hps_bfm
+# 
+# Top level modules:
+# 	pio32_f2h
+# 	pio32_h2f
+# 	rf_ram_mux
+# 	priority_encoder
+# 	mult_int8
+# 	all_top_tb
+# End time: 15:31:23 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/all_fpga_sim/elaborate.tcl
+# all_top_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# reading modelsim.ini
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver all_top_tb 
+# Start time: 15:31:24 on Mar 22,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): simulation/all_fpga_sim/all_top_tb.sv(174): (vopt-7063) Failed to find 'write_file_from_mem' in hierarchical name 'i_sdram_bi_slave.write_file_from_mem'.
+#         Region: all_top_tb
+# ** Note: (vopt-2085) Module "all_top_tb" error(s) may have resulted from inert synthesis off region.
+#    A synthesis off region is present in these dependencies:
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/all_fpga_sim/elaborate.tcl PAUSED at line 11
+do simulation/all_fpga_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# 
+#     design_rtl/ctrl_unit/*.sv              design_rtl/exec_unit/stmm/*.sv         design_rtl/exec_unit/*.sv              design_rtl/interface/*.sv               design_rtl/io/*.sv                      design_rtl/register_file/*.sv           design_rtl/support/*.sv                 design_rtl/design_top.sv                ip_cores/mult_int8.v                     ip_cores/ram_512x1408.v                  ip_cores/ram_176x1408.v                  simulation/all_fpga_sim/*.sv             
+#  
+#     ip_cores/fp16_to_int16_sim           ip_cores/int18_to_fp16_sim           ip_cores/mult_fp16_sim               
+# reading modelsim.ini
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:31:45 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/fp16_to_int16_sim/fp16_to_int16.vo 
+# -- Compiling module fp16_to_int16
+# 
+# Top level modules:
+# 	fp16_to_int16
+# End time: 15:31:45 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:31:45 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/int18_to_fp16_sim/int18_to_fp16.vo 
+# -- Compiling module int18_to_fp16
+# 
+# Top level modules:
+# 	int18_to_fp16
+# End time: 15:31:45 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:31:45 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/mult_fp16_sim/mult_fp16.vo 
+# -- Compiling module mult_fp16
+# 
+# Top level modules:
+# 	mult_fp16
+# End time: 15:31:45 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# reading modelsim.ini
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:31:45 on Mar 22,2025
+# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv design_rtl/exec_unit/stmm/stmm.sv design_rtl/exec_unit/stmm/stmm_fetch.sv design_rtl/exec_unit/stmm/stmm_wrapper.sv design_rtl/exec_unit/stmm/vvm.sv design_rtl/exec_unit/eu_top.sv design_rtl/interface/bram_intf.sv design_rtl/interface/bram_mux.sv design_rtl/interface/eu_ctrl_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/interface/sdram_intf.sv design_rtl/interface/sdram_read_intf.sv design_rtl/interface/sdram_read_mux.sv design_rtl/io/avmm_sdram_read_wrapper.sv design_rtl/io/avmm_sdram_wrapper.sv design_rtl/io/pio32_f2h.sv design_rtl/io/pio32_h2f.sv design_rtl/register_file/rf_ldst.sv design_rtl/register_file/rf_move.sv design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ram_mux.sv design_rtl/register_file/rf_wrapper.sv design_rtl/support/plexer.sv design_rtl/support/plexer_funcs.sv design_rtl/support/saturate.sv design_rtl/support/sign_funcs.sv design_rtl/design_top.sv ip_cores/mult_int8.v ip_cores/ram_512x1408.v ip_cores/ram_176x1408.v simulation/all_fpga_sim/all_top_tb.sv simulation/all_fpga_sim/avmm_sdram_bfm.sv simulation/all_fpga_sim/hps_bfm.sv 
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module StMM
+# -- Compiling module stmm_fetch
+# -- Compiling module stmm_wrapper
+# -- Compiling module vvm
+# -- Compiling module eu_top
+# -- Compiling interface bram_intf
+# -- Compiling module bram_mux
+# -- Compiling interface eu_ctrl_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rmio_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface sdram_read_intf
+# -- Compiling module sdram_read_mux
+# -- Compiling module avmm_sdram_read_wrapper
+# -- Compiling module avmm_sdram_wrapper
+# -- Compiling module pio32_f2h
+# -- Compiling module pio32_h2f
+# -- Compiling module rf_ldst
+# -- Compiling module rf_move
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_mux
+# -- Compiling module rf_wrapper
+# -- Compiling module priority_encoder
+# -- Compiling module decoder
+# -- Compiling module saturate
+# -- Compiling package sign_funcs_sv_unit
+# -- Compiling module design_top
+# -- Compiling module mult_int8
+# -- Compiling module ram_512x1408
+# -- Compiling module ram_176x1408
+# -- Compiling module all_top_tb
+# -- Compiling module avmm_sdram_bfm
+# -- Compiling module hps_bfm
+# 
+# Top level modules:
+# 	pio32_f2h
+# 	pio32_h2f
+# 	rf_ram_mux
+# 	priority_encoder
+# 	mult_int8
+# 	all_top_tb
+# End time: 15:31:45 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/all_fpga_sim/elaborate.tcl
+# all_top_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# reading modelsim.ini
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver all_top_tb 
+# Start time: 15:31:24 on Mar 22,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "stmm_fetch(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "vvm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "avmm_sdram_wrapper(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_move(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "avmm_sdram_read_wrapper(fast)".
+# ** Warning: $MODEL_TECH/../intel/verilog/src/sgate.v(320): (vopt-2685) [TFMPC] - Too few port connections for 'lpm_mult_component'.  Expected 8, found 7.
+# ** Warning: $MODEL_TECH/../intel/verilog/src/sgate.v(320): (vopt-2718) [TFMPC] - Missing connection for port 'sclr'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "ctrl_unit(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "rf_ldst(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=4.
+# Loading sv_std.std
+# Loading work.all_top_tb(fast)
+# Loading work.sdram_read_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.avmm_sdram_wrapper(fast)
+# Loading work.avmm_sdram_bfm(fast)
+# Loading work.avmm_sdram_read_wrapper(fast)
+# Loading work.avmm_sdram_bfm(fast__1)
+# Loading work.design_top(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+# Loading work.decoder(fast)
+# Loading work.rf_wrapper(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.bram_mux(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__3)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_move(fast)
+# Loading work.eu_top(fast)
+# Loading work.sdram_read_mux(fast)
+# Loading work.stmm_wrapper(fast)
+# Loading work.bram_intf(fast__4)
+# Loading work.stmm_fetch(fast)
+# Loading work.ram_176x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast__1)
+# Loading altera_mf_ver.altsyncram_body(fast__1)
+# Loading work.StMM(fast)
+# Loading work.vvm(fast)
+# Loading work.int18_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast)
+# Loading lpm_ver.lpm_add_sub(fast)
+# Loading sgate_ver.oper_add(fast__1)
+# Loading lpm_ver.lpm_add_sub(fast__1)
+# Loading sgate_ver.oper_add(fast__2)
+# Loading lpm_ver.lpm_add_sub(fast__2)
+# Loading sgate_ver.oper_add(fast__3)
+# Loading lpm_ver.lpm_add_sub(fast__3)
+# Loading sgate_ver.oper_mux(fast)
+# Loading work.mult_fp16(fast)
+# Loading sgate_ver.oper_add(fast__4)
+# Loading lpm_ver.lpm_add_sub(fast__4)
+# Loading sgate_ver.oper_add(fast__5)
+# Loading lpm_ver.lpm_add_sub(fast__5)
+# Loading sgate_ver.oper_add(fast__6)
+# Loading lpm_ver.lpm_add_sub(fast__6)
+# Loading sgate_ver.oper_add(fast__7)
+# Loading lpm_ver.lpm_add_sub(fast__7)
+# Loading sgate_ver.oper_mult(fast)
+# Loading lpm_ver.lpm_mult(fast)
+# Loading lpm_ver.LPM_HINT_EVALUATION(fast)
+# Loading sgate_ver.oper_mux(fast__1)
+# Loading work.fp16_to_int16(fast)
+# Loading sgate_ver.oper_add(fast__8)
+# Loading lpm_ver.lpm_add_sub(fast__8)
+# Loading sgate_ver.oper_add(fast__9)
+# Loading lpm_ver.lpm_add_sub(fast__9)
+# Loading work.saturate(fast)
+# Loading work.hps_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+# Loading work.eu_ctrl_intf(fast__1)
+# Loading work.sdram_read_intf(fast__2)
+# Loading work.bram_intf(fast__2)
+# Loading work.bram_intf(fast__5)
+do simulation/all_fpga_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# 
+#     design_rtl/ctrl_unit/*.sv              design_rtl/exec_unit/stmm/*.sv         design_rtl/exec_unit/*.sv              design_rtl/interface/*.sv               design_rtl/io/*.sv                      design_rtl/register_file/*.sv           design_rtl/support/*.sv                 design_rtl/design_top.sv                ip_cores/mult_int8.v                     ip_cores/ram_512x1408.v                  ip_cores/ram_176x1408.v                  simulation/all_fpga_sim/*.sv             
+#  
+#     ip_cores/fp16_to_int16_sim           ip_cores/int18_to_fp16_sim           ip_cores/mult_fp16_sim               
+# ** Error: Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+# Error in macro ./simulation/all_fpga_sim/compile.tcl line 25
+# Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+#     while executing
+# "cd $PROJ_PATH"
+quit -sim 
+# End time: 15:40:14 on Mar 22,2025, Elapsed time: 0:08:50
+# Errors: 2, Warnings: 4
+do simulation/all_fpga_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# 
+#     design_rtl/ctrl_unit/*.sv              design_rtl/exec_unit/stmm/*.sv         design_rtl/exec_unit/*.sv              design_rtl/interface/*.sv               design_rtl/io/*.sv                      design_rtl/register_file/*.sv           design_rtl/support/*.sv                 design_rtl/design_top.sv                ip_cores/mult_int8.v                     ip_cores/ram_512x1408.v                  ip_cores/ram_176x1408.v                  simulation/all_fpga_sim/*.sv             
+#  
+#     ip_cores/fp16_to_int16_sim           ip_cores/int18_to_fp16_sim           ip_cores/mult_fp16_sim               
+# reading modelsim.ini
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:40:15 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/fp16_to_int16_sim/fp16_to_int16.vo 
+# -- Compiling module fp16_to_int16
+# 
+# Top level modules:
+# 	fp16_to_int16
+# End time: 15:40:15 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:40:15 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/int18_to_fp16_sim/int18_to_fp16.vo 
+# -- Compiling module int18_to_fp16
+# 
+# Top level modules:
+# 	int18_to_fp16
+# End time: 15:40:15 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:40:16 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/mult_fp16_sim/mult_fp16.vo 
+# -- Compiling module mult_fp16
+# 
+# Top level modules:
+# 	mult_fp16
+# End time: 15:40:16 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# reading modelsim.ini
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:40:16 on Mar 22,2025
+# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv design_rtl/exec_unit/stmm/stmm.sv design_rtl/exec_unit/stmm/stmm_fetch.sv design_rtl/exec_unit/stmm/stmm_wrapper.sv design_rtl/exec_unit/stmm/vvm.sv design_rtl/exec_unit/eu_top.sv design_rtl/interface/bram_intf.sv design_rtl/interface/bram_mux.sv design_rtl/interface/eu_ctrl_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/interface/sdram_intf.sv design_rtl/interface/sdram_read_intf.sv design_rtl/interface/sdram_read_mux.sv design_rtl/io/avmm_sdram_read_wrapper.sv design_rtl/io/avmm_sdram_wrapper.sv design_rtl/io/pio32_f2h.sv design_rtl/io/pio32_h2f.sv design_rtl/register_file/rf_ldst.sv design_rtl/register_file/rf_move.sv design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ram_mux.sv design_rtl/register_file/rf_wrapper.sv design_rtl/support/plexer.sv design_rtl/support/plexer_funcs.sv design_rtl/support/saturate.sv design_rtl/support/sign_funcs.sv design_rtl/design_top.sv ip_cores/mult_int8.v ip_cores/ram_512x1408.v ip_cores/ram_176x1408.v simulation/all_fpga_sim/all_top_tb.sv simulation/all_fpga_sim/avmm_sdram_bfm.sv simulation/all_fpga_sim/hps_bfm.sv 
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module StMM
+# -- Compiling module stmm_fetch
+# -- Compiling module stmm_wrapper
+# -- Compiling module vvm
+# -- Compiling module eu_top
+# -- Compiling interface bram_intf
+# -- Compiling module bram_mux
+# -- Compiling interface eu_ctrl_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rmio_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface sdram_read_intf
+# -- Compiling module sdram_read_mux
+# -- Compiling module avmm_sdram_read_wrapper
+# -- Compiling module avmm_sdram_wrapper
+# -- Compiling module pio32_f2h
+# -- Compiling module pio32_h2f
+# -- Compiling module rf_ldst
+# -- Compiling module rf_move
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_mux
+# -- Compiling module rf_wrapper
+# -- Compiling module priority_encoder
+# -- Compiling module decoder
+# -- Compiling module saturate
+# -- Compiling package sign_funcs_sv_unit
+# -- Compiling module design_top
+# -- Compiling module mult_int8
+# -- Compiling module ram_512x1408
+# -- Compiling module ram_176x1408
+# -- Compiling module all_top_tb
+# -- Compiling module avmm_sdram_bfm
+# -- Compiling module hps_bfm
+# 
+# Top level modules:
+# 	pio32_f2h
+# 	pio32_h2f
+# 	rf_ram_mux
+# 	priority_encoder
+# 	mult_int8
+# 	all_top_tb
+# End time: 15:40:16 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/all_fpga_sim/elaborate.tcl
+# all_top_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# reading modelsim.ini
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver all_top_tb 
+# Start time: 15:40:18 on Mar 22,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.all_top_tb(fast)
+# Loading work.sdram_read_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.avmm_sdram_wrapper(fast)
+# Loading work.avmm_sdram_bfm(fast)
+# Loading work.avmm_sdram_read_wrapper(fast)
+# Loading work.avmm_sdram_bfm(fast__1)
+# Loading work.design_top(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+# Loading work.decoder(fast)
+# Loading work.rf_wrapper(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.bram_mux(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__3)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_move(fast)
+# Loading work.eu_top(fast)
+# Loading work.sdram_read_mux(fast)
+# Loading work.stmm_wrapper(fast)
+# Loading work.bram_intf(fast__4)
+# Loading work.stmm_fetch(fast)
+# Loading work.ram_176x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast__1)
+# Loading altera_mf_ver.altsyncram_body(fast__1)
+# Loading work.StMM(fast)
+# Loading work.vvm(fast)
+# Loading work.int18_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast)
+# Loading lpm_ver.lpm_add_sub(fast)
+# Loading sgate_ver.oper_add(fast__1)
+# Loading lpm_ver.lpm_add_sub(fast__1)
+# Loading sgate_ver.oper_add(fast__2)
+# Loading lpm_ver.lpm_add_sub(fast__2)
+# Loading sgate_ver.oper_add(fast__3)
+# Loading lpm_ver.lpm_add_sub(fast__3)
+# Loading sgate_ver.oper_mux(fast)
+# Loading work.mult_fp16(fast)
+# Loading sgate_ver.oper_add(fast__4)
+# Loading lpm_ver.lpm_add_sub(fast__4)
+# Loading sgate_ver.oper_add(fast__5)
+# Loading lpm_ver.lpm_add_sub(fast__5)
+# Loading sgate_ver.oper_add(fast__6)
+# Loading lpm_ver.lpm_add_sub(fast__6)
+# Loading sgate_ver.oper_add(fast__7)
+# Loading lpm_ver.lpm_add_sub(fast__7)
+# Loading sgate_ver.oper_mult(fast)
+# Loading lpm_ver.lpm_mult(fast)
+# Loading lpm_ver.LPM_HINT_EVALUATION(fast)
+# Loading sgate_ver.oper_mux(fast__1)
+# Loading work.fp16_to_int16(fast)
+# Loading sgate_ver.oper_add(fast__8)
+# Loading lpm_ver.lpm_add_sub(fast__8)
+# Loading sgate_ver.oper_add(fast__9)
+# Loading lpm_ver.lpm_add_sub(fast__9)
+# Loading work.saturate(fast)
+# Loading work.hps_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+# Loading work.eu_ctrl_intf(fast__1)
+# Loading work.sdram_read_intf(fast__2)
+# Loading work.bram_intf(fast__2)
+# Loading work.bram_intf(fast__5)
+# ** Error (suppressible): (vsim-PLI-3029) Expected a system function, not system task '$fwrite'.
+#    Time: 0 ps  Iteration: 0  Region: /all_top_tb/i_sdram_bi_slave/write_mem_to_file File: simulation/all_fpga_sim/avmm_sdram_bfm.sv Line: 144
+# ** Error (suppressible): (vsim-PLI-3029) Expected a system function, not system task '$fwrite'.
+#    Time: 0 ps  Iteration: 0  Region: /all_top_tb/i_sdram_ro_slave/write_mem_to_file File: simulation/all_fpga_sim/avmm_sdram_bfm.sv Line: 144
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/all_fpga_sim/elaborate.tcl PAUSED at line 11
+do simulation/all_fpga_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# 
+#     design_rtl/ctrl_unit/*.sv              design_rtl/exec_unit/stmm/*.sv         design_rtl/exec_unit/*.sv              design_rtl/interface/*.sv               design_rtl/io/*.sv                      design_rtl/register_file/*.sv           design_rtl/support/*.sv                 design_rtl/design_top.sv                ip_cores/mult_int8.v                     ip_cores/ram_512x1408.v                  ip_cores/ram_176x1408.v                  simulation/all_fpga_sim/*.sv             
+#  
+#     ip_cores/fp16_to_int16_sim           ip_cores/int18_to_fp16_sim           ip_cores/mult_fp16_sim               
+# reading modelsim.ini
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:41:25 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/fp16_to_int16_sim/fp16_to_int16.vo 
+# -- Compiling module fp16_to_int16
+# 
+# Top level modules:
+# 	fp16_to_int16
+# End time: 15:41:25 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:41:25 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/int18_to_fp16_sim/int18_to_fp16.vo 
+# -- Compiling module int18_to_fp16
+# 
+# Top level modules:
+# 	int18_to_fp16
+# End time: 15:41:26 on Mar 22,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:41:26 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/mult_fp16_sim/mult_fp16.vo 
+# -- Compiling module mult_fp16
+# 
+# Top level modules:
+# 	mult_fp16
+# End time: 15:41:26 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# reading modelsim.ini
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:41:26 on Mar 22,2025
+# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv design_rtl/exec_unit/stmm/stmm.sv design_rtl/exec_unit/stmm/stmm_fetch.sv design_rtl/exec_unit/stmm/stmm_wrapper.sv design_rtl/exec_unit/stmm/vvm.sv design_rtl/exec_unit/eu_top.sv design_rtl/interface/bram_intf.sv design_rtl/interface/bram_mux.sv design_rtl/interface/eu_ctrl_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/interface/sdram_intf.sv design_rtl/interface/sdram_read_intf.sv design_rtl/interface/sdram_read_mux.sv design_rtl/io/avmm_sdram_read_wrapper.sv design_rtl/io/avmm_sdram_wrapper.sv design_rtl/io/pio32_f2h.sv design_rtl/io/pio32_h2f.sv design_rtl/register_file/rf_ldst.sv design_rtl/register_file/rf_move.sv design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ram_mux.sv design_rtl/register_file/rf_wrapper.sv design_rtl/support/plexer.sv design_rtl/support/plexer_funcs.sv design_rtl/support/saturate.sv design_rtl/support/sign_funcs.sv design_rtl/design_top.sv ip_cores/mult_int8.v ip_cores/ram_512x1408.v ip_cores/ram_176x1408.v simulation/all_fpga_sim/all_top_tb.sv simulation/all_fpga_sim/avmm_sdram_bfm.sv simulation/all_fpga_sim/hps_bfm.sv 
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module StMM
+# -- Compiling module stmm_fetch
+# -- Compiling module stmm_wrapper
+# -- Compiling module vvm
+# -- Compiling module eu_top
+# -- Compiling interface bram_intf
+# -- Compiling module bram_mux
+# -- Compiling interface eu_ctrl_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rmio_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface sdram_read_intf
+# -- Compiling module sdram_read_mux
+# -- Compiling module avmm_sdram_read_wrapper
+# -- Compiling module avmm_sdram_wrapper
+# -- Compiling module pio32_f2h
+# -- Compiling module pio32_h2f
+# -- Compiling module rf_ldst
+# -- Compiling module rf_move
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_mux
+# -- Compiling module rf_wrapper
+# -- Compiling module priority_encoder
+# -- Compiling module decoder
+# -- Compiling module saturate
+# -- Compiling package sign_funcs_sv_unit
+# -- Compiling module design_top
+# -- Compiling module mult_int8
+# -- Compiling module ram_512x1408
+# -- Compiling module ram_176x1408
+# -- Compiling module all_top_tb
+# -- Compiling module avmm_sdram_bfm
+# -- Compiling module hps_bfm
+# 
+# Top level modules:
+# 	pio32_f2h
+# 	pio32_h2f
+# 	rf_ram_mux
+# 	priority_encoder
+# 	mult_int8
+# 	all_top_tb
+# End time: 15:41:26 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/all_fpga_sim/elaborate.tcl
+# all_top_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# reading modelsim.ini
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver all_top_tb 
+# Start time: 15:40:18 on Mar 22,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=2.
+# Loading sv_std.std
+# Loading work.all_top_tb(fast)
+# Loading work.sdram_read_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.avmm_sdram_wrapper(fast)
+# Loading work.avmm_sdram_bfm(fast)
+# Loading work.avmm_sdram_read_wrapper(fast)
+# Loading work.avmm_sdram_bfm(fast__1)
+# Loading work.design_top(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+# Loading work.decoder(fast)
+# Loading work.rf_wrapper(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.bram_mux(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__3)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_move(fast)
+# Loading work.eu_top(fast)
+# Loading work.sdram_read_mux(fast)
+# Loading work.stmm_wrapper(fast)
+# Loading work.bram_intf(fast__4)
+# Loading work.stmm_fetch(fast)
+# Loading work.ram_176x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast__1)
+# Loading altera_mf_ver.altsyncram_body(fast__1)
+# Loading work.StMM(fast)
+# Loading work.vvm(fast)
+# Loading work.int18_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast)
+# Loading lpm_ver.lpm_add_sub(fast)
+# Loading sgate_ver.oper_add(fast__1)
+# Loading lpm_ver.lpm_add_sub(fast__1)
+# Loading sgate_ver.oper_add(fast__2)
+# Loading lpm_ver.lpm_add_sub(fast__2)
+# Loading sgate_ver.oper_add(fast__3)
+# Loading lpm_ver.lpm_add_sub(fast__3)
+# Loading sgate_ver.oper_mux(fast)
+# Loading work.mult_fp16(fast)
+# Loading sgate_ver.oper_add(fast__4)
+# Loading lpm_ver.lpm_add_sub(fast__4)
+# Loading sgate_ver.oper_add(fast__5)
+# Loading lpm_ver.lpm_add_sub(fast__5)
+# Loading sgate_ver.oper_add(fast__6)
+# Loading lpm_ver.lpm_add_sub(fast__6)
+# Loading sgate_ver.oper_add(fast__7)
+# Loading lpm_ver.lpm_add_sub(fast__7)
+# Loading sgate_ver.oper_mult(fast)
+# Loading lpm_ver.lpm_mult(fast)
+# Loading lpm_ver.LPM_HINT_EVALUATION(fast)
+# Loading sgate_ver.oper_mux(fast__1)
+# Loading work.fp16_to_int16(fast)
+# Loading sgate_ver.oper_add(fast__8)
+# Loading lpm_ver.lpm_add_sub(fast__8)
+# Loading sgate_ver.oper_add(fast__9)
+# Loading lpm_ver.lpm_add_sub(fast__9)
+# Loading work.saturate(fast)
+# Loading work.hps_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+# Loading work.eu_ctrl_intf(fast__1)
+# Loading work.sdram_read_intf(fast__2)
+# Loading work.bram_intf(fast__2)
+# Loading work.bram_intf(fast__5)
+# ** Error (suppressible): (vsim-PLI-3029) Expected a system function, not system task '$fwrite'.
+#    Time: 0 ps  Iteration: 0  Region: /all_top_tb/i_sdram_bi_slave/write_mem_to_file File: simulation/all_fpga_sim/avmm_sdram_bfm.sv Line: 144
+# ** Error (suppressible): (vsim-PLI-3029) Expected a system function, not system task '$fwrite'.
+#    Time: 0 ps  Iteration: 0  Region: /all_top_tb/i_sdram_ro_slave/write_mem_to_file File: simulation/all_fpga_sim/avmm_sdram_bfm.sv Line: 144
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./simulation/all_fpga_sim/elaborate.tcl PAUSED at line 11
+do simulation/all_fpga_sim/compile.tcl
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# 
+#     design_rtl/ctrl_unit/*.sv              design_rtl/exec_unit/stmm/*.sv         design_rtl/exec_unit/*.sv              design_rtl/interface/*.sv               design_rtl/io/*.sv                      design_rtl/register_file/*.sv           design_rtl/support/*.sv                 design_rtl/design_top.sv                ip_cores/mult_int8.v                     ip_cores/ram_512x1408.v                  ip_cores/ram_176x1408.v                  simulation/all_fpga_sim/*.sv             
+#  
+#     ip_cores/fp16_to_int16_sim           ip_cores/int18_to_fp16_sim           ip_cores/mult_fp16_sim               
+# reading modelsim.ini
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:41:50 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/fp16_to_int16_sim/fp16_to_int16.vo 
+# -- Compiling module fp16_to_int16
+# 
+# Top level modules:
+# 	fp16_to_int16
+# End time: 15:41:50 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:41:50 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/int18_to_fp16_sim/int18_to_fp16.vo 
+# -- Compiling module int18_to_fp16
+# 
+# Top level modules:
+# 	int18_to_fp16
+# End time: 15:41:50 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# [exec] dev_com
+# [exec] com
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:41:50 on Mar 22,2025
+# vlog -reportprogress 300 ip_cores/mult_fp16_sim/mult_fp16.vo 
+# -- Compiling module mult_fp16
+# 
+# Top level modules:
+# 	mult_fp16
+# End time: 15:41:50 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# reading modelsim.ini
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:41:50 on Mar 22,2025
+# vlog -reportprogress 300 -sv design_rtl/ctrl_unit/ctrl_unit.sv design_rtl/ctrl_unit/inst_decode.sv design_rtl/exec_unit/stmm/stmm.sv design_rtl/exec_unit/stmm/stmm_fetch.sv design_rtl/exec_unit/stmm/stmm_wrapper.sv design_rtl/exec_unit/stmm/vvm.sv design_rtl/exec_unit/eu_top.sv design_rtl/interface/bram_intf.sv design_rtl/interface/bram_mux.sv design_rtl/interface/eu_ctrl_intf.sv design_rtl/interface/rf_ldst_intf.sv design_rtl/interface/rf_move_intf.sv design_rtl/interface/rmio_intf.sv design_rtl/interface/sdram_intf.sv design_rtl/interface/sdram_read_intf.sv design_rtl/interface/sdram_read_mux.sv design_rtl/io/avmm_sdram_read_wrapper.sv design_rtl/io/avmm_sdram_wrapper.sv design_rtl/io/pio32_f2h.sv design_rtl/io/pio32_h2f.sv design_rtl/register_file/rf_ldst.sv design_rtl/register_file/rf_move.sv design_rtl/register_file/rf_ram.sv design_rtl/register_file/rf_ram_mux.sv design_rtl/register_file/rf_wrapper.sv design_rtl/support/plexer.sv design_rtl/support/plexer_funcs.sv design_rtl/support/saturate.sv design_rtl/support/sign_funcs.sv design_rtl/design_top.sv ip_cores/mult_int8.v ip_cores/ram_512x1408.v ip_cores/ram_176x1408.v simulation/all_fpga_sim/all_top_tb.sv simulation/all_fpga_sim/avmm_sdram_bfm.sv simulation/all_fpga_sim/hps_bfm.sv 
+# -- Compiling module ctrl_unit
+# -- Compiling module inst_decode
+# -- Compiling module StMM
+# -- Compiling module stmm_fetch
+# -- Compiling module stmm_wrapper
+# -- Compiling module vvm
+# -- Compiling module eu_top
+# -- Compiling interface bram_intf
+# -- Compiling module bram_mux
+# -- Compiling interface eu_ctrl_intf
+# -- Compiling interface rf_ldst_intf
+# -- Compiling interface rf_move_intf
+# -- Compiling interface rmio_intf
+# -- Compiling interface sdram_intf
+# -- Compiling interface sdram_read_intf
+# -- Compiling module sdram_read_mux
+# -- Compiling module avmm_sdram_read_wrapper
+# -- Compiling module avmm_sdram_wrapper
+# -- Compiling module pio32_f2h
+# -- Compiling module pio32_h2f
+# -- Compiling module rf_ldst
+# -- Compiling module rf_move
+# -- Compiling module rf_ram
+# -- Compiling module rf_ram_mux
+# -- Compiling module rf_wrapper
+# -- Compiling module priority_encoder
+# -- Compiling module decoder
+# -- Compiling module saturate
+# -- Compiling package sign_funcs_sv_unit
+# -- Compiling module design_top
+# -- Compiling module mult_int8
+# -- Compiling module ram_512x1408
+# -- Compiling module ram_176x1408
+# -- Compiling module all_top_tb
+# -- Compiling module avmm_sdram_bfm
+# -- Compiling module hps_bfm
+# 
+# Top level modules:
+# 	pio32_f2h
+# 	pio32_h2f
+# 	rf_ram_mux
+# 	priority_encoder
+# 	mult_int8
+# 	all_top_tb
+# End time: 15:41:50 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do simulation/all_fpga_sim/elaborate.tcl
+# all_top_tb
+# /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
+# reading modelsim.ini
+# vsim -voptargs=""+acc"" -t ps -L work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver all_top_tb 
+# Start time: 15:40:18 on Mar 22,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=4, Warnings=3.
+# Loading sv_std.std
+# Loading work.all_top_tb(fast)
+# Loading work.sdram_read_intf(fast__1)
+# Loading work.sdram_intf(fast__1)
+# Loading work.avmm_sdram_wrapper(fast)
+# Loading work.avmm_sdram_bfm(fast)
+# Loading work.avmm_sdram_read_wrapper(fast)
+# Loading work.avmm_sdram_bfm(fast__1)
+# Loading work.design_top(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+# Loading work.decoder(fast)
+# Loading work.rf_wrapper(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.bram_mux(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__3)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_move(fast)
+# Loading work.eu_top(fast)
+# Loading work.sdram_read_mux(fast)
+# Loading work.stmm_wrapper(fast)
+# Loading work.bram_intf(fast__4)
+# Loading work.stmm_fetch(fast)
+# Loading work.ram_176x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast__1)
+# Loading altera_mf_ver.altsyncram_body(fast__1)
+# Loading work.StMM(fast)
+# Loading work.vvm(fast)
+# Loading work.int18_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast)
+# Loading lpm_ver.lpm_add_sub(fast)
+# Loading sgate_ver.oper_add(fast__1)
+# Loading lpm_ver.lpm_add_sub(fast__1)
+# Loading sgate_ver.oper_add(fast__2)
+# Loading lpm_ver.lpm_add_sub(fast__2)
+# Loading sgate_ver.oper_add(fast__3)
+# Loading lpm_ver.lpm_add_sub(fast__3)
+# Loading sgate_ver.oper_mux(fast)
+# Loading work.mult_fp16(fast)
+# Loading sgate_ver.oper_add(fast__4)
+# Loading lpm_ver.lpm_add_sub(fast__4)
+# Loading sgate_ver.oper_add(fast__5)
+# Loading lpm_ver.lpm_add_sub(fast__5)
+# Loading sgate_ver.oper_add(fast__6)
+# Loading lpm_ver.lpm_add_sub(fast__6)
+# Loading sgate_ver.oper_add(fast__7)
+# Loading lpm_ver.lpm_add_sub(fast__7)
+# Loading sgate_ver.oper_mult(fast)
+# Loading lpm_ver.lpm_mult(fast)
+# Loading lpm_ver.LPM_HINT_EVALUATION(fast)
+# Loading sgate_ver.oper_mux(fast__1)
+# Loading work.fp16_to_int16(fast)
+# Loading sgate_ver.oper_add(fast__8)
+# Loading lpm_ver.lpm_add_sub(fast__8)
+# Loading sgate_ver.oper_add(fast__9)
+# Loading lpm_ver.lpm_add_sub(fast__9)
+# Loading work.saturate(fast)
+# Loading work.hps_bfm(fast)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+# Loading work.eu_ctrl_intf(fast__1)
+# Loading work.sdram_read_intf(fast__2)
+# Loading work.bram_intf(fast__2)
+# Loading work.bram_intf(fast__5)
+run -a
+#     1048576 words read from test_data/rd_mem.bin to addr   536870912.
+# Read operation start, waiting...
+# Read wait done. address: 20000000, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200000b0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000160, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000210, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200002c0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000370, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000420, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200004d0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000580, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000630, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200006e0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000790, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000840, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200008f0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200009a0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000a50, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000b00, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000bb0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000c60, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000d10, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000dc0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000e70, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000f20, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20000fd0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001080, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001130, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200011e0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001290, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001340, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200013f0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200014a0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001550, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001600, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200016b0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001760, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001810, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200018c0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001970, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001a20, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001ad0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001b80, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001c30, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001ce0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001d90, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001e40, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001ef0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20001fa0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002050, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002100, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200021b0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002260, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002310, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200023c0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002470, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002520, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200025d0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002680, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002730, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200027e0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002890, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002940, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200029f0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002aa0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002b50, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002c00, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002cb0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002d60, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002e10, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002ec0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20002f70, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003020, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200030d0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003180, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003230, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200032e0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003390, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003440, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200034f0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200035a0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003650, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003700, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200037b0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003860, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003910, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200039c0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003a70, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003b20, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003bd0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003c80, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003d30, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003de0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003e90, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003f40, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20003ff0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200040a0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004150, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004200, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200042b0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004360, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004410, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200044c0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004570, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004620, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200046d0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004780, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004830, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200048e0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004990, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004a40, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004af0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004ba0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004c50, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004d00, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004db0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004e60, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004f10, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20004fc0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005070, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005120, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200051d0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005280, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005330, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200053e0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005490, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005540, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200055f0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200056a0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005750, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005800, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200058b0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005960, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005a10, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005ac0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005b70, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005c20, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005cd0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005d80, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005e30, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005ee0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20005f90, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006040, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200060f0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200061a0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006250, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006300, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200063b0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006460, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006510, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200065c0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006670, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006720, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200067d0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006880, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006930, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200069e0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006a90, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006b40, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006bf0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006ca0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006d50, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006e00, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006eb0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20006f60, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20007010, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 200070c0, burstcount:   11
+# Read operation done.
+# Read operation start, waiting...
+# Read wait done. address: 20007170, burstcount:   11
+# Read operation done.
+# Load Done
+# MOVE Done
+# Write operation start, waiting...
+# Write wait done. address: 20010000, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200100b0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010160, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010210, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200102c0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010370, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010420, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200104d0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010580, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010630, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200106e0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010790, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010840, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200108f0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200109a0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010a50, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010b00, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010bb0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010c60, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010d10, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010dc0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010e70, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010f20, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20010fd0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011080, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011130, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200111e0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011290, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011340, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200113f0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200114a0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011550, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011600, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200116b0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011760, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011810, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200118c0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011970, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011a20, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011ad0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011b80, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011c30, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011ce0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011d90, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011e40, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011ef0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20011fa0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012050, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012100, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200121b0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012260, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012310, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200123c0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012470, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012520, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200125d0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012680, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012730, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200127e0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012890, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012940, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200129f0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012aa0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012b50, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012c00, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012cb0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012d60, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012e10, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012ec0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20012f70, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013020, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200130d0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013180, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013230, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200132e0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013390, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013440, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200134f0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200135a0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013650, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013700, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200137b0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013860, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013910, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200139c0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013a70, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013b20, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013bd0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013c80, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013d30, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013de0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013e90, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013f40, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20013ff0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200140a0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014150, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014200, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200142b0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014360, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014410, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200144c0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014570, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014620, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200146d0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014780, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014830, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200148e0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014990, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014a40, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014af0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014ba0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014c50, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014d00, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014db0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014e60, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014f10, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20014fc0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015070, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015120, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200151d0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015280, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015330, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200153e0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015490, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015540, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200155f0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200156a0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015750, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015800, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200158b0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015960, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015a10, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015ac0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015b70, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015c20, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015cd0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015d80, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015e30, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015ee0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20015f90, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016040, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200160f0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200161a0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016250, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016300, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200163b0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016460, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016510, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200165c0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016670, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016720, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200167d0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016880, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016930, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200169e0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016a90, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016b40, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016bf0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016ca0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016d50, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016e00, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016eb0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20016f60, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20017010, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 200170c0, burstcount:   11
+# Write operation done.
+# Write operation start, waiting...
+# Write wait done. address: 20017170, burstcount:   11
+# Write operation done.
+# Store Done
+# Writing memory to file test_data/wt_mem.bin...
+#      262144 words written to file test_data/wt_mem.bin.
+# ** Note: $stop    : simulation/all_fpga_sim/all_top_tb.sv(175)
+#    Time: 1031880 ns  Iteration: 2  Instance: /all_top_tb
+# Break in Module all_top_tb at simulation/all_fpga_sim/all_top_tb.sv line 175

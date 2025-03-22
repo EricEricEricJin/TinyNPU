@@ -32,8 +32,10 @@ logic [31 : 0] mem [0 : RD_MEM_SIZE / 4 - 1];
 
 task read_file_to_mem();
     int i;
-    // open file
     int fd;
+    int n;
+
+    // open file
     fd = $fopen(RD_MEM_FILE, "rb");
     if (fd == 0) begin
         $display("Error: cannot open file %s", RD_MEM_FILE);
@@ -41,13 +43,15 @@ task read_file_to_mem();
     end
 
     // read into mem arr
-    for (i = 0; i < (RD_MEM_SIZE / 4) && !$feof(fd); i++) begin
-        for (int j = 0; j < 4; j++) begin
-            mem[i][j*8 +: 8] = $fgetc(fd);
-        end
-    end    
+    n = $fread(mem, fd);
+    
+    // for (i = 0; i < (RD_MEM_SIZE / 4) && !$feof(fd); i++) begin
+    //     for (int j = 0; j < 4; j++) begin
+    //         mem[i][j*8 +: 8] = $fgetc(fd);
+    //     end
+    // end    
 
-    $display("%d words read from %s to addr %d.", i, RD_MEM_FILE, RD_MEM_OFFSET);    
+    $display("%d words read from %s to addr %d.", n, RD_MEM_FILE, RD_MEM_OFFSET);
 endtask
 
 logic [31 : 0] address_reg;
@@ -60,7 +64,7 @@ always @(negedge clk, negedge rst_n) begin
 
     if (read && rst_n) begin
         // wait request for some time 
-        $display("Read operation start, waiting...");
+        // $display("Read operation start, waiting...");
         
         waitrequest = 1;
         wait_sometime();
@@ -83,7 +87,7 @@ always @(negedge clk, negedge rst_n) begin
             readdatavalid = 1;
             @(negedge clk) readdatavalid = 0;
         end
-        $display("Read operation done.");
+        // $display("Read operation done.");
     end
     else begin
         readdata = 'x;
@@ -94,7 +98,7 @@ end
 // process write
 always @(negedge clk, negedge rst_n) begin
     if (write && rst_n) begin
-        $display("Write operation start, waiting...");
+        // $display("Write operation start, waiting...");
 
         // wait request for some time 
         waitrequest = 1;
@@ -118,12 +122,13 @@ always @(negedge clk, negedge rst_n) begin
                 i++;
             end                
         end
-        $display("Write operation done.");
+        // $display("Write operation done.");
     end
 end
 
 task write_mem_to_file();
     int fd;
+    int n;
     int i, j;
 
     $display("Writing memory to file %s...", WT_MEM_FILE);
@@ -135,14 +140,19 @@ task write_mem_to_file();
         $stop();
     end
 
+    // write to file
+    // n = $fwrite(fd, "%u", mem);
+
     for (i = 0; i < (WT_MEM_SIZE / 4); i++) begin
         for (j = 0; j < 4; j++) begin
             $fwrite(fd, "%c", mem[i][j*8 +: 8]);
         end
     end
+    n = i;
+
 
     $fclose(fd);
-    $display("%i words written to file %s.", WT_MEM_FILE);
+    $display("%d words written to file %s.", n, WT_MEM_FILE);
 endtask
 
 endmodule

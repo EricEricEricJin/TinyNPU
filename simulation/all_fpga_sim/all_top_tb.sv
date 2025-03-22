@@ -2,6 +2,10 @@
 
 module all_top_tb;
 
+localparam string WEIGHT_MEM_FILE = "test_data/weight_mem.bin";
+localparam string RD_MEM_FILE = "test_data/rd_mem.bin";
+localparam string WT_MEM_FILE = "test_data/wt_mem.bin";
+
 logic clk, rst_n;
 
 
@@ -48,10 +52,10 @@ avmm_sdram_wrapper #(.SDRAM_DATA_W(128) ) i_avmm_sdram_wrapper (
 
 avmm_sdram_bfm #(
     .SDRAM_W(128),
-    .RD_MEM_FILE("rd_mem.bin"),
+    .RD_MEM_FILE(RD_MEM_FILE),
     .RD_MEM_SIZE(1024*1024),
     .RD_MEM_OFFSET(512*1024*1024),
-    .WT_MEM_FILE("wt_mem.bin"),
+    .WT_MEM_FILE(WT_MEM_FILE),
     .WT_MEM_SIZE(1024*1024),
     .WT_MEM_OFFSET(512*1024*1024)
 ) i_sdram_bi_slave (
@@ -98,7 +102,7 @@ avmm_sdram_read_wrapper #(.SDRAM_DATA_W(128) ) i_avmm_sdram_read_wrapper (
 
 avmm_sdram_bfm #(
     .SDRAM_W(128),
-    .RD_MEM_FILE("weight_mem.bin"),
+    .RD_MEM_FILE(WEIGHT_MEM_FILE),
     .RD_MEM_SIZE(256*1024*1024),
     .RD_MEM_OFFSET(512*1024*1024),
     .WT_MEM_FILE(""),
@@ -142,15 +146,35 @@ design_top i_design_top (
     .LED(LED)
 );
 
+// ----------------- HPS BFM -----------------
+logic sim_stop;
+hps_bfm i_hps_bfm (
+    .clk(clk),
+    .rst_n(rst_n),
+
+    .h2f_pio32(h2f_pio32),
+    .h2f_write(h2f_write),
+    .f2h_pio32(f2h_pio32),
+    .f2h_write(f2h_write),
+
+    .sim_stop(sim_stop)
+);
+
 initial begin
     clk = 0;
     rst_n = 0;
 
+    i_sdram_bi_slave.read_file_to_mem();
+    // i_sdram_ro_slave.read_file_to_mem();
+
     @(negedge clk);
-    rst_n = 1;    
+    rst_n = 1;
+
+    @(posedge sim_stop);
+    i_sdram_bi_slave.write_mem_to_file();
+    $stop();
 end
 
 always #10000 clk = ~clk;
-
 
 endmodule
