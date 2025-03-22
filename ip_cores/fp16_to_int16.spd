@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="fp16_to_int16_sim/fp16_to_int16.vo" type="VERILOG" />
+ <topLevel name="fp16_to_int16" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

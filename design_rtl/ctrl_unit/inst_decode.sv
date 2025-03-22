@@ -73,8 +73,8 @@ logic eu_fun;
 assign eu_fun = inst[29];
 
 // assign eu_unit = inst[28 : 24];
-assign eu_group = inst[28 : 24];
-assign ex_idx = inst[23 : 20];
+assign eu_group_idx = inst[28 : 24];
+assign eu_sub_idx = inst[23 : 20];
 
 assign eu_fetch_addr = {4'b0, inst[23 : 0], 4'b0};
 

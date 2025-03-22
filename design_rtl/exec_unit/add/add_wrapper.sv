@@ -6,7 +6,7 @@
 
 module add_wrapper #( 
     parameter int N = 176,
-    parameter int SDRAM_DATA_W = 128,
+    parameter int SDRAM_DATA_W = 128
 ) (
     input wire clk, 
     input wire rst_n,

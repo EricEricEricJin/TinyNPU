@@ -84,7 +84,7 @@ inst_decode i_inst_decode (
     .move_dst_freeze   (rf_move.dst_freeze),
 
     .eu_group_idx       (eu_group_idx),
-    .ex_sub_idx         (eu_sub_idx),
+    .eu_sub_idx         (eu_sub_idx),
     .eu_fetch_addr      (eu_fetch_addr)
 );
 

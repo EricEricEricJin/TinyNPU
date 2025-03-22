@@ -115,7 +115,7 @@ end
 
 always_comb begin    
     i_sdram_read_intf.read_start = 0;
-    i_sdram_read_intf.read_cnt = (11)'BLK_NUM;
+    i_sdram_read_intf.read_cnt = (11)'(BLK_NUM);
 
     blk_store = 0;
     nxt_line = 0;
@@ -151,7 +151,7 @@ always_comb begin
             end
         end
         default: begin  // RECV_QUANT
-            if (out_valid) begin
+            if (i_sdram_read_intf.read_valid) begin
                 quant_valid = 1;
                 nxt_state = IDLE;
             end

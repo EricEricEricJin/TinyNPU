@@ -1,0 +1,720 @@
+//IP Functional Simulation Model
+//VERSION_BEGIN 23.1 cbx_mgl 2024:05:14:18:00:13:SC cbx_simgen 2024:05:14:17:53:42:SC  VERSION_END
+// synthesis VERILOG_INPUT_VERSION VERILOG_2001
+// altera message_off 10463
+
+
+
+// Copyright (C) 2024  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// You may only use these simulation model output files for simulation
+// purposes and expressly not for synthesis or any other purposes (in which
+// event Intel disclaims all warranties of any kind).
+
+
+//synopsys translate_off
+
+//synthesis_resources = lut 20 mux21 21 oper_add 6 oper_mux 50 
+`timescale 1 ps / 1 ps
+module  fp16_to_int16
+	( 
+	a,
+	areset,
+	clk,
+	q) /* synthesis synthesis_clearbox=1 */;
+	input   [15:0]  a;
+	input   areset;
+	input   clk;
+	output   [15:0]  q;
+
+	reg	ni0i;
+	reg	ni0O;
+	reg	ni1l;
+	reg	ni1O;
+	reg	niOli;
+	reg	niOll;
+	reg	niOlO;
+	reg	niOOi;
+	reg	niOOl;
+	reg	niOOO;
+	reg	nl10i;
+	reg	nl10l;
+	reg	nl10O;
+	reg	nl11i;
+	reg	nl11l;
+	reg	nl11O;
+	reg	nl1ii;
+	reg	nlOil;
+	reg	nlOiO;
+	reg	nlOlO;
+	wire	wire_n00i_dataout;
+	wire	wire_n00l_dataout;
+	wire	wire_n00O_dataout;
+	wire	wire_n01i_dataout;
+	wire	wire_n01l_dataout;
+	wire	wire_n01O_dataout;
+	wire	wire_n0ii_dataout;
+	wire	wire_n0il_dataout;
+	wire	wire_n0iO_dataout;
+	wire	wire_n0li_dataout;
+	wire	wire_n0ll_dataout;
+	wire	wire_n0lO_dataout;
+	wire	wire_n0Oi_dataout;
+	wire	wire_n0Ol_dataout;
+	wire	wire_n0OO_dataout;
+	wire	wire_ni1i_dataout;
+	wire	wire_niii_dataout;
+	wire	wire_niil_dataout;
+	wire	wire_niiO_dataout;
+	wire	wire_nili_dataout;
+	wire	wire_nill_dataout;
+	wire  [9:0]   wire_nilO_o;
+	wire  [8:0]   wire_niOi_o;
+	wire  [8:0]   wire_nlOli_o;
+	wire  [20:0]   wire_nlOll_o;
+	wire  [8:0]   wire_nlOOi_o;
+	wire  [17:0]   wire_nlOOl_o;
+	wire  wire_n0i_o;
+	wire  wire_n0l_o;
+	wire  wire_n0O_o;
+	wire  wire_n1i_o;
+	wire  wire_n1l_o;
+	wire  wire_n1O_o;
+	wire  wire_ni_o;
+	wire  wire_nii_o;
+	wire  wire_nil_o;
+	wire  wire_niO_o;
+	wire  wire_niOl_o;
+	wire  wire_niOO_o;
+	wire  wire_nl_o;
+	wire  wire_nl0i_o;
+	wire  wire_nl0l_o;
+	wire  wire_nl0O_o;
+	wire  wire_nl1i_o;
+	wire  wire_nl1l_o;
+	wire  wire_nl1O_o;
+	wire  wire_nli_o;
+	wire  wire_nlii_o;
+	wire  wire_nlil_o;
+	wire  wire_nliO_o;
+	wire  wire_nliOO_o;
+	wire  wire_nll_o;
+	wire  wire_nll0i_o;
+	wire  wire_nll0l_o;
+	wire  wire_nll0O_o;
+	wire  wire_nll1i_o;
+	wire  wire_nll1l_o;
+	wire  wire_nll1O_o;
+	wire  wire_nlli_o;
+	wire  wire_nllii_o;
+	wire  wire_nllil_o;
+	wire  wire_nlliO_o;
+	wire  wire_nlll_o;
+	wire  wire_nllli_o;
+	wire  wire_nllll_o;
+	wire  wire_nlllO_o;
+	wire  wire_nllO_o;
+	wire  wire_nllOi_o;
+	wire  wire_nllOl_o;
+	wire  wire_nllOO_o;
+	wire  wire_nlO_o;
+	wire  wire_nlO1i_o;
+	wire  wire_nlO1l_o;
+	wire  wire_nlOi_o;
+	wire  wire_nlOl_o;
+	wire  wire_nlOO_o;
+	wire  wire_nO_o;
+	wire  niO0i;
+	wire  niO0l;
+	wire  niO0O;
+	wire  niO1O;
+	wire  niOii;
+
+	initial
+	begin
+		ni0i = 0;
+		ni0O = 0;
+		ni1l = 0;
+		ni1O = 0;
+		niOli = 0;
+		niOll = 0;
+		niOlO = 0;
+		niOOi = 0;
+		niOOl = 0;
+		niOOO = 0;
+		nl10i = 0;
+		nl10l = 0;
+		nl10O = 0;
+		nl11i = 0;
+		nl11l = 0;
+		nl11O = 0;
+		nl1ii = 0;
+		nlOil = 0;
+		nlOiO = 0;
+		nlOlO = 0;
+	end
+	always @ ( posedge clk or  posedge areset)
+	begin
+		if (areset == 1'b1) 
+		begin
+			ni0i <= 0;
+			ni0O <= 0;
+			ni1l <= 0;
+			ni1O <= 0;
+			niOli <= 0;
+			niOll <= 0;
+			niOlO <= 0;
+			niOOi <= 0;
+			niOOl <= 0;
+			niOOO <= 0;
+			nl10i <= 0;
+			nl10l <= 0;
+			nl10O <= 0;
+			nl11i <= 0;
+			nl11l <= 0;
+			nl11O <= 0;
+			nl1ii <= 0;
+			nlOil <= 0;
+			nlOiO <= 0;
+			nlOlO <= 0;
+		end
+		else 
+		begin
+			ni0i <= wire_nili_dataout;
+			ni0O <= wire_nill_dataout;
+			ni1l <= wire_niil_dataout;
+			ni1O <= wire_niiO_dataout;
+			niOli <= a[15];
+			niOll <= niO0i;
+			niOlO <= a[0];
+			niOOi <= a[1];
+			niOOl <= a[2];
+			niOOO <= a[3];
+			nl10i <= a[7];
+			nl10l <= a[8];
+			nl10O <= a[9];
+			nl11i <= a[4];
+			nl11l <= a[5];
+			nl11O <= a[6];
+			nl1ii <= niO1O;
+			nlOil <= wire_nlOli_o[8];
+			nlOiO <= wire_nlOOi_o[8];
+			nlOlO <= wire_niii_dataout;
+		end
+	end
+	assign		wire_n00i_dataout = ((~ nlOlO) === 1'b1) ? wire_nl1l_o : wire_nl1O_o;
+	assign		wire_n00l_dataout = ((~ nlOlO) === 1'b1) ? wire_nl1O_o : wire_nl0i_o;
+	assign		wire_n00O_dataout = ((~ nlOlO) === 1'b1) ? wire_nl0i_o : wire_nl0l_o;
+	assign		wire_n01i_dataout = ((~ nlOlO) === 1'b1) ? wire_niOl_o : wire_niOO_o;
+	assign		wire_n01l_dataout = ((~ nlOlO) === 1'b1) ? wire_niOO_o : wire_nl1i_o;
+	assign		wire_n01O_dataout = ((~ nlOlO) === 1'b1) ? wire_nl1i_o : wire_nl1l_o;
+	assign		wire_n0ii_dataout = ((~ nlOlO) === 1'b1) ? wire_nl0l_o : wire_nl0O_o;
+	assign		wire_n0il_dataout = ((~ nlOlO) === 1'b1) ? wire_nl0O_o : wire_nlii_o;
+	assign		wire_n0iO_dataout = ((~ nlOlO) === 1'b1) ? wire_nlii_o : wire_nlil_o;
+	assign		wire_n0li_dataout = ((~ nlOlO) === 1'b1) ? wire_nlil_o : wire_nliO_o;
+	assign		wire_n0ll_dataout = ((~ nlOlO) === 1'b1) ? wire_nliO_o : wire_nlli_o;
+	assign		wire_n0lO_dataout = ((~ nlOlO) === 1'b1) ? wire_nlli_o : wire_nlll_o;
+	assign		wire_n0Oi_dataout = ((~ nlOlO) === 1'b1) ? wire_nlll_o : wire_nllO_o;
+	assign		wire_n0Ol_dataout = ((~ nlOlO) === 1'b1) ? wire_nllO_o : wire_nlOi_o;
+	assign		wire_n0OO_dataout = ((~ nlOlO) === 1'b1) ? wire_nlOi_o : wire_nlOl_o;
+	and(wire_ni1i_dataout, wire_nlOl_o, (~ nlOlO));
+	and(wire_niii_dataout, wire_niOi_o[1], wire_nilO_o[9]);
+	and(wire_niil_dataout, wire_niOi_o[2], wire_nilO_o[9]);
+	and(wire_niiO_dataout, wire_niOi_o[3], wire_nilO_o[9]);
+	and(wire_nili_dataout, wire_niOi_o[4], wire_nilO_o[9]);
+	or(wire_nill_dataout, wire_niOi_o[5], ~(wire_nilO_o[9]));
+	oper_add   nilO
+	( 
+	.a({{2{wire_niOi_o[7]}}, wire_niOi_o[7:1], 1'b1}),
+	.b({{4{1'b1}}, 1'b0, {5{1'b1}}}),
+	.cin(1'b0),
+	.cout(),
+	.o(wire_nilO_o));
+	defparam
+		nilO.sgate_representation = 0,
+		nilO.width_a = 10,
+		nilO.width_b = 10,
+		nilO.width_o = 10;
+	oper_add   niOi
+	( 
+	.a({{3{1'b1}}, (~ a[14]), (~ a[13]), (~ a[12]), (~ a[11]), (~ a[10]), 1'b1}),
+	.b({{3{1'b0}}, {3{1'b1}}, 1'b0, {2{1'b1}}}),
+	.cin(1'b0),
+	.cout(),
+	.o(wire_niOi_o));
+	defparam
+		niOi.sgate_representation = 0,
+		niOi.width_a = 9,
+		niOi.width_b = 9,
+		niOi.width_o = 9;
+	oper_add   nlOli
+	( 
+	.a({{3{1'b0}}, a[14:10], 1'b1}),
+	.b({{3{1'b1}}, {4{1'b0}}, {2{1'b1}}}),
+	.cin(1'b0),
+	.cout(),
+	.o(wire_nlOli_o));
+	defparam
+		nlOli.sgate_representation = 0,
+		nlOli.width_a = 9,
+		nlOli.width_b = 9,
+		nlOli.width_o = 9;
+	oper_add   nlOll
+	( 
+	.a({{4{(~ wire_nlOOl_o[17])}}, (~ wire_nlOOl_o[16]), (~ wire_nlOOl_o[15]), (~ wire_nlOOl_o[14]), (~ wire_nlOOl_o[13]), (~ wire_nlOOl_o[12]), (~ wire_nlOOl_o[11]), (~ wire_nlOOl_o[10]), (~ wire_nlOOl_o[9]), (~ wire_nlOOl_o[8]), (~ wire_nlOOl_o[7]), (~ wire_nlOOl_o[6]), (~ wire_nlOOl_o[5]), (~ wire_nlOOl_o[4]), (~ wire_nlOOl_o[3]), (~ wire_nlOOl_o[2]), (~ wire_nlOOl_o[1]), 1'b1}),
+	.b({{5{1'b0}}, {16{1'b1}}}),
+	.cin(1'b0),
+	.cout(),
+	.o(wire_nlOll_o));
+	defparam
+		nlOll.sgate_representation = 0,
+		nlOll.width_a = 21,
+		nlOll.width_b = 21,
+		nlOll.width_o = 21;
+	oper_add   nlOOi
+	( 
+	.a({{3{1'b1}}, (~ a[14]), (~ a[13]), (~ a[12]), (~ a[11]), (~ a[10]), 1'b1}),
+	.b({{4{1'b0}}, {2{1'b1}}, 1'b0, {2{1'b1}}}),
+	.cin(1'b0),
+	.cout(),
+	.o(wire_nlOOi_o));
+	defparam
+		nlOOi.sgate_representation = 0,
+		nlOOi.width_a = 9,
+		nlOOi.width_b = 9,
+		nlOOi.width_o = 9;
+	oper_add   nlOOl
+	( 
+	.a({{2{niOli}}, (wire_ni1i_dataout ^ niOli), (wire_n0OO_dataout ^ niOli), (wire_n0Ol_dataout ^ niOli), (wire_n0Oi_dataout ^ niOli), (wire_n0lO_dataout ^ niOli), (wire_n0ll_dataout ^ niOli), (wire_n0li_dataout ^ niOli), (wire_n0iO_dataout ^ niOli), (wire_n0il_dataout ^ niOli), (wire_n0ii_dataout ^ niOli), (wire_n00O_dataout ^ niOli), (wire_n00l_dataout ^ niOli), (wire_n00i_dataout ^ niOli), (wire_n01O_dataout ^ niOli), (wire_n01l_dataout ^ niOli), (wire_n01i_dataout ^ niOli)}),
+	.b({{17{1'b0}}, 1'b1}),
+	.cin(1'b0),
+	.cout(),
+	.o(wire_nlOOl_o));
+	defparam
+		nlOOl.sgate_representation = 0,
+		nlOOl.width_a = 18,
+		nlOOl.width_b = 18,
+		nlOOl.width_o = 18;
+	oper_mux   n0i
+	( 
+	.data({{2{1'b0}}, nl10i, 1'b0}),
+	.o(wire_n0i_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		n0i.width_data = 4,
+		n0i.width_sel = 2;
+	oper_mux   n0l
+	( 
+	.data({{2{1'b0}}, nl10l, niOlO}),
+	.o(wire_n0l_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		n0l.width_data = 4,
+		n0l.width_sel = 2;
+	oper_mux   n0O
+	( 
+	.data({{2{1'b0}}, nl10O, niOOi}),
+	.o(wire_n0O_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		n0O.width_data = 4,
+		n0O.width_sel = 2;
+	oper_mux   n1i
+	( 
+	.data({{2{1'b0}}, nl11i, 1'b0}),
+	.o(wire_n1i_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		n1i.width_data = 4,
+		n1i.width_sel = 2;
+	oper_mux   n1l
+	( 
+	.data({{2{1'b0}}, nl11l, 1'b0}),
+	.o(wire_n1l_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		n1l.width_data = 4,
+		n1l.width_sel = 2;
+	oper_mux   n1O
+	( 
+	.data({{2{1'b0}}, nl11O, 1'b0}),
+	.o(wire_n1O_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		n1O.width_data = 4,
+		n1O.width_sel = 2;
+	oper_mux   ni
+	( 
+	.data({{3{1'b0}}, nl10l}),
+	.o(wire_ni_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		ni.width_data = 4,
+		ni.width_sel = 2;
+	oper_mux   nii
+	( 
+	.data({{2{1'b0}}, (~ niOll), niOOl}),
+	.o(wire_nii_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		nii.width_data = 4,
+		nii.width_sel = 2;
+	oper_mux   nil
+	( 
+	.data({{3{1'b0}}, niOOO}),
+	.o(wire_nil_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		nil.width_data = 4,
+		nil.width_sel = 2;
+	oper_mux   niO
+	( 
+	.data({{3{1'b0}}, nl11i}),
+	.o(wire_niO_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		niO.width_data = 4,
+		niO.width_sel = 2;
+	oper_mux   niOl
+	( 
+	.data({wire_n0O_o, wire_n0i_o, wire_n1l_o, wire_nlOO_o}),
+	.o(wire_niOl_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		niOl.width_data = 4,
+		niOl.width_sel = 2;
+	oper_mux   niOO
+	( 
+	.data({wire_nii_o, wire_n0l_o, wire_n1O_o, wire_n1i_o}),
+	.o(wire_niOO_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		niOO.width_data = 4,
+		niOO.width_sel = 2;
+	oper_mux   nl
+	( 
+	.data({{3{1'b0}}, nl10O}),
+	.o(wire_nl_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		nl.width_data = 4,
+		nl.width_sel = 2;
+	oper_mux   nl0i
+	( 
+	.data({wire_nll_o, wire_niO_o, wire_nii_o, wire_n0l_o}),
+	.o(wire_nl0i_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nl0i.width_data = 4,
+		nl0i.width_sel = 2;
+	oper_mux   nl0l
+	( 
+	.data({wire_nlO_o, wire_nli_o, wire_nil_o, wire_n0O_o}),
+	.o(wire_nl0l_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nl0l.width_data = 4,
+		nl0l.width_sel = 2;
+	oper_mux   nl0O
+	( 
+	.data({wire_ni_o, wire_nll_o, wire_niO_o, wire_nii_o}),
+	.o(wire_nl0O_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nl0O.width_data = 4,
+		nl0O.width_sel = 2;
+	oper_mux   nl1i
+	( 
+	.data({wire_nil_o, wire_n0O_o, wire_n0i_o, wire_n1l_o}),
+	.o(wire_nl1i_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nl1i.width_data = 4,
+		nl1i.width_sel = 2;
+	oper_mux   nl1l
+	( 
+	.data({wire_niO_o, wire_nii_o, wire_n0l_o, wire_n1O_o}),
+	.o(wire_nl1l_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nl1l.width_data = 4,
+		nl1l.width_sel = 2;
+	oper_mux   nl1O
+	( 
+	.data({wire_nli_o, wire_nil_o, wire_n0O_o, wire_n0i_o}),
+	.o(wire_nl1O_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nl1O.width_data = 4,
+		nl1O.width_sel = 2;
+	oper_mux   nli
+	( 
+	.data({{3{1'b0}}, nl11l}),
+	.o(wire_nli_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		nli.width_data = 4,
+		nli.width_sel = 2;
+	oper_mux   nlii
+	( 
+	.data({wire_nl_o, wire_nlO_o, wire_nli_o, wire_nil_o}),
+	.o(wire_nlii_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nlii.width_data = 4,
+		nlii.width_sel = 2;
+	oper_mux   nlil
+	( 
+	.data({wire_nO_o, wire_ni_o, wire_nll_o, wire_niO_o}),
+	.o(wire_nlil_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nlil.width_data = 4,
+		nlil.width_sel = 2;
+	oper_mux   nliO
+	( 
+	.data({1'b0, wire_nl_o, wire_nlO_o, wire_nli_o}),
+	.o(wire_nliO_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nliO.width_data = 4,
+		nliO.width_sel = 2;
+	oper_mux   nliOO
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[1]}),
+	.o(wire_nliOO_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nliOO.width_data = 4,
+		nliOO.width_sel = 2;
+	oper_mux   nll
+	( 
+	.data({{3{1'b0}}, nl11O}),
+	.o(wire_nll_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		nll.width_data = 4,
+		nll.width_sel = 2;
+	oper_mux   nll0i
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[5]}),
+	.o(wire_nll0i_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nll0i.width_data = 4,
+		nll0i.width_sel = 2;
+	oper_mux   nll0l
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[6]}),
+	.o(wire_nll0l_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nll0l.width_data = 4,
+		nll0l.width_sel = 2;
+	oper_mux   nll0O
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[7]}),
+	.o(wire_nll0O_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nll0O.width_data = 4,
+		nll0O.width_sel = 2;
+	oper_mux   nll1i
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[2]}),
+	.o(wire_nll1i_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nll1i.width_data = 4,
+		nll1i.width_sel = 2;
+	oper_mux   nll1l
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[3]}),
+	.o(wire_nll1l_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nll1l.width_data = 4,
+		nll1l.width_sel = 2;
+	oper_mux   nll1O
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[4]}),
+	.o(wire_nll1O_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nll1O.width_data = 4,
+		nll1O.width_sel = 2;
+	oper_mux   nlli
+	( 
+	.data({1'b0, wire_nO_o, wire_ni_o, wire_nll_o}),
+	.o(wire_nlli_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nlli.width_data = 4,
+		nlli.width_sel = 2;
+	oper_mux   nllii
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[8]}),
+	.o(wire_nllii_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nllii.width_data = 4,
+		nllii.width_sel = 2;
+	oper_mux   nllil
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[9]}),
+	.o(wire_nllil_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nllil.width_data = 4,
+		nllil.width_sel = 2;
+	oper_mux   nlliO
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[10]}),
+	.o(wire_nlliO_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nlliO.width_data = 4,
+		nlliO.width_sel = 2;
+	oper_mux   nlll
+	( 
+	.data({{2{1'b0}}, wire_nl_o, wire_nlO_o}),
+	.o(wire_nlll_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nlll.width_data = 4,
+		nlll.width_sel = 2;
+	oper_mux   nllli
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[11]}),
+	.o(wire_nllli_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nllli.width_data = 4,
+		nllli.width_sel = 2;
+	oper_mux   nllll
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[12]}),
+	.o(wire_nllll_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nllll.width_data = 4,
+		nllll.width_sel = 2;
+	oper_mux   nlllO
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[13]}),
+	.o(wire_nlllO_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nlllO.width_data = 4,
+		nlllO.width_sel = 2;
+	oper_mux   nllO
+	( 
+	.data({{2{1'b0}}, wire_nO_o, wire_ni_o}),
+	.o(wire_nllO_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nllO.width_data = 4,
+		nllO.width_sel = 2;
+	oper_mux   nllOi
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[14]}),
+	.o(wire_nllOi_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nllOi.width_data = 4,
+		nllOi.width_sel = 2;
+	oper_mux   nllOl
+	( 
+	.data({{2{1'b0}}, 1'b1, wire_nlOOl_o[15]}),
+	.o(wire_nllOl_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nllOl.width_data = 4,
+		nllOl.width_sel = 2;
+	oper_mux   nllOO
+	( 
+	.data({1'b0, 1'b1, 1'b0, wire_nlOOl_o[16]}),
+	.o(wire_nllOO_o),
+	.sel({wire_nlO1l_o, wire_nlO1i_o}));
+	defparam
+		nllOO.width_data = 4,
+		nllOO.width_sel = 2;
+	oper_mux   nlO
+	( 
+	.data({{3{1'b0}}, nl10i}),
+	.o(wire_nlO_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		nlO.width_data = 4,
+		nlO.width_sel = 2;
+	oper_mux   nlO1i
+	( 
+	.data({{2{1'b0}}, {3{1'b1}}, 1'b0, {2{1'b1}}}),
+	.o(wire_nlO1i_o),
+	.sel({niOli, nlOiO, niO0l}));
+	defparam
+		nlO1i.width_data = 8,
+		nlO1i.width_sel = 3;
+	oper_mux   nlO1l
+	( 
+	.data({1'b1, 1'b0, {2{1'b1}}, {2{1'b0}}, {2{1'b1}}}),
+	.o(wire_nlO1l_o),
+	.sel({niOli, nlOiO, niO0l}));
+	defparam
+		nlO1l.width_data = 8,
+		nlO1l.width_sel = 3;
+	oper_mux   nlOi
+	( 
+	.data({{3{1'b0}}, wire_nl_o}),
+	.o(wire_nlOi_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nlOi.width_data = 4,
+		nlOi.width_sel = 2;
+	oper_mux   nlOl
+	( 
+	.data({{3{1'b0}}, wire_nO_o}),
+	.o(wire_nlOl_o),
+	.sel({ni1O, ni1l}));
+	defparam
+		nlOl.width_data = 4,
+		nlOl.width_sel = 2;
+	oper_mux   nlOO
+	( 
+	.data({{2{1'b0}}, niOOO, 1'b0}),
+	.o(wire_nlOO_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		nlOO.width_data = 4,
+		nlOO.width_sel = 2;
+	oper_mux   nO
+	( 
+	.data({{3{1'b0}}, (~ niOll)}),
+	.o(wire_nO_o),
+	.sel({ni0O, ni0i}));
+	defparam
+		nO.width_data = 4,
+		nO.width_sel = 2;
+	assign
+		niO0i = (((((~ a[10]) & (~ a[11])) & (~ a[12])) & (~ a[13])) & (~ a[14])),
+		niO0l = (wire_nlOll_o[20] | ((~ nlOil) | ((niO0O & nl1ii) | ((~ niO0O) & nl1ii)))),
+		niO0O = ((((((((((~ nl10O) & (~ nl10l)) & (~ nl10i)) & (~ nl11O)) & (~ nl11l)) & (~ nl11i)) & (~ niOOO)) & (~ niOOl)) & (~ niOOi)) & (~ niOlO)),
+		niO1O = ((((a[10] & a[11]) & a[12]) & a[13]) & a[14]),
+		niOii = 1'b1,
+		q = {wire_nllOO_o, wire_nllOl_o, wire_nllOi_o, wire_nlllO_o, wire_nllll_o, wire_nllli_o, wire_nlliO_o, wire_nllil_o, wire_nllii_o, wire_nll0O_o, wire_nll0l_o, wire_nll0i_o, wire_nll1O_o, wire_nll1l_o, wire_nll1i_o, wire_nliOO_o};
+endmodule //fp16_to_int16
+//synopsys translate_on
+//VALID FILE

@@ -46,11 +46,6 @@ ram_MxN i_ram_Q (
 );
 
 ram_MxN i_ram_K (
-    .address
-    .clock
-    .data
-    .we
-    .q
 );
 
 ram_MxN i_ram_V (

@@ -1,89 +1,159 @@
 `default_nettype none
 
 module stmm_wrapper #(
+    parameter int SUB_NUM = 4,
     parameter int N = 176,
     parameter int SDRAM_W = 128
 ) (
     input wire clk, rst_n,
 
-    rmio_intf i_rmio_intf,
+    rmio_intf i_rmio_intf [4],
+
     sdram_read_intf i_sdram_read_intf,
+    
     eu_ctrl_intf i_eu_ctrl_intf,
 
     output logic fetch_done,
-    output logic exec_done
+    output logic [SUB_NUM - 1 : 0] exec_done
 );
 
 
-    
-localparam int P = N;
-localparam int DQ = 18;
-localparam int Q = 8;
+// ------------------ Fetcher related ------------------
 
-// << Parameter memory >>
-logic [15 : 0] scale_fp16;
-logic [7 : 0] z_X, z_W, zero;
+logic [1 : 0] fetch_sub_idx;
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n)
+        fetch_sub_idx <= '0;
+    else if (i_eu_ctrl_intf.fetch)
+        fetch_sub_idx <= i_eu_ctrl_intf.sub_idx;
+end
 
+////////////////////////
+// Param fetcher 
+////////////////////////
+bram_intf #(.ADDR_W(8), .DATA_W(176*8)) i_fetch_ram_intf();
 
-logic [7 : 0] bram_addr, bram_addr_ex, bram_addr_fetch;
-logic [1407 : 0] bram_data, bram_q;
-logic bram_we;
+logic [15 : 0] fetch_scale_fp16;
+logic [7 : 0] fetch_z_X, fetch_z_W, fetch_zero;
+logic quant_valid;
 
-assign bram_addr = bram_we ? bram_addr_fetch : bram_addr_ex;
-
-ram_176x1408 i_wmem(
-    .address    (bram_addr)
-    .clock      (clk),
-    .data       (bram_data),
-    .wren       (bram_we),
-    .q          (bram_q)
-);
-
-// Connect to StMM
-StMM #(.N(N), .P(P), .DQ(DQ), .Q(Q)) i_stmm (
+stmm_fetch i_stmm_fetch (
     .clk        (clk),
     .rst_n      (rst_n),
 
-    .X_in       (X_in),
-    .start      (start_ex),
+    .i_sdram_read_intf  (i_sdram_read_intf),
 
-    .scale_fp16 (scale_fp16),
-    .z_X        (z_X),
-    .z_W        (z_W),
-    .zero       (zero),
+    .i_bram_intf        (i_fetch_ram_intf),
 
-    .W_addr     (bram_addr_ex),
-    .W_data     (bram_q),
+    .scale_fp16 (fetch_scale_fp16),
+    .z_X        (fetch_z_X),
+    .z_W        (fetch_z_W),
+    .zero       (fetch_zero),
+    .quant_valid(quant_valid),
 
-    .Y_out      (Y_out),
-    .out_valid  (done_ex)
+    .start      (i_eu_ctrl_intf.fetch),
+    .fetch_addr (i_eu_ctrl_intf.fetch_addr),
+    .done       (fetch_done)
 );
 
-// << Connect to Param fetcher >>
-stmm_param_fetcher #( .BRAM_W(N * 8), .BRAM_L(N), .SDRAM_W(SDRAM_W) ) i_param_fetcher (
-    .clk        (clk),
-    .rst_n      (rst_n),
+////////////////////////
+// Weight BRAM
+////////////////////////
+logic [$clog2(N) - 1 : 0]   stmm_ram_addr [4];
+logic [N * 8 - 1 : 0]       stmm_ram_data [4];
 
-    .start      (start_fetch_param),
-    .base_addr  (),
-
-    .out_valid  (),
-    .out_idx    ()
-)
-
-
-// // Fetch DONE srff
-// logic set_fetch_done;
-// always_ff @( posedge clk, negedge rst_n ) begin
-//     if (!rst_n)
-//         done_fetch_param <= 0;
-//     else if (set_fetch_done)
-//         done_fetch_param <= 1;
-//     else if (start_fetch_param)
-//         done_fetch_param <= 0;
-// end
+genvar i;
+generate
+    for (i = 0; i < 4; i++) begin: blk_instantiate_wmem
+        wire i_we = (fetch_sub_idx == i) && i_fetch_ram_intf.we;
+        ram_176x1408 i_wmem(
+            .address    (i_we ? i_fetch_ram_intf.addr : stmm_ram_addr[i]),
+            .clock      (clk),
+            .data       (i_fetch_ram_intf.data),
+            .wren       (i_we),
+            .q          (stmm_ram_data[i])
+        );
+    end
+endgenerate
 
 
+////////////////////////
+// Quantization FF at quant_valid
+////////////////////////
+logic [15 : 0] scale_fp16_arr[SUB_NUM];
+logic [7 : 0] z_X_arr[SUB_NUM], z_W_arr[SUB_NUM], zero_arr[SUB_NUM];
+
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n) begin
+        for (int i = 0; i < SUB_NUM; i++) begin
+            scale_fp16_arr[i] <= 0;
+            z_X_arr[i] <= 0;
+            z_W_arr[i] <= 0;
+            zero_arr[i] <= 0;
+        end
+    end else if (quant_valid) begin
+        scale_fp16_arr[fetch_sub_idx] <= fetch_scale_fp16;
+        z_X_arr[fetch_sub_idx] <= fetch_z_X;
+        z_W_arr[fetch_sub_idx] <= fetch_z_W;
+        zero_arr[fetch_sub_idx] <= fetch_zero;
+    end
+end
+
+// ------------------ Executor related ------------------
+
+////////////////////////
+// Input FF
+////////////////////////
+logic input_we_arr[SUB_NUM];
+logic [N * 8 - 1 : 0] input_data_arr[SUB_NUM];
+generate
+    for (i = 0; i < SUB_NUM; i++) begin: blk_assign_rmio_intf_arr
+        assign input_we_arr[i] = i_rmio_intf[i].input_we;
+        assign input_data_arr[i] = i_rmio_intf[i].input_data;
+    end
+endgenerate
+
+logic [N * 8 - 1 : 0] X_in[SUB_NUM];
+always_ff @(posedge clk, negedge rst_n) begin
+    if (!rst_n) begin
+        for (int i = 0; i < SUB_NUM; i++)
+            X_in[i] <= 0;
+    end
+    else begin
+        for (int i = 0; i < SUB_NUM; i++) begin
+            if (input_we_arr[i])
+                X_in[i] <= input_data_arr[i];
+        end
+    end
+end
+
+
+// logic exec_start [SUB_NUM];
+
+bram_intf i_stmm_ram_intf [4] ();
+
+generate
+    for (i = 0; i < 4; i++) begin: blk_instantiate_stmm
+        StMM #(.N(176), .P(176), .DQ(18), .Q(8)) i_stmm(
+            .clk        (clk),
+            .rst_n      (rst_n),
+
+            .X_in       (X_in[i]),
+            .start      ((i_eu_ctrl_intf.sub_idx == i) && i_eu_ctrl_intf.exec),
+
+            .scale_fp16 (scale_fp16_arr[i]),
+            .z_X        (z_X_arr[i]),
+            .z_W        (z_W_arr[i]),
+            .zero       (zero_arr[i]),
+
+            .W_addr     (stmm_ram_addr[i]),
+            .W_data     (stmm_ram_data[i]),
+
+            .Y_out      (i_rmio_intf[i].output_data),
+            .out_valid  (exec_done[i])
+        );
+    end
+endgenerate
 
 endmodule
 

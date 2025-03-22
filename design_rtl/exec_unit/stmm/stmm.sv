@@ -107,7 +107,7 @@ int18_to_fp16 i_int2fp (
 
 // FP multiplication
 // FP16 * FP16
-mult0 i_mult (
+mult_fp16 i_mult (
     .clk        (clk), 
     .areset     (~rst_n),
     .a          (vvm_out_fp16),

@@ -1,0 +1,9 @@
+	component int18_to_fp16 is
+		port (
+			clk    : in  std_logic                     := 'X';             -- clk
+			areset : in  std_logic                     := 'X';             -- reset
+			a      : in  std_logic_vector(17 downto 0) := (others => 'X'); -- a
+			q      : out std_logic_vector(15 downto 0)                     -- q
+		);
+	end component int18_to_fp16;
+
