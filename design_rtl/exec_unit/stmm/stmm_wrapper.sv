@@ -25,7 +25,7 @@ always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
         fetch_sub_idx <= '0;
     else if (i_eu_ctrl_intf.fetch)
-        fetch_sub_idx <= i_eu_ctrl_intf.sub_idx;
+        fetch_sub_idx <= i_eu_ctrl_intf.sub_idx[1 : 0];
 end
 
 ////////////////////////
@@ -104,7 +104,7 @@ end
 ////////////////////////
 // Input FF
 ////////////////////////
-logic input_we_arr[SUB_NUM];
+logic               input_we_arr[SUB_NUM];
 logic [N * 8 - 1 : 0] input_data_arr[SUB_NUM];
 generate
     for (i = 0; i < SUB_NUM; i++) begin: blk_assign_rmio_intf_arr
@@ -127,10 +127,6 @@ always_ff @(posedge clk, negedge rst_n) begin
     end
 end
 
-
-// logic exec_start [SUB_NUM];
-
-bram_intf i_stmm_ram_intf [4] ();
 
 generate
     for (i = 0; i < 4; i++) begin: blk_instantiate_stmm
@@ -157,4 +153,4 @@ endgenerate
 
 endmodule
 
-`default_nettype wire 
+`default_nettype wire

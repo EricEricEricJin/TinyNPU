@@ -23,7 +23,9 @@ module ctrl_unit #(
     output logic [4 : 0] sdram_read_sel,
 
     // ---------- connect to EU groups ----------
-    eu_ctrl_intf i_eu_ctrl_intf[32],
+    output logic [31 : 0] eu_fetch,
+    output logic [31 : 0] eu_exec,
+    output logic [31 : 0] eu_fetch_addr,
 
     // ---------- state ----------
     output logic done
@@ -43,26 +45,12 @@ always_ff @( posedge clk, negedge rst_n ) begin
         rf_ram_sel <= 1;
 end
 
-
-////////////////////////
-// SDRAM Read Sel FF
-////////////////////////
-logic [4 : 0] nxt_sdram_read_sel;
-always_ff @( posedge clk, negedge rst_n ) begin
-    if (!rst_n)
-        sdram_read_sel <= '0;
-    else
-        sdram_read_sel <= nxt_sdram_read_sel;
-end
-
 ////////////////////////
 // inst decoder
 ////////////////////////
 logic load, store, move, fetch, exec;
 
-logic [4 : 0]   eu_group_idx;
-logic [3 : 0]   eu_sub_idx;
-logic [31 : 0]  eu_fetch_addr;
+logic [4 : 0]   eu_unit;
 
 inst_decode i_inst_decode (
     .inst               (h2f_io),
@@ -83,33 +71,34 @@ inst_decode i_inst_decode (
     .move_src_freeze   (rf_move.src_freeze),
     .move_dst_freeze   (rf_move.dst_freeze),
 
-    .eu_group_idx       (eu_group_idx),
-    .eu_sub_idx         (eu_sub_idx),
+    .eu_unit            (eu_unit),
     .eu_fetch_addr      (eu_fetch_addr)
 );
 
-logic [31 : 0] eu_group_onehot;
+
+////////////////////////
+// SDRAM Read Sel FF
+////////////////////////
+logic set_sdram_read_sel;
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n)
+        sdram_read_sel <= '0;
+    else if (set_sdram_read_sel)
+        sdram_read_sel <= eu_unit;
+end
+
+////////////////////////
+// EU one-hot decoder
+////////////////////////
+logic [31 : 0] eu_unit_onehot;
 decoder #(.N(32)) i_eu_decoder (
-    .in     (eu_group_idx),
-    .out    (eu_group_onehot)
+    .in     (eu_unit),
+    .out    (eu_unit_onehot)
 );
 
 ////////////////////////
-// Unpacked exec and fetch array
+// State machine
 ////////////////////////
-logic [31 : 0] eu_fetch;
-logic [31 : 0] eu_exec;
-
-genvar i;
-generate
-    for (i = 0; i < 32; i++) begin: blk_conn_eu_ctrl_intf
-        assign i_eu_ctrl_intf[i].fetch = eu_fetch[i];
-        assign i_eu_ctrl_intf[i].exec = eu_exec[i];
-        assign i_eu_ctrl_intf[i].sub_idx = eu_sub_idx;
-        assign i_eu_ctrl_intf[i].fetch_addr = eu_fetch_addr;
-    end
-endgenerate
-
 typedef enum logic [1 : 0] { IDLE, DECODE, ISSUE } state_t;
 state_t state, nxt_state;
 
@@ -129,7 +118,8 @@ always_comb begin
 
     set_ram_sel_ldst = 0;
     set_ram_sel_move = 0;
-    nxt_sdram_read_sel = sdram_read_sel;
+
+    set_sdram_read_sel = 0;
 
     eu_exec = '0;
     eu_fetch = '0;
@@ -148,8 +138,7 @@ always_comb begin
         DECODE: begin
             set_ram_sel_ldst = load || store;
             set_ram_sel_move = move;
-            nxt_sdram_read_sel = eu_group_idx;
-
+            set_sdram_read_sel = 1;
             nxt_state = ISSUE;
         end
         
@@ -159,9 +148,9 @@ always_comb begin
             rf_move.start = move;
 
             if (exec)
-                eu_exec = eu_group_onehot;
+                eu_exec = eu_unit_onehot;
             else if (fetch)
-                eu_fetch = eu_group_onehot;
+                eu_fetch = eu_unit_onehot;
             
             nxt_state = IDLE;
         end

@@ -9,7 +9,7 @@ logic rst_n;
 
 logic [31 : 0] h2f_io;
 logic h2f_write;
-logic isrunning;
+logic done;
 
 // logic                       move_start;
 // logic [RF_ADDR_W - 1 : 0]   move_src_addr;
@@ -35,7 +35,7 @@ ctrl_unit #( .RF_ADDR_W (10) ) i_ctrl_unit (
     .h2f_io         (h2f_io),
     .h2f_write      (h2f_write),
 
-    .isrunning      (isrunning),
+    // .isrunning      (isrunning),
 
     // .move_start       (move_start),
     // .move_src_addr    (move_src_addr),
@@ -52,7 +52,8 @@ ctrl_unit #( .RF_ADDR_W (10) ) i_ctrl_unit (
 
     .eu_fetch       (eu_fetch),
     .eu_exec        (eu_exec),
-    .eu_fetch_addr  (eu_fetch_addr)
+    .eu_fetch_addr  (eu_fetch_addr),
+    .done           (done)
 );
 
 initial begin
@@ -80,7 +81,7 @@ initial begin
 
     // Move
     repeat (10) @(negedge clk);
-    h2f_io = {2'b10, 10'd167, 10'h200, 2'hx, 8'd166};
+    h2f_io = {2'b10, 10'd167, 10'h200, 2'b01, 8'd166};
     h2f_write = 1;
     @(negedge clk) h2f_write = 0;
 
