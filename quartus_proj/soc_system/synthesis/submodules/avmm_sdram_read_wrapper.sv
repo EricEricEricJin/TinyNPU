@@ -1,6 +1,6 @@
 `default_nettype none
 
-module sdram_read #(
+module avmm_sdram_read_wrapper #(
     parameter int SDRAM_DATA_W = 128
 ) (
     input   wire          clk,

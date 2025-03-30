@@ -1,7 +1,7 @@
 `default_nettype none
 
 module eu_top #(
-    
+    parameter int SDRAM_W = 128
 ) (
     input wire clk, rst_n,
 
@@ -44,7 +44,8 @@ localparam int REAL_SDRAM_NUM_PORTS = 8;
 logic [$clog2(REAL_SDRAM_NUM_PORTS) - 1 : 0] real_sdram_read_sel;
 always_comb begin
     real_sdram_read_sel = '0;
-    case(sdram_read_sel) inside
+    // case(sdram_read_sel) inside
+    casex(sdram_read_sel)
         5'b000??: real_sdram_read_sel = ($clog2(REAL_SDRAM_NUM_PORTS))'(0);
     endcase
 end
@@ -63,7 +64,7 @@ assign stmm_exec = eu_exec[3:0];
 ////////////////////////
 // EU Groups 
 ////////////////////////
-stmm_wrapper #( .SUB_NUM (4), .N (176), .SDRAM_W (128) ) i_stmm_wrapper (
+stmm_wrapper #( .SUB_NUM (4), .N (176), .SDRAM_W (SDRAM_W) ) i_stmm_wrapper (
     .clk(clk),
     .rst_n(rst_n),
 

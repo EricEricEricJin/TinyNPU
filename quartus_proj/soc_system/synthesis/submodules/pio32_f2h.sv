@@ -1,13 +1,13 @@
 `default_nettype none
 
 module pio32_f2h (
-    input logic clk,
-    input logic rst_n,
+    input wire clk,
+    input wire rst_n,
   
-    input logic [31 : 0] read_data_in,
+    input wire [31 : 0] read_data_in,
     output logic read_en_out,
 
-    input logic read_en_in,
+    input wire read_en_in,
     output logic [31 : 0] read_data_out
 );
 

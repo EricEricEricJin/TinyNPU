@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<instance entity-name="altera_fp_functions" version="23.1" >
+<generic name="FUNCTION_FAMILY" value="ARITH" />
+<generic name="ARITH_function" value="MUL" />
+<generic name="CONVERT_function" value="FXP_FP" />
+<generic name="ALL_function" value="ADD" />
+<generic name="EXP_LOG_function" value="EXPE" />
+<generic name="TRIG_function" value="SIN" />
+<generic name="COMPARE_function" value="MIN" />
+<generic name="ROOTS_function" value="SQRT" />
+<generic name="fp_format" value="custom" />
+<generic name="fp_exp" value="5" />
+<generic name="fp_man" value="10" />
+<generic name="exponent_width" value="23" />
+<generic name="frequency_target" value="50" />
+<generic name="latency_target" value="2" />
+<generic name="performance_goal" value="frequency" />
+<generic name="rounding_mode" value="nearest with tie breaking away from zero" />
+<generic name="faithful_rounding" value="true" />
+<generic name="gen_enable" value="false" />
+<generic name="divide_type" value="0" />
+<generic name="select_signal_enable" value="false" />
+<generic name="scale_by_pi" value="false" />
+<generic name="number_of_inputs" value="2" />
+<generic name="trig_no_range_reduction" value="false" />
+<generic name="report_resources_to_xml" value="false" />
+<generic name="fxpt_width" value="32" />
+<generic name="fxpt_fraction" value="0" />
+<generic name="fxpt_sign" value="1" />
+<generic name="fp_out_format" value="single" />
+<generic name="fp_out_exp" value="8" />
+<generic name="fp_out_man" value="23" />
+<generic name="fp_in_format" value="single" />
+<generic name="fp_in_exp" value="8" />
+<generic name="fp_in_man" value="23" />
+<generic name="enable_hard_fp" value="true" />
+<generic name="manual_dsp_planning" value="true" />
+<generic name="forceRegisters" value="1111" />
+<generic name="selected_device_family" value="Cyclone V" />
+<generic name="selected_device_speedgrade" value="7" />
+</instance>

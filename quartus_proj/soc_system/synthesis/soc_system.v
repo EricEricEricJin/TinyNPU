@@ -117,7 +117,7 @@ module soc_system (
 	wire          rst_controller_reset_out_reset;                        // rst_controller:reset_out -> [avmm_sdram_read_wrapper_0:rst_n, avmm_sdram_wrapper_0:rst_n, mm_interconnect_0:pio32_h2f_0_reset_reset_bridge_in_reset_reset, mm_interconnect_0:pio32_h2f_0_slave_0_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_1:avmm_sdram_wrapper_0_reset_reset_bridge_in_reset_reset, mm_interconnect_2:avmm_sdram_read_wrapper_0_reset_reset_bridge_in_reset_reset]
 	wire          rst_controller_001_reset_out_reset;                    // rst_controller_001:reset_out -> [mm_interconnect_0:hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_2:hps_0_f2h_sdram1_data_translator_reset_reset_bridge_in_reset_reset]
 
-	sdram_read #(
+	avmm_sdram_read_wrapper #(
 		.SDRAM_DATA_W (128)
 	) avmm_sdram_read_wrapper_0 (
 		.clk           (clk_clk),                                    // clock.clk
