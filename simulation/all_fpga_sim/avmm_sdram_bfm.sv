@@ -43,14 +43,19 @@ task read_file_to_mem();
     end
 
     // read into mem arr
-    n = $fread(mem, fd);
+    // n = $fread(mem, fd);
+    // for(i = 0; i < 16; i++) begin
+    //     $display("%h", mem[i]);
+    // end
     
-    // for (i = 0; i < (RD_MEM_SIZE / 4) && !$feof(fd); i++) begin
-    //     for (int j = 0; j < 4; j++) begin
-    //         mem[i][j*8 +: 8] = $fgetc(fd);
-    //     end
-    // end    
-
+    for (i = 0; i < (RD_MEM_SIZE / 4) && !$feof(fd); i++) begin
+        for (int j = 0; j < 4; j++) begin
+            mem[i][j*8 +: 8] = $fgetc(fd);
+        end
+    end
+    n = i;
+    
+    $fclose(fd);
     $display("%d words read from %s to addr %d.", n, RD_MEM_FILE, RD_MEM_OFFSET);
 endtask
 
@@ -84,6 +89,7 @@ always @(negedge clk, negedge rst_n) begin
 
             // set read valid
             readdata = readdata_temp;
+            $display("%s Read data: %h", RD_MEM_FILE, readdata);
             readdatavalid = 1;
             @(negedge clk) readdatavalid = 0;
         end

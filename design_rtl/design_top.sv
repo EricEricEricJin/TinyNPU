@@ -43,8 +43,13 @@ rmio_intf #( .INPUT_NUM (1), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_layernorm  
 rmio_intf #( .INPUT_NUM (1), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_silu       [4] ();
 rmio_intf #( .INPUT_NUM (3), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_att        [1] ();
 
-eu_ctrl_intf i_eu_ctrl_intf_arr [32] ();
+// eu_ctrl_intf i_eu_ctrl_intf_arr [32] ();
 
+////////////////////////
+// Control unit signals
+////////////////////////
+logic [31 : 0] eu_fetch, eu_exec;
+logic [31 : 0] eu_fetch_addr;
 logic rf_ram_sel;
 logic [4:0] sdram_read_sel;
 
@@ -64,8 +69,11 @@ ctrl_unit #(.RF_ADDR_W (RF_ADDR_W) ) i_ctrl_unit (
 
     .sdram_read_sel (sdram_read_sel),
 
-    .i_eu_ctrl_intf (i_eu_ctrl_intf_arr), 
-    
+    // .i_eu_ctrl_intf (i_eu_ctrl_intf_arr), 
+    .eu_fetch       (eu_fetch),
+    .eu_exec        (eu_exec),
+    .eu_fetch_addr  (eu_fetch_addr),
+
     .done           (cu_done)
 );
 
@@ -108,7 +116,11 @@ eu_top i_eu_top (
 
     .sdram_read_sel(sdram_read_sel),
 
-    .ctrl_intf_stmm(i_eu_ctrl_intf_arr[0]),
+    .eu_fetch(eu_fetch),
+    .eu_exec(eu_exec),
+    .eu_fetch_addr(eu_fetch_addr),
+
+    // .ctrl_intf_stmm(i_eu_ctrl_intf_arr[0]),
     // .ctrl_intf_layernorm(i_ctrl_unit.ctrl_intf_layernorm),
     // .ctrl_intf_silu(i_ctrl_unit.ctrl_intf_silu),
     // .ctrl_intf_att(i_ctrl_unit.ctrl_intf_att),

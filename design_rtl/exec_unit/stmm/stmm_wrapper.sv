@@ -7,11 +7,14 @@ module stmm_wrapper #(
 ) (
     input wire clk, rst_n,
 
-    rmio_intf i_rmio_intf [4],
+    rmio_intf i_rmio_intf [SUB_NUM],
 
     sdram_read_intf i_sdram_read_intf,
     
-    eu_ctrl_intf i_eu_ctrl_intf,
+    // eu_ctrl_intf i_eu_ctrl_intf,
+    input wire [SUB_NUM - 1 : 0] fetch,
+    input wire [SUB_NUM - 1 : 0] exec,
+    input wire [31 : 0] fetch_addr,
 
     output logic fetch_done,
     output logic [SUB_NUM - 1 : 0] exec_done
@@ -19,13 +22,16 @@ module stmm_wrapper #(
 
 
 // ------------------ Fetcher related ------------------
-
-logic [1 : 0] fetch_sub_idx;
+logic [1 : 0] fetch_sub_idx_wire, fetch_sub_idx;
+priority_encoder #(SUB_NUM) i_fetch_pe (
+    .in(fetch),
+    .out(fetch_sub_idx_wire)
+);
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
         fetch_sub_idx <= '0;
-    else if (i_eu_ctrl_intf.fetch)
-        fetch_sub_idx <= i_eu_ctrl_intf.sub_idx[1 : 0];
+    else if (|fetch)
+        fetch_sub_idx <= fetch_sub_idx_wire;
 end
 
 ////////////////////////
@@ -51,8 +57,11 @@ stmm_fetch i_stmm_fetch (
     .zero       (fetch_zero),
     .quant_valid(quant_valid),
 
-    .start      (i_eu_ctrl_intf.fetch),
-    .fetch_addr (i_eu_ctrl_intf.fetch_addr),
+    // .start      (i_eu_ctrl_intf.fetch),
+    // .fetch_addr (i_eu_ctrl_intf.fetch_addr),
+    .start      (|fetch),
+    .fetch_addr (fetch_addr),
+
     .done       (fetch_done)
 );
 
@@ -135,7 +144,8 @@ generate
             .rst_n      (rst_n),
 
             .X_in       (X_in[i]),
-            .start      ((i_eu_ctrl_intf.sub_idx == i) && i_eu_ctrl_intf.exec),
+            // .start      ((i_eu_ctrl_intf.sub_idx == i) && i_eu_ctrl_intf.exec),
+            .start      (exec[i]),
 
             .scale_fp16 (scale_fp16_arr[i]),
             .z_X        (z_X_arr[i]),

@@ -41,10 +41,31 @@ initial begin
     @(posedge f2h_pio32[28]) $display("Fetch Done");
     @(negedge clk);
 
+    // move to StMM
+    h2f_pio32 = {2'b10, 10'h0, 10'h200, 2'b00, 8'h1};
+    h2f_write = 1;
+    @(negedge clk) h2f_write = 0;
+    @(posedge f2h_pio32[31]) $display("Move Done");
+    @(negedge clk);
 
+    repeat(100) @(negedge clk);
+
+    // StMM exec
+    h2f_pio32 = {2'b11, 1'b1, 5'h0, 24'h0};
+    h2f_write = 1;
+    @(negedge clk) h2f_write = 0;
+    @(posedge f2h_pio32[0]) $display("StMM Exec Done");
+    @(negedge clk);
+
+    // extract from StMM
+    h2f_pio32 = {2'b10, 10'h208, 10'd167, 2'b00, 8'h1};
+    h2f_write = 1;
+    @(negedge clk) h2f_write = 0;
+    @(posedge f2h_pio32[31]) $display("Extract Done");
+    @(negedge clk);
 
     // - store to sdram
-    h2f_pio32 = {2'b01, 9'd167, 13'h1000, 8'd166};
+    h2f_pio32 = {2'b01, 9'd167, 13'h1000, 8'h1};
     h2f_write = 1;
     @(negedge clk) h2f_write = 0;
     @(posedge f2h_pio32[30]) $display("Store Done");

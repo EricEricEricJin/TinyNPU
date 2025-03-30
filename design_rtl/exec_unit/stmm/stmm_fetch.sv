@@ -44,7 +44,7 @@ endgenerate
 // SDRAM address and BRAM address
 ////////////////////////
 logic nxt_line;   
-logic [$clog2(BRAM_L) - 1 : 0] line_cnt;
+// logic [$clog2(BRAM_L) - 1 : 0] line_cnt;
 
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n) begin
@@ -99,10 +99,12 @@ assign scale_fp16 = i_sdram_read_intf.read_data[96 +: 16];
 // state machine
 ////////////////////////
 
-typedef enum logic[1:0] { 
+typedef enum logic[2:0] { 
     IDLE, 
-    RECV_MAT,
-    RECV_QUANT
+    MAT_SEND_ADDR,
+    MAT_RECV_DATA,
+    QUANT_SEND_ADDR,
+    QUANT_RECV_DATA
 } state_t;
 
 state_t state, nxt_state;
@@ -130,27 +132,38 @@ always_comb begin
     case (state)
         IDLE: begin
             done = 1;
-            if (start) begin
-                i_sdram_read_intf.read_start = 1;
-                nxt_state = RECV_MAT;
-            end
+            if (start)
+                nxt_state = MAT_SEND_ADDR;
         end
-        RECV_MAT: begin
+
+        MAT_SEND_ADDR: begin
+            i_sdram_read_intf.read_cnt = (11)'(BLK_NUM);
+            i_sdram_read_intf.read_start = 1;
+            nxt_state = MAT_RECV_DATA;
+        end
+ 
+        MAT_RECV_DATA: begin
             if (i_sdram_read_intf.read_valid)
                 blk_store = 1;
             
             if (i_sdram_read_intf.read_done) begin
                 i_bram_intf.we = 1;
                 nxt_line = 1;
-                i_sdram_read_intf.read_start = 1;
                 
-                if (i_bram_intf.addr == BRAM_L - 1) begin
-                    i_sdram_read_intf.read_cnt = 11'h1;
-                    nxt_state = RECV_QUANT;
-                end
+                if (i_bram_intf.addr == BRAM_L - 1)
+                    nxt_state = QUANT_SEND_ADDR;
+                else
+                    nxt_state = MAT_SEND_ADDR;
             end
         end
-        default: begin  // RECV_QUANT
+
+        QUANT_SEND_ADDR: begin
+            i_sdram_read_intf.read_cnt = 11'h1;
+            i_sdram_read_intf.read_start = 1;
+            nxt_state = QUANT_RECV_DATA;
+        end
+
+        default: begin  // QUANT_RECV_DATA
             if (i_sdram_read_intf.read_valid) begin
                 quant_valid = 1;
                 nxt_state = IDLE;

@@ -78,6 +78,14 @@ initial begin
     @(posedge f2h_pio32[30]) $display("Store Done");
     @(negedge clk);
 
+    // - test StMM
+    h2f_pio32 = {2'b11, 1'b1, 5'h0, 24'h0};
+    h2f_write = 1;
+    @(negedge clk) h2f_write = 0;
+
+    @(posedge f2h_pio32[0]) $display("StMM Done");
+    @(negedge clk);
+
     i_sdram_slave_bfm.write_mem_to_file();
 
     $stop();

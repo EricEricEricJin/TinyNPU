@@ -2,9 +2,13 @@
 
 module all_top_tb;
 
-localparam string WEIGHT_MEM_FILE = "test_data/weight_mem.bin";
-localparam string RD_MEM_FILE = "test_data/rd_mem.bin";
-localparam string WT_MEM_FILE = "test_data/wt_mem.bin";
+// localparam string WEIGHT_MEM_FILE = "test_data/weight_mem.bin";
+// localparam string RD_MEM_FILE = "test_data/rd_mem.bin";
+// localparam string WT_MEM_FILE = "test_data/wt_mem.bin";
+
+localparam string WEIGHT_MEM_FILE = "utils/mem_w.bin";
+localparam string RD_MEM_FILE = "utils/mem_in.bin";
+localparam string WT_MEM_FILE = "wt_mem.bin";
 
 logic clk, rst_n;
 
@@ -165,7 +169,7 @@ initial begin
     rst_n = 0;
 
     i_sdram_bi_slave.read_file_to_mem();
-    // i_sdram_ro_slave.read_file_to_mem();
+    i_sdram_ro_slave.read_file_to_mem();
 
     @(negedge clk);
     rst_n = 1;
