@@ -1,4 +1,9 @@
 
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[3].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
 State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[2].i_stmm|vvm:i_vvm|state
 Name state.CNTD 
 state.IDLE 0 
@@ -22,18 +27,6 @@ state.MAT_RECV_DATA 0 1 0 1 0
 state.QUANT_SEND_ADDR 1 0 0 1 0 
 state.QUANT_RECV_DATA 0 0 0 1 1 
 
-State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_merlin_burst_adapter:hps_0_f2h_sdram1_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
-Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
-state.ST_IDLE 0 0 0 0 
-state.ST_COMP_TRANS 1 0 0 1 
-state.ST_UNCOMP_TRANS 1 0 1 0 
-state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[3].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
 State Machine - |tiny_npu|design_top:i_design_top|rf_wrapper:i_rf_wrapper|rf_move:i_rf_move|state
 Name state.IDLE state.STORE state.LOAD 
 state.IDLE 0 0 0 
@@ -54,20 +47,12 @@ state.IDLE 0 0 0
 state.SEND_ADDR 1 0 1 
 state.RECV_DATA 1 1 0 
 
-State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_merlin_burst_adapter:hps_0_f2h_sdram1_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 0 
 state.ST_COMP_TRANS 1 0 0 1 
 state.ST_UNCOMP_TRANS 1 0 1 0 
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
-
-State Machine - |tiny_npu|soc_system:u0|avmm_sdram_wrapper:avmm_sdram_wrapper_0|state
-Name state.WT_SEND_ADDR state.RECV_DATA state.RD_SEND_ADDR state.IDLE state.SEND_DATA 
-state.IDLE 0 0 0 0 0 
-state.RD_SEND_ADDR 0 0 1 1 0 
-state.RECV_DATA 0 1 0 1 0 
-state.WT_SEND_ADDR 1 0 0 1 0 
-state.SEND_DATA 0 0 0 1 1 
 
 State Machine - |tiny_npu|design_top:i_design_top|ctrl_unit:i_ctrl_unit|state
 Name state.IDLE state.ISSUE state.DECODE 
@@ -88,3 +73,18 @@ state.ST_IDLE 0 0 0 0
 state.ST_COMP_TRANS 1 0 0 1 
 state.ST_UNCOMP_TRANS 1 0 1 0 
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |tiny_npu|soc_system:u0|avmm_sdram_wrapper:avmm_sdram_wrapper_0|state
+Name state.WT_SEND_ADDR state.RECV_DATA state.RD_SEND_ADDR state.IDLE state.SEND_DATA 
+state.IDLE 0 0 0 0 0 
+state.RD_SEND_ADDR 0 0 1 1 0 
+state.RECV_DATA 0 1 0 1 0 
+state.WT_SEND_ADDR 1 0 0 1 0 
+state.SEND_DATA 0 0 0 1 1 

@@ -1,0 +1,3 @@
+0x2000_0000 - 0x2fff_ffff: weight
+0x3000_0000 - 0x3001_ffff: input/output
+

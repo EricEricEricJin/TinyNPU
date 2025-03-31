@@ -43,28 +43,28 @@ assign exec_done = {24'b0, stmm_exec_done};
 localparam int REAL_SDRAM_NUM_PORTS = 8;
 logic [$clog2(REAL_SDRAM_NUM_PORTS) - 1 : 0] real_sdram_read_sel;
 always_comb begin
-    real_sdram_read_sel = '0;
     // case(sdram_read_sel) inside
     casex(sdram_read_sel)
         5'b000??: real_sdram_read_sel = ($clog2(REAL_SDRAM_NUM_PORTS))'(0);
+        default: real_sdram_read_sel = '0;
     endcase
 end
 
 sdram_read_intf i_sdram_read_intf_arr [REAL_SDRAM_NUM_PORTS] ();
 sdram_read_mux #( .NUM_PORTS (REAL_SDRAM_NUM_PORTS) ) i_sdram_read_mux (
-    .sel(sdram_read_sel),
+    .sel(real_sdram_read_sel),
     .i_sdram_read_intf_in(i_sdram_read_intf_arr),
     .i_sdram_read_intf_out(i_sdram_read_intf)
 );
 
-logic [3 : 0] stmm_fetch, stmm_exec;
-assign stmm_fetch = eu_fetch[3:0];
-assign stmm_exec = eu_exec[3:0];
+logic [STMM_SUB_NUM-1 : 0] stmm_fetch, stmm_exec;
+assign stmm_fetch = eu_fetch[STMM_SUB_NUM-1:0];
+assign stmm_exec = eu_exec[STMM_SUB_NUM-1:0];
 
 ////////////////////////
 // EU Groups 
 ////////////////////////
-stmm_wrapper #( .SUB_NUM (4), .N (176), .SDRAM_W (SDRAM_W) ) i_stmm_wrapper (
+stmm_wrapper #( .SUB_NUM (STMM_SUB_NUM), .N (176), .SDRAM_W (SDRAM_W) ) i_stmm_wrapper (
     .clk(clk),
     .rst_n(rst_n),
 

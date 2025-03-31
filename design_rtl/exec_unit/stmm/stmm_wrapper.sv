@@ -73,7 +73,7 @@ logic [N * 8 - 1 : 0]       stmm_ram_data [4];
 
 genvar i;
 generate
-    for (i = 0; i < 4; i++) begin: blk_instantiate_wmem
+    for (i = 0; i < SUB_NUM; i++) begin: blk_instantiate_wmem
         wire i_we = (fetch_sub_idx == i) && i_fetch_ram_intf.we;
         ram_176x1408 i_wmem(
             .address    (i_we ? i_fetch_ram_intf.addr : stmm_ram_addr[i]),
@@ -138,7 +138,7 @@ end
 
 
 generate
-    for (i = 0; i < 4; i++) begin: blk_instantiate_stmm
+    for (i = 0; i < SUB_NUM; i++) begin: blk_instantiate_stmm
         StMM #(.N(176), .P(176), .DQ(18), .Q(8)) i_stmm(
             .clk        (clk),
             .rst_n      (rst_n),
