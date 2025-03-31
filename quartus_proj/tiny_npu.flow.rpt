@@ -1,5 +1,5 @@
 Flow report for tiny_npu
-Mon Mar 31 19:32:51 2025
+Tue Apr  1 05:33:06 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Mar 31 19:31:59 2025          ;
+; Flow Status                     ; Successful - Tue Apr  1 05:32:15 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; tiny_npu                                       ;
 ; Top-level Entity Name           ; tiny_npu                                       ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEBA6U23I7                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 14,237 / 41,910 ( 34 % )                       ;
-; Total registers                 ; 28080                                          ;
+; Logic utilization (in ALMs)     ; 14,587 / 41,910 ( 35 % )                       ;
+; Total registers                 ; 30828                                          ;
 ; Total pins                      ; 89 / 314 ( 28 % )                              ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 1,712,336 / 5,662,720 ( 30 % )                 ;
@@ -68,43 +68,48 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/31/2025 19:19:12 ;
+; Start date & time ; 04/01/2025 05:19:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tiny_npu            ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                  ;
-+---------------------------------------+------------------------------------------------+---------------+-------------+------------+
-; Assignment Name                       ; Value                                          ; Default Value ; Entity Name ; Section Id ;
-+---------------------------------------+------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                 ; 625436798633.174341995205194                   ; --            ; --          ; --         ;
-; ECO_REGENERATE_REPORT                 ; On                                             ; Off           ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP                ; 100                                            ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP                ; -40                                            ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/ram_512x1408_bb.v                  ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/mult_int8_bb.v                     ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/ram_176x1408_bb.v                  ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/int18_to_fp16.cmp                  ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/int18_to_fp16_sim/int18_to_fp16.vo ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/fp16_to_int16.cmp                  ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/fp16_to_int16_sim/fp16_to_int16.vo ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/mult_fp16.cmp                      ; --            ; --          ; --         ;
-; MISC_FILE                             ; ../ip_cores/mult_fp16_sim/mult_fp16.vo         ; --            ; --          ; --         ;
-; PARTITION_COLOR                       ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL   ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE                ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL             ; None (CONSERVATIVE)                            ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION         ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW          ; --            ; --          ; --         ;
-; SPD_FILE                              ; ../ip_cores/int18_to_fp16.spd                  ; --            ; --          ; --         ;
-; SPD_FILE                              ; ../ip_cores/fp16_to_int16.spd                  ; --            ; --          ; --         ;
-; SPD_FILE                              ; ../ip_cores/mult_fp16.spd                      ; --            ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                    ; On                                             ; --            ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                    ; On                                             ; --            ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                    ; On                                             ; --            ; --          ; --         ;
-; USE_DLL_FREQUENCY_FOR_DQS_DELAY_CHAIN ; On                                             ; Off           ; --          ; --         ;
-+---------------------------------------+------------------------------------------------+---------------+-------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                       ;
++--------------------------------------------+------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                            ; Value                                          ; Default Value ; Entity Name ; Section Id ;
++--------------------------------------------+------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID                      ; 63451731822.174345599236103                    ; --            ; --          ; --         ;
+; ECO_REGENERATE_REPORT                      ; On                                             ; Off           ; --          ; --         ;
+; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION ; Always                                         ; Automatically ; --          ; --         ;
+; FITTER_EFFORT                              ; Standard Fit                                   ; Auto Fit      ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP                     ; 100                                            ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP                     ; -40                                            ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/ram_512x1408_bb.v                  ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/mult_int8_bb.v                     ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/ram_176x1408_bb.v                  ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/int18_to_fp16.cmp                  ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/int18_to_fp16_sim/int18_to_fp16.vo ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/fp16_to_int16.cmp                  ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/fp16_to_int16_sim/fp16_to_int16.vo ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/mult_fp16.cmp                      ; --            ; --          ; --         ;
+; MISC_FILE                                  ; ../ip_cores/mult_fp16_sim/mult_fp16.vo         ; --            ; --          ; --         ;
+; PARTITION_COLOR                            ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL        ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE                     ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
+; PHYSICAL_SYNTHESIS_EFFORT                  ; Extra                                          ; Normal        ; --          ; --         ;
+; POWER_BOARD_THERMAL_MODEL                  ; None (CONSERVATIVE)                            ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION              ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW          ; --            ; --          ; --         ;
+; ROUTER_TIMING_OPTIMIZATION_LEVEL           ; MAXIMUM                                        ; Normal        ; --          ; --         ;
+; SEED                                       ; 2                                              ; 1             ; --          ; --         ;
+; SPD_FILE                                   ; ../ip_cores/int18_to_fp16.spd                  ; --            ; --          ; --         ;
+; SPD_FILE                                   ; ../ip_cores/fp16_to_int16.spd                  ; --            ; --          ; --         ;
+; SPD_FILE                                   ; ../ip_cores/mult_fp16.spd                      ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                         ; On                                             ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                         ; On                                             ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                         ; On                                             ; --            ; --          ; --         ;
+; USE_DLL_FREQUENCY_FOR_DQS_DELAY_CHAIN      ; On                                             ; Off           ; --          ; --         ;
++--------------------------------------------+------------------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -112,11 +117,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:24     ; 1.4                     ; 1560 MB             ; 00:02:53                           ;
-; Fitter               ; 00:10:55     ; 1.4                     ; 4071 MB             ; 00:24:28                           ;
-; Assembler            ; 00:00:10     ; 1.0                     ; 825 MB              ; 00:00:11                           ;
-; Timing Analyzer      ; 00:00:50     ; 3.7                     ; 2243 MB             ; 00:02:54                           ;
-; Total                ; 00:13:19     ; --                      ; --                  ; 00:30:26                           ;
+; Analysis & Synthesis ; 00:01:24     ; 1.5                     ; 1538 MB             ; 00:02:53                           ;
+; Fitter               ; 00:10:30     ; 1.5                     ; 4029 MB             ; 00:27:47                           ;
+; Assembler            ; 00:00:11     ; 1.0                     ; 825 MB              ; 00:00:11                           ;
+; Timing Analyzer      ; 00:00:49     ; 3.5                     ; 2241 MB             ; 00:02:40                           ;
+; Total                ; 00:12:54     ; --                      ; --                  ; 00:33:31                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

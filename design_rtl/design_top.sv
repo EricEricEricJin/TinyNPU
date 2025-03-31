@@ -38,7 +38,7 @@ assign f2h_pio32 = {move_done, ldst_done, cu_done, fetch_done, exec_done};
 rf_move_intf i_rf_move_intf ();
 rf_ldst_intf i_rf_ldst_intf ();
 
-rmio_intf #( .INPUT_NUM (1), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_stmm       [4] ();
+rmio_intf #( .INPUT_NUM (4), .OUTPUT_NUM (4), .DATA_W (176*8) ) rmio_stmm       ();
 rmio_intf #( .INPUT_NUM (1), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_layernorm  [4] ();
 rmio_intf #( .INPUT_NUM (1), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_silu       [4] ();
 rmio_intf #( .INPUT_NUM (3), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_att        [1] ();

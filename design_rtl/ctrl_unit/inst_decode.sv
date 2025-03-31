@@ -3,7 +3,7 @@
 
 module inst_decode #(
     parameter int RF_ADDR_W = 10,
-    parameter logic [14 : 0] LDST_SDRAM_OFFSET = 15'h1000,
+    parameter logic [14 : 0] LDST_SDRAM_OFFSET = 15'h1800,
     parameter logic [3 : 0] FETCH_SDRAM_OFFSET = 4'h2
 ) (
     input wire [31 : 0] inst,

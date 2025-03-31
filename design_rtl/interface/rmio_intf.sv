@@ -9,9 +9,9 @@ interface rmio_intf #(
 );
 
 logic [DATA_W - 1 : 0]      input_data;
-logic [0 : INPUT_NUM - 1]   input_we; 
+logic [INPUT_NUM - 1 : 0]   input_we; 
 logic [DATA_W - 1 : 0]      output_data;
-logic [0 : OUTPUT_NUM - 1]  output_re;
+logic [OUTPUT_NUM - 1 : 0]  output_re;
 
 modport eu (
     input  input_data, input_we, output_re,

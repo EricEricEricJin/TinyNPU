@@ -4,13 +4,14 @@ module rf_ram #(
     parameter int RF_DATA_W = 176*8,
     parameter int RF_ADDR_W = 10
 ) (
-    input wire clk,         // no need reset
+    input wire clk,         
+    input wire rst_n,
 
     // === Export BRAM interface ===
     bram_intf ram,
 
     // === RMIOs ===
-    rmio_intf rmio_stmm         [0 : 3],
+    rmio_intf rmio_stmm,
     rmio_intf rmio_layernorm    [0 : 3],
     rmio_intf rmio_silu         [0 : 3],
     rmio_intf rmio_att          [0 : 0]
@@ -49,18 +50,33 @@ end
 //////////////////////////////
 // Connect rmio input data and real_ram.d to ram.d
 //////////////////////////////
-genvar i;
-generate
-    for (i = 0; i < 4; i++) begin: blk_connect_rmio_in_data
-        assign rmio_stmm[i].input_data = ram.data;
-        assign rmio_layernorm[i].input_data = ram.data;
-        assign rmio_silu[i].input_data = ram.data;
-    end
-    
-endgenerate
+
+logic [RF_DATA_W - 1 : 0] ram_data_ff;
+always_ff @( posedge clk ) begin
+    ram_data_ff <= ram.data;
+end
+
+logic [3 : 0] stmm_input_we;
+
+// genvar i;
+// generate
+//     for (i = 0; i < 4; i++) begin: blk_connect_rmio_in_data
+//         // assign rmio_stmm[i].input_data = ram.data;
+//         assign rmio_stmm[i].input_data = ram_data_ff[i];
+//         // assign rmio_layernorm[i].input_data = ram.data;
+//         // assign rmio_silu[i].input_data = ram.data;
+//     end
+// endgenerate
+assign rmio_stmm.input_data = ram_data_ff;
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n)
+        rmio_stmm.input_we <= '0;
+    else
+        rmio_stmm.input_we <= stmm_input_we;
+end
 
 // Only one ATT
-assign rmio_att[0].input_data = ram.data;
+// assign rmio_att[0].input_data = ram.data;
 
 assign real_ram.data = ram.data;
 
@@ -110,22 +126,20 @@ typedef enum logic [RF_ADDR_W - 1 : 0] {
 //////////////////////////////
 always_comb begin
 
-    rmio_stmm[0].input_we = 0;
-    rmio_stmm[1].input_we = 0; 
-    rmio_stmm[2].input_we = 0;
-    rmio_stmm[3].input_we = 0;
+    // rmio_stmm.input_we = '0;
+    stmm_input_we = '0;
     
-    rmio_layernorm[0].input_we = 0;
-    rmio_layernorm[1].input_we = 0;
-    rmio_layernorm[2].input_we = 0;
-    rmio_layernorm[3].input_we = 0;
+    // rmio_layernorm[0].input_we = 0;
+    // rmio_layernorm[1].input_we = 0;
+    // rmio_layernorm[2].input_we = 0;
+    // rmio_layernorm[3].input_we = 0;
     
-    rmio_silu[0].input_we = 0;
-    rmio_silu[1].input_we = 0;
-    rmio_silu[2].input_we = 0;
-    rmio_silu[3].input_we = 0;
+    // rmio_silu[0].input_we = 0;
+    // rmio_silu[1].input_we = 0;
+    // rmio_silu[2].input_we = 0;
+    // rmio_silu[3].input_we = 0;
     
-    rmio_att[0].input_we = 3'b000;
+    // rmio_att[0].input_we = 3'b000;
     // rmio_att[1].input_we = 3'b000;
     // rmio_att[2].input_we = 3'b000;
     // rmio_att[3].input_we = 3'b000;
@@ -135,35 +149,39 @@ always_comb begin
     if (ram.we) begin
         case (ram.addr)
             // === STMM ===
-            ADDR_STMM_0_X:  rmio_stmm[0].input_we = 1;
-            ADDR_STMM_1_X:  rmio_stmm[1].input_we = 1;
-            ADDR_STMM_2_X:  rmio_stmm[2].input_we = 1;
-            ADDR_STMM_3_X:  rmio_stmm[3].input_we = 1;
+            // ADDR_STMM_0_X:  rmio_stmm.input_we = 4'b0001;
+            // ADDR_STMM_1_X:  rmio_stmm.input_we = 4'b0010;
+            // ADDR_STMM_2_X:  rmio_stmm.input_we = 4'b0100;
+            // ADDR_STMM_3_X:  rmio_stmm.input_we = 4'b1000;
+            ADDR_STMM_0_X:  stmm_input_we = 4'b0001;
+            ADDR_STMM_1_X:  stmm_input_we = 4'b0010;
+            ADDR_STMM_2_X:  stmm_input_we = 4'b0100;
+            ADDR_STMM_3_X:  stmm_input_we = 4'b1000;
 
             // === LAYER NORM ===
-            ADDR_LN_0_X:    rmio_layernorm[0].input_we = 1;
-            ADDR_LN_1_X:    rmio_layernorm[1].input_we = 1;
-            ADDR_LN_2_X:    rmio_layernorm[2].input_we = 1;
-            ADDR_LN_3_X:    rmio_layernorm[3].input_we = 1;
+            // ADDR_LN_0_X:    rmio_layernorm[0].input_we = 1;
+            // ADDR_LN_1_X:    rmio_layernorm[1].input_we = 1;
+            // ADDR_LN_2_X:    rmio_layernorm[2].input_we = 1;
+            // ADDR_LN_3_X:    rmio_layernorm[3].input_we = 1;
 
             // === SILU ===
-            ADDR_SILU_0_X:  rmio_silu[0].input_we = 1;
-            ADDR_SILU_1_X:  rmio_silu[1].input_we = 1;
-            ADDR_SILU_2_X:  rmio_silu[2].input_we = 1;
-            ADDR_SILU_3_X:  rmio_silu[3].input_we = 1;
+            // ADDR_SILU_0_X:  rmio_silu[0].input_we = 1;
+            // ADDR_SILU_1_X:  rmio_silu[1].input_we = 1;
+            // ADDR_SILU_2_X:  rmio_silu[2].input_we = 1;
+            // ADDR_SILU_3_X:  rmio_silu[3].input_we = 1;
 
             // === ATTENTION ===
-            ADDR_ATT_0_Q:  rmio_att[0].input_we = 3'b001;
+            // ADDR_ATT_0_Q:  rmio_att[0].input_we = 3'b001;
             // ADDR_ATT_1_Q:  rmio_att[1].input_we = 3'b001;
             // ADDR_ATT_2_Q:  rmio_att[2].input_we = 3'b001;
             // ADDR_ATT_3_Q:  rmio_att[3].input_we = 3'b001;
 
-            ADDR_ATT_0_K:  rmio_att[0].input_we = 3'b010;
+            // ADDR_ATT_0_K:  rmio_att[0].input_we = 3'b010;
             // ADDR_ATT_1_K:  rmio_att[1].input_we = 3'b010;
             // ADDR_ATT_2_K:  rmio_att[2].input_we = 3'b010;
             // ADDR_ATT_3_K:  rmio_att[3].input_we = 3'b010;
 
-            ADDR_ATT_0_V:  rmio_att[0].input_we = 3'b100;
+            // ADDR_ATT_0_V:  rmio_att[0].input_we = 3'b100;
             // ADDR_ATT_1_V:  rmio_att[1].input_we = 3'b100;
             // ADDR_ATT_2_V:  rmio_att[2].input_we = 3'b100;
             // ADDR_ATT_3_V:  rmio_att[3].input_we = 3'b100;
@@ -181,22 +199,19 @@ end
 always_comb begin
     
     // set all read-enable to zero by default 
-    rmio_stmm[0].output_re = 0;
-    rmio_stmm[1].output_re = 0;
-    rmio_stmm[2].output_re = 0;
-    rmio_stmm[3].output_re = 0;
+    rmio_stmm.output_re = '0;
 
-    rmio_layernorm[0].output_re = 0;
-    rmio_layernorm[1].output_re = 0;
-    rmio_layernorm[2].output_re = 0;
-    rmio_layernorm[3].output_re = 0;
+    // rmio_layernorm[0].output_re = 0;
+    // rmio_layernorm[1].output_re = 0;
+    // rmio_layernorm[2].output_re = 0;
+    // rmio_layernorm[3].output_re = 0;
 
-    rmio_silu[0].output_re = 0;
-    rmio_silu[1].output_re = 0;
-    rmio_silu[2].output_re = 0;
-    rmio_silu[3].output_re = 0;
+    // rmio_silu[0].output_re = 0;
+    // rmio_silu[1].output_re = 0;
+    // rmio_silu[2].output_re = 0;
+    // rmio_silu[3].output_re = 0;
 
-    rmio_att[0].output_re = 0;
+    // rmio_att[0].output_re = 0;
     // rmio_att[1].output_re = 0;
     // rmio_att[2].output_re = 0;
     // rmio_att[3].output_re = 0;
@@ -206,25 +221,25 @@ always_comb begin
     if (ram.re) begin
         case (ram.addr)
             // === STMM ===
-            ADDR_STMM_0_Y:  rmio_stmm[0].output_re = 1;
-            ADDR_STMM_1_Y:  rmio_stmm[1].output_re = 1;
-            ADDR_STMM_2_Y:  rmio_stmm[2].output_re = 1;
-            ADDR_STMM_3_Y:  rmio_stmm[3].output_re = 1;
+            ADDR_STMM_0_Y:  rmio_stmm.output_re = 4'b0001;
+            ADDR_STMM_1_Y:  rmio_stmm.output_re = 4'b0010;
+            ADDR_STMM_2_Y:  rmio_stmm.output_re = 4'b0100;
+            ADDR_STMM_3_Y:  rmio_stmm.output_re = 4'b1000;
 
             // === LAYER NORM ===
-            ADDR_LN_0_Y:    rmio_layernorm[0].output_re = 1;
-            ADDR_LN_1_Y:    rmio_layernorm[1].output_re = 1;
-            ADDR_LN_2_Y:    rmio_layernorm[2].output_re = 1;
-            ADDR_LN_3_Y:    rmio_layernorm[3].output_re = 1;
+            // ADDR_LN_0_Y:    rmio_layernorm[0].output_re = 1;
+            // ADDR_LN_1_Y:    rmio_layernorm[1].output_re = 1;
+            // ADDR_LN_2_Y:    rmio_layernorm[2].output_re = 1;
+            // ADDR_LN_3_Y:    rmio_layernorm[3].output_re = 1;
 
             // === SILU ===
-            ADDR_SILU_0_Y:  rmio_silu[0].output_re = 1;
-            ADDR_SILU_1_Y:  rmio_silu[1].output_re = 1;
-            ADDR_SILU_2_Y:  rmio_silu[2].output_re = 1;
-            ADDR_SILU_3_Y:  rmio_silu[3].output_re = 1;
+            // ADDR_SILU_0_Y:  rmio_silu[0].output_re = 1;
+            // ADDR_SILU_1_Y:  rmio_silu[1].output_re = 1;
+            // ADDR_SILU_2_Y:  rmio_silu[2].output_re = 1;
+            // ADDR_SILU_3_Y:  rmio_silu[3].output_re = 1;
 
             // === ATTENTION ===
-            ADDR_ATT_0_Y:  rmio_att[0].output_re = 1;
+            // ADDR_ATT_0_Y:  rmio_att[0].output_re = 1;
             // ADDR_ATT_1_Y:  rmio_att[1].output_re = 1;
             // ADDR_ATT_2_Y:  rmio_att[2].output_re = 1;
             // ADDR_ATT_3_Y:  rmio_att[3].output_re = 1;
@@ -238,12 +253,14 @@ end
 // determine ram.q based on the flip-floped addr
 //////////////////////////////
 always_comb begin
-    case (addr_ff)
+    unique case (addr_ff)
         // === STMM ===
-        ADDR_STMM_0_Y:  ram.q = rmio_stmm[0].output_data;
-        ADDR_STMM_1_Y:  ram.q = rmio_stmm[1].output_data;
-        ADDR_STMM_2_Y:  ram.q = rmio_stmm[2].output_data;
-        ADDR_STMM_3_Y:  ram.q = rmio_stmm[3].output_data;
+        ADDR_STMM_0_Y:  ram.q = rmio_stmm.output_data;
+        ADDR_STMM_1_Y:  ram.q = rmio_stmm.output_data;        
+        ADDR_STMM_2_Y:  ram.q = rmio_stmm.output_data;
+        ADDR_STMM_3_Y:  ram.q = rmio_stmm.output_data;
+
+/*
         
         // === LAYER NORM ===
         ADDR_LN_0_Y:    ram.q = rmio_layernorm[0].output_data;
@@ -262,7 +279,7 @@ always_comb begin
         // ADDR_ATT_1_Y:  ram.q = rmio_att[1].output_data;
         // ADDR_ATT_2_Y:  ram.q = rmio_att[2].output_data;
         // ADDR_ATT_3_Y:  ram.q = rmio_att[3].output_data;
-
+*/
         default:       ram.q = real_ram.q;  // no need if(...), dirty is OK.
     endcase
 end

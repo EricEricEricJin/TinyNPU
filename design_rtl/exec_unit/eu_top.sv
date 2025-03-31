@@ -9,7 +9,7 @@ module eu_top #(
     sdram_read_intf i_sdram_read_intf,
 
     // ---------- RMIO ----------
-    rmio_intf rmio_stmm [4],
+    rmio_intf rmio_stmm,
     // todo
 
     // ---------- Control Unit signals ----------

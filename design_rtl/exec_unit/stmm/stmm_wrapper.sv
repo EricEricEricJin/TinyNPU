@@ -7,7 +7,7 @@ module stmm_wrapper #(
 ) (
     input wire clk, rst_n,
 
-    rmio_intf i_rmio_intf [SUB_NUM],
+    rmio_intf i_rmio_intf,
 
     sdram_read_intf i_sdram_read_intf,
     
@@ -113,14 +113,14 @@ end
 ////////////////////////
 // Input FF
 ////////////////////////
-logic               input_we_arr[SUB_NUM];
-logic [N * 8 - 1 : 0] input_data_arr[SUB_NUM];
-generate
-    for (i = 0; i < SUB_NUM; i++) begin: blk_assign_rmio_intf_arr
-        assign input_we_arr[i] = i_rmio_intf[i].input_we;
-        assign input_data_arr[i] = i_rmio_intf[i].input_data;
-    end
-endgenerate
+// logic               input_we_arr[SUB_NUM];
+// logic [N * 8 - 1 : 0] input_data_arr[SUB_NUM];
+// generate
+//     for (i = 0; i < SUB_NUM; i++) begin: blk_assign_rmio_intf_arr
+//         assign input_we_arr[i] = i_rmio_intf[i].input_we;
+//         assign input_data_arr[i] = i_rmio_intf[i].input_data;
+//     end
+// endgenerate
 
 logic [N * 8 - 1 : 0] X_in[SUB_NUM];
 always_ff @(posedge clk, negedge rst_n) begin
@@ -130,13 +130,13 @@ always_ff @(posedge clk, negedge rst_n) begin
     end
     else begin
         for (int i = 0; i < SUB_NUM; i++) begin
-            if (input_we_arr[i])
-                X_in[i] <= input_data_arr[i];
+            if (i_rmio_intf.input_we[i])
+                X_in[i] <= i_rmio_intf.input_data;
         end
     end
 end
 
-
+logic [N * 8 - 1 : 0] Y_out[SUB_NUM];
 generate
     for (i = 0; i < SUB_NUM; i++) begin: blk_instantiate_stmm
         StMM #(.N(176), .P(176), .DQ(18), .Q(8)) i_stmm(
@@ -155,11 +155,23 @@ generate
             .W_addr     (stmm_ram_addr[i]),
             .W_data     (stmm_ram_data[i]),
 
-            .Y_out      (i_rmio_intf[i].output_data),
+            .Y_out      (Y_out[i]),
             .out_valid  (exec_done[i])
         );
     end
 endgenerate
+
+// output mux
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n)
+        i_rmio_intf.output_data <= 0;
+    else begin
+        for (int i = 0; i < SUB_NUM; i++) begin
+            if (i_rmio_intf.output_re[i])
+                i_rmio_intf.output_data <= Y_out[i];
+        end
+    end
+end
 
 endmodule
 

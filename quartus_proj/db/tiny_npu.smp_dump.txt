@@ -27,32 +27,18 @@ state.MAT_RECV_DATA 0 1 0 1 0
 state.QUANT_SEND_ADDR 1 0 0 1 0 
 state.QUANT_RECV_DATA 0 0 0 1 1 
 
-State Machine - |tiny_npu|design_top:i_design_top|rf_wrapper:i_rf_wrapper|rf_move:i_rf_move|state
-Name state.IDLE state.STORE state.LOAD 
-state.IDLE 0 0 0 
-state.LOAD 1 0 1 
-state.STORE 1 1 0 
-
-State Machine - |tiny_npu|design_top:i_design_top|rf_wrapper:i_rf_wrapper|rf_ldst:i_rf_ldst|state
-Name state.READ_FROM_RF state.WRITE_TO_RF state.READ_FROM_SDRAM state.IDLE state.WRITE_TO_SDRAM 
-state.IDLE 0 0 0 0 0 
-state.READ_FROM_SDRAM 0 0 1 1 0 
-state.WRITE_TO_RF 0 1 0 1 0 
-state.READ_FROM_RF 1 0 0 1 0 
-state.WRITE_TO_SDRAM 0 0 0 1 1 
-
-State Machine - |tiny_npu|soc_system:u0|avmm_sdram_read_wrapper:avmm_sdram_read_wrapper_0|state
-Name state.IDLE state.RECV_DATA state.SEND_ADDR 
-state.IDLE 0 0 0 
-state.SEND_ADDR 1 0 1 
-state.RECV_DATA 1 1 0 
-
 State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_merlin_burst_adapter:hps_0_f2h_sdram1_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 0 
 state.ST_COMP_TRANS 1 0 0 1 
 state.ST_UNCOMP_TRANS 1 0 1 0 
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |tiny_npu|soc_system:u0|avmm_sdram_read_wrapper:avmm_sdram_read_wrapper_0|state
+Name state.IDLE state.RECV_DATA state.SEND_ADDR 
+state.IDLE 0 0 0 
+state.SEND_ADDR 1 0 1 
+state.RECV_DATA 1 1 0 
 
 State Machine - |tiny_npu|design_top:i_design_top|ctrl_unit:i_ctrl_unit|state
 Name state.IDLE state.ISSUE state.DECODE 
@@ -73,6 +59,20 @@ state.ST_IDLE 0 0 0 0
 state.ST_COMP_TRANS 1 0 0 1 
 state.ST_UNCOMP_TRANS 1 0 1 0 
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |tiny_npu|design_top:i_design_top|rf_wrapper:i_rf_wrapper|rf_move:i_rf_move|state
+Name state.IDLE state.STORE state.LOAD 
+state.IDLE 0 0 0 
+state.LOAD 1 0 1 
+state.STORE 1 1 0 
+
+State Machine - |tiny_npu|design_top:i_design_top|rf_wrapper:i_rf_wrapper|rf_ldst:i_rf_ldst|state
+Name state.READ_FROM_RF state.WRITE_TO_RF state.READ_FROM_SDRAM state.IDLE state.WRITE_TO_SDRAM 
+state.IDLE 0 0 0 0 0 
+state.READ_FROM_SDRAM 0 0 1 1 0 
+state.WRITE_TO_RF 0 1 0 1 0 
+state.READ_FROM_RF 1 0 0 1 0 
+state.WRITE_TO_SDRAM 0 0 0 1 1 
 
 State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 

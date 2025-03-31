@@ -16,7 +16,7 @@ module rf_wrapper #(
     input wire   ram_sel,
 
     // Connect to RF Ram RMIO
-    rmio_intf   rmio_stmm       [0 : 3],
+    rmio_intf   rmio_stmm,
     rmio_intf   rmio_layernorm  [0 : 3],
     rmio_intf   rmio_silu       [0 : 3],
     rmio_intf   rmio_att        [0 : 0],
@@ -79,6 +79,7 @@ bram_mux #(
 ////////////////////////
 rf_ram #( .RF_DATA_W(RF_DATA_W), .RF_ADDR_W(RF_ADDR_W) ) i_rf_ram (
     .clk            (clk),
+    .rst_n          (rst_n),
 
     .ram            (i_rf_ram_intf_ram.ram),
     
