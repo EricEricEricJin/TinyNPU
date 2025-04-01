@@ -1,6 +1,6 @@
 `default_nettype none
 
-module layer_norm #(
+module layernorm #(
     parameter int N = 176,
     parameter int Q = 8
 ) (
