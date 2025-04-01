@@ -58,10 +58,10 @@ avmm_sdram_bfm #(
     .SDRAM_W(128),
     .RD_MEM_FILE(RD_MEM_FILE),
     .RD_MEM_SIZE(1024*1024),
-    .RD_MEM_OFFSET(512*1024*1024),
+    .RD_MEM_OFFSET(768*1024*1024),
     .WT_MEM_FILE(WT_MEM_FILE),
     .WT_MEM_SIZE(1024*1024),
-    .WT_MEM_OFFSET(512*1024*1024)
+    .WT_MEM_OFFSET(768*1024*1024)
 ) i_sdram_bi_slave (
     .clk(clk), 
     .rst_n(rst_n),

@@ -2,45 +2,91 @@
 
 module ln_fetch #(
     parameter int SDRAM_DATA_W = 128,
-    parameter int DATA_W = 176*8
+    parameter int DATA_W = 176*8,
+    parameter int N = 176
 ) (
     input wire clk, 
     input wire rst_n,
 
+    // ------------------ To AVMM Read ------------------
     sdram_read_intf i_sdram_read_intf,
-    ln_fetch_intf   i_fetch_intf,
 
-    input wire [31 : 0] addr,
-    input wire start,
-    output logic done
+    // ------------------ To Registers ------------------
+    output logic [7 : 0] data_out[0 : N - 1],    
+    output logic gamma_hi_valid,
+    output logic gamma_lo_valid,
+    output logic beta_valid,
+
+    // ------------------ To Control ------------------
+    input wire          start,
+    input wire [31 : 0] fetch_addr,
+    output logic        done
 );
 
 localparam BLK_NUM = DATA_W / SDRAM_DATA_W;
+localparam NUM_PER_BLK = SDRAM_DATA_W / 8;
 
-assign i_sdram_read_intf.read_addr = addr;
-assign i_sdram_read_intf.read_cnt = BLK_NUM;
+logic nxt_line;
+logic blk_store;
 
-
-// pack data
-logic [SDRAM_DATA_W - 1 : 0] data_unpacked[0 : BLK_NUM - 1];
-genvar i;
-generate
-    for (i = 0; i < BLK_NUM - 1; i++) begin: pack_data
-        assign i_fetch_intf.data[i*SDRAM_DATA_W+:SDRAM_DATA_W] = data_unpacked[i];
-    end
-endgenerate
-
-// Data Index
-logic [$clog2(BLK_NUM) - 1 : 0] data_idx;
+// Address FF
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
-        data_idx <= '0;
-    else if (i_fetch_intf.data_we)
-        data_idx <= data_idx + 1;
+        i_sdram_read_intf.read_addr <= '0;
+    else if (start)
+        i_sdram_read_intf.read_addr <= fetch_addr;
+    else if (nxt_line)
+        i_sdram_read_intf.read_addr <= i_sdram_read_intf.read_addr + 32'h10 * BLK_NUM;
+end
+
+assign i_sdram_read_intf.read_cnt = BLK_NUM;
+
+/////////////////////////
+// line buffer
+/////////////////////////
+logic [$clog2(BLK_NUM) - 1 : 0] blk_cnt;
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n)
+        blk_cnt <= '0;
+    else if (start)
+        blk_cnt <= '0;
+    else if (blk_store)
+        blk_cnt <= blk_cnt + 1;
 end
 
 
-typedef enum logic [1 : 0] { IDLE, GAMMA_HI, GAMMA_LO, BETA } state_t;
+logic [SDRAM_DATA_W - 1 : 0] line_buf[0 : BLK_NUM - 1];
+genvar i, j;
+generate
+    for (i = 0; i < BLK_NUM; i++) begin: blk_pack_line_buf_i
+        for (j = 0; j < NUM_PER_BLK; j++) begin: blk_pack_line_buf_j
+            assign data_out[i*NUM_PER_BLK + j] = line_buf[i][j*8 +: 8];
+        end
+    end
+endgenerate
+
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n) begin
+        for (int i = 0; i < BLK_NUM; i++)
+            line_buf[i] <= '0;
+    end else begin
+        if (nxt_line)
+            line_buf[line_cnt] <= i_sdram_read_intf.read_data;
+    end
+end
+
+
+/////////////////////////////
+// State machine
+/////////////////////////////
+typedef enum logic [2 : 0] {
+    IDLE, 
+    SEND_ADDR, 
+    RECV_GAMMA_HI, 
+    RECV_GAMMA_LO, 
+    RECV_BETA 
+} state_t;
+
 state_t state, nxt_state;
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
@@ -53,22 +99,31 @@ always_comb begin
     
     i_sdram_read_intf.read_start = 0;
 
-    i_fetch_intf.gamma_high_we = 0;
-    i_fetch_intf.gamma_low_we = 0;
-    i_fetch_intf.beta_we = 0;
+    gamma_hi_valid = 0;
+    gamma_lo_valid = 0;
+    beta_valid = 0;
+
+    nxt_line = 0;
 
     done = 0;
+
     nxt_state = state;
 
     case (state)
         IDLE: begin
-            if (start) begin
-                i_sdram_read_intf.read = 1;
-                nxt_state = GAMMA_HI;
-            end
-        end 
-        GAMMA_HI: begin
+            done = 1;
+            if (start)
 
+        end
+
+        SEND_ADDR: begin
+            i_sdram_read_intf.read_start = 1;
+            nxt_state = RECV_GAMMA_HI;
+        end
+
+        RECV_GAMMA_HI: begin
+            if (i_sdram_read_intf.read_valid)
+                store
         end
         GAMMA_LO: begin
         end
