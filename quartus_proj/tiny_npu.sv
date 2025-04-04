@@ -131,7 +131,7 @@ design_top i_design_top (
     .h2f_write      (h2f_write),
     
     .f2h_pio32      (f2h_pio32),
-    .f2h_write      (f2h_write)
+    .f2h_write      (f2h_read)
 );
 
 ////////////////////////

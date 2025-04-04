@@ -1,4 +1,13 @@
 
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[3].i_layernorm|state
+Name state.STORE_Y state.WAIT_Y state.FLOP_SD state.SD_MEAN state.X_MEAN state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.X_MEAN 0 0 0 0 1 1 
+state.SD_MEAN 0 0 0 1 0 1 
+state.FLOP_SD 0 0 1 0 0 1 
+state.WAIT_Y 0 1 0 0 0 1 
+state.STORE_Y 1 0 0 0 0 1 
+
 State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[0].i_layernorm|state
 Name state.STORE_Y state.WAIT_Y state.FLOP_SD state.SD_MEAN state.X_MEAN state.IDLE 
 state.IDLE 0 0 0 0 0 0 
@@ -26,14 +35,20 @@ state.FLOP_SD 0 0 1 0 0 1
 state.WAIT_Y 0 1 0 0 0 1 
 state.STORE_Y 1 0 0 0 0 1 
 
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[3].i_layernorm|state
-Name state.STORE_Y state.WAIT_Y state.FLOP_SD state.SD_MEAN state.X_MEAN state.IDLE 
-state.IDLE 0 0 0 0 0 0 
-state.X_MEAN 0 0 0 0 1 1 
-state.SD_MEAN 0 0 0 1 0 1 
-state.FLOP_SD 0 0 1 0 0 1 
-state.WAIT_Y 0 1 0 0 0 1 
-state.STORE_Y 1 0 0 0 0 1 
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[2].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[1].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[0].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
 
 State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm_fetch:i_layernorm_fetch|state
 Name state.BETA_RECV_DATA state.BETA_SEND_ADDR state.GAMMA_LO_RECV_DATA state.GAMMA_LO_SEND_ADDR state.GAMMA_HI_RECV_DATA state.GAMMA_HI_SEND_ADDR state.IDLE 
@@ -67,21 +82,6 @@ state.SEND_ADDR 1 0 1
 state.RECV_DATA 1 1 0 
 
 State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[3].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[2].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[1].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[0].i_stmm|vvm:i_vvm|state
 Name state.CNTD 
 state.IDLE 0 
 state.CNTD 1 

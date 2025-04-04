@@ -17,6 +17,8 @@ module design_top (
     output logic [7 : 0] LED
 );
 
+assign LED = '0;
+
 localparam int RF_ADDR_W = 10;
 localparam int RF_DATA_W = 176*8;
 localparam int SDRAM_DATA_W = 128;
