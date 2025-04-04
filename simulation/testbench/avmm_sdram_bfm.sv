@@ -109,7 +109,7 @@ forever begin
     end
 
     if (i_avmm_raw_intf.read) begin
-        $display("Read request");
+        // $display("Read request");
 
         i_avmm_raw_intf.waitrequest = 1;
         wait_sometime(clk);
@@ -135,7 +135,7 @@ forever begin
             i_avmm_raw_intf.readdatavalid = 1;
             @(negedge clk) i_avmm_raw_intf.readdatavalid = 0;
         end
-        $display("Read done.");
+        // $display("Read done.");
     end else begin
         i_avmm_raw_intf.readdatavalid = 0;
         i_avmm_raw_intf.readdata = 'x;
@@ -166,7 +166,7 @@ forever begin
                 i++;
             end
         end
-        $display("Write done.");
+        // $display("Write done.");
     end
 
 end

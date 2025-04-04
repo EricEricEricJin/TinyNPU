@@ -1,4 +1,4 @@
-set TOP_LEVEL_NAME all_top_tb
+set TOP_LEVEL_NAME top_tb
 set PROJ_PATH /home/eric/Documents/Conformer-FPGA-New/TinyNPU/
 
 cd $PROJ_PATH

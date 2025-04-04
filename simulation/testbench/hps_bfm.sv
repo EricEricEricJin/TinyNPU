@@ -22,8 +22,7 @@ class hpsBfm #(
         @(negedge clk) rst_n = 1;
     endtask
 
-
-    task run(ref logic clk);
+    task run(ref logic clk, ref logic rst_n);
         `include "simulation/hps_prgms/test_prgm.sv"
     endtask
     
