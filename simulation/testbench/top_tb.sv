@@ -1,3 +1,11 @@
+/**
+ * Organization: The University of Hong Kong 
+ * Student: Jin Yushang
+ * Project: ELEC4848 SDP
+
+ * File: top_tb.sv
+ * Brief: top module for functional simulation
+ */
 `timescale 1ps/1ps
 
 module top_tb;

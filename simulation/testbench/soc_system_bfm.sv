@@ -121,8 +121,12 @@ initial begin
     i_sdram_bi_slave.i_avmm_raw_intf = i_avmm_raw_bi_intf;
     i_sdram_ro_slave.i_avmm_raw_intf = i_avmm_raw_ro_intf;
 
-    i_sdram_bi_slave.read_file_to_mem(RD_MEM_FILE, 32'h3000_0000, 176*166);
-    i_sdram_ro_slave.read_file_to_mem(WEIGHT_MEM_FILE, 32'h2000_0000, 176*176+16);
+
+
+    // i_sdram_bi_slave.read_file_to_mem(RD_MEM_FILE, 32'h3000_0000, 176*166);
+    // i_sdram_ro_slave.read_file_to_mem(WEIGHT_MEM_FILE, 32'h2000_0000, 176*176+16);
+
+    `include "simulation/program/test.mm.sv"
 
     fork
         i_sdram_bi_slave.run(clk, rst_n);
@@ -130,7 +134,11 @@ initial begin
     join_none
 
     i_hps_bfm.reset(clk, h2f_reset_reset_n);
-    i_hps_bfm.run(clk, h2f_reset_reset_n);
+
+    repeat (10) @(negedge clk);
+
+    // i_hps_bfm.run(clk, h2f_reset_reset_n);
+    `include "simulation/program/test.hps.sv"
 
     i_sdram_bi_slave.write_mem_to_file(WT_MEM_FILE);
 

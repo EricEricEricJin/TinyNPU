@@ -37,7 +37,7 @@ logic [LAYERNORM_SUB_NUM - 1 : 0] layernorm_exec_done;
 // todo 
 
 assign fetch_done = stmm_fetch_done & layernorm_fetch_done;
-assign exec_done = {20'b0, layernorm_exec_done, stmm_exec_done};
+assign exec_done = {20'b1, layernorm_exec_done, stmm_exec_done};
 
 ////////////////////////
 // SDRAM Read Mux
