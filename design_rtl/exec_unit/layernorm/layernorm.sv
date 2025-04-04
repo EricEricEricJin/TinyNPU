@@ -26,9 +26,9 @@ module layernorm #(
 ///////////////////////////////
 // Unpack x, gamma, beta
 ///////////////////////////////
-logic signed [7 : 0] x_in_unpacked [0 : N];
-logic [7 : 0] beta_scaled_unpacked [0 : N];
-logic [15 : 0] gamma_scaled_unpacked [0 : N];
+logic signed [7 : 0] x_in_unpacked [N];
+logic signed [7 : 0] beta_scaled_unpacked [N];
+logic [15 : 0] gamma_scaled_unpacked [N];
 
 genvar i;
 generate

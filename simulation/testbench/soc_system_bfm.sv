@@ -1,3 +1,9 @@
+// `define MM_PRGM "simulation/program/stmm.mm.sv"
+// `define HPS_PRGM "simulation/program/stmm.hps.sv"
+
+`define MM_PRGM "simulation/program/layernorm.mm.sv"
+`define HPS_PRGM "simulation/program/layernorm.hps.sv"
+
 `default_nettype none
 
 module soc_system #(
@@ -124,7 +130,8 @@ initial begin
     // i_sdram_bi_slave.read_file_to_mem(RD_MEM_FILE, 32'h3000_0000, 176*166);
     // i_sdram_ro_slave.read_file_to_mem(WEIGHT_MEM_FILE, 32'h2000_0000, 176*176+16);
 
-    `include "simulation/program/stmm.mm.sv"
+    // `include "simulation/program/stmm.mm.sv"
+    `include `MM_PRGM
 
     fork
         i_sdram_bi_slave.run(clk, rst_n);
@@ -136,7 +143,8 @@ initial begin
     repeat (10) @(negedge clk);
 
     // i_hps_bfm.run(clk, h2f_reset_reset_n);
-    `include "simulation/program/stmm.hps.sv"
+    // `include "simulation/program/stmm.hps.sv"
+    `include `HPS_PRGM
 
     i_sdram_bi_slave.write_mem_to_file(WT_MEM_FILE);
 

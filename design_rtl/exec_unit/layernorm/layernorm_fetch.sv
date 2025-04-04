@@ -48,7 +48,7 @@ logic [$clog2(BLK_NUM) - 1 : 0] blk_cnt;
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
         blk_cnt <= '0;
-    else if (start)
+    else if (start || nxt_line)
         blk_cnt <= '0;
     else if (blk_store)
         blk_cnt <= blk_cnt + 1;

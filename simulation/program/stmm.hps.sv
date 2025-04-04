@@ -21,3 +21,4 @@
 `hps.npu_wait(clk, 32'(1<<30));
 
 `undef hps
+`undef N

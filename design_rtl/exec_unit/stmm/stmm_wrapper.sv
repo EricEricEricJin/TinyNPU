@@ -126,7 +126,7 @@ logic [N * 8 - 1 : 0] X_in[SUB_NUM];
 always_ff @(posedge clk, negedge rst_n) begin
     if (!rst_n) begin
         for (int i = 0; i < SUB_NUM; i++)
-            X_in[i] <= 0;
+            X_in[i] <= '0;
     end
     else begin
         for (int i = 0; i < SUB_NUM; i++) begin

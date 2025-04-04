@@ -50,6 +50,7 @@ always_comb begin
     // case(sdram_read_sel) inside
     casex(sdram_read_sel)
         5'b000??: real_sdram_read_sel = ($clog2(REAL_SDRAM_NUM_PORTS))'(0);
+        5'b001??: real_sdram_read_sel = ($clog2(REAL_SDRAM_NUM_PORTS))'(1);
         default: real_sdram_read_sel = '0;
     endcase
 end

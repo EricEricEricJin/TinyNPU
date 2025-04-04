@@ -77,6 +77,19 @@ always_ff @( posedge clk, negedge rst_n ) begin
     end
 end
 
+// input loader
+logic [N*8-1 : 0] X_in[SUB_NUM];
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n) begin
+        for (int i = 0; i < SUB_NUM; i++)
+            X_in[i] <= '0;
+    end else begin
+        for (int i = 0; i < SUB_NUM; i++) begin
+            if (i_rmio_intf.input_we[i])
+                X_in[i] <= i_rmio_intf.input_data;
+        end
+    end
+end
 
 // Layernorm executors 
 logic [N * 8 - 1 : 0] Y_out[SUB_NUM];
@@ -87,7 +100,7 @@ generate
             .clk    (clk),
             .rst_n  (rst_n),
 
-            .x_in           (fetch_data),
+            .x_in           (X_in[i]),
             .gamma_scaled_hi(gamma_scaled_hi[i]),
             .gamma_scaled_lo(gamma_scaled_lo[i]),
             .beta_scaled    (beta_scaled[i]),

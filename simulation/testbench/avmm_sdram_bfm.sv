@@ -8,7 +8,8 @@ class avmmSdramBfm #( parameter int SDRAM_W = 128 );
 
 local int           size;
 local int           offset;
-local logic [7 : 0] mem [];
+// local logic [7 : 0] mem [];
+logic [7 : 0] mem [];
 
 // logic [31 : 0]           address;
 // logic [10 : 0]           burstcount;

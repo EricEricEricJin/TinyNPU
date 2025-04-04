@@ -137,6 +137,24 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 Z2 !s12c _opt2
 R1
 R2
@@ -216,10 +234,10 @@ Z9 OL;O;2023.3;77
 R4
 T_opt1
 !s11d avmm_sdram_bfm_pkg /home/eric/Documents/Conformer-FPGA-New/TinyNPU/libraries/work 1 avmm_raw_intf 1 /home/eric/Documents/Conformer-FPGA-New/TinyNPU/libraries/work 
-!s110 1743765187
-Vk`F4OHDE7OHH9b5BkX6Z`0
+!s110 1743773389
+VK85c?be902OVlMTjF;EGW2
 04 6 4 work top_tb fast 0
-=1-000ae431a4f1-67efbec3-1b996-15870
+=1-000ae431a4f1-67efdecd-8ff2-1a18d
 R1
 R6
 !s124 OEM10U124 
@@ -270,7 +288,7 @@ R8
 Yavmm_raw_intf
 Z14 2design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/exec_unit/stmm/stmm.sv|design_rtl/exec_unit/stmm/stmm_fetch.sv|design_rtl/exec_unit/stmm/stmm_wrapper.sv|design_rtl/exec_unit/stmm/vvm.sv|design_rtl/exec_unit/layernorm/gamma_path.sv|design_rtl/exec_unit/layernorm/layernorm.sv|design_rtl/exec_unit/layernorm/layernorm_fetch.sv|design_rtl/exec_unit/layernorm/layernorm_wrapper.sv|design_rtl/exec_unit/layernorm/ln_fetch_intf.sv|design_rtl/exec_unit/eu_top.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/bram_mux.sv|design_rtl/interface/eu_ctrl_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/interface/rmio_pipeline.sv|design_rtl/interface/sdram_intf.sv|design_rtl/interface/sdram_read_intf.sv|design_rtl/interface/sdram_read_mux.sv|design_rtl/io/avmm_sdram_read_wrapper.sv|design_rtl/io/avmm_sdram_wrapper.sv|design_rtl/io/pio32_f2h.sv|design_rtl/io/pio32_h2f.sv|design_rtl/register_file/output_tree_mux.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/support/count_down.sv|design_rtl/support/plexer.sv|design_rtl/support/saturate.sv|design_rtl/design_top.sv|ip_cores/mult_int8.v|ip_cores/ram_512x1408.v|ip_cores/ram_176x1408.v|simulation/testbench/avmm_raw_intf.sv|simulation/testbench/avmm_sdram_bfm.sv|simulation/testbench/hps_bfm.sv|simulation/testbench/soc_system_bfm.sv|simulation/testbench/top_tb.sv
 R10
-Z15 !s110 1743765184
+Z15 !s110 1743773387
 !i10b 1
 !s100 hmz@TSXMGP@jR[9[BzPPa3
 I:`i5kLPhA:hIj5HYa6DS30
@@ -279,15 +297,15 @@ R4
 w1743751366
 8simulation/testbench/avmm_raw_intf.sv
 Fsimulation/testbench/avmm_raw_intf.sv
-!i122 1085
+!i122 1190
 Z16 L0 4 0
 R11
 R12
 r1
 !s85 0
 31
-Z17 !s108 1743765184.000000
-Z18 !s107 simulation/program/stmm.hps.sv|simulation/program/stmm.mm.sv|simulation/testbench/top_tb.sv|simulation/testbench/soc_system_bfm.sv|simulation/testbench/hps_bfm.sv|simulation/testbench/avmm_sdram_bfm.sv|simulation/testbench/avmm_raw_intf.sv|ip_cores/ram_176x1408.v|ip_cores/ram_512x1408.v|ip_cores/mult_int8.v|design_rtl/design_top.sv|design_rtl/support/saturate.sv|design_rtl/support/plexer.sv|design_rtl/support/count_down.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/output_tree_mux.sv|design_rtl/io/pio32_h2f.sv|design_rtl/io/pio32_f2h.sv|design_rtl/io/avmm_sdram_wrapper.sv|design_rtl/io/avmm_sdram_read_wrapper.sv|design_rtl/interface/sdram_read_mux.sv|design_rtl/interface/sdram_read_intf.sv|design_rtl/interface/sdram_intf.sv|design_rtl/interface/rmio_pipeline.sv|design_rtl/interface/rmio_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/eu_ctrl_intf.sv|design_rtl/interface/bram_mux.sv|design_rtl/interface/bram_intf.sv|design_rtl/exec_unit/eu_top.sv|design_rtl/exec_unit/layernorm/ln_fetch_intf.sv|design_rtl/exec_unit/layernorm/layernorm_wrapper.sv|design_rtl/exec_unit/layernorm/layernorm_fetch.sv|design_rtl/exec_unit/layernorm/layernorm.sv|design_rtl/exec_unit/layernorm/gamma_path.sv|design_rtl/exec_unit/stmm/vvm.sv|design_rtl/exec_unit/stmm/stmm_wrapper.sv|design_rtl/exec_unit/stmm/stmm_fetch.sv|design_rtl/exec_unit/stmm/stmm.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|
+Z17 !s108 1743773387.000000
+Z18 !s107 simulation/program/layernorm.hps.sv|simulation/program/layernorm.mm.sv|simulation/testbench/top_tb.sv|simulation/testbench/soc_system_bfm.sv|simulation/testbench/hps_bfm.sv|simulation/testbench/avmm_sdram_bfm.sv|simulation/testbench/avmm_raw_intf.sv|ip_cores/ram_176x1408.v|ip_cores/ram_512x1408.v|ip_cores/mult_int8.v|design_rtl/design_top.sv|design_rtl/support/saturate.sv|design_rtl/support/plexer.sv|design_rtl/support/count_down.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/output_tree_mux.sv|design_rtl/io/pio32_h2f.sv|design_rtl/io/pio32_f2h.sv|design_rtl/io/avmm_sdram_wrapper.sv|design_rtl/io/avmm_sdram_read_wrapper.sv|design_rtl/interface/sdram_read_mux.sv|design_rtl/interface/sdram_read_intf.sv|design_rtl/interface/sdram_intf.sv|design_rtl/interface/rmio_pipeline.sv|design_rtl/interface/rmio_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/eu_ctrl_intf.sv|design_rtl/interface/bram_mux.sv|design_rtl/interface/bram_intf.sv|design_rtl/exec_unit/eu_top.sv|design_rtl/exec_unit/layernorm/ln_fetch_intf.sv|design_rtl/exec_unit/layernorm/layernorm_wrapper.sv|design_rtl/exec_unit/layernorm/layernorm_fetch.sv|design_rtl/exec_unit/layernorm/layernorm.sv|design_rtl/exec_unit/layernorm/gamma_path.sv|design_rtl/exec_unit/stmm/vvm.sv|design_rtl/exec_unit/stmm/stmm_wrapper.sv|design_rtl/exec_unit/stmm/stmm_fetch.sv|design_rtl/exec_unit/stmm/stmm.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/ctrl_unit/ctrl_unit.sv|
 Z19 !s90 -reportprogress|300|-sv|design_rtl/ctrl_unit/ctrl_unit.sv|design_rtl/ctrl_unit/inst_decode.sv|design_rtl/exec_unit/stmm/stmm.sv|design_rtl/exec_unit/stmm/stmm_fetch.sv|design_rtl/exec_unit/stmm/stmm_wrapper.sv|design_rtl/exec_unit/stmm/vvm.sv|design_rtl/exec_unit/layernorm/gamma_path.sv|design_rtl/exec_unit/layernorm/layernorm.sv|design_rtl/exec_unit/layernorm/layernorm_fetch.sv|design_rtl/exec_unit/layernorm/layernorm_wrapper.sv|design_rtl/exec_unit/layernorm/ln_fetch_intf.sv|design_rtl/exec_unit/eu_top.sv|design_rtl/interface/bram_intf.sv|design_rtl/interface/bram_mux.sv|design_rtl/interface/eu_ctrl_intf.sv|design_rtl/interface/rf_ldst_intf.sv|design_rtl/interface/rf_move_intf.sv|design_rtl/interface/rmio_intf.sv|design_rtl/interface/rmio_pipeline.sv|design_rtl/interface/sdram_intf.sv|design_rtl/interface/sdram_read_intf.sv|design_rtl/interface/sdram_read_mux.sv|design_rtl/io/avmm_sdram_read_wrapper.sv|design_rtl/io/avmm_sdram_wrapper.sv|design_rtl/io/pio32_f2h.sv|design_rtl/io/pio32_h2f.sv|design_rtl/register_file/output_tree_mux.sv|design_rtl/register_file/rf_ldst.sv|design_rtl/register_file/rf_move.sv|design_rtl/register_file/rf_ram.sv|design_rtl/register_file/rf_ram_mux.sv|design_rtl/register_file/rf_wrapper.sv|design_rtl/support/count_down.sv|design_rtl/support/plexer.sv|design_rtl/support/saturate.sv|design_rtl/design_top.sv|ip_cores/mult_int8.v|ip_cores/ram_512x1408.v|ip_cores/ram_176x1408.v|simulation/testbench/avmm_raw_intf.sv|simulation/testbench/avmm_sdram_bfm.sv|simulation/testbench/hps_bfm.sv|simulation/testbench/soc_system_bfm.sv|simulation/testbench/top_tb.sv|
 !i113 0
 R13
@@ -322,16 +340,16 @@ R14
 R10
 R15
 !i10b 1
-!s100 ZiOMX[m:CacTkK:bB=dC[1
-II4ZU@9BOE<QM=DDhYL1T?0
+!s100 l6=EIeaARhFk1Qg:K?Z8H0
+I[O<XOooUlG5=H9OKhzXJ_3
 S1
 R4
-w1743755658
+w1743769343
 8simulation/testbench/avmm_sdram_bfm.sv
 Fsimulation/testbench/avmm_sdram_bfm.sv
-!i122 1085
+!i122 1190
 Z20 L0 3 0
-VI4ZU@9BOE<QM=DDhYL1T?0
+V[O<XOooUlG5=H9OKhzXJ_3
 R12
 r1
 !s85 0
@@ -354,7 +372,7 @@ R4
 w1742362892
 8design_rtl/io/avmm_sdram_read_wrapper.sv
 Fdesign_rtl/io/avmm_sdram_read_wrapper.sv
-!i122 1085
+!i122 1190
 L0 3 91
 R11
 R12
@@ -379,7 +397,7 @@ R4
 w1742345603
 8design_rtl/io/avmm_sdram_wrapper.sv
 Fdesign_rtl/io/avmm_sdram_wrapper.sv
-!i122 1085
+!i122 1190
 L0 3 135
 R11
 R12
@@ -404,7 +422,7 @@ R4
 w1741173157
 8design_rtl/interface/bram_intf.sv
 Fdesign_rtl/interface/bram_intf.sv
-!i122 1085
+!i122 1190
 R20
 R11
 R12
@@ -429,7 +447,7 @@ R4
 w1742440621
 8design_rtl/interface/bram_mux.sv
 Fdesign_rtl/interface/bram_mux.sv
-!i122 1085
+!i122 1190
 L0 3 33
 R11
 R12
@@ -454,7 +472,7 @@ R4
 Z21 w1739567044
 8design_rtl/support/count_down.sv
 Fdesign_rtl/support/count_down.sv
-!i122 1085
+!i122 1190
 L0 3 55
 R11
 R12
@@ -479,7 +497,7 @@ R4
 w1742776850
 8design_rtl/ctrl_unit/ctrl_unit.sv
 Fdesign_rtl/ctrl_unit/ctrl_unit.sv
-!i122 1085
+!i122 1190
 L0 8 153
 R11
 R12
@@ -529,7 +547,7 @@ R4
 Z22 w1741903575
 Z23 8design_rtl/support/plexer.sv
 Z24 Fdesign_rtl/support/plexer.sv
-!i122 1085
+!i122 1190
 L0 20 11
 R11
 R12
@@ -554,7 +572,7 @@ R4
 w1743536430
 8design_rtl/design_top.sv
 Fdesign_rtl/design_top.sv
-!i122 1085
+!i122 1190
 L0 4 129
 R11
 R12
@@ -579,7 +597,7 @@ R4
 w1742444231
 8design_rtl/interface/eu_ctrl_intf.sv
 Fdesign_rtl/interface/eu_ctrl_intf.sv
-!i122 1085
+!i122 1190
 R20
 R11
 R12
@@ -597,15 +615,15 @@ R14
 R10
 R15
 !i10b 1
-!s100 CHOWMbf0hZUVJdD<6TFZS2
-IzG8DiNf1KB]kg@2QVE]f21
+!s100 iPnoQl;LM`zQ8m3LAzZ=R3
+IhETa]7chmC4P0fPZSoIkc2
 S1
 R4
-w1743763392
+w1743767763
 8design_rtl/exec_unit/eu_top.sv
 Fdesign_rtl/exec_unit/eu_top.sv
-!i122 1085
-L0 3 108
+!i122 1190
+L0 3 109
 R11
 R12
 r1
@@ -627,14 +645,14 @@ R4
 w1742625596
 8ip_cores/fp16_to_int16_sim/fp16_to_int16.vo
 Fip_cores/fp16_to_int16_sim/fp16_to_int16.vo
-!i122 1079
+!i122 1184
 L0 32 687
 R11
 R12
 r1
 !s85 0
 31
-R17
+!s108 1743773386.000000
 !s107 ip_cores/fp16_to_int16_sim/fp16_to_int16.vo|
 !s90 -reportprogress|300|ip_cores/fp16_to_int16_sim/fp16_to_int16.vo|
 !i113 0
@@ -652,7 +670,7 @@ R4
 R21
 8design_rtl/exec_unit/layernorm/gamma_path.sv
 Fdesign_rtl/exec_unit/layernorm/gamma_path.sv
-!i122 1085
+!i122 1190
 L0 3 187
 R11
 R12
@@ -703,7 +721,7 @@ R4
 w1743763592
 8simulation/testbench/hps_bfm.sv
 Fsimulation/testbench/hps_bfm.sv
-!i122 1085
+!i122 1190
 R20
 VoW:@SY1Gj=li:]F[WlP=g1
 R12
@@ -728,7 +746,7 @@ R4
 w1743455869
 8design_rtl/ctrl_unit/inst_decode.sv
 Fdesign_rtl/ctrl_unit/inst_decode.sv
-!i122 1085
+!i122 1190
 L0 4 87
 R11
 R12
@@ -751,7 +769,7 @@ R4
 w1743620690
 8ip_cores/int16_to_fp16_sim/int16_to_fp16.vo
 Fip_cores/int16_to_fp16_sim/int16_to_fp16.vo
-!i122 1081
+!i122 1186
 L0 32 438
 R11
 R12
@@ -774,7 +792,7 @@ R4
 w1742625481
 8ip_cores/int18_to_fp16_sim/int18_to_fp16.vo
 Fip_cores/int18_to_fp16_sim/int18_to_fp16.vo
-!i122 1080
+!i122 1185
 L0 32 468
 R11
 R12
@@ -792,14 +810,14 @@ R14
 R10
 R15
 !i10b 1
-!s100 8gV]9hICDIadX0I20nzQX2
-I353CMU?iR92<QJJam25kf0
+!s100 JnFN_X0If7eJegQHE`<N53
+I1[akjjI><<^f8>nhKOjnZ0
 S1
 R4
-w1743621740
+w1743773378
 8design_rtl/exec_unit/layernorm/layernorm.sv
 Fdesign_rtl/exec_unit/layernorm/layernorm.sv
-!i122 1085
+!i122 1190
 L0 3 343
 R11
 R12
@@ -817,14 +835,14 @@ R14
 R10
 R15
 !i10b 1
-!s100 bezk]SKYLC<fL_N31JTNH0
-IKlX_OPLjLL^47:FY]R;:c2
+!s100 0YNl_]IVV;g[n`NJBk[E03
+I`F[8k3Mak8O<B6Pd`RT=g3
 S1
 R4
-w1743621264
+w1743769665
 8design_rtl/exec_unit/layernorm/layernorm_fetch.sv
 Fdesign_rtl/exec_unit/layernorm/layernorm_fetch.sv
-!i122 1085
+!i122 1190
 L0 3 166
 R11
 R12
@@ -842,15 +860,15 @@ R14
 R10
 R15
 !i10b 1
-!s100 0Sjkl[RKf7TZ1i;b@COGC3
-IlcJh@L5Xm2FQea4<hR5o81
+!s100 ;jCjXgEi@1[j;`UD<ODhD0
+I=^9VLE_aS7dZ@5<7ZG0_T0
 S1
 R4
-w1743621749
+w1743770269
 8design_rtl/exec_unit/layernorm/layernorm_wrapper.sv
 Fdesign_rtl/exec_unit/layernorm/layernorm_wrapper.sv
-!i122 1085
-L0 3 113
+!i122 1190
+L0 3 126
 R11
 R12
 r1
@@ -874,7 +892,7 @@ R4
 w1742347846
 8design_rtl/exec_unit/layernorm/ln_fetch_intf.sv
 Fdesign_rtl/exec_unit/layernorm/ln_fetch_intf.sv
-!i122 1085
+!i122 1190
 R20
 R11
 R12
@@ -897,7 +915,7 @@ R4
 w1742625737
 8ip_cores/mult_fp16_sim/mult_fp16.vo
 Fip_cores/mult_fp16_sim/mult_fp16.vo
-!i122 1083
+!i122 1188
 L0 32 554
 R11
 R12
@@ -922,7 +940,7 @@ R4
 Z26 w1743348510
 8ip_cores/mult_int8.v
 Fip_cores/mult_int8.v
-!i122 1085
+!i122 1190
 L0 40 31
 R11
 R12
@@ -947,7 +965,7 @@ R4
 w1742623538
 8design_rtl/io/pio32_f2h.sv
 Fdesign_rtl/io/pio32_f2h.sv
-!i122 1085
+!i122 1190
 Z27 L0 3 21
 R11
 R12
@@ -972,7 +990,7 @@ R4
 w1742623554
 8design_rtl/io/pio32_h2f.sv
 Fdesign_rtl/io/pio32_h2f.sv
-!i122 1085
+!i122 1190
 R27
 R11
 R12
@@ -997,7 +1015,7 @@ R4
 R22
 R23
 R24
-!i122 1085
+!i122 1190
 L0 3 16
 R11
 R12
@@ -1022,7 +1040,7 @@ R4
 R26
 8ip_cores/ram_176x1408.v
 Fip_cores/ram_176x1408.v
-!i122 1085
+!i122 1190
 L0 40 65
 R11
 R12
@@ -1047,7 +1065,7 @@ R4
 R26
 8ip_cores/ram_512x1408.v
 Fip_cores/ram_512x1408.v
-!i122 1085
+!i122 1190
 L0 40 68
 R11
 R12
@@ -1072,7 +1090,7 @@ R4
 w1741989423
 8design_rtl/register_file/rf_ldst.sv
 Fdesign_rtl/register_file/rf_ldst.sv
-!i122 1085
+!i122 1190
 L0 4 198
 R11
 R12
@@ -1097,7 +1115,7 @@ R4
 w1741777326
 8design_rtl/interface/rf_ldst_intf.sv
 Fdesign_rtl/interface/rf_ldst_intf.sv
-!i122 1085
+!i122 1190
 R16
 R11
 R12
@@ -1122,7 +1140,7 @@ R4
 w1741502827
 8design_rtl/register_file/rf_move.sv
 Fdesign_rtl/register_file/rf_move.sv
-!i122 1085
+!i122 1190
 L0 5 94
 R11
 R12
@@ -1147,7 +1165,7 @@ R4
 w1741867097
 8design_rtl/interface/rf_move_intf.sv
 Fdesign_rtl/interface/rf_move_intf.sv
-!i122 1085
+!i122 1190
 R20
 R11
 R12
@@ -1172,7 +1190,7 @@ R4
 w1743536390
 8design_rtl/register_file/rf_ram.sv
 Fdesign_rtl/register_file/rf_ram.sv
-!i122 1085
+!i122 1190
 L0 3 300
 R11
 R12
@@ -1197,7 +1215,7 @@ R4
 w1741499975
 8design_rtl/register_file/rf_ram_mux.sv
 Fdesign_rtl/register_file/rf_ram_mux.sv
-!i122 1085
+!i122 1190
 L0 3 26
 R11
 R12
@@ -1222,7 +1240,7 @@ R4
 w1743535504
 8design_rtl/register_file/rf_wrapper.sv
 Fdesign_rtl/register_file/rf_wrapper.sv
-!i122 1085
+!i122 1190
 L0 3 127
 R11
 R12
@@ -1247,7 +1265,7 @@ R4
 w1743451943
 8design_rtl/interface/rmio_intf.sv
 Fdesign_rtl/interface/rmio_intf.sv
-!i122 1085
+!i122 1190
 L0 5 0
 R11
 R12
@@ -1272,7 +1290,7 @@ R4
 w1743428748
 8design_rtl/interface/rmio_pipeline.sv
 Fdesign_rtl/interface/rmio_pipeline.sv
-!i122 1085
+!i122 1190
 L0 3 17
 R11
 R12
@@ -1295,7 +1313,7 @@ R4
 w1743620975
 8ip_cores/rsqrt_sim/rsqrt.vo
 Fip_cores/rsqrt_sim/rsqrt.vo
-!i122 1084
+!i122 1189
 L0 32 658
 R11
 R12
@@ -1320,7 +1338,7 @@ R4
 w1739576157
 8design_rtl/support/saturate.sv
 Fdesign_rtl/support/saturate.sv
-!i122 1085
+!i122 1190
 L0 7 12
 R11
 R12
@@ -1345,7 +1363,7 @@ R4
 w1741987820
 8design_rtl/interface/sdram_intf.sv
 Fdesign_rtl/interface/sdram_intf.sv
-!i122 1085
+!i122 1190
 R20
 R11
 R12
@@ -1370,7 +1388,7 @@ R4
 w1742441247
 8design_rtl/interface/sdram_read_intf.sv
 Fdesign_rtl/interface/sdram_read_intf.sv
-!i122 1085
+!i122 1190
 R20
 R11
 R12
@@ -1395,7 +1413,7 @@ R4
 w1742441359
 8design_rtl/interface/sdram_read_mux.sv
 Fdesign_rtl/interface/sdram_read_mux.sv
-!i122 1085
+!i122 1190
 L0 3 31
 R11
 R12
@@ -1462,21 +1480,21 @@ R8
 vsoc_system
 R14
 R10
-Z28 DXx4 work 18 avmm_sdram_bfm_pkg 0 22 I4ZU@9BOE<QM=DDhYL1T?0
+Z28 DXx4 work 18 avmm_sdram_bfm_pkg 0 22 [O<XOooUlG5=H9OKhzXJ_3
 Z29 DXx4 work 11 hps_bfm_pkg 0 22 oW:@SY1Gj=li:]F[WlP=g1
 R15
 !i10b 1
-!s100 YR5a8GoD_O5RV_K^EhMi71
-IFP`3]C?1^i77Pmdze[54R0
+!s100 H>EY1Wk:LUUeSNN=1eCEB3
+Ij9FF0iODF0G=fUj9EgTkT0
 S1
 R4
-w1743765182
+w1743769326
 8simulation/testbench/soc_system_bfm.sv
 Fsimulation/testbench/soc_system_bfm.sv
-Fsimulation/program/stmm.mm.sv
-Fsimulation/program/stmm.hps.sv
-!i122 1085
-L0 3 176
+Fsimulation/program/layernorm.mm.sv
+Fsimulation/program/layernorm.hps.sv
+!i122 1190
+L0 9 181
 R11
 R12
 r1
@@ -1500,7 +1518,7 @@ R4
 w1743763465
 8design_rtl/exec_unit/stmm/stmm.sv
 Fdesign_rtl/exec_unit/stmm/stmm.sv
-!i122 1085
+!i122 1190
 L0 8 225
 R11
 R12
@@ -1526,7 +1544,7 @@ R4
 w1743317081
 8design_rtl/exec_unit/stmm/stmm_fetch.sv
 Fdesign_rtl/exec_unit/stmm/stmm_fetch.sv
-!i122 1085
+!i122 1190
 L0 2 174
 R11
 R12
@@ -1544,14 +1562,14 @@ R14
 R10
 R15
 !i10b 1
-!s100 >8PNJ2Zj4CDeiDUfF`;hj1
-I0LNL<A9Ik59SQab9GN7960
+!s100 DO7UK8mU>nEQ`z15:gk8N2
+Il7k1:I277ce9>^IE4bD3H2
 S1
 R4
-w1743534849
+w1743770190
 8design_rtl/exec_unit/stmm/stmm_wrapper.sv
 Fdesign_rtl/exec_unit/stmm/stmm_wrapper.sv
-!i122 1085
+!i122 1190
 L0 3 174
 R11
 R12
@@ -1578,7 +1596,7 @@ R4
 w1743758001
 8simulation/testbench/top_tb.sv
 Fsimulation/testbench/top_tb.sv
-!i122 1085
+!i122 1190
 L0 11 99
 R11
 R12
@@ -1601,7 +1619,7 @@ R4
 w1743620818
 8ip_cores/uint16_to_fp16_sim/uint16_to_fp16.vo
 Fip_cores/uint16_to_fp16_sim/uint16_to_fp16.vo
-!i122 1082
+!i122 1187
 L0 32 409
 R11
 R12
@@ -1626,7 +1644,7 @@ R4
 w1743437388
 8design_rtl/exec_unit/stmm/vvm.sv
 Fdesign_rtl/exec_unit/stmm/vvm.sv
-!i122 1085
+!i122 1190
 L0 3 123
 R11
 R12
