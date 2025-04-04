@@ -7,15 +7,37 @@ module layernorm #(
     input wire clk,
     input wire rst_n,
 
-    // input 
-    input wire signed [7 : 0]   x_in [0 : N - 1],
-    input wire [15 : 0]         gamma_scaled[0 : N - 1],    // FP16!!
-    input wire signed [7 : 0]   beta_scaled[0 : N - 1],     // INT8!!
+    // input wire signed [7 : 0]   x_in [0 : N - 1],
+    // input wire [15 : 0]         gamma_scaled[0 : N - 1],    // FP16!!
+    // input wire signed [7 : 0]   beta_scaled[0 : N - 1],     // INT8!!
+
+    input wire [8 * N - 1 : 0] x_in,
+    input wire [8 * N - 1 : 0] gamma_scaled_hi,
+    input wire [8 * N - 1 : 0] gamma_scaled_lo,
+    input wire [8 * N - 1 : 0] beta_scaled,
+
     input wire                  start,
 
-    output logic signed [7 : 0] y_out[0 : N - 1],
+    // output logic signed [7 : 0] y_out[0 : N - 1],
+    output logic [8 * N - 1 : 0] y_out,
     output logic                out_valid
 );
+
+///////////////////////////////
+// Unpack x, gamma, beta
+///////////////////////////////
+logic signed [7 : 0] x_in_unpacked [0 : N];
+logic [7 : 0] beta_scaled_unpacked [0 : N];
+logic [15 : 0] gamma_scaled_unpacked [0 : N];
+
+genvar i;
+generate
+    for (i = 0; i < N; i++) begin: blk_unpack
+        assign x_in_unpacked[i] = x_in[i * 8 +: 8];
+        assign gamma_scaled_unpacked[i] = {gamma_scaled_hi[i * 8 +: 8], gamma_scaled_lo[i * 8 +: 8]};
+        assign beta_scaled_unpacked[i] = beta_scaled[i * 8 +: 8];
+    end
+endgenerate
 
 // Command signals
 logic idx_acc, idx_clr;         // index accumulator
@@ -118,9 +140,11 @@ always_ff @( posedge clk, negedge rst_n ) begin
 end
 
 wire signed [7 : 0] xd;
-assign xd = x_in[index] - x_mean;
+// assign xd = x_in[index] - x_mean;
+assign xd = x_in_unpacked[index] - x_mean;
 
-assign avg_in = avg_sel ? xd**2 : x_in[index]; 
+// assign avg_in = avg_sel ? xd**2 : x_in[index]; 
+assign avg_in = avg_sel ? xd**2 : x_in_unpacked[index]; 
 
 // <<Gamma Path >>
 wire signed [7 : 0] y1;
@@ -131,7 +155,7 @@ gamma_path i_gamma_path (
     .clk            (clk),
     .rst_n          (rst_n),
 
-    .gamma_scaled   (gamma_scaled[index]),
+    .gamma_scaled   (gamma_scaled_unpacked[index]),
     .xd             (xd),
     .sd             (sd_mean),
     
@@ -150,7 +174,8 @@ logic [7 : 0] y_idx;
 wire signed [8 : 0]    y_i_raw;
 wire signed [7 : 0]     y_i;
 
-assign y_i_raw = y1 + beta_scaled[y_idx];
+// assign y_i_raw = y1 + beta_scaled[y_idx];
+assign y_i_raw = y1 + beta_scaled_unpacked[y_idx];
 saturate #( .IN_W (9), .OUT_W (8) ) i_sat_y (.in (y_i_raw), .out (y_i) );
 
 
@@ -158,15 +183,23 @@ saturate #( .IN_W (9), .OUT_W (8) ) i_sat_y (.in (y_i_raw), .out (y_i) );
 assign cs_in = {store_y_nf, index};
 assign {store_y, y_idx} = cs_out;
 
+logic signed [7 : 0] y_out_unpacked [N];
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n) begin
         for (int i = 0; i < N; i++)
-            y_out[i] <= '0;
+            y_out_unpacked[i] <= '0;
     end
     else if (store_y) begin
-        y_out[y_idx] <= y_i;
+        y_out_unpacked[y_idx] <= y_i;
     end
 end
+
+// Pack Y_out
+generate
+    for (i = 0; i < N; i++) begin: blk_pack_y_out
+        assign y_out[i * 8 +: 8] = y_out_unpacked[i];
+    end
+endgenerate 
 
 
 // << Outside Latency timer >>

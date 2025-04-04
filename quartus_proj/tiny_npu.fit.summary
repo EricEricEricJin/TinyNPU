@@ -1,17 +1,17 @@
-Fitter Status : Successful - Tue Apr  1 05:31:54 2025
+Fitter Status : Successful - Thu Apr  3 03:42:44 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : tiny_npu
 Top-level Entity Name : tiny_npu
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 14,587 / 41,910 ( 35 % )
-Total registers : 30828
+Logic utilization (in ALMs) : 26,285 / 41,910 ( 63 % )
+Total registers : 57524
 Total pins : 89 / 314 ( 28 % )
 Total virtual pins : 0
 Total block memory bits : 1,712,336 / 5,662,720 ( 30 % )
 Total RAM Blocks : 217 / 553 ( 39 % )
-Total DSP Blocks : 12 / 112 ( 11 % )
+Total DSP Blocks : 32 / 112 ( 29 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

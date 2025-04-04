@@ -2,9 +2,8 @@
 
 module all_top_tb;
 
-// localparam string WEIGHT_MEM_FILE = "test_data/weight_mem.bin";
-// localparam string RD_MEM_FILE = "test_data/rd_mem.bin";
-// localparam string WT_MEM_FILE = "test_data/wt_mem.bin";
+import avmm_sdram_bfm_pkg::*;
+import hps_bfm_pkg::*;
 
 localparam string WEIGHT_MEM_FILE = "utils/mem_w.bin";
 localparam string RD_MEM_FILE = "utils/mem_in.bin";
@@ -54,28 +53,6 @@ avmm_sdram_wrapper #(.SDRAM_DATA_W(128) ) i_avmm_sdram_wrapper (
     .write_data(i_sdram_intf.write_data)
 );
 
-avmm_sdram_bfm #(
-    .SDRAM_W(128),
-    .RD_MEM_FILE(RD_MEM_FILE),
-    .RD_MEM_SIZE(1024*1024),
-    .RD_MEM_OFFSET(768*1024*1024),
-    .WT_MEM_FILE(WT_MEM_FILE),
-    .WT_MEM_SIZE(1024*1024),
-    .WT_MEM_OFFSET(768*1024*1024)
-) i_sdram_bi_slave (
-    .clk(clk), 
-    .rst_n(rst_n),
-    .address(bi_address),
-    .burstcount(bi_burstcount),
-    .waitrequest(bi_waitrequest),
-    .readdata(bi_readdata),
-    .readdatavalid(bi_readdatavalid),
-    .read(bi_read),
-    .writedata(bi_writedata),
-    .byteenable(bi_byteenable),
-    .write(bi_write)
-);
-
 // ----------------- Read-only SDRAM -----------------
 logic [127 : 0] ro_readdata;
 logic ro_readdatavalid;
@@ -104,28 +81,6 @@ avmm_sdram_read_wrapper #(.SDRAM_DATA_W(128) ) i_avmm_sdram_read_wrapper (
     .read_data(i_sdram_read_intf.read_data)
 );
 
-avmm_sdram_bfm #(
-    .SDRAM_W(128),
-    .RD_MEM_FILE(WEIGHT_MEM_FILE),
-    .RD_MEM_SIZE(256*1024*1024),
-    .RD_MEM_OFFSET(512*1024*1024),
-    .WT_MEM_FILE(""),
-    .WT_MEM_SIZE(0),
-    .WT_MEM_OFFSET(0)
-) i_sdram_ro_slave (
-    .clk(clk), 
-    .rst_n(rst_n),
-    .address(ro_address),
-    .burstcount(ro_burstcount),
-    .waitrequest(ro_waitrequest),
-    .readdata(ro_readdata),
-    .readdatavalid(ro_readdatavalid),
-    .read(ro_read),
-    .writedata('0),
-    .byteenable('0),
-    .write('0)    
-);
-
 
 // ----------------- Design top -----------------
 logic [31 : 0] h2f_pio32;
@@ -150,33 +105,75 @@ design_top i_design_top (
     .LED(LED)
 );
 
-// ----------------- HPS BFM -----------------
-logic sim_stop;
-hps_bfm i_hps_bfm (
-    .clk(clk),
-    .rst_n(rst_n),
+// ----------------- BFM -----------------
+avmmSdramBfm #(.SDRAM_W (128)) i_sdram_bi_slave;
+avmmSdramBfm #(.SDRAM_W (128)) i_sdram_ro_slave;
+hpsBfm #(.H2F_PIO_W(32), .F2H_PIO_W(32)) i_hps_bfm;
 
-    .h2f_pio32(h2f_pio32),
-    .h2f_write(h2f_write),
-    .f2h_pio32(f2h_pio32),
-    .f2h_write(f2h_write),
-
-    .sim_stop(sim_stop)
-);
+bit sim_stop;
+logic ro_write;
+logic [127 : 0] ro_writedata;
+logic [15 : 0] ro_byteenable;
 
 initial begin
+    ro_write = 0;
+    ro_writedata = 0;
+    ro_byteenable = 0;
+
+    sim_stop = 0;
     clk = 0;
     rst_n = 0;
 
-    i_sdram_bi_slave.read_file_to_mem();
-    i_sdram_ro_slave.read_file_to_mem();
+    i_sdram_bi_slave = new (128*1024, 32'h3000_0000);
+    i_sdram_ro_slave = new (176*176*2, 32'h2000_0000);
+    i_hps_bfm = new();
+    
+    i_sdram_bi_slave.read_file_to_mem(RD_MEM_FILE, 32'h3000_0000, 176*166);
+    i_sdram_ro_slave.read_file_to_mem(WEIGHT_MEM_FILE, 32'h2000_0000, 176*176+16);
 
-    @(negedge clk);
-    rst_n = 1;
+    i_hps_bfm.reset(clk, rst_n);
 
-    @(posedge sim_stop);
-    i_sdram_bi_slave.write_mem_to_file();
+    fork
+        i_sdram_bi_slave.run(
+            .clk(clk),
+            .address(bi_address),
+            .burstcount(bi_burstcount),
+            .waitrequest(bi_waitrequest),
+            .read(bi_read),
+            .readdata(bi_readdata),
+            .readdatavalid(bi_readdatavalid),
+            .writedata(bi_writedata),
+            .write(bi_write),
+            .byteenable(bi_byteenable)
+        );
+
+        i_sdram_ro_slave.run(
+            .clk(clk),
+            .address(ro_address),
+            .burstcount(ro_burstcount),
+            .waitrequest(ro_waitrequest),
+            .read(ro_read),
+            .readdata(ro_readdata),
+            .readdatavalid(ro_readdatavalid),
+            .writedata(ro_writedata),
+            .write(ro_write),
+            .byteenable(ro_byteenable)
+        );
+    join_none
+
+    i_hps_bfm.run(
+        .clk(clk),
+        .rst_n(rst_n),
+        .h2f_pio32(h2f_pio32),
+        .h2f_write(h2f_write),
+        .f2h_pio32(f2h_pio32),
+        .f2h_write(f2h_write),
+        .sim_stop(sim_stop)
+    );
+
+    i_sdram_bi_slave.write_mem_to_file(WT_MEM_FILE);
     $stop();
+
 end
 
 always #10000 clk = ~clk;

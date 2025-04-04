@@ -1,166 +1,178 @@
 `default_nettype none
 
-module avmm_sdram_bfm #(
-    parameter int       SDRAM_W         = 128,
-    parameter string    RD_MEM_FILE     = "rd_mem.bin",
-    parameter int       RD_MEM_SIZE     = 1024*1024,
-    parameter int       RD_MEM_OFFSET   = 512*1024*1024,
-    parameter string    WT_MEM_FILE     = "wt_mem.bin",
-    parameter int       WT_MEM_SIZE     = 1024*1024,
-    parameter int       WT_MEM_OFFSET   = 512*1024*1024
-) (
-    input  wire                     clk, 
-    input  wire                     rst_n,
-    
-    // ---------- Bi-direction SDRAM signals ----------
-    input  wire [31:0]             address,
-    input  wire [10:0]             burstcount,
-    output logic                    waitrequest,
-    output logic [SDRAM_W-1:0]     readdata,
-    output logic                    readdatavalid,
-    input  wire                     read,
-    input  wire [SDRAM_W-1:0]      writedata,
-    input  wire [15:0]             byteenable,
-    input  wire                     write
-);
+package avmm_sdram_bfm_pkg;
 
-task wait_sometime();
-    repeat($urandom_range(7, 37)) @(negedge clk);
-endtask
+class avmmSdramBfm #( parameter int SDRAM_W = 128 );
 
-logic [31 : 0] mem [0 : RD_MEM_SIZE / 4 - 1];
+int size;
+int offset;
 
-task read_file_to_mem();
+logic [7 : 0] mem [];
+
+function new(int size, int offset);
+    this.size = size;
+    this.offset = offset;
+    this.mem = new[size];
+endfunction
+
+task read_file_to_mem(string filename, int addr, int size);
+
     int i;
     int fd;
     int n;
 
-    // open file
-    fd = $fopen(RD_MEM_FILE, "rb");
-    if (fd == 0) begin
-        $display("Error: cannot open file %s", RD_MEM_FILE);
+    addr = addr - this.offset;
+    assert (addr >= 0 && addr + size <= this.size) else begin
+        $display("Error: address %d out of range.", addr);
         $stop();
     end
 
-    // read into mem arr
-    // n = $fread(mem, fd);
-    // for(i = 0; i < 16; i++) begin
-    //     $display("%h", mem[i]);
-    // end
-    
-    for (i = 0; i < (RD_MEM_SIZE / 4) && !$feof(fd); i++) begin
-        for (int j = 0; j < 4; j++) begin
-            mem[i][j*8 +: 8] = $fgetc(fd);
-        end
+    // open file
+    fd = $fopen(filename, "rb");
+    assert (fd != 0) else begin
+        $display("Error: cannot open file %s", filename);
+        $stop();
     end
-    n = i;
     
+    for (i = 0; i < size && !$feof(fd); i++) begin
+        mem[addr + i] = $fgetc(fd);
+    end
+    assert (i == size) else begin
+        $display("Error: read %d expect %d", i, size);
+        $stop();
+    end
+
     $fclose(fd);
-    $display("%d words read from %s to addr %d.", n, RD_MEM_FILE, RD_MEM_OFFSET);
+    $display("%d bytes read from %s to addr %d.", i, filename, offset);
 endtask
+
+task write_mem_to_file(string filename);
+
+    int i;
+    int fd;
+
+    fd = $fopen(filename, "wb");
+    assert (fd != 0) else begin
+        $display("Error: cannot open file %s", filename);
+        $stop();
+    end
+        
+    for (i = 0; i < this.size; i++) begin
+        $fwrite(fd, "%c", mem[i]);
+    end
+
+    $fclose(fd);
+    $display("%d bytes write to %s from addr %d.", i, filename, offset);
+
+endtask
+
+task automatic wait_sometime(ref logic clk);
+    repeat($urandom_range(7, 37)) @(negedge clk);
+endtask
+
+task automatic run(
+    ref logic clk,
+
+    ref logic [31 : 0]  address,
+    ref logic [10 : 0]  burstcount,
+    ref logic           waitrequest,
+
+    ref logic                   read,
+    ref logic [SDRAM_W - 1 : 0] readdata,
+    ref logic                   readdatavalid,
+
+    ref logic                   write,
+    ref logic [SDRAM_W - 1 : 0] writedata,
+    ref logic [15 : 0]          byteenable
+);
 
 logic [31 : 0] address_reg;
 logic [10 : 0] burstcount_reg;
+int idx;
 
-// process read
-always @(negedge clk, negedge rst_n) begin
-    int i, j, k;
+forever begin
+
+    int i,j;
     logic [SDRAM_W - 1 : 0] readdata_temp;
 
-    if (read && rst_n) begin
-        // wait request for some time 
-        // $display("Read operation start, waiting...");
-        
-        waitrequest = 1;
-        wait_sometime();
-        address_reg = (address - RD_MEM_OFFSET) / 4;
-        burstcount_reg = burstcount;
-        $display("Read wait done. address: %h, burstcount: %d", address, burstcount);
-        waitrequest = 0;
+    // process read
+    @(negedge clk);
+    // $display("SDRAM BFM Run");
 
-        // read from memory
-        for (i = 0; i < burstcount_reg; i++) begin
-            // read data  
-            for (j = 0; j < 4; j++) begin
-                readdata_temp[j*32 +: 32] = mem[address_reg + i*4 + j];
-            end
-
-            wait_sometime();
-
-            // set read valid
-            readdata = readdata_temp;
-            $display("%s Read data: %h", RD_MEM_FILE, readdata);
-            readdatavalid = 1;
-            @(negedge clk) readdatavalid = 0;
-        end
-        // $display("Read operation done.");
-    end
-    else begin
-        readdata = 'x;
-        readdatavalid = 0;
-    end    
-end
-
-// process write
-always @(negedge clk, negedge rst_n) begin
-    if (write && rst_n) begin
-        // $display("Write operation start, waiting...");
-
-        // wait request for some time 
-        waitrequest = 1;
-        wait_sometime();
-        address_reg = (address - WT_MEM_OFFSET) / 4;
-        burstcount_reg = burstcount;
-        $display("Write wait done. address: %h, burstcount: %d", address, burstcount);
-        waitrequest = 0;
-
-        // write to memory
-        for (int i = 0; i < burstcount_reg; ) begin
-            @(posedge clk);
-            if (write) begin
-                for (int j = 0; j < SDRAM_W/32; j++) begin
-                    for (int k = 0; k < 32/8; k++) begin
-                        if (byteenable[j*(SDRAM_W/32) + k]) begin
-                            mem[address_reg + i*4 + j][k*8 +: 8] = writedata[j*32 + k*8 +: 8];
-                        end
-                    end
-                end
-                i++;
-            end                
-        end
-        // $display("Write operation done.");
-    end
-end
-
-task write_mem_to_file();
-    int fd;
-    int n;
-    int i, j;
-
-    $display("Writing memory to file %s...", WT_MEM_FILE);
-    
-    // open file 
-    fd = $fopen(WT_MEM_FILE, "wb");
-    if (fd == 0) begin
-        $display("Error: cannot open file %s", WT_MEM_FILE);
+    assert (!(read && write)) else begin
+        $display("Error: read and write at the same time.");
         $stop();
     end
 
-    // write to file
-    // n = $fwrite(fd, "%u", mem);
+    if (read) begin
+        $display("Read request");
 
-    for (i = 0; i < (WT_MEM_SIZE / 4); i++) begin
-        for (j = 0; j < 4; j++) begin
-            $fwrite(fd, "%c", mem[i][j*8 +: 8]);
+        waitrequest = 1;
+        wait_sometime(clk);
+
+        address_reg = (address);
+        burstcount_reg = burstcount;
+        waitrequest = 0;
+        $display("Read address=0x%h, burstcount=%d", address_reg, burstcount_reg);
+
+        for (i = 0; i < burstcount_reg; i++) begin
+
+            for (j = 0; j < SDRAM_W / 8; j++) begin
+                idx = (address_reg - offset + i * SDRAM_W / 8 + j);
+                assert (idx >= 0 && idx < size) else begin
+                    $display("Error: address %d out of range.", idx);
+                    $stop();
+                end
+                readdata_temp[j*8 +: 8] = mem[idx];
+            end
+
+            wait_sometime(clk);
+            readdata = readdata_temp;
+            readdatavalid = 1;
+            @(negedge clk) readdatavalid = 0;
         end
+        $display("Read done.");
+    end else begin
+        readdatavalid = 0;
+        readdata = 'x;
     end
-    n = i;
+    
+    if (write) begin
+
+        waitrequest = 1;
+        wait_sometime(clk);
+        address_reg = (address);
+        burstcount_reg = burstcount;
+        waitrequest = 0;
+        $display("Write address=0x%h, burstcount=%d", address_reg, burstcount_reg);
+
+        for (i = 0; i < burstcount_reg; ) begin
+            @(posedge clk);
+            if (write) begin
+                for (j = 0; j < SDRAM_W / 8; j++) begin
+                    idx = (address_reg - offset + i * SDRAM_W / 8 + j);
+                    assert (idx >= 0 && idx < size) else begin
+                        $display("Error: address %d out of range.", idx);
+                        $stop();
+                    end
+                    if (byteenable[j]) begin
+                        mem[idx] = writedata[j*8 +: 8];
+                    end
+                end
+                i++;
+            end
+        end
+        $display("Write done.");
+    end
 
 
-    $fclose(fd);
-    $display("%d words written to file %s.", n, WT_MEM_FILE);
+end
+
 endtask
 
-endmodule
+endclass
+
+    
+endpackage
 
 `default_nettype wire

@@ -22,7 +22,7 @@ module stmm_wrapper #(
 
 
 // ------------------ Fetcher related ------------------
-logic [1 : 0] fetch_sub_idx_wire, fetch_sub_idx;
+logic [$clog2(SUB_NUM)-1 : 0] fetch_sub_idx_wire, fetch_sub_idx;
 priority_encoder #(SUB_NUM) i_fetch_pe (
     .in(fetch),
     .out(fetch_sub_idx_wire)
@@ -164,7 +164,7 @@ endgenerate
 // output mux
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
-        i_rmio_intf.output_data <= 0;
+        i_rmio_intf.output_data <= '0;
     else begin
         for (int i = 0; i < SUB_NUM; i++) begin
             if (i_rmio_intf.output_re[i])

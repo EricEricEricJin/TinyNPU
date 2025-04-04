@@ -10,6 +10,7 @@ module eu_top #(
 
     // ---------- RMIO ----------
     rmio_intf rmio_stmm,
+    rmio_intf rmio_layernorm,
     // todo
 
     // ---------- Control Unit signals ----------
@@ -25,15 +26,18 @@ module eu_top #(
 );
 
 localparam int STMM_SUB_NUM = 4;
+localparam int LAYERNORM_SUB_NUM = 4;
 
 // ---------- Done signals ----------
 logic stmm_fetch_done;
 logic [STMM_SUB_NUM - 1 : 0] stmm_exec_done;
+logic layernorm_fetch_done;
+logic [LAYERNORM_SUB_NUM - 1 : 0] layernorm_exec_done;
 
 // todo 
 
-assign fetch_done = stmm_fetch_done;
-assign exec_done = {24'b0, stmm_exec_done};
+assign fetch_done = stmm_fetch_done & layernorm_fetch_done;
+assign exec_done = {20'b0, layernorm_exec_done, stmm_exec_done};
 
 ////////////////////////
 // SDRAM Read Mux
@@ -58,8 +62,12 @@ sdram_read_mux #( .NUM_PORTS (REAL_SDRAM_NUM_PORTS) ) i_sdram_read_mux (
 );
 
 logic [STMM_SUB_NUM-1 : 0] stmm_fetch, stmm_exec;
-assign stmm_fetch = eu_fetch[STMM_SUB_NUM-1:0];
-assign stmm_exec = eu_exec[STMM_SUB_NUM-1:0];
+assign stmm_fetch = eu_fetch[0 +: STMM_SUB_NUM];
+assign stmm_exec = eu_exec[0 +: STMM_SUB_NUM];
+
+logic [LAYERNORM_SUB_NUM-1 : 0] layernorm_fetch, layernorm_exec;
+assign layernorm_fetch = eu_fetch[STMM_SUB_NUM +: LAYERNORM_SUB_NUM];
+assign layernorm_exec = eu_exec[STMM_SUB_NUM +: LAYERNORM_SUB_NUM];
 
 ////////////////////////
 // EU Groups 
@@ -79,6 +87,21 @@ stmm_wrapper #( .SUB_NUM (STMM_SUB_NUM), .N (176), .SDRAM_W (SDRAM_W) ) i_stmm_w
 
     .fetch_done(stmm_fetch_done),
     .exec_done(stmm_exec_done)
+);
+
+
+layernorm_wrapper #( .SUB_NUM (LAYERNORM_SUB_NUM), .N (176), .SDRAM_W (SDRAM_W) ) i_layernorm_wrapper (
+    .clk(clk),
+    .rst_n(rst_n),
+
+    .i_rmio_intf(rmio_layernorm),
+    .i_sdram_read_intf(i_sdram_read_intf_arr[1]),
+    .fetch(layernorm_fetch),
+    .exec(layernorm_exec),
+    .fetch_addr(eu_fetch_addr),
+
+    .fetch_done(layernorm_fetch_done),
+    .exec_done(layernorm_exec_done)
 );
 
 // todo

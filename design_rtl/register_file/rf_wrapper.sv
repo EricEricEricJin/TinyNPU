@@ -17,7 +17,7 @@ module rf_wrapper #(
 
     // Connect to RF Ram RMIO
     rmio_intf   rmio_stmm,
-    rmio_intf   rmio_layernorm  [0 : 3],
+    rmio_intf   rmio_layernorm,
     rmio_intf   rmio_silu       [0 : 3],
     rmio_intf   rmio_att        [0 : 0],
 

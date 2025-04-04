@@ -12,7 +12,7 @@ module rf_ram #(
 
     // === RMIOs ===
     rmio_intf rmio_stmm,
-    rmio_intf rmio_layernorm    [0 : 3],
+    rmio_intf rmio_layernorm,
     rmio_intf rmio_silu         [0 : 3],
     rmio_intf rmio_att          [0 : 0]
 
@@ -50,13 +50,26 @@ end
 //////////////////////////////
 // Connect rmio input data and real_ram.d to ram.d
 //////////////////////////////
+logic [3 : 0] stmm_input_we;
+logic [3 : 0] layernorm_input_we;
 
-logic [RF_DATA_W - 1 : 0] ram_data_ff;
-always_ff @( posedge clk ) begin
-    ram_data_ff <= ram.data;
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n) begin
+        rmio_stmm.input_data <= '0;
+        rmio_stmm.input_we <= '0;
+        
+        rmio_layernorm.input_data <= '0;
+        rmio_layernorm.input_we <= '0;
+    end
+    else begin
+        rmio_stmm.input_data <= ram.data;
+        rmio_stmm.input_we <= stmm_input_we;
+        
+        rmio_layernorm.input_data <= ram.data;
+        rmio_layernorm.input_we <= layernorm_input_we;
+    end
 end
 
-logic [3 : 0] stmm_input_we;
 
 // genvar i;
 // generate
@@ -67,16 +80,6 @@ logic [3 : 0] stmm_input_we;
 //         // assign rmio_silu[i].input_data = ram.data;
 //     end
 // endgenerate
-assign rmio_stmm.input_data = ram_data_ff;
-always_ff @( posedge clk, negedge rst_n ) begin
-    if (!rst_n)
-        rmio_stmm.input_we <= '0;
-    else
-        rmio_stmm.input_we <= stmm_input_we;
-end
-
-// Only one ATT
-// assign rmio_att[0].input_data = ram.data;
 
 assign real_ram.data = ram.data;
 
@@ -128,7 +131,8 @@ always_comb begin
 
     // rmio_stmm.input_we = '0;
     stmm_input_we = '0;
-    
+    layernorm_input_we = '0;
+
     // rmio_layernorm[0].input_we = 0;
     // rmio_layernorm[1].input_we = 0;
     // rmio_layernorm[2].input_we = 0;
@@ -163,6 +167,10 @@ always_comb begin
             // ADDR_LN_1_X:    rmio_layernorm[1].input_we = 1;
             // ADDR_LN_2_X:    rmio_layernorm[2].input_we = 1;
             // ADDR_LN_3_X:    rmio_layernorm[3].input_we = 1;
+            ADDR_LN_0_X:    layernorm_input_we = 4'b0001;
+            ADDR_LN_1_X:    layernorm_input_we = 4'b0010;
+            ADDR_LN_2_X:    layernorm_input_we = 4'b0100;
+            ADDR_LN_3_X:    layernorm_input_we = 4'b1000;
 
             // === SILU ===
             // ADDR_SILU_0_X:  rmio_silu[0].input_we = 1;
@@ -200,6 +208,7 @@ always_comb begin
     
     // set all read-enable to zero by default 
     rmio_stmm.output_re = '0;
+    rmio_layernorm.output_re = '0;
 
     // rmio_layernorm[0].output_re = 0;
     // rmio_layernorm[1].output_re = 0;
@@ -232,6 +241,11 @@ always_comb begin
             // ADDR_LN_2_Y:    rmio_layernorm[2].output_re = 1;
             // ADDR_LN_3_Y:    rmio_layernorm[3].output_re = 1;
 
+            ADDR_LN_0_Y:    rmio_layernorm.output_re = 4'b0001;
+            ADDR_LN_1_Y:    rmio_layernorm.output_re = 4'b0010;
+            ADDR_LN_2_Y:    rmio_layernorm.output_re = 4'b0100;
+            ADDR_LN_3_Y:    rmio_layernorm.output_re = 4'b1000;
+
             // === SILU ===
             // ADDR_SILU_0_Y:  rmio_silu[0].output_re = 1;
             // ADDR_SILU_1_Y:  rmio_silu[1].output_re = 1;
@@ -253,21 +267,20 @@ end
 // determine ram.q based on the flip-floped addr
 //////////////////////////////
 always_comb begin
-    unique case (addr_ff)
+    case (addr_ff)
         // === STMM ===
         ADDR_STMM_0_Y:  ram.q = rmio_stmm.output_data;
         ADDR_STMM_1_Y:  ram.q = rmio_stmm.output_data;        
         ADDR_STMM_2_Y:  ram.q = rmio_stmm.output_data;
         ADDR_STMM_3_Y:  ram.q = rmio_stmm.output_data;
 
+        ADDR_LN_0_Y, ADDR_LN_1_Y, ADDR_LN_2_Y, ADDR_LN_3_Y: ram.q = rmio_layernorm.output_data;
 /*
         
         // === LAYER NORM ===
-        ADDR_LN_0_Y:    ram.q = rmio_layernorm[0].output_data;
-        ADDR_LN_1_Y:    ram.q = rmio_layernorm[1].output_data;
-        ADDR_LN_2_Y:    ram.q = rmio_layernorm[2].output_data;
-        ADDR_LN_3_Y:    ram.q = rmio_layernorm[3].output_data;
         
+
+
         // === SILU ===
         ADDR_SILU_0_Y:  ram.q = rmio_silu[0].output_data;
         ADDR_SILU_1_Y:  ram.q = rmio_silu[1].output_data;

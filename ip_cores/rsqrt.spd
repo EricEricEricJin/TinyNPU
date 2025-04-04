@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="rsqrt_sim/rsqrt.vo" type="VERILOG" />
+ <topLevel name="rsqrt" />
+ <deviceFamily name="cyclonev" />
+</simPackage>
