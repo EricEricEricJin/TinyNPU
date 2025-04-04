@@ -4,8 +4,6 @@ module soc_system #(
     parameter int SDRAM_W = 128,
     parameter int H2F_PIO_W = 32,
     parameter int F2H_PIO_W = 32,
-    parameter string WEIGHT_MEM_FILE = "utils/mem_w.bin",
-    parameter string RD_MEM_FILE = "utils/mem_in.bin",
     parameter string WT_MEM_FILE = "wt_mem.bin"
 ) (
     input wire clk_clk,             // system clock input
@@ -126,7 +124,7 @@ initial begin
     // i_sdram_bi_slave.read_file_to_mem(RD_MEM_FILE, 32'h3000_0000, 176*166);
     // i_sdram_ro_slave.read_file_to_mem(WEIGHT_MEM_FILE, 32'h2000_0000, 176*176+16);
 
-    `include "simulation/program/test.mm.sv"
+    `include "simulation/program/stmm.mm.sv"
 
     fork
         i_sdram_bi_slave.run(clk, rst_n);
@@ -138,7 +136,7 @@ initial begin
     repeat (10) @(negedge clk);
 
     // i_hps_bfm.run(clk, h2f_reset_reset_n);
-    `include "simulation/program/test.hps.sv"
+    `include "simulation/program/stmm.hps.sv"
 
     i_sdram_bi_slave.write_mem_to_file(WT_MEM_FILE);
 

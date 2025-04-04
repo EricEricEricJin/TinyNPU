@@ -1,6 +1,6 @@
 `define hps i_hps_bfm
 
-`define N 3
+`define N 2
 
 `hps.npu_fetch(clk, `N, 32'h2000_0000);
 `hps.npu_wait(clk, 32'(1<<28));
