@@ -13,6 +13,7 @@ set SRC_FILES {
     ip_cores/mult_int8.v                    \
     ip_cores/ram_512x1408.v                 \
     ip_cores/ram_176x1408.v                 \
+    simulation/all_fpga_sim/avmm_raw_intf.sv \
     simulation/all_fpga_sim/hps_bfm.sv       \
     simulation/all_fpga_sim/avmm_sdram_bfm.sv   \
     simulation/all_fpga_sim/all_top_tb.sv   \

@@ -4,10 +4,23 @@ package avmm_sdram_bfm_pkg;
 
 class avmmSdramBfm #( parameter int SDRAM_W = 128 );
 
-int size;
-int offset;
+// import avmm_raw_intf_pkg::*;
 
-logic [7 : 0] mem [];
+local int           size;
+local int           offset;
+local logic [7 : 0] mem [];
+
+// logic [31 : 0]           address;
+// logic [10 : 0]           burstcount;
+// logic                    waitrequest;
+// logic                    read;
+// logic [SDRAM_W - 1 : 0]  readdata;
+// logic                    readdatavalid;
+// logic                    write;
+// logic [SDRAM_W - 1 : 0]  writedata;
+// logic [15 : 0]           byteenable;
+
+virtual avmm_raw_intf #(.SDRAM_W(SDRAM_W)) i_avmm_raw_intf;
 
 function new(int size, int offset);
     this.size = size;
@@ -70,21 +83,7 @@ task automatic wait_sometime(ref logic clk);
     repeat($urandom_range(7, 37)) @(negedge clk);
 endtask
 
-task automatic run(
-    ref logic clk,
-
-    ref logic [31 : 0]  address,
-    ref logic [10 : 0]  burstcount,
-    ref logic           waitrequest,
-
-    ref logic                   read,
-    ref logic [SDRAM_W - 1 : 0] readdata,
-    ref logic                   readdatavalid,
-
-    ref logic                   write,
-    ref logic [SDRAM_W - 1 : 0] writedata,
-    ref logic [15 : 0]          byteenable
-);
+task automatic run( ref logic clk, ref logic rst_n);
 
 logic [31 : 0] address_reg;
 logic [10 : 0] burstcount_reg;
@@ -97,22 +96,27 @@ forever begin
 
     // process read
     @(negedge clk);
+    if (!rst_n) begin
+        $display("continue");
+        continue;
+    end
     // $display("SDRAM BFM Run");
 
-    assert (!(read && write)) else begin
+    assert (!(i_avmm_raw_intf.read && i_avmm_raw_intf.write)) else begin
         $display("Error: read and write at the same time.");
+        $display("read=%b, write=%b", i_avmm_raw_intf.read, i_avmm_raw_intf.write);
         $stop();
     end
 
-    if (read) begin
+    if (i_avmm_raw_intf.read) begin
         $display("Read request");
 
-        waitrequest = 1;
+        i_avmm_raw_intf.waitrequest = 1;
         wait_sometime(clk);
 
-        address_reg = (address);
-        burstcount_reg = burstcount;
-        waitrequest = 0;
+        address_reg = (i_avmm_raw_intf.address);
+        burstcount_reg = i_avmm_raw_intf.burstcount;
+        i_avmm_raw_intf.waitrequest = 0;
         $display("Read address=0x%h, burstcount=%d", address_reg, burstcount_reg);
 
         for (i = 0; i < burstcount_reg; i++) begin
@@ -127,36 +131,36 @@ forever begin
             end
 
             wait_sometime(clk);
-            readdata = readdata_temp;
-            readdatavalid = 1;
-            @(negedge clk) readdatavalid = 0;
+            i_avmm_raw_intf.readdata = readdata_temp;
+            i_avmm_raw_intf.readdatavalid = 1;
+            @(negedge clk) i_avmm_raw_intf.readdatavalid = 0;
         end
         $display("Read done.");
     end else begin
-        readdatavalid = 0;
-        readdata = 'x;
+        i_avmm_raw_intf.readdatavalid = 0;
+        i_avmm_raw_intf.readdata = 'x;
     end
     
-    if (write) begin
+    if (i_avmm_raw_intf.write) begin
 
-        waitrequest = 1;
+        i_avmm_raw_intf.waitrequest = 1;
         wait_sometime(clk);
-        address_reg = (address);
-        burstcount_reg = burstcount;
-        waitrequest = 0;
+        address_reg = (i_avmm_raw_intf.address);
+        burstcount_reg = i_avmm_raw_intf.burstcount;
+        i_avmm_raw_intf.waitrequest = 0;
         $display("Write address=0x%h, burstcount=%d", address_reg, burstcount_reg);
 
         for (i = 0; i < burstcount_reg; ) begin
             @(posedge clk);
-            if (write) begin
+            if (i_avmm_raw_intf.write) begin
                 for (j = 0; j < SDRAM_W / 8; j++) begin
                     idx = (address_reg - offset + i * SDRAM_W / 8 + j);
                     assert (idx >= 0 && idx < size) else begin
                         $display("Error: address %d out of range.", idx);
                         $stop();
                     end
-                    if (byteenable[j]) begin
-                        mem[idx] = writedata[j*8 +: 8];
+                    if (i_avmm_raw_intf.byteenable[j]) begin
+                        mem[idx] = i_avmm_raw_intf.writedata[j*8 +: 8];
                     end
                 end
                 i++;
@@ -165,8 +169,8 @@ forever begin
         $display("Write done.");
     end
 
-
 end
+
 
 endtask
 
