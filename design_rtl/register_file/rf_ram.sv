@@ -269,12 +269,8 @@ end
 always_comb begin
     case (addr_ff)
         // === STMM ===
-        ADDR_STMM_0_Y:  ram.q = rmio_stmm.output_data;
-        ADDR_STMM_1_Y:  ram.q = rmio_stmm.output_data;        
-        ADDR_STMM_2_Y:  ram.q = rmio_stmm.output_data;
-        ADDR_STMM_3_Y:  ram.q = rmio_stmm.output_data;
-
-        ADDR_LN_0_Y, ADDR_LN_1_Y, ADDR_LN_2_Y, ADDR_LN_3_Y: ram.q = rmio_layernorm.output_data;
+        ADDR_STMM_0_Y, ADDR_STMM_1_Y, ADDR_STMM_2_Y, ADDR_STMM_3_Y: ram.q = rmio_stmm.output_data;
+        ADDR_LN_0_Y, ADDR_LN_1_Y, ADDR_LN_2_Y, ADDR_LN_3_Y:         ram.q = rmio_layernorm.output_data;
 /*
         
         // === LAYER NORM ===
