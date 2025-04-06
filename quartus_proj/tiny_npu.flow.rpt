@@ -1,5 +1,5 @@
 Flow report for tiny_npu
-Mon Apr  7 04:10:48 2025
+Mon Apr  7 05:33:04 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,19 +41,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Apr  7 04:09:41 2025          ;
+; Flow Status                     ; Successful - Mon Apr  7 05:32:02 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; tiny_npu                                       ;
 ; Top-level Entity Name           ; tiny_npu                                       ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEBA6U23I7                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 19,651 / 41,910 ( 47 % )                       ;
-; Total registers                 ; 48099                                          ;
+; Logic utilization (in ALMs)     ; 20,204 / 41,910 ( 48 % )                       ;
+; Total registers                 ; 48201                                          ;
 ; Total pins                      ; 89 / 314 ( 28 % )                              ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 1,718,480 / 5,662,720 ( 30 % )                 ;
-; Total DSP Blocks                ; 93 / 112 ( 83 % )                              ;
+; Total DSP Blocks                ; 13 / 112 ( 12 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
 ; Total HSSI TX PCSs              ; 0                                              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/07/2025 03:41:04 ;
+; Start date & time ; 04/07/2025 05:16:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tiny_npu            ;
 +-------------------+---------------------+
@@ -83,7 +83,7 @@ https://fpgasoftware.intel.com/eula.
 ; AUTO_RESOURCE_SHARING                                  ; On                                               ; Off           ; --          ; --         ;
 ; BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; Dont Care                                        ; Care          ; --          ; --         ;
 ; BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; Dont Care                                        ; Auto          ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                                  ; 66076473083265.174396846342323                   ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                                  ; 625436798633.174397418017690                     ; --            ; --          ; --         ;
 ; ECO_REGENERATE_REPORT                                  ; On                                               ; Off           ; --          ; --         ;
 ; FINAL_PLACEMENT_OPTIMIZATION                           ; Always                                           ; Automatically ; --          ; --         ;
 ; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION             ; Always                                           ; Automatically ; --          ; --         ;
@@ -136,11 +136,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:26     ; 1.5                     ; 1715 MB             ; 00:02:59                           ;
-; Fitter               ; 00:26:37     ; 1.2                     ; 4410 MB             ; 01:11:02                           ;
-; Assembler            ; 00:00:12     ; 1.0                     ; 944 MB              ; 00:00:13                           ;
-; Timing Analyzer      ; 00:01:04     ; 3.8                     ; 2579 MB             ; 00:03:50                           ;
-; Total                ; 00:29:19     ; --                      ; --                  ; 01:18:04                           ;
+; Analysis & Synthesis ; 00:01:25     ; 1.5                     ; 1649 MB             ; 00:02:53                           ;
+; Fitter               ; 00:13:45     ; 1.4                     ; 4422 MB             ; 00:40:48                           ;
+; Assembler            ; 00:00:13     ; 1.0                     ; 931 MB              ; 00:00:13                           ;
+; Timing Analyzer      ; 00:01:00     ; 3.7                     ; 2511 MB             ; 00:03:32                           ;
+; Total                ; 00:16:23     ; --                      ; --                  ; 00:47:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -40,7 +40,7 @@ logic [LUT_SUB_NUM - 1 : 0] lut_exec_done;
 // todo 
 
 assign fetch_done = stmm_fetch_done & layernorm_fetch_done & lut_fetch_done;
-assign exec_done = {16'b1, {2'b1, lut_exec_done}, {3'b1, layernorm_exec_done}, stmm_exec_done};
+assign exec_done = {{16{1'b1}}, {2'b11, lut_exec_done}, {3'b111, layernorm_exec_done}, stmm_exec_done};
 
 ////////////////////////
 // SDRAM Read Mux

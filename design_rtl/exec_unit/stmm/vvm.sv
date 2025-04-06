@@ -58,8 +58,8 @@ logic signed [DQ - 1 : 0] mulout;
 genvar i;
 generate
     for (i = 0; i < W; i++) begin: blk_assign_mults
-        assign mul1[i] = $signed(A[cnt][Q * i +: Q])-z_A;
-        assign mul2[i] = $signed(B[cnt][Q * i +: Q])-z_B;
+        assign mul1[i] = $signed(A[cnt][Q * i +: Q])-$signed(z_A);
+        assign mul2[i] = $signed(B[cnt][Q * i +: Q])-$signed(z_B);
     end
 endgenerate
 
