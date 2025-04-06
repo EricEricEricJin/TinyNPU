@@ -40,7 +40,7 @@ logic [LUT_SUB_NUM - 1 : 0] lut_exec_done;
 // todo 
 
 assign fetch_done = stmm_fetch_done & layernorm_fetch_done & lut_fetch_done;
-assign exec_done = {21'b1, lut_exec_done, layernorm_exec_done, stmm_exec_done};
+assign exec_done = {16'b1, {2'b1, lut_exec_done}, {3'b1, layernorm_exec_done}, stmm_exec_done};
 
 ////////////////////////
 // SDRAM Read Mux
@@ -71,12 +71,12 @@ assign stmm_fetch = eu_fetch[0 +: STMM_SUB_NUM];
 assign stmm_exec = eu_exec[0 +: STMM_SUB_NUM];
 
 logic [LAYERNORM_SUB_NUM-1 : 0] layernorm_fetch, layernorm_exec;
-assign layernorm_fetch = eu_fetch[STMM_SUB_NUM +: LAYERNORM_SUB_NUM];
-assign layernorm_exec = eu_exec[STMM_SUB_NUM +: LAYERNORM_SUB_NUM];
+assign layernorm_fetch = eu_fetch[4 +: LAYERNORM_SUB_NUM];
+assign layernorm_exec = eu_exec[4 +: LAYERNORM_SUB_NUM];
 
 logic [LUT_SUB_NUM-1 : 0] lut_fetch, lut_exec;
-assign lut_fetch = eu_fetch[STMM_SUB_NUM + LAYERNORM_SUB_NUM +: LUT_SUB_NUM];
-assign lut_exec = eu_exec[STMM_SUB_NUM + LAYERNORM_SUB_NUM +: LUT_SUB_NUM];
+assign lut_fetch = eu_fetch[8 +: LUT_SUB_NUM];
+assign lut_exec = eu_exec[8 +: LUT_SUB_NUM];
 
 ////////////////////////
 // EU Groups 

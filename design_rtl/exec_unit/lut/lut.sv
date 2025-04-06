@@ -17,25 +17,26 @@ module lut #(
     output logic done
 );
 
+
+//////////////////////////////
+// Counter
+//////////////////////////////
 logic [$clog2(N) - 1 : 0] cnt;
+logic cnt_inc, cnt_clr;
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
         cnt <= '0;
-    else if (start)
+    else if (cnt_clr)
         cnt <= '0;
-    else if (cnt == N)
-        cnt <= '0;
-    else
+    else if (cnt_inc)
         cnt <= cnt + 1;
 end
 
+/////////////////////////////
+// Pack Unpack Store 
+/////////////////////////////
 logic store;
-assign store = (cnt != 0);
 
-assign done = ~store;
-
-
-// unpack X,Y
 logic [7 : 0] x_unpacked [N];
 logic [7 : 0] y_unpacked [N];
 genvar i;
@@ -54,6 +55,50 @@ always_ff @( posedge clk, negedge rst_n ) begin
     end else if (store) begin
         y_unpacked[cnt-1] <= y_i;
     end
+end
+
+
+
+/////////////////////////////
+// State Machine
+/////////////////////////////
+typedef enum logic[1:0] { IDLE, RUN } state_t;
+state_t state, nxt_state;
+always_ff @( posedge clk, negedge rst_n ) begin
+    if (!rst_n)
+        state <= IDLE;
+    else
+        state <= nxt_state;
+end
+
+always_comb begin
+
+    cnt_inc = 0;
+    cnt_clr = 0;
+    store = 0;
+    done = 0;
+
+    nxt_state = state;
+
+    case (state)
+        IDLE: begin
+            done = 1;
+            if (start) begin
+                cnt_inc = 1;
+                nxt_state = RUN;
+            end
+            else begin
+                cnt_clr = 1;
+            end
+        end
+
+        default: begin
+            cnt_inc = 1;
+            store = 1;
+            if (cnt == N - 1)
+                nxt_state = IDLE;
+        end
+    endcase
 end
 
 endmodule
