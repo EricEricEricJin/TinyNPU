@@ -58,8 +58,8 @@ logic signed [DQ - 1 : 0] mulout;
 genvar i;
 generate
     for (i = 0; i < W; i++) begin: blk_assign_mults
-        assign mul1[i] = A[cnt][Q * i +: Q];
-        assign mul2[i] = B[cnt][Q * i +: Q];
+        assign mul1[i] = $signed(A[cnt][Q * i +: Q])-z_A;
+        assign mul2[i] = $signed(B[cnt][Q * i +: Q]);
     end
 endgenerate
 
@@ -67,7 +67,7 @@ always_comb begin
     mulout = '0;
     for (int i = 0; i < W; i++)
         mulout += mul1[i] * mul2[i];
-        // mulout += (mul1[i] - 9'(z_A) ) * (mul2[i] - 9'(z_B) );
+        // mulout += (mul1[i] - z_A) * (mul2[i] - z_B);
 end
 
 // output accumulator
