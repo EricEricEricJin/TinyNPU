@@ -1,4 +1,34 @@
 
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[3].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[2].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[1].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut:blk_instantiate_lut[1].i_lut|state
+Name state.RUN 
+state.IDLE 0 
+state.RUN 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut:blk_instantiate_lut[0].i_lut|state
+Name state.RUN 
+state.IDLE 0 
+state.RUN 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[0].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
 State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut_fetch:i_lut_fetch|state
 Name state.IDLE state.RECV_DATA state.SEND_ADDR 
 state.IDLE 0 0 0 
@@ -20,16 +50,6 @@ state.FLOP_SD 0 0 1 0 0 1
 state.WAIT_Y 0 1 0 0 0 1 
 state.STORE_Y 1 0 0 0 0 1 
 
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm_fetch:i_layernorm_fetch|state
-Name state.BETA_RECV_DATA state.BETA_SEND_ADDR state.GAMMA_LO_RECV_DATA state.GAMMA_LO_SEND_ADDR state.GAMMA_HI_RECV_DATA state.GAMMA_HI_SEND_ADDR state.IDLE 
-state.IDLE 0 0 0 0 0 0 0 
-state.GAMMA_HI_SEND_ADDR 0 0 0 0 0 1 1 
-state.GAMMA_HI_RECV_DATA 0 0 0 0 1 0 1 
-state.GAMMA_LO_SEND_ADDR 0 0 0 1 0 0 1 
-state.GAMMA_LO_RECV_DATA 0 0 1 0 0 0 1 
-state.BETA_SEND_ADDR 0 1 0 0 0 0 1 
-state.BETA_RECV_DATA 1 0 0 0 0 0 1 
-
 State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|stmm_fetch:i_stmm_fetch|state
 Name state.QUANT_SEND_ADDR state.MAT_RECV_DATA state.MAT_SEND_ADDR state.IDLE state.QUANT_RECV_DATA 
 state.IDLE 0 0 0 0 0 
@@ -44,32 +64,6 @@ state.ST_IDLE 0 0 0 0
 state.ST_COMP_TRANS 1 0 0 1 
 state.ST_UNCOMP_TRANS 1 0 1 0 
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
-
-State Machine - |tiny_npu|soc_system:u0|avmm_sdram_read_wrapper:avmm_sdram_read_wrapper_0|state
-Name state.IDLE state.RECV_DATA state.SEND_ADDR 
-state.IDLE 0 0 0 
-state.SEND_ADDR 1 0 1 
-state.RECV_DATA 1 1 0 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[3].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[2].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[1].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[0].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
 
 State Machine - |tiny_npu|design_top:i_design_top|rf_wrapper:i_rf_wrapper|rf_move:i_rf_move|state
 Name state.IDLE state.STORE state.LOAD 
@@ -99,6 +93,22 @@ state.RD_SEND_ADDR 0 0 1 1 0
 state.RECV_DATA 0 1 0 1 0 
 state.WT_SEND_ADDR 1 0 0 1 0 
 state.SEND_DATA 0 0 0 1 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm_fetch:i_layernorm_fetch|state
+Name state.BETA_RECV_DATA state.BETA_SEND_ADDR state.GAMMA_LO_RECV_DATA state.GAMMA_LO_SEND_ADDR state.GAMMA_HI_RECV_DATA state.GAMMA_HI_SEND_ADDR state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.GAMMA_HI_SEND_ADDR 0 0 0 0 0 1 1 
+state.GAMMA_HI_RECV_DATA 0 0 0 0 1 0 1 
+state.GAMMA_LO_SEND_ADDR 0 0 0 1 0 0 1 
+state.GAMMA_LO_RECV_DATA 0 0 1 0 0 0 1 
+state.BETA_SEND_ADDR 0 1 0 0 0 0 1 
+state.BETA_RECV_DATA 1 0 0 0 0 0 1 
+
+State Machine - |tiny_npu|soc_system:u0|avmm_sdram_read_wrapper:avmm_sdram_read_wrapper_0|state
+Name state.IDLE state.RECV_DATA state.SEND_ADDR 
+state.IDLE 0 0 0 
+state.SEND_ADDR 1 0 1 
+state.RECV_DATA 1 1 0 
 
 State Machine - |tiny_npu|design_top:i_design_top|ctrl_unit:i_ctrl_unit|state
 Name state.IDLE state.ISSUE state.DECODE 

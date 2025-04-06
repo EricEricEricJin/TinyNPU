@@ -1,5 +1,5 @@
 Flow report for tiny_npu
-Sun Apr  6 21:12:44 2025
+Mon Apr  7 01:25:27 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Sun Apr  6 21:11:40 2025          ;
+; Flow Status                     ; Successful - Mon Apr  7 01:24:24 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; tiny_npu                                       ;
 ; Top-level Entity Name           ; tiny_npu                                       ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEBA6U23I7                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 19,886 / 41,910 ( 47 % )                       ;
-; Total registers                 ; 48169                                          ;
+; Logic utilization (in ALMs)     ; 20,150 / 41,910 ( 48 % )                       ;
+; Total registers                 ; 48167                                          ;
 ; Total pins                      ; 89 / 314 ( 28 % )                              ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 1,718,480 / 5,662,720 ( 30 % )                 ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/06/2025 20:53:05 ;
+; Start date & time ; 04/07/2025 01:08:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tiny_npu            ;
 +-------------------+---------------------+
@@ -83,7 +83,7 @@ https://fpgasoftware.intel.com/eula.
 ; AUTO_RESOURCE_SHARING                                  ; On                                               ; Off           ; --          ; --         ;
 ; BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; Dont Care                                        ; Care          ; --          ; --         ;
 ; BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; Dont Care                                        ; Auto          ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                                  ; 625436798633.174394398433840                     ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                                  ; 625436798633.174395928501527                     ; --            ; --          ; --         ;
 ; ECO_REGENERATE_REPORT                                  ; On                                               ; Off           ; --          ; --         ;
 ; FINAL_PLACEMENT_OPTIMIZATION                           ; Always                                           ; Automatically ; --          ; --         ;
 ; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION             ; Always                                           ; Automatically ; --          ; --         ;
@@ -136,11 +136,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:25     ; 1.5                     ; 1621 MB             ; 00:03:00                           ;
-; Fitter               ; 00:16:35     ; 1.3                     ; 4447 MB             ; 00:49:22                           ;
-; Assembler            ; 00:00:13     ; 1.0                     ; 923 MB              ; 00:00:13                           ;
-; Timing Analyzer      ; 00:01:02     ; 3.8                     ; 2515 MB             ; 00:03:40                           ;
-; Total                ; 00:19:15     ; --                      ; --                  ; 00:56:15                           ;
+; Analysis & Synthesis ; 00:01:21     ; 1.5                     ; 1637 MB             ; 00:02:49                           ;
+; Fitter               ; 00:14:24     ; 1.4                     ; 4293 MB             ; 00:39:03                           ;
+; Assembler            ; 00:00:13     ; 1.0                     ; 935 MB              ; 00:00:13                           ;
+; Timing Analyzer      ; 00:01:00     ; 3.7                     ; 2514 MB             ; 00:03:34                           ;
+; Total                ; 00:16:58     ; --                      ; --                  ; 00:45:39                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
