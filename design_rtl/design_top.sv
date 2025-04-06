@@ -42,8 +42,7 @@ rf_ldst_intf i_rf_ldst_intf ();
 
 rmio_intf #( .INPUT_NUM (4), .OUTPUT_NUM (4), .DATA_W (176*8) ) rmio_stmm();
 rmio_intf #( .INPUT_NUM (4), .OUTPUT_NUM (4), .DATA_W (176*8) ) rmio_layernorm();
-rmio_intf #( .INPUT_NUM (1), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_silu       [4] ();
-rmio_intf #( .INPUT_NUM (3), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_att        [1] ();
+rmio_intf #( .INPUT_NUM (4), .OUTPUT_NUM (4), .DATA_W (176*8) ) rmio_lut();
 
 // eu_ctrl_intf i_eu_ctrl_intf_arr [32] ();
 
@@ -93,8 +92,7 @@ rf_wrapper #( .ADDR_W(RF_ADDR_W), .DATA_W(RF_DATA_W) ) i_rf_wrapper (
 
     .rmio_stmm      (rmio_stmm),
     .rmio_layernorm (rmio_layernorm),
-    .rmio_silu      (rmio_silu),
-    .rmio_att       (rmio_att),
+    .rmio_lut       (rmio_lut),
 
     .move_done      (move_done),
     .ldst_done      (ldst_done)
@@ -121,11 +119,6 @@ eu_top i_eu_top (
     .eu_fetch(eu_fetch),
     .eu_exec(eu_exec),
     .eu_fetch_addr(eu_fetch_addr),
-
-    // .ctrl_intf_stmm(i_eu_ctrl_intf_arr[0]),
-    // .ctrl_intf_layernorm(i_ctrl_unit.ctrl_intf_layernorm),
-    // .ctrl_intf_silu(i_ctrl_unit.ctrl_intf_silu),
-    // .ctrl_intf_att(i_ctrl_unit.ctrl_intf_att),
 
     .fetch_done(fetch_done),
     .exec_done(exec_done)

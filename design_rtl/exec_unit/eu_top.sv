@@ -11,7 +11,7 @@ module eu_top #(
     // ---------- RMIO ----------
     rmio_intf rmio_stmm,
     rmio_intf rmio_layernorm,
-    // todo
+    rmio_intf rmio_lut,
 
     // ---------- Control Unit signals ----------
     input wire [4 : 0] sdram_read_sel,
@@ -27,30 +27,34 @@ module eu_top #(
 
 localparam int STMM_SUB_NUM = 4;
 localparam int LAYERNORM_SUB_NUM = 4;
+localparam int LUT_SUB_NUM = 4;
 
 // ---------- Done signals ----------
-logic stmm_fetch_done;
-logic [STMM_SUB_NUM - 1 : 0] stmm_exec_done;
-logic layernorm_fetch_done;
-logic [LAYERNORM_SUB_NUM - 1 : 0] layernorm_exec_done;
+logic                           stmm_fetch_done;
+logic [STMM_SUB_NUM - 1 : 0]    stmm_exec_done;
+logic                               layernorm_fetch_done;
+logic [LAYERNORM_SUB_NUM - 1 : 0]   layernorm_exec_done;
+logic                       lut_fetch_done;
+logic [LUT_SUB_NUM - 1 : 0] lut_exec_done;
 
 // todo 
 
-assign fetch_done = stmm_fetch_done & layernorm_fetch_done;
-assign exec_done = {20'b1, layernorm_exec_done, stmm_exec_done};
+assign fetch_done = stmm_fetch_done & layernorm_fetch_done & lut_fetch_done;
+assign exec_done = {16'b1, lut_exec_done, layernorm_exec_done, stmm_exec_done};
 
 ////////////////////////
 // SDRAM Read Mux
 ////////////////////////
 
 // determine sel signal
-localparam int REAL_SDRAM_NUM_PORTS = 8;
+localparam int REAL_SDRAM_NUM_PORTS = 4;
 logic [$clog2(REAL_SDRAM_NUM_PORTS) - 1 : 0] real_sdram_read_sel;
 always_comb begin
     // case(sdram_read_sel) inside
     casex(sdram_read_sel)
         5'b000??: real_sdram_read_sel = ($clog2(REAL_SDRAM_NUM_PORTS))'(0);
         5'b001??: real_sdram_read_sel = ($clog2(REAL_SDRAM_NUM_PORTS))'(1);
+        5'b010??: real_sdram_read_sel = ($clog2(REAL_SDRAM_NUM_PORTS))'(2);
         default: real_sdram_read_sel = '0;
     endcase
 end
@@ -69,6 +73,10 @@ assign stmm_exec = eu_exec[0 +: STMM_SUB_NUM];
 logic [LAYERNORM_SUB_NUM-1 : 0] layernorm_fetch, layernorm_exec;
 assign layernorm_fetch = eu_fetch[STMM_SUB_NUM +: LAYERNORM_SUB_NUM];
 assign layernorm_exec = eu_exec[STMM_SUB_NUM +: LAYERNORM_SUB_NUM];
+
+logic [LUT_SUB_NUM-1 : 0] lut_fetch, lut_exec;
+assign lut_fetch = eu_fetch[STMM_SUB_NUM + LAYERNORM_SUB_NUM +: LUT_SUB_NUM];
+assign lut_exec = eu_exec[STMM_SUB_NUM + LAYERNORM_SUB_NUM +: LUT_SUB_NUM];
 
 ////////////////////////
 // EU Groups 
@@ -105,8 +113,19 @@ layernorm_wrapper #( .SUB_NUM (LAYERNORM_SUB_NUM), .N (176), .SDRAM_W (SDRAM_W) 
     .exec_done(layernorm_exec_done)
 );
 
-// todo
+lut_wrapper #( .SUB_NUM(4), .N(176), .SDRAM_W(128) ) i_lut_wrapper (
+    .clk(clk),
+    .rst_n(rst_n),
 
+    .i_rmio_intf(rmio_lut),
+    .i_sdram_read_intf(i_sdram_read_intf_arr[2]),
+    .fetch (lut_fetch),
+    .exec (lut_exec),
+    .fetch_addr (eu_fetch_addr),
+
+    .fetch_done (lut_fetch_done),
+    .exec_done (lut_exec_done)
+);
 
 endmodule
 

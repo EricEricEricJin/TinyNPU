@@ -18,8 +18,7 @@ module rf_wrapper #(
     // Connect to RF Ram RMIO
     rmio_intf   rmio_stmm,
     rmio_intf   rmio_layernorm,
-    rmio_intf   rmio_silu       [0 : 3],
-    rmio_intf   rmio_att        [0 : 0],
+    rmio_intf   rmio_lut,
 
     // Done signals
     output logic move_done,
@@ -40,29 +39,6 @@ localparam LDST_RAM_IF_IDX = 1;
 
 bram_intf #(.ADDR_W(ADDR_W), .DATA_W(DATA_W)) i_rf_ram_intf_ram ();
 bram_intf #(.ADDR_W(ADDR_W), .DATA_W(DATA_W)) i_rf_ram_intf_arr [2] ();
-// bram_intf #(.ADDR_W(ADDR_W), .DATA_W(DATA_W)) i_rf_ram_intf_ldst ();
-// bram_intf #(.ADDR_W(ADDR_W), .DATA_W(DATA_W)) i_rf_ram_intf_move ();
-
-////////////////////////
-// RF Ram Mux
-////////////////////////
-// always_comb begin
-//     i_rf_ram_intf_move.q = i_rf_ram_intf_ram.q;
-//     i_rf_ram_intf_ldst.q = i_rf_ram_intf_ram.q;
-
-//     if (ram_sel) begin
-//         i_rf_ram_intf_ram.addr = i_rf_ram_intf_ldst.addr;
-//         i_rf_ram_intf_ram.data = i_rf_ram_intf_ldst.data;
-//         i_rf_ram_intf_ram.we = i_rf_ram_intf_ldst.we;
-//         i_rf_ram_intf_ram.re = i_rf_ram_intf_ldst.re;
-//     end
-//     else begin
-//         i_rf_ram_intf_ram.addr = i_rf_ram_intf_move.addr;
-//         i_rf_ram_intf_ram.data = i_rf_ram_intf_move.data;
-//         i_rf_ram_intf_ram.we = i_rf_ram_intf_move.we;
-//         i_rf_ram_intf_ram.re = i_rf_ram_intf_move.re;
-//     end
-// end
 
 bram_mux #(
     .NUM_PORTS (2),
@@ -85,8 +61,7 @@ rf_ram #( .RF_DATA_W(RF_DATA_W), .RF_ADDR_W(RF_ADDR_W) ) i_rf_ram (
     
     .rmio_stmm      (rmio_stmm),
     .rmio_layernorm (rmio_layernorm),
-    .rmio_silu      (rmio_silu),
-    .rmio_att       (rmio_att)
+    .rmio_lut       (rmio_lut)
 );
 
 

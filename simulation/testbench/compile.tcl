@@ -5,6 +5,7 @@ set SRC_FILES {
     design_rtl/exec_unit/stmm/*.sv        \
     design_rtl/exec_unit/layernorm/*.sv   \
     design_rtl/exec_unit/*.sv             \
+    design_rtl/exec_unit/lut/*.sv        \
     design_rtl/interface/*.sv              \
     design_rtl/io/*.sv                     \
     design_rtl/register_file/*.sv          \
@@ -13,6 +14,7 @@ set SRC_FILES {
     ip_cores/mult_int8.v                    \
     ip_cores/ram_512x1408.v                 \
     ip_cores/ram_176x1408.v                 \
+    ip_cores/fifo_16x128.v               \
     simulation/testbench/avmm_raw_intf.sv \
     simulation/testbench/avmm_sdram_bfm.sv \
     simulation/testbench/hps_bfm.sv       \

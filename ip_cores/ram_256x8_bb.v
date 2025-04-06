@@ -4,7 +4,7 @@
 // MODULE: altsyncram 
 
 // ============================================================
-// File Name: ram_256x1408.v
+// File Name: ram_256x8.v
 // Megafunction Name(s):
 // 			altsyncram
 //
@@ -32,7 +32,7 @@
 //refer to the applicable agreement for further details, at
 //https://fpgasoftware.intel.com/eula.
 
-module ram_256x1408 (
+module ram_256x8 (
 	address,
 	clock,
 	data,
@@ -41,9 +41,9 @@ module ram_256x1408 (
 
 	input	[7:0]  address;
 	input	  clock;
-	input	[1407:0]  data;
+	input	[7:0]  data;
 	input	  wren;
-	output	[1407:0]  q;
+	output	[7:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -82,13 +82,13 @@ endmodule
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "2"
 // Retrieval info: PRIVATE: RegAddr NUMERIC "1"
 // Retrieval info: PRIVATE: RegData NUMERIC "1"
-// Retrieval info: PRIVATE: RegOutput NUMERIC "1"
+// Retrieval info: PRIVATE: RegOutput NUMERIC "0"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 // Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 // Retrieval info: PRIVATE: UseDQRAM NUMERIC "1"
 // Retrieval info: PRIVATE: WRCONTROL_ACLR_A NUMERIC "0"
 // Retrieval info: PRIVATE: WidthAddr NUMERIC "8"
-// Retrieval info: PRIVATE: WidthData NUMERIC "1408"
+// Retrieval info: PRIVATE: WidthData NUMERIC "8"
 // Retrieval info: PRIVATE: rden NUMERIC "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
@@ -99,26 +99,26 @@ endmodule
 // Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "256"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "SINGLE_PORT"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
-// Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
+// Retrieval info: CONSTANT: OUTDATA_REG_A STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "DONT_CARE"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "8"
-// Retrieval info: CONSTANT: WIDTH_A NUMERIC "1408"
+// Retrieval info: CONSTANT: WIDTH_A NUMERIC "8"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 // Retrieval info: USED_PORT: address 0 0 8 0 INPUT NODEFVAL "address[7..0]"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
-// Retrieval info: USED_PORT: data 0 0 1408 0 INPUT NODEFVAL "data[1407..0]"
-// Retrieval info: USED_PORT: q 0 0 1408 0 OUTPUT NODEFVAL "q[1407..0]"
+// Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL "data[7..0]"
+// Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL "q[7..0]"
 // Retrieval info: USED_PORT: wren 0 0 0 0 INPUT NODEFVAL "wren"
 // Retrieval info: CONNECT: @address_a 0 0 8 0 address 0 0 8 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
-// Retrieval info: CONNECT: @data_a 0 0 1408 0 data 0 0 1408 0
+// Retrieval info: CONNECT: @data_a 0 0 8 0 data 0 0 8 0
 // Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
-// Retrieval info: CONNECT: q 0 0 1408 0 @q_a 0 0 1408 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x1408.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x1408.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x1408.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x1408.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x1408_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x1408_bb.v TRUE
+// Retrieval info: CONNECT: q 0 0 8 0 @q_a 0 0 8 0
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x8.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x8.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x8.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x8.bsf FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x8_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram_256x8_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf
