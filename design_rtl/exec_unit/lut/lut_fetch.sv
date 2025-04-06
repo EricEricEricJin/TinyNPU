@@ -37,7 +37,7 @@ lut_fetch_fifo i_fetch_fifo (
 
     .i_bram_intf(i_bram_intf),
     .done(fifo_done)
-)
+);
 
 
 

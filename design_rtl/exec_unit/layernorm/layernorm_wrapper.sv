@@ -43,17 +43,22 @@ layernorm_fetch #(
 );
 
 // fetch index ff
-logic [$clog2(SUB_NUM) - 1 : 0] fetch_sub_idx, fetch_sub_idx_wire;
-priority_encoder #(SUB_NUM) i_fetch_pe (
-    .in(fetch),
-    .out(fetch_sub_idx_wire)
-);
-always_ff @( posedge clk, negedge rst_n ) begin
-    if (!rst_n)
-        fetch_sub_idx <= '0;
-    else if (|fetch)
-        fetch_sub_idx <= fetch_sub_idx_wire;
-end
+
+
+// logic [$clog2(SUB_NUM) - 1 : 0] fetch_sub_idx, fetch_sub_idx_wire;
+// priority_encoder #(SUB_NUM) i_fetch_pe (
+//     .in(fetch),
+//     .out(fetch_sub_idx_wire)
+// );
+// always_ff @( posedge clk, negedge rst_n ) begin
+//     if (!rst_n)
+//         fetch_sub_idx <= '0;
+//     else if (|fetch)
+//         fetch_sub_idx <= fetch_sub_idx_wire;
+// end
+
+logic fetch_sub_idx;
+assign fetch_sub_idx = 0;
 
 // Param storer
 logic [N*8-1 : 0] gamma_scaled_lo[SUB_NUM];

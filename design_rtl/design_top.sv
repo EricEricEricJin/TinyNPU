@@ -41,8 +41,8 @@ rf_move_intf i_rf_move_intf ();
 rf_ldst_intf i_rf_ldst_intf ();
 
 rmio_intf #( .INPUT_NUM (4), .OUTPUT_NUM (4), .DATA_W (176*8) ) rmio_stmm();
-rmio_intf #( .INPUT_NUM (4), .OUTPUT_NUM (4), .DATA_W (176*8) ) rmio_layernorm();
-rmio_intf #( .INPUT_NUM (4), .OUTPUT_NUM (4), .DATA_W (176*8) ) rmio_lut();
+rmio_intf #( .INPUT_NUM (1), .OUTPUT_NUM (1), .DATA_W (176*8) ) rmio_layernorm();
+rmio_intf #( .INPUT_NUM (2), .OUTPUT_NUM (2), .DATA_W (176*8) ) rmio_lut();
 
 // eu_ctrl_intf i_eu_ctrl_intf_arr [32] ();
 
@@ -111,8 +111,7 @@ eu_top i_eu_top (
 
     .rmio_stmm(rmio_stmm),
     .rmio_layernorm(rmio_layernorm),
-    // .rmio_silu(rmio_silu),
-    // .rmio_att(rmio_att),
+    .rmio_lut(rmio_lut),
 
     .sdram_read_sel(sdram_read_sel),
 

@@ -1,12 +1,15 @@
 
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[3].i_layernorm|state
-Name state.STORE_Y state.WAIT_Y state.FLOP_SD state.SD_MEAN state.X_MEAN state.IDLE 
-state.IDLE 0 0 0 0 0 0 
-state.X_MEAN 0 0 0 0 1 1 
-state.SD_MEAN 0 0 0 1 0 1 
-state.FLOP_SD 0 0 1 0 0 1 
-state.WAIT_Y 0 1 0 0 0 1 
-state.STORE_Y 1 0 0 0 0 1 
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut_fetch:i_lut_fetch|state
+Name state.IDLE state.RECV_DATA state.SEND_ADDR 
+state.IDLE 0 0 0 
+state.SEND_ADDR 1 0 1 
+state.RECV_DATA 1 1 0 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut_fetch:i_lut_fetch|lut_fetch_fifo:i_fetch_fifo|state
+Name state.IDLE state.WRITE_TO_BRAM state.READ_FROM_FIFO 
+state.IDLE 0 0 0 
+state.READ_FROM_FIFO 1 0 1 
+state.WRITE_TO_BRAM 1 1 0 
 
 State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[0].i_layernorm|state
 Name state.STORE_Y state.WAIT_Y state.FLOP_SD state.SD_MEAN state.X_MEAN state.IDLE 
@@ -16,39 +19,6 @@ state.SD_MEAN 0 0 0 1 0 1
 state.FLOP_SD 0 0 1 0 0 1 
 state.WAIT_Y 0 1 0 0 0 1 
 state.STORE_Y 1 0 0 0 0 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[1].i_layernorm|state
-Name state.STORE_Y state.WAIT_Y state.FLOP_SD state.SD_MEAN state.X_MEAN state.IDLE 
-state.IDLE 0 0 0 0 0 0 
-state.X_MEAN 0 0 0 0 1 1 
-state.SD_MEAN 0 0 0 1 0 1 
-state.FLOP_SD 0 0 1 0 0 1 
-state.WAIT_Y 0 1 0 0 0 1 
-state.STORE_Y 1 0 0 0 0 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[2].i_layernorm|state
-Name state.STORE_Y state.WAIT_Y state.FLOP_SD state.SD_MEAN state.X_MEAN state.IDLE 
-state.IDLE 0 0 0 0 0 0 
-state.X_MEAN 0 0 0 0 1 1 
-state.SD_MEAN 0 0 0 1 0 1 
-state.FLOP_SD 0 0 1 0 0 1 
-state.WAIT_Y 0 1 0 0 0 1 
-state.STORE_Y 1 0 0 0 0 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[2].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[1].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
-
-State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[0].i_stmm|vvm:i_vvm|state
-Name state.CNTD 
-state.IDLE 0 
-state.CNTD 1 
 
 State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm_fetch:i_layernorm_fetch|state
 Name state.BETA_RECV_DATA state.BETA_SEND_ADDR state.GAMMA_LO_RECV_DATA state.GAMMA_LO_SEND_ADDR state.GAMMA_HI_RECV_DATA state.GAMMA_HI_SEND_ADDR state.IDLE 
@@ -86,6 +56,21 @@ Name state.CNTD
 state.IDLE 0 
 state.CNTD 1 
 
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[2].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[1].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|stmm_wrapper:i_stmm_wrapper|StMM:blk_instantiate_stmm[0].i_stmm|vvm:i_vvm|state
+Name state.CNTD 
+state.IDLE 0 
+state.CNTD 1 
+
 State Machine - |tiny_npu|design_top:i_design_top|rf_wrapper:i_rf_wrapper|rf_move:i_rf_move|state
 Name state.IDLE state.STORE state.LOAD 
 state.IDLE 0 0 0 
@@ -100,18 +85,26 @@ state.WRITE_TO_RF 0 1 0 1 0
 state.READ_FROM_RF 1 0 0 1 0 
 state.WRITE_TO_SDRAM 0 0 0 1 1 
 
-State Machine - |tiny_npu|design_top:i_design_top|ctrl_unit:i_ctrl_unit|state
-Name state.IDLE state.ISSUE state.DECODE 
-state.IDLE 0 0 0 
-state.DECODE 1 0 1 
-state.ISSUE 1 1 0 
-
 State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 0 
 state.ST_COMP_TRANS 1 0 0 1 
 state.ST_UNCOMP_TRANS 1 0 1 0 
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |tiny_npu|soc_system:u0|avmm_sdram_wrapper:avmm_sdram_wrapper_0|state
+Name state.WT_SEND_ADDR state.RECV_DATA state.RD_SEND_ADDR state.IDLE state.SEND_DATA 
+state.IDLE 0 0 0 0 0 
+state.RD_SEND_ADDR 0 0 1 1 0 
+state.RECV_DATA 0 1 0 1 0 
+state.WT_SEND_ADDR 1 0 0 1 0 
+state.SEND_DATA 0 0 0 1 1 
+
+State Machine - |tiny_npu|design_top:i_design_top|ctrl_unit:i_ctrl_unit|state
+Name state.IDLE state.ISSUE state.DECODE 
+state.IDLE 0 0 0 
+state.DECODE 1 0 1 
+state.ISSUE 1 1 0 
 
 State Machine - |tiny_npu|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_f2h_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
@@ -126,11 +119,3 @@ state.ST_IDLE 0 0 0 0
 state.ST_COMP_TRANS 1 0 0 1 
 state.ST_UNCOMP_TRANS 1 0 1 0 
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
-
-State Machine - |tiny_npu|soc_system:u0|avmm_sdram_wrapper:avmm_sdram_wrapper_0|state
-Name state.WT_SEND_ADDR state.RECV_DATA state.RD_SEND_ADDR state.IDLE state.SEND_DATA 
-state.IDLE 0 0 0 0 0 
-state.RD_SEND_ADDR 0 0 1 1 0 
-state.RECV_DATA 0 1 0 1 0 
-state.WT_SEND_ADDR 1 0 0 1 0 
-state.SEND_DATA 0 0 0 1 1 

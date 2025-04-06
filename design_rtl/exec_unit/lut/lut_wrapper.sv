@@ -47,7 +47,7 @@ always_ff @( posedge clk, negedge rst_n ) begin
 end
 
 
-bram_intf #(.ADDR_W(8), .DATA_W(8)) i_fetch_ram_intf;
+bram_intf #(.ADDR_W(8), .DATA_W(8)) i_fetch_ram_intf ();
 
 lut_fetch #(.BRAM_W(8), .BRAM_L(2**8), .SDRAM_W(SDRAM_W)) i_lut_fetch (
     .clk(clk),
@@ -64,9 +64,10 @@ lut_fetch #(.BRAM_W(8), .BRAM_L(2**8), .SDRAM_W(SDRAM_W)) i_lut_fetch (
 
 
 // LUT BRAM
-logic [7 : 0] lut_bram_addr[4];
-logic [7 : 0] lut_bram_data[4];
+logic [7 : 0] lut_bram_addr[SUB_NUM];
+logic [7 : 0] lut_bram_data[SUB_NUM];
 
+genvar i;
 generate
     for (i = 0; i < SUB_NUM; i++) begin : blk_instantiate_lut_bram
         wire i_we = (i == fetch_sub_idx) && i_fetch_ram_intf.we;
@@ -105,7 +106,7 @@ endgenerate
 // Output mux
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
-        i_rmio_intf.data_out <= '0;
+        i_rmio_intf.output_data <= '0;
     else begin
         for (int i = 0; i < SUB_NUM; i++) begin
             if (i_rmio_intf.output_re[i])

@@ -49,8 +49,8 @@ end
 // Connect rmio input data and real_ram.d to ram.d
 //////////////////////////////
 logic [3 : 0] stmm_input_we;
-logic [3 : 0] layernorm_input_we;
-logic [3 : 0] lut_input_we;
+logic [0 : 0] layernorm_input_we;
+logic [1 : 0] lut_input_we;
 
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n) begin
@@ -89,24 +89,24 @@ typedef enum logic [RF_ADDR_W - 1 : 0] {
     ADDR_STMM_3_Y = 10'h20b,
 
     ADDR_LN_0_X = 10'h210,
-    ADDR_LN_1_X = 10'h211,
-    ADDR_LN_2_X = 10'h212,
-    ADDR_LN_3_X = 10'h213,
+    // ADDR_LN_1_X = 10'h211,
+    // ADDR_LN_2_X = 10'h212,
+    // ADDR_LN_3_X = 10'h213,
 
     ADDR_LN_0_Y = 10'h218,
-    ADDR_LN_1_Y = 10'h219,
-    ADDR_LN_2_Y = 10'h21a,
-    ADDR_LN_3_Y = 10'h21b,
+    // ADDR_LN_1_Y = 10'h219,
+    // ADDR_LN_2_Y = 10'h21a,
+    // ADDR_LN_3_Y = 10'h21b,
 
     ADDR_LUT_0_X = 10'h220,
     ADDR_LUT_1_X = 10'h221,
-    ADDR_LUT_2_X = 10'h222,
-    ADDR_LUT_3_X = 10'h223,
+    // ADDR_LUT_2_X = 10'h222,
+    // ADDR_LUT_3_X = 10'h223,
     
     ADDR_LUT_0_Y = 10'h228,
-    ADDR_LUT_1_Y = 10'h229,
-    ADDR_LUT_2_Y = 10'h22a,
-    ADDR_LUT_3_Y = 10'h22b
+    ADDR_LUT_1_Y = 10'h229
+    // ADDR_LUT_2_Y = 10'h22a,
+    // ADDR_LUT_3_Y = 10'h22b
     
 } addr_t;
 
@@ -132,15 +132,15 @@ always_comb begin
 
             // === LAYER NORM ===
             ADDR_LN_0_X:    layernorm_input_we = 4'b0001;
-            ADDR_LN_1_X:    layernorm_input_we = 4'b0010;
-            ADDR_LN_2_X:    layernorm_input_we = 4'b0100;
-            ADDR_LN_3_X:    layernorm_input_we = 4'b1000;
+            // ADDR_LN_1_X:    layernorm_input_we = 4'b0010;
+            // ADDR_LN_2_X:    layernorm_input_we = 4'b0100;
+            // ADDR_LN_3_X:    layernorm_input_we = 4'b1000;
 
             // === LUT ===
             ADDR_LUT_0_X:   lut_input_we = 4'b0001;
             ADDR_LUT_1_X:   lut_input_we = 4'b0010;
-            ADDR_LUT_2_X:   lut_input_we = 4'b0100;
-            ADDR_LUT_3_X:   lut_input_we = 4'b1000;
+            // ADDR_LUT_2_X:   lut_input_we = 4'b0100;
+            // ADDR_LUT_3_X:   lut_input_we = 4'b1000;
 
             default: if (is_real_ram_addr) real_ram.we = 1;
         endcase
@@ -171,15 +171,15 @@ always_comb begin
 
             // === LAYER NORM ===
             ADDR_LN_0_Y:    rmio_layernorm.output_re = 4'b0001;
-            ADDR_LN_1_Y:    rmio_layernorm.output_re = 4'b0010;
-            ADDR_LN_2_Y:    rmio_layernorm.output_re = 4'b0100;
-            ADDR_LN_3_Y:    rmio_layernorm.output_re = 4'b1000;
+            // ADDR_LN_1_Y:    rmio_layernorm.output_re = 4'b0010;
+            // ADDR_LN_2_Y:    rmio_layernorm.output_re = 4'b0100;
+            // ADDR_LN_3_Y:    rmio_layernorm.output_re = 4'b1000;
 
             // === LUT ===
             ADDR_LUT_0_Y:   rmio_lut.output_re = 4'b0001;
             ADDR_LUT_1_Y:   rmio_lut.output_re = 4'b0010;
-            ADDR_LUT_2_Y:   rmio_lut.output_re = 4'b0100;
-            ADDR_LUT_3_Y:   rmio_lut.output_re = 4'b1000;
+            // ADDR_LUT_2_Y:   rmio_lut.output_re = 4'b0100;
+            // ADDR_LUT_3_Y:   rmio_lut.output_re = 4'b1000;
 
             default: if (is_real_ram_addr) real_ram.re = 1;
         endcase
@@ -193,8 +193,10 @@ always_comb begin
     case (addr_ff)
         // === STMM ===
         ADDR_STMM_0_Y, ADDR_STMM_1_Y, ADDR_STMM_2_Y, ADDR_STMM_3_Y: ram.q = rmio_stmm.output_data;
-        ADDR_LN_0_Y, ADDR_LN_1_Y, ADDR_LN_2_Y, ADDR_LN_3_Y:         ram.q = rmio_layernorm.output_data;
-        ADDR_LUT_0_Y, ADDR_LUT_1_Y, ADDR_LUT_2_Y, ADDR_LUT_3_Y:     ram.q = rmio_lut.output_data;
+        // ADDR_LN_0_Y, ADDR_LN_1_Y, ADDR_LN_2_Y, ADDR_LN_3_Y:         ram.q = rmio_layernorm.output_data;
+        ADDR_LN_0_Y:         ram.q = rmio_layernorm.output_data;
+        // ADDR_LUT_0_Y, ADDR_LUT_1_Y, ADDR_LUT_2_Y, ADDR_LUT_3_Y:     ram.q = rmio_lut.output_data;
+        ADDR_LUT_0_Y, ADDR_LUT_1_Y:     ram.q = rmio_lut.output_data;
 
         default:       ram.q = real_ram.q;  // no need if(...), dirty is OK.
     endcase

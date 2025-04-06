@@ -26,8 +26,8 @@ module eu_top #(
 );
 
 localparam int STMM_SUB_NUM = 4;
-localparam int LAYERNORM_SUB_NUM = 4;
-localparam int LUT_SUB_NUM = 4;
+localparam int LAYERNORM_SUB_NUM = 1;
+localparam int LUT_SUB_NUM = 2;
 
 // ---------- Done signals ----------
 logic                           stmm_fetch_done;
@@ -40,7 +40,7 @@ logic [LUT_SUB_NUM - 1 : 0] lut_exec_done;
 // todo 
 
 assign fetch_done = stmm_fetch_done & layernorm_fetch_done & lut_fetch_done;
-assign exec_done = {16'b1, lut_exec_done, layernorm_exec_done, stmm_exec_done};
+assign exec_done = {21'b1, lut_exec_done, layernorm_exec_done, stmm_exec_done};
 
 ////////////////////////
 // SDRAM Read Mux
@@ -113,7 +113,7 @@ layernorm_wrapper #( .SUB_NUM (LAYERNORM_SUB_NUM), .N (176), .SDRAM_W (SDRAM_W) 
     .exec_done(layernorm_exec_done)
 );
 
-lut_wrapper #( .SUB_NUM(4), .N(176), .SDRAM_W(128) ) i_lut_wrapper (
+lut_wrapper #( .SUB_NUM(LUT_SUB_NUM), .N(176), .SDRAM_W(128) ) i_lut_wrapper (
     .clk(clk),
     .rst_n(rst_n),
 

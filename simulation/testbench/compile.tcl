@@ -11,9 +11,9 @@ set SRC_FILES {
     design_rtl/register_file/*.sv          \
     design_rtl/support/*.sv                \
     design_rtl/design_top.sv               \
-    ip_cores/mult_int8.v                    \
     ip_cores/ram_512x1408.v                 \
     ip_cores/ram_176x1408.v                 \
+    ip_cores/ram_256x8.v                 \
     ip_cores/fifo_16x128.v               \
     simulation/testbench/avmm_raw_intf.sv \
     simulation/testbench/avmm_sdram_bfm.sv \
