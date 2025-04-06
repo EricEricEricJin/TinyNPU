@@ -1,5 +1,5 @@
 Assembler report for tiny_npu
-Mon Apr  7 02:40:34 2025
+Mon Apr  7 04:09:41 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Apr  7 02:40:34 2025 ;
+; Assembler Status      ; Successful - Mon Apr  7 04:09:41 2025 ;
 ; Revision Name         ; tiny_npu                              ;
 ; Top-level Entity Name ; tiny_npu                              ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-----------------------+
 ; Option         ; Setting               ;
 +----------------+-----------------------+
-; JTAG usercode  ; 0x0851767E            ;
-; Checksum       ; 0x0851767E            ;
+; JTAG usercode  ; 0x086CB290            ;
+; Checksum       ; 0x086CB290            ;
 +----------------+-----------------------+
 
 
@@ -78,15 +78,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Apr  7 02:40:20 2025
+    Info: Processing started: Mon Apr  7 04:09:29 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off tiny_npu -c tiny_npu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 943 megabytes
-    Info: Processing ended: Mon Apr  7 02:40:34 2025
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 944 megabytes
+    Info: Processing ended: Mon Apr  7 04:09:42 2025
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:13
 
 

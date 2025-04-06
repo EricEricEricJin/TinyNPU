@@ -1,11 +1,11 @@
-// `define MM_PRGM "simulation/program/stmm.mm.sv"
-// `define HPS_PRGM "simulation/program/stmm.hps.sv"
+`define MM_PRGM "simulation/program/stmm.mm.sv"
+`define HPS_PRGM "simulation/program/stmm.hps.sv"
 
 // `define MM_PRGM "simulation/program/layernorm.mm.sv"
 // `define HPS_PRGM "simulation/program/layernorm.hps.sv"
 
-`define MM_PRGM "simulation/program/lut.mm.sv"
-`define HPS_PRGM "simulation/program/lut.hps.sv"
+// `define MM_PRGM "simulation/program/lut.mm.sv"
+// `define HPS_PRGM "simulation/program/lut.hps.sv"
 
 `default_nettype none
 

@@ -51,15 +51,15 @@ always_ff @( posedge clk, negedge rst_n ) begin
 end
 
 // multiplier
-wire signed [Q - 1 : 0] mul1 [0 : W - 1];
-wire signed [Q - 1 : 0] mul2 [0 : W - 1];
+wire signed [8 : 0] mul1 [0 : W - 1];
+wire signed [8 : 0] mul2 [0 : W - 1];
 logic signed [DQ - 1 : 0] mulout;
 
 genvar i;
 generate
     for (i = 0; i < W; i++) begin: blk_assign_mults
         assign mul1[i] = $signed(A[cnt][Q * i +: Q])-z_A;
-        assign mul2[i] = $signed(B[cnt][Q * i +: Q]);
+        assign mul2[i] = $signed(B[cnt][Q * i +: Q])-z_B;
     end
 endgenerate
 
