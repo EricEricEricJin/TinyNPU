@@ -49,7 +49,7 @@ logic X_ld, W_ld, vvm_start;
 wire signed [DQ - 1 : 0] vvm_out;
 wire vvm_rdy;
 
-vvm #(.L(N), .W(2), .Q(Q), .DQ(DQ)) i_vvm (
+vvm #(.L(N), .W(22), .Q(Q), .DQ(DQ)) i_vvm (
     .clk    (clk), 
     .rst_n  (rst_n), 
     .A_in   (X_in), 

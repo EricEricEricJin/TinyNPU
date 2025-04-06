@@ -66,7 +66,8 @@ endgenerate
 always_comb begin 
     mulout = '0;
     for (int i = 0; i < W; i++)
-        mulout += (mul1[i] - 9'(z_A) ) * (mul2[i] - 9'(z_B) );
+        mulout += mul1[i] * mul2[i];
+        // mulout += (mul1[i] - 9'(z_A) ) * (mul2[i] - 9'(z_B) );
 end
 
 // output accumulator
