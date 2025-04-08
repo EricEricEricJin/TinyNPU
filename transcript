@@ -3490,3 +3490,1471 @@ run -a
 # ** Note: $stop    : simulation/testbench/soc_system_bfm.sv(154)
 #    Time: 2201500 ns  Iteration: 1  Instance: /top_tb/u0
 # Break in Module soc_system at simulation/testbench/soc_system_bfm.sv line 154
+add wave -position insertpoint  \
+sim:/top_tb/i_design_top/rmio_stmm/INPUT_NUM \
+sim:/top_tb/i_design_top/rmio_stmm/OUTPUT_NUM \
+sim:/top_tb/i_design_top/rmio_stmm/DATA_W \
+sim:/top_tb/i_design_top/rmio_stmm/input_data \
+sim:/top_tb/i_design_top/rmio_stmm/input_we \
+sim:/top_tb/i_design_top/rmio_stmm/output_data \
+sim:/top_tb/i_design_top/rmio_stmm/output_re
+add wave -position insertpoint  \
+sim:/top_tb/i_design_top/h2f_pio32 \
+sim:/top_tb/i_design_top/h2f_write \
+sim:/top_tb/i_design_top/f2h_pio32
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.hps_bfm_pkg(fast)
+# Loading work.avmm_raw_intf(fast)
+# Loading work.avmm_sdram_bfm_pkg(fast)
+# Loading work.top_tb(fast)
+# Loading work.sdram_intf(fast__1)
+# Loading work.sdram_read_intf(fast__1)
+# Loading work.soc_system(fast)
+# Loading work.avmm_raw_intf(fast__2)
+# Loading work.avmm_sdram_wrapper(fast)
+# Loading work.avmm_sdram_read_wrapper(fast)
+# Loading work.design_top(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+# Loading work.rmio_intf(fast__3)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+# Loading work.decoder(fast)
+# Loading work.rf_wrapper(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.bram_mux(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__3)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_move(fast)
+# Loading work.eu_top(fast)
+# Loading work.sdram_read_mux(fast)
+# Loading work.stmm_wrapper(fast)
+# Loading work.priority_encoder(fast)
+# Loading work.bram_intf(fast__4)
+# Loading work.stmm_fetch(fast)
+# Loading work.ram_176x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast__1)
+# Loading altera_mf_ver.altsyncram_body(fast__1)
+# Loading work.StMM(fast)
+# Loading work.vvm(fast)
+# Loading work.int18_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast)
+# Loading lpm_ver.lpm_add_sub(fast)
+# Loading sgate_ver.oper_add(fast__1)
+# Loading lpm_ver.lpm_add_sub(fast__1)
+# Loading sgate_ver.oper_add(fast__2)
+# Loading lpm_ver.lpm_add_sub(fast__2)
+# Loading sgate_ver.oper_add(fast__3)
+# Loading lpm_ver.lpm_add_sub(fast__3)
+# Loading sgate_ver.oper_mux(fast)
+# Loading work.mult_fp16(fast)
+# Loading sgate_ver.oper_add(fast__4)
+# Loading lpm_ver.lpm_add_sub(fast__4)
+# Loading sgate_ver.oper_add(fast__5)
+# Loading lpm_ver.lpm_add_sub(fast__5)
+# Loading sgate_ver.oper_add(fast__6)
+# Loading lpm_ver.lpm_add_sub(fast__6)
+# Loading sgate_ver.oper_add(fast__7)
+# Loading lpm_ver.lpm_add_sub(fast__7)
+# Loading sgate_ver.oper_mult(fast)
+# Loading lpm_ver.lpm_mult(fast)
+# Loading lpm_ver.LPM_HINT_EVALUATION(fast)
+# Loading sgate_ver.oper_mux(fast__1)
+# Loading work.fp16_to_int16(fast)
+# Loading sgate_ver.oper_add(fast__8)
+# Loading lpm_ver.lpm_add_sub(fast__8)
+# Loading sgate_ver.oper_add(fast__9)
+# Loading lpm_ver.lpm_add_sub(fast__9)
+# Loading work.saturate(fast)
+# Loading work.layernorm_wrapper(fast)
+# Loading work.layernorm_fetch(fast)
+# Loading work.layernorm(fast)
+# Loading work.gamma_path(fast)
+# Loading work.uint16_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast__10)
+# Loading lpm_ver.lpm_add_sub(fast__10)
+# Loading work.rsqrt(fast)
+# Loading sgate_ver.oper_add(fast__11)
+# Loading lpm_ver.lpm_add_sub(fast__11)
+# Loading sgate_ver.oper_mult(fast__1)
+# Loading lpm_ver.lpm_mult(fast__1)
+# Loading sgate_ver.oper_mux(fast__2)
+# Loading work.count_down(fast)
+# Loading work.int16_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast__12)
+# Loading lpm_ver.lpm_add_sub(fast__12)
+# Loading work.saturate(fast__1)
+# Loading work.saturate(fast__2)
+# Loading work.count_down(fast__1)
+# Loading work.lut_wrapper(fast)
+# Loading work.priority_encoder(fast__1)
+# Loading work.bram_intf(fast__5)
+# Loading work.lut_fetch(fast)
+# Loading work.lut_fetch_fifo(fast)
+# Loading work.fifo_16x128(fast)
+# Loading altera_mf_ver.scfifo(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading work.ram_256x8(fast)
+# Loading altera_mf_ver.altsyncram(fast__2)
+# Loading altera_mf_ver.altsyncram_body(fast__2)
+# Loading work.lut(fast)
+# Loading work.sdram_read_intf(fast__2)
+# Loading work.bram_intf(fast__2)
+run -a
+#       29216 bytes read from test_data/stmm_x.bin to addr   805306368.
+#       30992 bytes read from test_data/stmm_w.bin to addr   536870912.
+# continue
+# continue
+# continue
+# continue
+# Read address=0x20000000, burstcount=  11
+# Read address=0x200000b0, burstcount=  11
+# Read address=0x20000160, burstcount=  11
+# Read address=0x20000210, burstcount=  11
+# Read address=0x200002c0, burstcount=  11
+# Read address=0x20000370, burstcount=  11
+# Read address=0x20000420, burstcount=  11
+# Read address=0x200004d0, burstcount=  11
+# Read address=0x20000580, burstcount=  11
+# Read address=0x20000630, burstcount=  11
+# Read address=0x200006e0, burstcount=  11
+# Read address=0x20000790, burstcount=  11
+# Read address=0x20000840, burstcount=  11
+# Read address=0x200008f0, burstcount=  11
+# Read address=0x200009a0, burstcount=  11
+# Read address=0x20000a50, burstcount=  11
+# Read address=0x20000b00, burstcount=  11
+# Read address=0x20000bb0, burstcount=  11
+# Read address=0x20000c60, burstcount=  11
+# Read address=0x20000d10, burstcount=  11
+# Read address=0x20000dc0, burstcount=  11
+# Read address=0x20000e70, burstcount=  11
+# Read address=0x20000f20, burstcount=  11
+# Read address=0x20000fd0, burstcount=  11
+# Read address=0x20001080, burstcount=  11
+# Read address=0x20001130, burstcount=  11
+# Read address=0x200011e0, burstcount=  11
+# Read address=0x20001290, burstcount=  11
+# Read address=0x20001340, burstcount=  11
+# Read address=0x200013f0, burstcount=  11
+# Read address=0x200014a0, burstcount=  11
+# Read address=0x20001550, burstcount=  11
+# Read address=0x20001600, burstcount=  11
+# Read address=0x200016b0, burstcount=  11
+# Read address=0x20001760, burstcount=  11
+# Read address=0x20001810, burstcount=  11
+# Read address=0x200018c0, burstcount=  11
+# Read address=0x20001970, burstcount=  11
+# Read address=0x20001a20, burstcount=  11
+# Read address=0x20001ad0, burstcount=  11
+# Read address=0x20001b80, burstcount=  11
+# Read address=0x20001c30, burstcount=  11
+# Read address=0x20001ce0, burstcount=  11
+# Read address=0x20001d90, burstcount=  11
+# Read address=0x20001e40, burstcount=  11
+# Read address=0x20001ef0, burstcount=  11
+# Read address=0x20001fa0, burstcount=  11
+# Read address=0x20002050, burstcount=  11
+# Read address=0x20002100, burstcount=  11
+# Read address=0x200021b0, burstcount=  11
+# Read address=0x20002260, burstcount=  11
+# Read address=0x20002310, burstcount=  11
+# Read address=0x200023c0, burstcount=  11
+# Read address=0x20002470, burstcount=  11
+# Read address=0x20002520, burstcount=  11
+# Read address=0x200025d0, burstcount=  11
+# Read address=0x20002680, burstcount=  11
+# Read address=0x20002730, burstcount=  11
+# Read address=0x200027e0, burstcount=  11
+# Read address=0x20002890, burstcount=  11
+# Read address=0x20002940, burstcount=  11
+# Read address=0x200029f0, burstcount=  11
+# Read address=0x20002aa0, burstcount=  11
+# Read address=0x20002b50, burstcount=  11
+# Read address=0x20002c00, burstcount=  11
+# Read address=0x20002cb0, burstcount=  11
+# Read address=0x20002d60, burstcount=  11
+# Read address=0x20002e10, burstcount=  11
+# Read address=0x20002ec0, burstcount=  11
+# Read address=0x20002f70, burstcount=  11
+# Read address=0x20003020, burstcount=  11
+# Read address=0x200030d0, burstcount=  11
+# Read address=0x20003180, burstcount=  11
+# Read address=0x20003230, burstcount=  11
+# Read address=0x200032e0, burstcount=  11
+# Read address=0x20003390, burstcount=  11
+# Read address=0x20003440, burstcount=  11
+# Read address=0x200034f0, burstcount=  11
+# Read address=0x200035a0, burstcount=  11
+# Read address=0x20003650, burstcount=  11
+# Read address=0x20003700, burstcount=  11
+# Read address=0x200037b0, burstcount=  11
+# Read address=0x20003860, burstcount=  11
+# Read address=0x20003910, burstcount=  11
+# Read address=0x200039c0, burstcount=  11
+# Read address=0x20003a70, burstcount=  11
+# Read address=0x20003b20, burstcount=  11
+# Read address=0x20003bd0, burstcount=  11
+# Read address=0x20003c80, burstcount=  11
+# Read address=0x20003d30, burstcount=  11
+# Read address=0x20003de0, burstcount=  11
+# Read address=0x20003e90, burstcount=  11
+# Read address=0x20003f40, burstcount=  11
+# Read address=0x20003ff0, burstcount=  11
+# Read address=0x200040a0, burstcount=  11
+# Read address=0x20004150, burstcount=  11
+# Read address=0x20004200, burstcount=  11
+# Read address=0x200042b0, burstcount=  11
+# Read address=0x20004360, burstcount=  11
+# Read address=0x20004410, burstcount=  11
+# Read address=0x200044c0, burstcount=  11
+# Read address=0x20004570, burstcount=  11
+# Read address=0x20004620, burstcount=  11
+# Read address=0x200046d0, burstcount=  11
+# Read address=0x20004780, burstcount=  11
+# Read address=0x20004830, burstcount=  11
+# Read address=0x200048e0, burstcount=  11
+# Read address=0x20004990, burstcount=  11
+# Read address=0x20004a40, burstcount=  11
+# Read address=0x20004af0, burstcount=  11
+# Read address=0x20004ba0, burstcount=  11
+# Read address=0x20004c50, burstcount=  11
+# Read address=0x20004d00, burstcount=  11
+# Read address=0x20004db0, burstcount=  11
+# Read address=0x20004e60, burstcount=  11
+# Read address=0x20004f10, burstcount=  11
+# Read address=0x20004fc0, burstcount=  11
+# Read address=0x20005070, burstcount=  11
+# Read address=0x20005120, burstcount=  11
+# Read address=0x200051d0, burstcount=  11
+# Read address=0x20005280, burstcount=  11
+# Read address=0x20005330, burstcount=  11
+# Read address=0x200053e0, burstcount=  11
+# Read address=0x20005490, burstcount=  11
+# Read address=0x20005540, burstcount=  11
+# Read address=0x200055f0, burstcount=  11
+# Read address=0x200056a0, burstcount=  11
+# Read address=0x20005750, burstcount=  11
+# Read address=0x20005800, burstcount=  11
+# Read address=0x200058b0, burstcount=  11
+# Read address=0x20005960, burstcount=  11
+# Read address=0x20005a10, burstcount=  11
+# Read address=0x20005ac0, burstcount=  11
+# Read address=0x20005b70, burstcount=  11
+# Read address=0x20005c20, burstcount=  11
+# Read address=0x20005cd0, burstcount=  11
+# Read address=0x20005d80, burstcount=  11
+# Read address=0x20005e30, burstcount=  11
+# Read address=0x20005ee0, burstcount=  11
+# Read address=0x20005f90, burstcount=  11
+# Read address=0x20006040, burstcount=  11
+# Read address=0x200060f0, burstcount=  11
+# Read address=0x200061a0, burstcount=  11
+# Read address=0x20006250, burstcount=  11
+# Read address=0x20006300, burstcount=  11
+# Read address=0x200063b0, burstcount=  11
+# Read address=0x20006460, burstcount=  11
+# Read address=0x20006510, burstcount=  11
+# Read address=0x200065c0, burstcount=  11
+# Read address=0x20006670, burstcount=  11
+# Read address=0x20006720, burstcount=  11
+# Read address=0x200067d0, burstcount=  11
+# Read address=0x20006880, burstcount=  11
+# Read address=0x20006930, burstcount=  11
+# Read address=0x200069e0, burstcount=  11
+# Read address=0x20006a90, burstcount=  11
+# Read address=0x20006b40, burstcount=  11
+# Read address=0x20006bf0, burstcount=  11
+# Read address=0x20006ca0, burstcount=  11
+# Read address=0x20006d50, burstcount=  11
+# Read address=0x20006e00, burstcount=  11
+# Read address=0x20006eb0, burstcount=  11
+# Read address=0x20006f60, burstcount=  11
+# Read address=0x20007010, burstcount=  11
+# Read address=0x200070c0, burstcount=  11
+# Read address=0x20007170, burstcount=  11
+# Read address=0x20007220, burstcount=  11
+# Read address=0x200072d0, burstcount=  11
+# Read address=0x20007380, burstcount=  11
+# Read address=0x20007430, burstcount=  11
+# Read address=0x200074e0, burstcount=  11
+# Read address=0x20007590, burstcount=  11
+# Read address=0x20007640, burstcount=  11
+# Read address=0x200076f0, burstcount=  11
+# Read address=0x200077a0, burstcount=  11
+# Read address=0x20007850, burstcount=  11
+# Read address=0x20007900, burstcount=   1
+# Read address=0x30000000, burstcount=  11
+# Read address=0x300000b0, burstcount=  11
+# Read address=0x30000160, burstcount=  11
+# Read address=0x30000210, burstcount=  11
+# Read address=0x300002c0, burstcount=  11
+# Read address=0x30000370, burstcount=  11
+# Read address=0x30000420, burstcount=  11
+# Read address=0x300004d0, burstcount=  11
+# Read address=0x30000580, burstcount=  11
+# Read address=0x30000630, burstcount=  11
+# Read address=0x300006e0, burstcount=  11
+# Read address=0x30000790, burstcount=  11
+# Read address=0x30000840, burstcount=  11
+# Read address=0x300008f0, burstcount=  11
+# Read address=0x300009a0, burstcount=  11
+# Read address=0x30000a50, burstcount=  11
+# Read address=0x30000b00, burstcount=  11
+# Read address=0x30000bb0, burstcount=  11
+# Read address=0x30000c60, burstcount=  11
+# Read address=0x30000d10, burstcount=  11
+# Read address=0x30000dc0, burstcount=  11
+# Read address=0x30000e70, burstcount=  11
+# Read address=0x30000f20, burstcount=  11
+# Read address=0x30000fd0, burstcount=  11
+# Read address=0x30001080, burstcount=  11
+# Read address=0x30001130, burstcount=  11
+# Read address=0x300011e0, burstcount=  11
+# Read address=0x30001290, burstcount=  11
+# Read address=0x30001340, burstcount=  11
+# Read address=0x300013f0, burstcount=  11
+# Read address=0x300014a0, burstcount=  11
+# Read address=0x30001550, burstcount=  11
+# Read address=0x30001600, burstcount=  11
+# Read address=0x300016b0, burstcount=  11
+# Read address=0x30001760, burstcount=  11
+# Read address=0x30001810, burstcount=  11
+# Read address=0x300018c0, burstcount=  11
+# Read address=0x30001970, burstcount=  11
+# Read address=0x30001a20, burstcount=  11
+# Read address=0x30001ad0, burstcount=  11
+# Read address=0x30001b80, burstcount=  11
+# Read address=0x30001c30, burstcount=  11
+# Read address=0x30001ce0, burstcount=  11
+# Read address=0x30001d90, burstcount=  11
+# Read address=0x30001e40, burstcount=  11
+# Read address=0x30001ef0, burstcount=  11
+# Read address=0x30001fa0, burstcount=  11
+# Read address=0x30002050, burstcount=  11
+# Read address=0x30002100, burstcount=  11
+# Read address=0x300021b0, burstcount=  11
+# Read address=0x30002260, burstcount=  11
+# Read address=0x30002310, burstcount=  11
+# Read address=0x300023c0, burstcount=  11
+# Read address=0x30002470, burstcount=  11
+# Read address=0x30002520, burstcount=  11
+# Read address=0x300025d0, burstcount=  11
+# Read address=0x30002680, burstcount=  11
+# Read address=0x30002730, burstcount=  11
+# Read address=0x300027e0, burstcount=  11
+# Read address=0x30002890, burstcount=  11
+# Read address=0x30002940, burstcount=  11
+# Read address=0x300029f0, burstcount=  11
+# Read address=0x30002aa0, burstcount=  11
+# Read address=0x30002b50, burstcount=  11
+# Read address=0x30002c00, burstcount=  11
+# Read address=0x30002cb0, burstcount=  11
+# Read address=0x30002d60, burstcount=  11
+# Read address=0x30002e10, burstcount=  11
+# Read address=0x30002ec0, burstcount=  11
+# Read address=0x30002f70, burstcount=  11
+# Read address=0x30003020, burstcount=  11
+# Read address=0x300030d0, burstcount=  11
+# Read address=0x30003180, burstcount=  11
+# Read address=0x30003230, burstcount=  11
+# Read address=0x300032e0, burstcount=  11
+# Read address=0x30003390, burstcount=  11
+# Read address=0x30003440, burstcount=  11
+# Read address=0x300034f0, burstcount=  11
+# Read address=0x300035a0, burstcount=  11
+# Read address=0x30003650, burstcount=  11
+# Read address=0x30003700, burstcount=  11
+# Read address=0x300037b0, burstcount=  11
+# Read address=0x30003860, burstcount=  11
+# Read address=0x30003910, burstcount=  11
+# Read address=0x300039c0, burstcount=  11
+# Read address=0x30003a70, burstcount=  11
+# Read address=0x30003b20, burstcount=  11
+# Read address=0x30003bd0, burstcount=  11
+# Read address=0x30003c80, burstcount=  11
+# Read address=0x30003d30, burstcount=  11
+# Read address=0x30003de0, burstcount=  11
+# Read address=0x30003e90, burstcount=  11
+# Read address=0x30003f40, burstcount=  11
+# Read address=0x30003ff0, burstcount=  11
+# Read address=0x300040a0, burstcount=  11
+# Read address=0x30004150, burstcount=  11
+# Read address=0x30004200, burstcount=  11
+# Read address=0x300042b0, burstcount=  11
+# Read address=0x30004360, burstcount=  11
+# Read address=0x30004410, burstcount=  11
+# Read address=0x300044c0, burstcount=  11
+# Read address=0x30004570, burstcount=  11
+# Read address=0x30004620, burstcount=  11
+# Read address=0x300046d0, burstcount=  11
+# Read address=0x30004780, burstcount=  11
+# Read address=0x30004830, burstcount=  11
+# Read address=0x300048e0, burstcount=  11
+# Read address=0x30004990, burstcount=  11
+# Read address=0x30004a40, burstcount=  11
+# Read address=0x30004af0, burstcount=  11
+# Read address=0x30004ba0, burstcount=  11
+# Read address=0x30004c50, burstcount=  11
+# Read address=0x30004d00, burstcount=  11
+# Read address=0x30004db0, burstcount=  11
+# Read address=0x30004e60, burstcount=  11
+# Read address=0x30004f10, burstcount=  11
+# Read address=0x30004fc0, burstcount=  11
+# Read address=0x30005070, burstcount=  11
+# Read address=0x30005120, burstcount=  11
+# Read address=0x300051d0, burstcount=  11
+# Read address=0x30005280, burstcount=  11
+# Read address=0x30005330, burstcount=  11
+# Read address=0x300053e0, burstcount=  11
+# Read address=0x30005490, burstcount=  11
+# Read address=0x30005540, burstcount=  11
+# Read address=0x300055f0, burstcount=  11
+# Read address=0x300056a0, burstcount=  11
+# Read address=0x30005750, burstcount=  11
+# Read address=0x30005800, burstcount=  11
+# Read address=0x300058b0, burstcount=  11
+# Read address=0x30005960, burstcount=  11
+# Read address=0x30005a10, burstcount=  11
+# Read address=0x30005ac0, burstcount=  11
+# Read address=0x30005b70, burstcount=  11
+# Read address=0x30005c20, burstcount=  11
+# Read address=0x30005cd0, burstcount=  11
+# Read address=0x30005d80, burstcount=  11
+# Read address=0x30005e30, burstcount=  11
+# Read address=0x30005ee0, burstcount=  11
+# Read address=0x30005f90, burstcount=  11
+# Read address=0x30006040, burstcount=  11
+# Read address=0x300060f0, burstcount=  11
+# Read address=0x300061a0, burstcount=  11
+# Read address=0x30006250, burstcount=  11
+# Read address=0x30006300, burstcount=  11
+# Read address=0x300063b0, burstcount=  11
+# Read address=0x30006460, burstcount=  11
+# Read address=0x30006510, burstcount=  11
+# Read address=0x300065c0, burstcount=  11
+# Read address=0x30006670, burstcount=  11
+# Read address=0x30006720, burstcount=  11
+# Read address=0x300067d0, burstcount=  11
+# Read address=0x30006880, burstcount=  11
+# Read address=0x30006930, burstcount=  11
+# Read address=0x300069e0, burstcount=  11
+# Read address=0x30006a90, burstcount=  11
+# Read address=0x30006b40, burstcount=  11
+# Read address=0x30006bf0, burstcount=  11
+# Read address=0x30006ca0, burstcount=  11
+# Read address=0x30006d50, burstcount=  11
+# Read address=0x30006e00, burstcount=  11
+# Read address=0x30006eb0, burstcount=  11
+# Read address=0x30006f60, burstcount=  11
+# Read address=0x30007010, burstcount=  11
+# Read address=0x300070c0, burstcount=  11
+# Read address=0x30007170, burstcount=  11
+# Warning : Address pointed at port A is out of bound!
+# Time: 2198490000  Instance: top_tb.i_design_top.i_eu_top.i_stmm_wrapper.blk_instantiate_wmem[0].i_wmem.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 2198490000  Instance: top_tb.i_design_top.i_eu_top.i_stmm_wrapper.blk_instantiate_wmem[0].i_wmem.altsyncram_component.m_default.altsyncram_inst
+# Write address=0x30010000, burstcount=  11
+#      131072 bytes write to wt_mem.bin from addr   805306368.
+# ** Note: $stop    : simulation/testbench/soc_system_bfm.sv(154)
+#    Time: 2201500 ns  Iteration: 1  Instance: /top_tb/u0
+# Break in Module soc_system at simulation/testbench/soc_system_bfm.sv line 154
+add wave -position insertpoint  \
+sim:/top_tb/SDRAM_W \
+sim:/top_tb/KEY \
+sim:/top_tb/LED \
+sim:/top_tb/SW \
+sim:/top_tb/FPGA_CLK1_50 \
+sim:/top_tb/h2f_rst_n \
+sim:/top_tb/clk \
+sim:/top_tb/rst_n \
+sim:/top_tb/f2h_pio32 \
+sim:/top_tb/h2f_pio32 \
+sim:/top_tb/f2h_read \
+sim:/top_tb/h2f_write \
+sim:/top_tb/f2h_write
+add wave -position insertpoint  \
+sim:/top_tb/i_design_top/rmio_stmm/INPUT_NUM \
+sim:/top_tb/i_design_top/rmio_stmm/OUTPUT_NUM \
+sim:/top_tb/i_design_top/rmio_stmm/DATA_W \
+sim:/top_tb/i_design_top/rmio_stmm/input_data \
+sim:/top_tb/i_design_top/rmio_stmm/input_we \
+sim:/top_tb/i_design_top/rmio_stmm/output_data \
+sim:/top_tb/i_design_top/rmio_stmm/output_re
+add wave -position insertpoint  \
+sim:/top_tb/i_design_top/i_sdram_intf/SDRAM_DATA_W \
+sim:/top_tb/i_design_top/i_sdram_intf/rw_addr \
+sim:/top_tb/i_design_top/i_sdram_intf/rw_cnt \
+sim:/top_tb/i_design_top/i_sdram_intf/rw_done \
+sim:/top_tb/i_design_top/i_sdram_intf/read_start \
+sim:/top_tb/i_design_top/i_sdram_intf/read_valid \
+sim:/top_tb/i_design_top/i_sdram_intf/read_data \
+sim:/top_tb/i_design_top/i_sdram_intf/write_start \
+sim:/top_tb/i_design_top/i_sdram_intf/write_nxt \
+sim:/top_tb/i_design_top/i_sdram_intf/write_data
+add wave -position insertpoint  \
+sim:/top_tb/i_design_top/i_sdram_read_intf/SDRAM_DATA_W \
+sim:/top_tb/i_design_top/i_sdram_read_intf/read_addr \
+sim:/top_tb/i_design_top/i_sdram_read_intf/read_cnt \
+sim:/top_tb/i_design_top/i_sdram_read_intf/read_start \
+sim:/top_tb/i_design_top/i_sdram_read_intf/read_data \
+sim:/top_tb/i_design_top/i_sdram_read_intf/read_valid \
+sim:/top_tb/i_design_top/i_sdram_read_intf/read_done
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.hps_bfm_pkg(fast)
+# Loading work.avmm_raw_intf(fast)
+# Loading work.avmm_sdram_bfm_pkg(fast)
+# Loading work.top_tb(fast)
+# Loading work.sdram_intf(fast__1)
+# Loading work.sdram_read_intf(fast__1)
+# Loading work.soc_system(fast)
+# Loading work.avmm_raw_intf(fast__2)
+# Loading work.avmm_sdram_wrapper(fast)
+# Loading work.avmm_sdram_read_wrapper(fast)
+# Loading work.design_top(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+# Loading work.rmio_intf(fast__3)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+# Loading work.decoder(fast)
+# Loading work.rf_wrapper(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.bram_mux(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__3)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_move(fast)
+# Loading work.eu_top(fast)
+# Loading work.sdram_read_mux(fast)
+# Loading work.stmm_wrapper(fast)
+# Loading work.priority_encoder(fast)
+# Loading work.bram_intf(fast__4)
+# Loading work.stmm_fetch(fast)
+# Loading work.ram_176x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast__1)
+# Loading altera_mf_ver.altsyncram_body(fast__1)
+# Loading work.StMM(fast)
+# Loading work.vvm(fast)
+# Loading work.int18_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast)
+# Loading lpm_ver.lpm_add_sub(fast)
+# Loading sgate_ver.oper_add(fast__1)
+# Loading lpm_ver.lpm_add_sub(fast__1)
+# Loading sgate_ver.oper_add(fast__2)
+# Loading lpm_ver.lpm_add_sub(fast__2)
+# Loading sgate_ver.oper_add(fast__3)
+# Loading lpm_ver.lpm_add_sub(fast__3)
+# Loading sgate_ver.oper_mux(fast)
+# Loading work.mult_fp16(fast)
+# Loading sgate_ver.oper_add(fast__4)
+# Loading lpm_ver.lpm_add_sub(fast__4)
+# Loading sgate_ver.oper_add(fast__5)
+# Loading lpm_ver.lpm_add_sub(fast__5)
+# Loading sgate_ver.oper_add(fast__6)
+# Loading lpm_ver.lpm_add_sub(fast__6)
+# Loading sgate_ver.oper_add(fast__7)
+# Loading lpm_ver.lpm_add_sub(fast__7)
+# Loading sgate_ver.oper_mult(fast)
+# Loading lpm_ver.lpm_mult(fast)
+# Loading lpm_ver.LPM_HINT_EVALUATION(fast)
+# Loading sgate_ver.oper_mux(fast__1)
+# Loading work.fp16_to_int16(fast)
+# Loading sgate_ver.oper_add(fast__8)
+# Loading lpm_ver.lpm_add_sub(fast__8)
+# Loading sgate_ver.oper_add(fast__9)
+# Loading lpm_ver.lpm_add_sub(fast__9)
+# Loading work.saturate(fast)
+# Loading work.layernorm_wrapper(fast)
+# Loading work.layernorm_fetch(fast)
+# Loading work.layernorm(fast)
+# Loading work.gamma_path(fast)
+# Loading work.uint16_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast__10)
+# Loading lpm_ver.lpm_add_sub(fast__10)
+# Loading work.rsqrt(fast)
+# Loading sgate_ver.oper_add(fast__11)
+# Loading lpm_ver.lpm_add_sub(fast__11)
+# Loading sgate_ver.oper_mult(fast__1)
+# Loading lpm_ver.lpm_mult(fast__1)
+# Loading sgate_ver.oper_mux(fast__2)
+# Loading work.count_down(fast)
+# Loading work.int16_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast__12)
+# Loading lpm_ver.lpm_add_sub(fast__12)
+# Loading work.saturate(fast__1)
+# Loading work.saturate(fast__2)
+# Loading work.count_down(fast__1)
+# Loading work.lut_wrapper(fast)
+# Loading work.priority_encoder(fast__1)
+# Loading work.bram_intf(fast__5)
+# Loading work.lut_fetch(fast)
+# Loading work.lut_fetch_fifo(fast)
+# Loading work.fifo_16x128(fast)
+# Loading altera_mf_ver.scfifo(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading work.ram_256x8(fast)
+# Loading altera_mf_ver.altsyncram(fast__2)
+# Loading altera_mf_ver.altsyncram_body(fast__2)
+# Loading work.lut(fast)
+# Loading work.sdram_read_intf(fast__2)
+# Loading work.bram_intf(fast__2)
+run -a
+#       29216 bytes read from test_data/stmm_x.bin to addr   805306368.
+#       30992 bytes read from test_data/stmm_w.bin to addr   536870912.
+# continue
+# continue
+# continue
+# continue
+# Read address=0x20000000, burstcount=  11
+# Read address=0x200000b0, burstcount=  11
+# Read address=0x20000160, burstcount=  11
+# Read address=0x20000210, burstcount=  11
+# Read address=0x200002c0, burstcount=  11
+# Read address=0x20000370, burstcount=  11
+# Read address=0x20000420, burstcount=  11
+# Read address=0x200004d0, burstcount=  11
+# Read address=0x20000580, burstcount=  11
+# Read address=0x20000630, burstcount=  11
+# Read address=0x200006e0, burstcount=  11
+# Read address=0x20000790, burstcount=  11
+# Read address=0x20000840, burstcount=  11
+# Read address=0x200008f0, burstcount=  11
+# Read address=0x200009a0, burstcount=  11
+# Read address=0x20000a50, burstcount=  11
+# Read address=0x20000b00, burstcount=  11
+# Read address=0x20000bb0, burstcount=  11
+# Read address=0x20000c60, burstcount=  11
+# Read address=0x20000d10, burstcount=  11
+# Read address=0x20000dc0, burstcount=  11
+# Read address=0x20000e70, burstcount=  11
+# Read address=0x20000f20, burstcount=  11
+# Read address=0x20000fd0, burstcount=  11
+# Read address=0x20001080, burstcount=  11
+# Read address=0x20001130, burstcount=  11
+# Read address=0x200011e0, burstcount=  11
+# Read address=0x20001290, burstcount=  11
+# Read address=0x20001340, burstcount=  11
+# Read address=0x200013f0, burstcount=  11
+# Read address=0x200014a0, burstcount=  11
+# Read address=0x20001550, burstcount=  11
+# Read address=0x20001600, burstcount=  11
+# Read address=0x200016b0, burstcount=  11
+# Read address=0x20001760, burstcount=  11
+# Read address=0x20001810, burstcount=  11
+# Read address=0x200018c0, burstcount=  11
+# Read address=0x20001970, burstcount=  11
+# Read address=0x20001a20, burstcount=  11
+# Read address=0x20001ad0, burstcount=  11
+# Read address=0x20001b80, burstcount=  11
+# Read address=0x20001c30, burstcount=  11
+# Read address=0x20001ce0, burstcount=  11
+# Read address=0x20001d90, burstcount=  11
+# Read address=0x20001e40, burstcount=  11
+# Read address=0x20001ef0, burstcount=  11
+# Read address=0x20001fa0, burstcount=  11
+# Read address=0x20002050, burstcount=  11
+# Read address=0x20002100, burstcount=  11
+# Read address=0x200021b0, burstcount=  11
+# Read address=0x20002260, burstcount=  11
+# Read address=0x20002310, burstcount=  11
+# Read address=0x200023c0, burstcount=  11
+# Read address=0x20002470, burstcount=  11
+# Read address=0x20002520, burstcount=  11
+# Read address=0x200025d0, burstcount=  11
+# Read address=0x20002680, burstcount=  11
+# Read address=0x20002730, burstcount=  11
+# Read address=0x200027e0, burstcount=  11
+# Read address=0x20002890, burstcount=  11
+# Read address=0x20002940, burstcount=  11
+# Read address=0x200029f0, burstcount=  11
+# Read address=0x20002aa0, burstcount=  11
+# Read address=0x20002b50, burstcount=  11
+# Read address=0x20002c00, burstcount=  11
+# Read address=0x20002cb0, burstcount=  11
+# Read address=0x20002d60, burstcount=  11
+# Read address=0x20002e10, burstcount=  11
+# Read address=0x20002ec0, burstcount=  11
+# Read address=0x20002f70, burstcount=  11
+# Read address=0x20003020, burstcount=  11
+# Read address=0x200030d0, burstcount=  11
+# Read address=0x20003180, burstcount=  11
+# Read address=0x20003230, burstcount=  11
+# Read address=0x200032e0, burstcount=  11
+# Read address=0x20003390, burstcount=  11
+# Read address=0x20003440, burstcount=  11
+# Read address=0x200034f0, burstcount=  11
+# Read address=0x200035a0, burstcount=  11
+# Read address=0x20003650, burstcount=  11
+# Read address=0x20003700, burstcount=  11
+# Read address=0x200037b0, burstcount=  11
+# Read address=0x20003860, burstcount=  11
+# Read address=0x20003910, burstcount=  11
+# Read address=0x200039c0, burstcount=  11
+# Read address=0x20003a70, burstcount=  11
+# Read address=0x20003b20, burstcount=  11
+# Read address=0x20003bd0, burstcount=  11
+# Read address=0x20003c80, burstcount=  11
+# Read address=0x20003d30, burstcount=  11
+# Read address=0x20003de0, burstcount=  11
+# Read address=0x20003e90, burstcount=  11
+# Read address=0x20003f40, burstcount=  11
+# Read address=0x20003ff0, burstcount=  11
+# Read address=0x200040a0, burstcount=  11
+# Read address=0x20004150, burstcount=  11
+# Read address=0x20004200, burstcount=  11
+# Read address=0x200042b0, burstcount=  11
+# Read address=0x20004360, burstcount=  11
+# Read address=0x20004410, burstcount=  11
+# Read address=0x200044c0, burstcount=  11
+# Read address=0x20004570, burstcount=  11
+# Read address=0x20004620, burstcount=  11
+# Read address=0x200046d0, burstcount=  11
+# Read address=0x20004780, burstcount=  11
+# Read address=0x20004830, burstcount=  11
+# Read address=0x200048e0, burstcount=  11
+# Read address=0x20004990, burstcount=  11
+# Read address=0x20004a40, burstcount=  11
+# Read address=0x20004af0, burstcount=  11
+# Read address=0x20004ba0, burstcount=  11
+# Read address=0x20004c50, burstcount=  11
+# Read address=0x20004d00, burstcount=  11
+# Read address=0x20004db0, burstcount=  11
+# Read address=0x20004e60, burstcount=  11
+# Read address=0x20004f10, burstcount=  11
+# Read address=0x20004fc0, burstcount=  11
+# Read address=0x20005070, burstcount=  11
+# Read address=0x20005120, burstcount=  11
+# Read address=0x200051d0, burstcount=  11
+# Read address=0x20005280, burstcount=  11
+# Read address=0x20005330, burstcount=  11
+# Read address=0x200053e0, burstcount=  11
+# Read address=0x20005490, burstcount=  11
+# Read address=0x20005540, burstcount=  11
+# Read address=0x200055f0, burstcount=  11
+# Read address=0x200056a0, burstcount=  11
+# Read address=0x20005750, burstcount=  11
+# Read address=0x20005800, burstcount=  11
+# Read address=0x200058b0, burstcount=  11
+# Read address=0x20005960, burstcount=  11
+# Read address=0x20005a10, burstcount=  11
+# Read address=0x20005ac0, burstcount=  11
+# Read address=0x20005b70, burstcount=  11
+# Read address=0x20005c20, burstcount=  11
+# Read address=0x20005cd0, burstcount=  11
+# Read address=0x20005d80, burstcount=  11
+# Read address=0x20005e30, burstcount=  11
+# Read address=0x20005ee0, burstcount=  11
+# Read address=0x20005f90, burstcount=  11
+# Read address=0x20006040, burstcount=  11
+# Read address=0x200060f0, burstcount=  11
+# Read address=0x200061a0, burstcount=  11
+# Read address=0x20006250, burstcount=  11
+# Read address=0x20006300, burstcount=  11
+# Read address=0x200063b0, burstcount=  11
+# Read address=0x20006460, burstcount=  11
+# Read address=0x20006510, burstcount=  11
+# Read address=0x200065c0, burstcount=  11
+# Read address=0x20006670, burstcount=  11
+# Read address=0x20006720, burstcount=  11
+# Read address=0x200067d0, burstcount=  11
+# Read address=0x20006880, burstcount=  11
+# Read address=0x20006930, burstcount=  11
+# Read address=0x200069e0, burstcount=  11
+# Read address=0x20006a90, burstcount=  11
+# Read address=0x20006b40, burstcount=  11
+# Read address=0x20006bf0, burstcount=  11
+# Read address=0x20006ca0, burstcount=  11
+# Read address=0x20006d50, burstcount=  11
+# Read address=0x20006e00, burstcount=  11
+# Read address=0x20006eb0, burstcount=  11
+# Read address=0x20006f60, burstcount=  11
+# Read address=0x20007010, burstcount=  11
+# Read address=0x200070c0, burstcount=  11
+# Read address=0x20007170, burstcount=  11
+# Read address=0x20007220, burstcount=  11
+# Read address=0x200072d0, burstcount=  11
+# Read address=0x20007380, burstcount=  11
+# Read address=0x20007430, burstcount=  11
+# Read address=0x200074e0, burstcount=  11
+# Read address=0x20007590, burstcount=  11
+# Read address=0x20007640, burstcount=  11
+# Read address=0x200076f0, burstcount=  11
+# Read address=0x200077a0, burstcount=  11
+# Read address=0x20007850, burstcount=  11
+# Read address=0x20007900, burstcount=   1
+# Read address=0x30000000, burstcount=  11
+# Read address=0x300000b0, burstcount=  11
+# Read address=0x30000160, burstcount=  11
+# Read address=0x30000210, burstcount=  11
+# Read address=0x300002c0, burstcount=  11
+# Read address=0x30000370, burstcount=  11
+# Read address=0x30000420, burstcount=  11
+# Read address=0x300004d0, burstcount=  11
+# Read address=0x30000580, burstcount=  11
+# Read address=0x30000630, burstcount=  11
+# Read address=0x300006e0, burstcount=  11
+# Read address=0x30000790, burstcount=  11
+# Read address=0x30000840, burstcount=  11
+# Read address=0x300008f0, burstcount=  11
+# Read address=0x300009a0, burstcount=  11
+# Read address=0x30000a50, burstcount=  11
+# Read address=0x30000b00, burstcount=  11
+# Read address=0x30000bb0, burstcount=  11
+# Read address=0x30000c60, burstcount=  11
+# Read address=0x30000d10, burstcount=  11
+# Read address=0x30000dc0, burstcount=  11
+# Read address=0x30000e70, burstcount=  11
+# Read address=0x30000f20, burstcount=  11
+# Read address=0x30000fd0, burstcount=  11
+# Read address=0x30001080, burstcount=  11
+# Read address=0x30001130, burstcount=  11
+# Read address=0x300011e0, burstcount=  11
+# Read address=0x30001290, burstcount=  11
+# Read address=0x30001340, burstcount=  11
+# Read address=0x300013f0, burstcount=  11
+# Read address=0x300014a0, burstcount=  11
+# Read address=0x30001550, burstcount=  11
+# Read address=0x30001600, burstcount=  11
+# Read address=0x300016b0, burstcount=  11
+# Read address=0x30001760, burstcount=  11
+# Read address=0x30001810, burstcount=  11
+# Read address=0x300018c0, burstcount=  11
+# Read address=0x30001970, burstcount=  11
+# Read address=0x30001a20, burstcount=  11
+# Read address=0x30001ad0, burstcount=  11
+# Read address=0x30001b80, burstcount=  11
+# Read address=0x30001c30, burstcount=  11
+# Read address=0x30001ce0, burstcount=  11
+# Read address=0x30001d90, burstcount=  11
+# Read address=0x30001e40, burstcount=  11
+# Read address=0x30001ef0, burstcount=  11
+# Read address=0x30001fa0, burstcount=  11
+# Read address=0x30002050, burstcount=  11
+# Read address=0x30002100, burstcount=  11
+# Read address=0x300021b0, burstcount=  11
+# Read address=0x30002260, burstcount=  11
+# Read address=0x30002310, burstcount=  11
+# Read address=0x300023c0, burstcount=  11
+# Read address=0x30002470, burstcount=  11
+# Read address=0x30002520, burstcount=  11
+# Read address=0x300025d0, burstcount=  11
+# Read address=0x30002680, burstcount=  11
+# Read address=0x30002730, burstcount=  11
+# Read address=0x300027e0, burstcount=  11
+# Read address=0x30002890, burstcount=  11
+# Read address=0x30002940, burstcount=  11
+# Read address=0x300029f0, burstcount=  11
+# Read address=0x30002aa0, burstcount=  11
+# Read address=0x30002b50, burstcount=  11
+# Read address=0x30002c00, burstcount=  11
+# Read address=0x30002cb0, burstcount=  11
+# Read address=0x30002d60, burstcount=  11
+# Read address=0x30002e10, burstcount=  11
+# Read address=0x30002ec0, burstcount=  11
+# Read address=0x30002f70, burstcount=  11
+# Read address=0x30003020, burstcount=  11
+# Read address=0x300030d0, burstcount=  11
+# Read address=0x30003180, burstcount=  11
+# Read address=0x30003230, burstcount=  11
+# Read address=0x300032e0, burstcount=  11
+# Read address=0x30003390, burstcount=  11
+# Read address=0x30003440, burstcount=  11
+# Read address=0x300034f0, burstcount=  11
+# Read address=0x300035a0, burstcount=  11
+# Read address=0x30003650, burstcount=  11
+# Read address=0x30003700, burstcount=  11
+# Read address=0x300037b0, burstcount=  11
+# Read address=0x30003860, burstcount=  11
+# Read address=0x30003910, burstcount=  11
+# Read address=0x300039c0, burstcount=  11
+# Read address=0x30003a70, burstcount=  11
+# Read address=0x30003b20, burstcount=  11
+# Read address=0x30003bd0, burstcount=  11
+# Read address=0x30003c80, burstcount=  11
+# Read address=0x30003d30, burstcount=  11
+# Read address=0x30003de0, burstcount=  11
+# Read address=0x30003e90, burstcount=  11
+# Read address=0x30003f40, burstcount=  11
+# Read address=0x30003ff0, burstcount=  11
+# Read address=0x300040a0, burstcount=  11
+# Read address=0x30004150, burstcount=  11
+# Read address=0x30004200, burstcount=  11
+# Read address=0x300042b0, burstcount=  11
+# Read address=0x30004360, burstcount=  11
+# Read address=0x30004410, burstcount=  11
+# Read address=0x300044c0, burstcount=  11
+# Read address=0x30004570, burstcount=  11
+# Read address=0x30004620, burstcount=  11
+# Read address=0x300046d0, burstcount=  11
+# Read address=0x30004780, burstcount=  11
+# Read address=0x30004830, burstcount=  11
+# Read address=0x300048e0, burstcount=  11
+# Read address=0x30004990, burstcount=  11
+# Read address=0x30004a40, burstcount=  11
+# Read address=0x30004af0, burstcount=  11
+# Read address=0x30004ba0, burstcount=  11
+# Read address=0x30004c50, burstcount=  11
+# Read address=0x30004d00, burstcount=  11
+# Read address=0x30004db0, burstcount=  11
+# Read address=0x30004e60, burstcount=  11
+# Read address=0x30004f10, burstcount=  11
+# Read address=0x30004fc0, burstcount=  11
+# Read address=0x30005070, burstcount=  11
+# Read address=0x30005120, burstcount=  11
+# Read address=0x300051d0, burstcount=  11
+# Read address=0x30005280, burstcount=  11
+# Read address=0x30005330, burstcount=  11
+# Read address=0x300053e0, burstcount=  11
+# Read address=0x30005490, burstcount=  11
+# Read address=0x30005540, burstcount=  11
+# Read address=0x300055f0, burstcount=  11
+# Read address=0x300056a0, burstcount=  11
+# Read address=0x30005750, burstcount=  11
+# Read address=0x30005800, burstcount=  11
+# Read address=0x300058b0, burstcount=  11
+# Read address=0x30005960, burstcount=  11
+# Read address=0x30005a10, burstcount=  11
+# Read address=0x30005ac0, burstcount=  11
+# Read address=0x30005b70, burstcount=  11
+# Read address=0x30005c20, burstcount=  11
+# Read address=0x30005cd0, burstcount=  11
+# Read address=0x30005d80, burstcount=  11
+# Read address=0x30005e30, burstcount=  11
+# Read address=0x30005ee0, burstcount=  11
+# Read address=0x30005f90, burstcount=  11
+# Read address=0x30006040, burstcount=  11
+# Read address=0x300060f0, burstcount=  11
+# Read address=0x300061a0, burstcount=  11
+# Read address=0x30006250, burstcount=  11
+# Read address=0x30006300, burstcount=  11
+# Read address=0x300063b0, burstcount=  11
+# Read address=0x30006460, burstcount=  11
+# Read address=0x30006510, burstcount=  11
+# Read address=0x300065c0, burstcount=  11
+# Read address=0x30006670, burstcount=  11
+# Read address=0x30006720, burstcount=  11
+# Read address=0x300067d0, burstcount=  11
+# Read address=0x30006880, burstcount=  11
+# Read address=0x30006930, burstcount=  11
+# Read address=0x300069e0, burstcount=  11
+# Read address=0x30006a90, burstcount=  11
+# Read address=0x30006b40, burstcount=  11
+# Read address=0x30006bf0, burstcount=  11
+# Read address=0x30006ca0, burstcount=  11
+# Read address=0x30006d50, burstcount=  11
+# Read address=0x30006e00, burstcount=  11
+# Read address=0x30006eb0, burstcount=  11
+# Read address=0x30006f60, burstcount=  11
+# Read address=0x30007010, burstcount=  11
+# Read address=0x300070c0, burstcount=  11
+# Read address=0x30007170, burstcount=  11
+# Warning : Address pointed at port A is out of bound!
+# Time: 2198490000  Instance: top_tb.i_design_top.i_eu_top.i_stmm_wrapper.blk_instantiate_wmem[0].i_wmem.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 2198490000  Instance: top_tb.i_design_top.i_eu_top.i_stmm_wrapper.blk_instantiate_wmem[0].i_wmem.altsyncram_component.m_default.altsyncram_inst
+# Write address=0x30010000, burstcount=  11
+#      131072 bytes write to wt_mem.bin from addr   805306368.
+# ** Note: $stop    : simulation/testbench/soc_system_bfm.sv(154)
+#    Time: 2201500 ns  Iteration: 1  Instance: /top_tb/u0
+# Break in Module soc_system at simulation/testbench/soc_system_bfm.sv line 154
+# error writing "file21": broken pipe
+# error writing "file21": broken pipe
+add wave -position insertpoint  \
+sim:/top_tb/i_design_top/i_ctrl_unit/rf_ram_sel \
+sim:/top_tb/i_design_top/i_ctrl_unit/sdram_read_sel \
+sim:/top_tb/i_design_top/i_ctrl_unit/eu_fetch \
+sim:/top_tb/i_design_top/i_ctrl_unit/eu_exec \
+sim:/top_tb/i_design_top/i_ctrl_unit/eu_fetch_addr \
+sim:/top_tb/i_design_top/i_ctrl_unit/state
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.hps_bfm_pkg(fast)
+# Loading work.avmm_raw_intf(fast)
+# Loading work.avmm_sdram_bfm_pkg(fast)
+# Loading work.top_tb(fast)
+# Loading work.sdram_intf(fast__1)
+# Loading work.sdram_read_intf(fast__1)
+# Loading work.soc_system(fast)
+# Loading work.avmm_raw_intf(fast__2)
+# Loading work.avmm_sdram_wrapper(fast)
+# Loading work.avmm_sdram_read_wrapper(fast)
+# Loading work.design_top(fast)
+# Loading work.rf_move_intf(fast__1)
+# Loading work.rf_ldst_intf(fast__1)
+# Loading work.rmio_intf(fast__1)
+# Loading work.rmio_intf(fast__2)
+# Loading work.rmio_intf(fast__3)
+# Loading work.ctrl_unit(fast)
+# Loading work.inst_decode(fast)
+# Loading work.decoder(fast)
+# Loading work.rf_wrapper(fast)
+# Loading work.bram_intf(fast__1)
+# Loading work.bram_mux(fast)
+# Loading work.rf_ram(fast)
+# Loading work.bram_intf(fast__3)
+# Loading work.ram_512x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.rf_ldst(fast)
+# Loading work.rf_move(fast)
+# Loading work.eu_top(fast)
+# Loading work.sdram_read_mux(fast)
+# Loading work.stmm_wrapper(fast)
+# Loading work.priority_encoder(fast)
+# Loading work.bram_intf(fast__4)
+# Loading work.stmm_fetch(fast)
+# Loading work.ram_176x1408(fast)
+# Loading altera_mf_ver.altsyncram(fast__1)
+# Loading altera_mf_ver.altsyncram_body(fast__1)
+# Loading work.StMM(fast)
+# Loading work.vvm(fast)
+# Loading work.int18_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast)
+# Loading lpm_ver.lpm_add_sub(fast)
+# Loading sgate_ver.oper_add(fast__1)
+# Loading lpm_ver.lpm_add_sub(fast__1)
+# Loading sgate_ver.oper_add(fast__2)
+# Loading lpm_ver.lpm_add_sub(fast__2)
+# Loading sgate_ver.oper_add(fast__3)
+# Loading lpm_ver.lpm_add_sub(fast__3)
+# Loading sgate_ver.oper_mux(fast)
+# Loading work.mult_fp16(fast)
+# Loading sgate_ver.oper_add(fast__4)
+# Loading lpm_ver.lpm_add_sub(fast__4)
+# Loading sgate_ver.oper_add(fast__5)
+# Loading lpm_ver.lpm_add_sub(fast__5)
+# Loading sgate_ver.oper_add(fast__6)
+# Loading lpm_ver.lpm_add_sub(fast__6)
+# Loading sgate_ver.oper_add(fast__7)
+# Loading lpm_ver.lpm_add_sub(fast__7)
+# Loading sgate_ver.oper_mult(fast)
+# Loading lpm_ver.lpm_mult(fast)
+# Loading lpm_ver.LPM_HINT_EVALUATION(fast)
+# Loading sgate_ver.oper_mux(fast__1)
+# Loading work.fp16_to_int16(fast)
+# Loading sgate_ver.oper_add(fast__8)
+# Loading lpm_ver.lpm_add_sub(fast__8)
+# Loading sgate_ver.oper_add(fast__9)
+# Loading lpm_ver.lpm_add_sub(fast__9)
+# Loading work.saturate(fast)
+# Loading work.layernorm_wrapper(fast)
+# Loading work.layernorm_fetch(fast)
+# Loading work.layernorm(fast)
+# Loading work.gamma_path(fast)
+# Loading work.uint16_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast__10)
+# Loading lpm_ver.lpm_add_sub(fast__10)
+# Loading work.rsqrt(fast)
+# Loading sgate_ver.oper_add(fast__11)
+# Loading lpm_ver.lpm_add_sub(fast__11)
+# Loading sgate_ver.oper_mult(fast__1)
+# Loading lpm_ver.lpm_mult(fast__1)
+# Loading sgate_ver.oper_mux(fast__2)
+# Loading work.count_down(fast)
+# Loading work.int16_to_fp16(fast)
+# Loading sgate_ver.oper_add(fast__12)
+# Loading lpm_ver.lpm_add_sub(fast__12)
+# Loading work.saturate(fast__1)
+# Loading work.saturate(fast__2)
+# Loading work.count_down(fast__1)
+# Loading work.lut_wrapper(fast)
+# Loading work.priority_encoder(fast__1)
+# Loading work.bram_intf(fast__5)
+# Loading work.lut_fetch(fast)
+# Loading work.lut_fetch_fifo(fast)
+# Loading work.fifo_16x128(fast)
+# Loading altera_mf_ver.scfifo(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading work.ram_256x8(fast)
+# Loading altera_mf_ver.altsyncram(fast__2)
+# Loading altera_mf_ver.altsyncram_body(fast__2)
+# Loading work.lut(fast)
+# Loading work.sdram_read_intf(fast__2)
+# Loading work.bram_intf(fast__2)
+run -a
+#       29216 bytes read from test_data/stmm_x.bin to addr   805306368.
+#       30992 bytes read from test_data/stmm_w.bin to addr   536870912.
+# continue
+# continue
+# continue
+# continue
+# Read address=0x20000000, burstcount=  11
+# Read address=0x200000b0, burstcount=  11
+# Read address=0x20000160, burstcount=  11
+# Read address=0x20000210, burstcount=  11
+# Read address=0x200002c0, burstcount=  11
+# Read address=0x20000370, burstcount=  11
+# Read address=0x20000420, burstcount=  11
+# Read address=0x200004d0, burstcount=  11
+# Read address=0x20000580, burstcount=  11
+# Read address=0x20000630, burstcount=  11
+# Read address=0x200006e0, burstcount=  11
+# Read address=0x20000790, burstcount=  11
+# Read address=0x20000840, burstcount=  11
+# Read address=0x200008f0, burstcount=  11
+# Read address=0x200009a0, burstcount=  11
+# Read address=0x20000a50, burstcount=  11
+# Read address=0x20000b00, burstcount=  11
+# Read address=0x20000bb0, burstcount=  11
+# Read address=0x20000c60, burstcount=  11
+# Read address=0x20000d10, burstcount=  11
+# Read address=0x20000dc0, burstcount=  11
+# Read address=0x20000e70, burstcount=  11
+# Read address=0x20000f20, burstcount=  11
+# Read address=0x20000fd0, burstcount=  11
+# Read address=0x20001080, burstcount=  11
+# Read address=0x20001130, burstcount=  11
+# Read address=0x200011e0, burstcount=  11
+# Read address=0x20001290, burstcount=  11
+# Read address=0x20001340, burstcount=  11
+# Read address=0x200013f0, burstcount=  11
+# Read address=0x200014a0, burstcount=  11
+# Read address=0x20001550, burstcount=  11
+# Read address=0x20001600, burstcount=  11
+# Read address=0x200016b0, burstcount=  11
+# Read address=0x20001760, burstcount=  11
+# Read address=0x20001810, burstcount=  11
+# Read address=0x200018c0, burstcount=  11
+# Read address=0x20001970, burstcount=  11
+# Read address=0x20001a20, burstcount=  11
+# Read address=0x20001ad0, burstcount=  11
+# Read address=0x20001b80, burstcount=  11
+# Read address=0x20001c30, burstcount=  11
+# Read address=0x20001ce0, burstcount=  11
+# Read address=0x20001d90, burstcount=  11
+# Read address=0x20001e40, burstcount=  11
+# Read address=0x20001ef0, burstcount=  11
+# Read address=0x20001fa0, burstcount=  11
+# Read address=0x20002050, burstcount=  11
+# Read address=0x20002100, burstcount=  11
+# Read address=0x200021b0, burstcount=  11
+# Read address=0x20002260, burstcount=  11
+# Read address=0x20002310, burstcount=  11
+# Read address=0x200023c0, burstcount=  11
+# Read address=0x20002470, burstcount=  11
+# Read address=0x20002520, burstcount=  11
+# Read address=0x200025d0, burstcount=  11
+# Read address=0x20002680, burstcount=  11
+# Read address=0x20002730, burstcount=  11
+# Read address=0x200027e0, burstcount=  11
+# Read address=0x20002890, burstcount=  11
+# Read address=0x20002940, burstcount=  11
+# Read address=0x200029f0, burstcount=  11
+# Read address=0x20002aa0, burstcount=  11
+# Read address=0x20002b50, burstcount=  11
+# Read address=0x20002c00, burstcount=  11
+# Read address=0x20002cb0, burstcount=  11
+# Read address=0x20002d60, burstcount=  11
+# Read address=0x20002e10, burstcount=  11
+# Read address=0x20002ec0, burstcount=  11
+# Read address=0x20002f70, burstcount=  11
+# Read address=0x20003020, burstcount=  11
+# Read address=0x200030d0, burstcount=  11
+# Read address=0x20003180, burstcount=  11
+# Read address=0x20003230, burstcount=  11
+# Read address=0x200032e0, burstcount=  11
+# Read address=0x20003390, burstcount=  11
+# Read address=0x20003440, burstcount=  11
+# Read address=0x200034f0, burstcount=  11
+# Read address=0x200035a0, burstcount=  11
+# Read address=0x20003650, burstcount=  11
+# Read address=0x20003700, burstcount=  11
+# Read address=0x200037b0, burstcount=  11
+# Read address=0x20003860, burstcount=  11
+# Read address=0x20003910, burstcount=  11
+# Read address=0x200039c0, burstcount=  11
+# Read address=0x20003a70, burstcount=  11
+# Read address=0x20003b20, burstcount=  11
+# Read address=0x20003bd0, burstcount=  11
+# Read address=0x20003c80, burstcount=  11
+# Read address=0x20003d30, burstcount=  11
+# Read address=0x20003de0, burstcount=  11
+# Read address=0x20003e90, burstcount=  11
+# Read address=0x20003f40, burstcount=  11
+# Read address=0x20003ff0, burstcount=  11
+# Read address=0x200040a0, burstcount=  11
+# Read address=0x20004150, burstcount=  11
+# Read address=0x20004200, burstcount=  11
+# Read address=0x200042b0, burstcount=  11
+# Read address=0x20004360, burstcount=  11
+# Read address=0x20004410, burstcount=  11
+# Read address=0x200044c0, burstcount=  11
+# Read address=0x20004570, burstcount=  11
+# Read address=0x20004620, burstcount=  11
+# Read address=0x200046d0, burstcount=  11
+# Read address=0x20004780, burstcount=  11
+# Read address=0x20004830, burstcount=  11
+# Read address=0x200048e0, burstcount=  11
+# Read address=0x20004990, burstcount=  11
+# Read address=0x20004a40, burstcount=  11
+# Read address=0x20004af0, burstcount=  11
+# Read address=0x20004ba0, burstcount=  11
+# Read address=0x20004c50, burstcount=  11
+# Read address=0x20004d00, burstcount=  11
+# Read address=0x20004db0, burstcount=  11
+# Read address=0x20004e60, burstcount=  11
+# Read address=0x20004f10, burstcount=  11
+# Read address=0x20004fc0, burstcount=  11
+# Read address=0x20005070, burstcount=  11
+# Read address=0x20005120, burstcount=  11
+# Read address=0x200051d0, burstcount=  11
+# Read address=0x20005280, burstcount=  11
+# Read address=0x20005330, burstcount=  11
+# Read address=0x200053e0, burstcount=  11
+# Read address=0x20005490, burstcount=  11
+# Read address=0x20005540, burstcount=  11
+# Read address=0x200055f0, burstcount=  11
+# Read address=0x200056a0, burstcount=  11
+# Read address=0x20005750, burstcount=  11
+# Read address=0x20005800, burstcount=  11
+# Read address=0x200058b0, burstcount=  11
+# Read address=0x20005960, burstcount=  11
+# Read address=0x20005a10, burstcount=  11
+# Read address=0x20005ac0, burstcount=  11
+# Read address=0x20005b70, burstcount=  11
+# Read address=0x20005c20, burstcount=  11
+# Read address=0x20005cd0, burstcount=  11
+# Read address=0x20005d80, burstcount=  11
+# Read address=0x20005e30, burstcount=  11
+# Read address=0x20005ee0, burstcount=  11
+# Read address=0x20005f90, burstcount=  11
+# Read address=0x20006040, burstcount=  11
+# Read address=0x200060f0, burstcount=  11
+# Read address=0x200061a0, burstcount=  11
+# Read address=0x20006250, burstcount=  11
+# Read address=0x20006300, burstcount=  11
+# Read address=0x200063b0, burstcount=  11
+# Read address=0x20006460, burstcount=  11
+# Read address=0x20006510, burstcount=  11
+# Read address=0x200065c0, burstcount=  11
+# Read address=0x20006670, burstcount=  11
+# Read address=0x20006720, burstcount=  11
+# Read address=0x200067d0, burstcount=  11
+# Read address=0x20006880, burstcount=  11
+# Read address=0x20006930, burstcount=  11
+# Read address=0x200069e0, burstcount=  11
+# Read address=0x20006a90, burstcount=  11
+# Read address=0x20006b40, burstcount=  11
+# Read address=0x20006bf0, burstcount=  11
+# Read address=0x20006ca0, burstcount=  11
+# Read address=0x20006d50, burstcount=  11
+# Read address=0x20006e00, burstcount=  11
+# Read address=0x20006eb0, burstcount=  11
+# Read address=0x20006f60, burstcount=  11
+# Read address=0x20007010, burstcount=  11
+# Read address=0x200070c0, burstcount=  11
+# Read address=0x20007170, burstcount=  11
+# Read address=0x20007220, burstcount=  11
+# Read address=0x200072d0, burstcount=  11
+# Read address=0x20007380, burstcount=  11
+# Read address=0x20007430, burstcount=  11
+# Read address=0x200074e0, burstcount=  11
+# Read address=0x20007590, burstcount=  11
+# Read address=0x20007640, burstcount=  11
+# Read address=0x200076f0, burstcount=  11
+# Read address=0x200077a0, burstcount=  11
+# Read address=0x20007850, burstcount=  11
+# Read address=0x20007900, burstcount=   1
+# Read address=0x30000000, burstcount=  11
+# Read address=0x300000b0, burstcount=  11
+# Read address=0x30000160, burstcount=  11
+# Read address=0x30000210, burstcount=  11
+# Read address=0x300002c0, burstcount=  11
+# Read address=0x30000370, burstcount=  11
+# Read address=0x30000420, burstcount=  11
+# Read address=0x300004d0, burstcount=  11
+# Read address=0x30000580, burstcount=  11
+# Read address=0x30000630, burstcount=  11
+# Read address=0x300006e0, burstcount=  11
+# Read address=0x30000790, burstcount=  11
+# Read address=0x30000840, burstcount=  11
+# Read address=0x300008f0, burstcount=  11
+# Read address=0x300009a0, burstcount=  11
+# Read address=0x30000a50, burstcount=  11
+# Read address=0x30000b00, burstcount=  11
+# Read address=0x30000bb0, burstcount=  11
+# Read address=0x30000c60, burstcount=  11
+# Read address=0x30000d10, burstcount=  11
+# Read address=0x30000dc0, burstcount=  11
+# Read address=0x30000e70, burstcount=  11
+# Read address=0x30000f20, burstcount=  11
+# Read address=0x30000fd0, burstcount=  11
+# Read address=0x30001080, burstcount=  11
+# Read address=0x30001130, burstcount=  11
+# Read address=0x300011e0, burstcount=  11
+# Read address=0x30001290, burstcount=  11
+# Read address=0x30001340, burstcount=  11
+# Read address=0x300013f0, burstcount=  11
+# Read address=0x300014a0, burstcount=  11
+# Read address=0x30001550, burstcount=  11
+# Read address=0x30001600, burstcount=  11
+# Read address=0x300016b0, burstcount=  11
+# Read address=0x30001760, burstcount=  11
+# Read address=0x30001810, burstcount=  11
+# Read address=0x300018c0, burstcount=  11
+# Read address=0x30001970, burstcount=  11
+# Read address=0x30001a20, burstcount=  11
+# Read address=0x30001ad0, burstcount=  11
+# Read address=0x30001b80, burstcount=  11
+# Read address=0x30001c30, burstcount=  11
+# Read address=0x30001ce0, burstcount=  11
+# Read address=0x30001d90, burstcount=  11
+# Read address=0x30001e40, burstcount=  11
+# Read address=0x30001ef0, burstcount=  11
+# Read address=0x30001fa0, burstcount=  11
+# Read address=0x30002050, burstcount=  11
+# Read address=0x30002100, burstcount=  11
+# Read address=0x300021b0, burstcount=  11
+# Read address=0x30002260, burstcount=  11
+# Read address=0x30002310, burstcount=  11
+# Read address=0x300023c0, burstcount=  11
+# Read address=0x30002470, burstcount=  11
+# Read address=0x30002520, burstcount=  11
+# Read address=0x300025d0, burstcount=  11
+# Read address=0x30002680, burstcount=  11
+# Read address=0x30002730, burstcount=  11
+# Read address=0x300027e0, burstcount=  11
+# Read address=0x30002890, burstcount=  11
+# Read address=0x30002940, burstcount=  11
+# Read address=0x300029f0, burstcount=  11
+# Read address=0x30002aa0, burstcount=  11
+# Read address=0x30002b50, burstcount=  11
+# Read address=0x30002c00, burstcount=  11
+# Read address=0x30002cb0, burstcount=  11
+# Read address=0x30002d60, burstcount=  11
+# Read address=0x30002e10, burstcount=  11
+# Read address=0x30002ec0, burstcount=  11
+# Read address=0x30002f70, burstcount=  11
+# Read address=0x30003020, burstcount=  11
+# Read address=0x300030d0, burstcount=  11
+# Read address=0x30003180, burstcount=  11
+# Read address=0x30003230, burstcount=  11
+# Read address=0x300032e0, burstcount=  11
+# Read address=0x30003390, burstcount=  11
+# Read address=0x30003440, burstcount=  11
+# Read address=0x300034f0, burstcount=  11
+# Read address=0x300035a0, burstcount=  11
+# Read address=0x30003650, burstcount=  11
+# Read address=0x30003700, burstcount=  11
+# Read address=0x300037b0, burstcount=  11
+# Read address=0x30003860, burstcount=  11
+# Read address=0x30003910, burstcount=  11
+# Read address=0x300039c0, burstcount=  11
+# Read address=0x30003a70, burstcount=  11
+# Read address=0x30003b20, burstcount=  11
+# Read address=0x30003bd0, burstcount=  11
+# Read address=0x30003c80, burstcount=  11
+# Read address=0x30003d30, burstcount=  11
+# Read address=0x30003de0, burstcount=  11
+# Read address=0x30003e90, burstcount=  11
+# Read address=0x30003f40, burstcount=  11
+# Read address=0x30003ff0, burstcount=  11
+# Read address=0x300040a0, burstcount=  11
+# Read address=0x30004150, burstcount=  11
+# Read address=0x30004200, burstcount=  11
+# Read address=0x300042b0, burstcount=  11
+# Read address=0x30004360, burstcount=  11
+# Read address=0x30004410, burstcount=  11
+# Read address=0x300044c0, burstcount=  11
+# Read address=0x30004570, burstcount=  11
+# Read address=0x30004620, burstcount=  11
+# Read address=0x300046d0, burstcount=  11
+# Read address=0x30004780, burstcount=  11
+# Read address=0x30004830, burstcount=  11
+# Read address=0x300048e0, burstcount=  11
+# Read address=0x30004990, burstcount=  11
+# Read address=0x30004a40, burstcount=  11
+# Read address=0x30004af0, burstcount=  11
+# Read address=0x30004ba0, burstcount=  11
+# Read address=0x30004c50, burstcount=  11
+# Read address=0x30004d00, burstcount=  11
+# Read address=0x30004db0, burstcount=  11
+# Read address=0x30004e60, burstcount=  11
+# Read address=0x30004f10, burstcount=  11
+# Read address=0x30004fc0, burstcount=  11
+# Read address=0x30005070, burstcount=  11
+# Read address=0x30005120, burstcount=  11
+# Read address=0x300051d0, burstcount=  11
+# Read address=0x30005280, burstcount=  11
+# Read address=0x30005330, burstcount=  11
+# Read address=0x300053e0, burstcount=  11
+# Read address=0x30005490, burstcount=  11
+# Read address=0x30005540, burstcount=  11
+# Read address=0x300055f0, burstcount=  11
+# Read address=0x300056a0, burstcount=  11
+# Read address=0x30005750, burstcount=  11
+# Read address=0x30005800, burstcount=  11
+# Read address=0x300058b0, burstcount=  11
+# Read address=0x30005960, burstcount=  11
+# Read address=0x30005a10, burstcount=  11
+# Read address=0x30005ac0, burstcount=  11
+# Read address=0x30005b70, burstcount=  11
+# Read address=0x30005c20, burstcount=  11
+# Read address=0x30005cd0, burstcount=  11
+# Read address=0x30005d80, burstcount=  11
+# Read address=0x30005e30, burstcount=  11
+# Read address=0x30005ee0, burstcount=  11
+# Read address=0x30005f90, burstcount=  11
+# Read address=0x30006040, burstcount=  11
+# Read address=0x300060f0, burstcount=  11
+# Read address=0x300061a0, burstcount=  11
+# Read address=0x30006250, burstcount=  11
+# Read address=0x30006300, burstcount=  11
+# Read address=0x300063b0, burstcount=  11
+# Read address=0x30006460, burstcount=  11
+# Read address=0x30006510, burstcount=  11
+# Read address=0x300065c0, burstcount=  11
+# Read address=0x30006670, burstcount=  11
+# Read address=0x30006720, burstcount=  11
+# Read address=0x300067d0, burstcount=  11
+# Read address=0x30006880, burstcount=  11
+# Read address=0x30006930, burstcount=  11
+# Read address=0x300069e0, burstcount=  11
+# Read address=0x30006a90, burstcount=  11
+# Read address=0x30006b40, burstcount=  11
+# Read address=0x30006bf0, burstcount=  11
+# Read address=0x30006ca0, burstcount=  11
+# Read address=0x30006d50, burstcount=  11
+# Read address=0x30006e00, burstcount=  11
+# Read address=0x30006eb0, burstcount=  11
+# Read address=0x30006f60, burstcount=  11
+# Read address=0x30007010, burstcount=  11
+# Read address=0x300070c0, burstcount=  11
+# Read address=0x30007170, burstcount=  11
+# Warning : Address pointed at port A is out of bound!
+# Time: 2198490000  Instance: top_tb.i_design_top.i_eu_top.i_stmm_wrapper.blk_instantiate_wmem[0].i_wmem.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 2198490000  Instance: top_tb.i_design_top.i_eu_top.i_stmm_wrapper.blk_instantiate_wmem[0].i_wmem.altsyncram_component.m_default.altsyncram_inst
+# Write address=0x30010000, burstcount=  11
+#      131072 bytes write to wt_mem.bin from addr   805306368.
+# ** Note: $stop    : simulation/testbench/soc_system_bfm.sv(154)
+#    Time: 2201500 ns  Iteration: 1  Instance: /top_tb/u0
+# Break in Module soc_system at simulation/testbench/soc_system_bfm.sv line 154
+# End time: 17:42:59 on Apr 07,2025, Elapsed time: 12:26:21
+# Errors: 0, Warnings: 1

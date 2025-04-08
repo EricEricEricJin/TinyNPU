@@ -1,0 +1,17 @@
+*
+!.gitignore
+
+!design_rtl
+!design_rtl/*
+
+!ip_cores
+!ip_cores/*
+
+!quartus_proj
+!quartus_proj/*
+
+!simulation
+!simulation/*
+
+!test_data
+!test_data/*
