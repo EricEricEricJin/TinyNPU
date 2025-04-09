@@ -1,0 +1,69 @@
+Archive Project report for tiny_npu
+Tue Apr  8 19:32:51 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------------------------+
+; Archive Project Summary                                    ;
++------------------------+-----------------------------------+
+; Archive Project Status ; Failed - Tue Apr  8 19:32:51 2025 ;
+; Revision Name          ; tiny_npu                          ;
+; Top-level Entity Name  ; tiny_npu                          ;
+; Family                 ; Cyclone V                         ;
++------------------------+-----------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Error: No files to archive
+Info: Archive will store files relative to the closest common parent directory
+Error: ERROR: Archiver failed because there were no files to archive
+
+Error: Failed to generate '/home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/tiny_npu.qar'
+Info: Generated report 'tiny_npu.archive.rpt'
+Error (23031): Evaluation of Tcl script /opt/intelFPGA_lite/23.1std/quartus/common/tcl/apps/qpm/qar.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 4 errors, 0 warnings
+    Error: Peak virtual memory: 639 megabytes
+    Error: Processing ended: Tue Apr  8 19:32:51 2025
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
+
+
++----------------+
+; Files Archived ;
++----------------+
+; File Name      ;
++----------------+
+
+

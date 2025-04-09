@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="9a5e9ef2f5aa3d0da0b8"/>
+  </project>
+  <file_info>
+    <file device="5CSEBA6U23I7" path="tiny_npu.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="soc_system:u0" name="u0">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1744108543"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>

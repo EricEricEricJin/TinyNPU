@@ -15,3 +15,8 @@
 
 !test_data
 !test_data/*
+
+!doc
+!doc/*
+
+!README.md
