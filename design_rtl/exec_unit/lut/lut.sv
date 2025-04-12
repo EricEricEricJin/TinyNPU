@@ -21,7 +21,7 @@ module lut #(
 //////////////////////////////
 // Counter
 //////////////////////////////
-logic [$clog2(N) - 1 : 0] cnt;
+logic [$clog2(N+1) - 1 : 0] cnt;
 logic cnt_inc, cnt_clr;
 always_ff @( posedge clk, negedge rst_n ) begin
     if (!rst_n)
@@ -95,7 +95,7 @@ always_comb begin
         default: begin
             cnt_inc = 1;
             store = 1;
-            if (cnt == N - 1)
+            if (cnt == N)
                 nxt_state = IDLE;
         end
     endcase

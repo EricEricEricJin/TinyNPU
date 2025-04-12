@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tiny_npu
-Sat Apr 12 10:49:22 2025
+Sat Apr 12 12:51:15 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -559,7 +559,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr 12 10:49:21 2025          ;
+; Analysis & Synthesis Status     ; Successful - Sat Apr 12 12:51:14 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; tiny_npu                                       ;
 ; Top-level Entity Name           ; tiny_npu                                       ;
@@ -674,18 +674,18 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.55        ;
+; Average used               ; 1.53        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   8.2%      ;
-;     Processor 3            ;   8.2%      ;
-;     Processor 4            ;   8.2%      ;
-;     Processor 5            ;   8.1%      ;
-;     Processor 6            ;   7.4%      ;
-;     Processor 7            ;   7.4%      ;
-;     Processor 8            ;   7.1%      ;
+;     Processor 2            ;   8.1%      ;
+;     Processor 3            ;   8.1%      ;
+;     Processor 4            ;   7.7%      ;
+;     Processor 5            ;   7.7%      ;
+;     Processor 6            ;   7.3%      ;
+;     Processor 7            ;   7.3%      ;
+;     Processor 8            ;   6.9%      ;
 +----------------------------+-------------+
 
 
@@ -862,14 +862,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimate of Logic utilization (ALMs needed) ; 28458              ;
+; Estimate of Logic utilization (ALMs needed) ; 28465              ;
 ;                                             ;                    ;
-; Combinational ALUT usage for logic          ; 16631              ;
+; Combinational ALUT usage for logic          ; 16622              ;
 ;     -- 7 input functions                    ; 22                 ;
-;     -- 6 input functions                    ; 10126              ;
-;     -- 5 input functions                    ; 913                ;
-;     -- 4 input functions                    ; 1272               ;
-;     -- <=3 input functions                  ; 4298               ;
+;     -- 6 input functions                    ; 10150              ;
+;     -- 5 input functions                    ; 915                ;
+;     -- 4 input functions                    ; 1243               ;
+;     -- <=3 input functions                  ; 4292               ;
 ;                                             ;                    ;
 ; Dedicated logic registers                   ; 48108              ;
 ;                                             ;                    ;
@@ -883,8 +883,8 @@ https://fpgasoftware.intel.com/eula.
 ; Total DLLs                                  ; 1                  ;
 ; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
 ; Maximum fan-out                             ; 55298              ;
-; Total fan-out                               ; 347716             ;
-; Average fan-out                             ; 4.77               ;
+; Total fan-out                               ; 347739             ;
+; Average fan-out                             ; 4.78               ;
 +---------------------------------------------+--------------------+
 
 
@@ -893,11 +893,11 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+----------------+
 ; Compilation Hierarchy Node                                                                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                          ; Entity Name                                       ; Library Name   ;
 +-----------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+----------------+
-; |tiny_npu                                                                                     ; 16631 (43)          ; 48108 (40)                ; 1718480           ; 13         ; 89   ; 0            ; |tiny_npu                                                                                                                                                                                                                                                                                                                                                    ; tiny_npu                                          ; work           ;
-;    |design_top:i_design_top|                                                                  ; 15433 (4)           ; 46704 (5639)              ; 1718480           ; 13         ; 0    ; 0            ; |tiny_npu|design_top:i_design_top                                                                                                                                                                                                                                                                                                                            ; design_top                                        ; work           ;
+; |tiny_npu                                                                                     ; 16622 (43)          ; 48108 (40)                ; 1718480           ; 13         ; 89   ; 0            ; |tiny_npu                                                                                                                                                                                                                                                                                                                                                    ; tiny_npu                                          ; work           ;
+;    |design_top:i_design_top|                                                                  ; 15424 (4)           ; 46704 (5639)              ; 1718480           ; 13         ; 0    ; 0            ; |tiny_npu|design_top:i_design_top                                                                                                                                                                                                                                                                                                                            ; design_top                                        ; work           ;
 ;       |ctrl_unit:i_ctrl_unit|                                                                 ; 14 (13)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|ctrl_unit:i_ctrl_unit                                                                                                                                                                                                                                                                                                      ; ctrl_unit                                         ; work           ;
 ;          |decoder:i_eu_decoder|                                                               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|ctrl_unit:i_ctrl_unit|decoder:i_eu_decoder                                                                                                                                                                                                                                                                                 ; decoder                                           ; work           ;
-;       |eu_top:i_eu_top|                                                                       ; 11927 (6)           ; 39546 (81)                ; 997584            ; 13         ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top                                                                                                                                                                                                                                                                                                            ; eu_top                                            ; work           ;
+;       |eu_top:i_eu_top|                                                                       ; 11918 (6)           ; 39546 (81)                ; 997584            ; 13         ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top                                                                                                                                                                                                                                                                                                            ; eu_top                                            ; work           ;
 ;          |layernorm_wrapper:i_layernorm_wrapper|                                              ; 2704 (0)            ; 8852 (5632)               ; 0                 ; 5          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper                                                                                                                                                                                                                                                                      ; layernorm_wrapper                                 ; work           ;
 ;             |layernorm:blk_instantiate_layernorm[0].i_layernorm|                              ; 2644 (2178)         ; 1801 (1471)               ; 0                 ; 5          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[0].i_layernorm                                                                                                                                                                                                                   ; layernorm                                         ; work           ;
 ;                |count_down:i_count_down|                                                      ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[0].i_layernorm|count_down:i_count_down                                                                                                                                                                                           ; count_down                                        ; work           ;
@@ -949,9 +949,9 @@ https://fpgasoftware.intel.com/eula.
 ;                         |dspba_delay:sticky_uid16_fxpToFPTest_delay|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[0].i_layernorm|gamma_path:i_gamma_path|uint16_to_fp16:i_sd_int_to_fp|uint16_to_fp16_0002:uint16_to_fp16_inst|dspba_delay:sticky_uid16_fxpToFPTest_delay                                                                          ; dspba_delay                                       ; uint16_to_fp16 ;
 ;                |saturate:i_sat_y|                                                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm:blk_instantiate_layernorm[0].i_layernorm|saturate:i_sat_y                                                                                                                                                                                                  ; saturate                                          ; work           ;
 ;             |layernorm_fetch:i_layernorm_fetch|                                               ; 60 (60)             ; 1419 (1419)               ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|layernorm_wrapper:i_layernorm_wrapper|layernorm_fetch:i_layernorm_fetch                                                                                                                                                                                                                                    ; layernorm_fetch                                   ; work           ;
-;          |lut_wrapper:i_lut_wrapper|                                                          ; 1489 (957)          ; 5811 (2825)               ; 6144              ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper                                                                                                                                                                                                                                                                                  ; lut_wrapper                                       ; work           ;
+;          |lut_wrapper:i_lut_wrapper|                                                          ; 1480 (958)          ; 5811 (2825)               ; 6144              ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper                                                                                                                                                                                                                                                                                  ; lut_wrapper                                       ; work           ;
 ;             |lut:blk_instantiate_lut[0].i_lut|                                                ; 224 (224)           ; 1417 (1417)               ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut:blk_instantiate_lut[0].i_lut                                                                                                                                                                                                                                                 ; lut                                               ; work           ;
-;             |lut:blk_instantiate_lut[1].i_lut|                                                ; 232 (232)           ; 1417 (1417)               ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut:blk_instantiate_lut[1].i_lut                                                                                                                                                                                                                                                 ; lut                                               ; work           ;
+;             |lut:blk_instantiate_lut[1].i_lut|                                                ; 222 (222)           ; 1417 (1417)               ; 0                 ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut:blk_instantiate_lut[1].i_lut                                                                                                                                                                                                                                                 ; lut                                               ; work           ;
 ;             |lut_fetch:i_lut_fetch|                                                           ; 76 (4)              ; 152 (3)                   ; 2048              ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut_fetch:i_lut_fetch                                                                                                                                                                                                                                                            ; lut_fetch                                         ; work           ;
 ;                |lut_fetch_fifo:i_fetch_fifo|                                                  ; 72 (55)             ; 149 (135)                 ; 2048              ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut_fetch:i_lut_fetch|lut_fetch_fifo:i_fetch_fifo                                                                                                                                                                                                                                ; lut_fetch_fifo                                    ; work           ;
 ;                   |fifo_16x128:i_fifo|                                                        ; 17 (0)              ; 14 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |tiny_npu|design_top:i_design_top|eu_top:i_eu_top|lut_wrapper:i_lut_wrapper|lut_fetch:i_lut_fetch|lut_fetch_fifo:i_fetch_fifo|fifo_16x128:i_fifo                                                                                                                                                                                                             ; fifo_16x128                                       ; work           ;
@@ -14145,7 +14145,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_hps_interface_fpga2sdram                      ; 1     ;
 ; arriav_hps_interface_hps2fpga                        ; 1     ;
 ; arriav_hps_interface_tpiu_trace                      ; 1     ;
-; arriav_lcell_comb                                    ; 16631 ;
+; arriav_lcell_comb                                    ; 16622 ;
 ;     arith                                            ; 1592  ;
 ;         0 data inputs                                ; 73    ;
 ;         1 data inputs                                ; 733   ;
@@ -14155,14 +14155,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs                                ; 74    ;
 ;     extend                                           ; 22    ;
 ;         7 data inputs                                ; 22    ;
-;     normal                                           ; 14875 ;
+;     normal                                           ; 14866 ;
 ;         0 data inputs                                ; 4     ;
 ;         1 data inputs                                ; 37    ;
-;         2 data inputs                                ; 490   ;
-;         3 data inputs                                ; 2423  ;
-;         4 data inputs                                ; 956   ;
-;         5 data inputs                                ; 839   ;
-;         6 data inputs                                ; 10126 ;
+;         2 data inputs                                ; 487   ;
+;         3 data inputs                                ; 2420  ;
+;         4 data inputs                                ; 927   ;
+;         5 data inputs                                ; 841   ;
+;         6 data inputs                                ; 10150 ;
 ;     shared                                           ; 142   ;
 ;         1 data inputs                                ; 116   ;
 ;         2 data inputs                                ; 24    ;
@@ -14223,7 +14223,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+--------------+
 ; Partition Name                        ; Elapsed Time ;
 +---------------------------------------+--------------+
-; Top                                   ; 00:00:24     ;
+; Top                                   ; 00:00:23     ;
 ; soc_system_hps_0_hps_io_border:border ; 00:00:00     ;
 +---------------------------------------+--------------+
 
@@ -14234,29 +14234,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sat Apr 12 10:47:55 2025
+    Info: Processing started: Sat Apr 12 12:49:49 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tiny_npu -c tiny_npu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12248): Elaborating Platform Designer system entity "soc_system.qsys"
-Info (12250): 2025.04.12.10:48:02 Progress: Loading quartus_proj/soc_system.qsys
-Info (12250): 2025.04.12.10:48:03 Progress: Reading input file
-Info (12250): 2025.04.12.10:48:03 Progress: Adding avmm_sdram_read_wrapper_0 [avmm_sdram_read_wrapper 1.0]
-Info (12250): 2025.04.12.10:48:03 Progress: Parameterizing module avmm_sdram_read_wrapper_0
-Info (12250): 2025.04.12.10:48:03 Progress: Adding avmm_sdram_wrapper_0 [avmm_sdram_wrapper 1.0]
-Info (12250): 2025.04.12.10:48:03 Progress: Parameterizing module avmm_sdram_wrapper_0
-Info (12250): 2025.04.12.10:48:03 Progress: Adding clk_50m [clock_source 23.1]
-Info (12250): 2025.04.12.10:48:03 Progress: Parameterizing module clk_50m
-Info (12250): 2025.04.12.10:48:03 Progress: Adding hps_0 [altera_hps 23.1]
-Info (12250): 2025.04.12.10:48:04 Progress: Parameterizing module hps_0
-Info (12250): 2025.04.12.10:48:04 Progress: Adding pio32_f2h_0 [pio32_f2h 1.0]
-Info (12250): 2025.04.12.10:48:04 Progress: Parameterizing module pio32_f2h_0
-Info (12250): 2025.04.12.10:48:04 Progress: Adding pio32_h2f_0 [pio32_h2f 1.0]
-Info (12250): 2025.04.12.10:48:04 Progress: Parameterizing module pio32_h2f_0
-Info (12250): 2025.04.12.10:48:04 Progress: Building connections
-Info (12250): 2025.04.12.10:48:04 Progress: Parameterizing connections
-Info (12250): 2025.04.12.10:48:04 Progress: Validating
-Info (12250): 2025.04.12.10:48:09 Progress: Done reading input file
+Info (12250): 2025.04.12.12:49:56 Progress: Loading quartus_proj/soc_system.qsys
+Info (12250): 2025.04.12.12:49:57 Progress: Reading input file
+Info (12250): 2025.04.12.12:49:57 Progress: Adding avmm_sdram_read_wrapper_0 [avmm_sdram_read_wrapper 1.0]
+Info (12250): 2025.04.12.12:49:57 Progress: Parameterizing module avmm_sdram_read_wrapper_0
+Info (12250): 2025.04.12.12:49:57 Progress: Adding avmm_sdram_wrapper_0 [avmm_sdram_wrapper 1.0]
+Info (12250): 2025.04.12.12:49:57 Progress: Parameterizing module avmm_sdram_wrapper_0
+Info (12250): 2025.04.12.12:49:57 Progress: Adding clk_50m [clock_source 23.1]
+Info (12250): 2025.04.12.12:49:57 Progress: Parameterizing module clk_50m
+Info (12250): 2025.04.12.12:49:57 Progress: Adding hps_0 [altera_hps 23.1]
+Info (12250): 2025.04.12.12:49:58 Progress: Parameterizing module hps_0
+Info (12250): 2025.04.12.12:49:58 Progress: Adding pio32_f2h_0 [pio32_f2h 1.0]
+Info (12250): 2025.04.12.12:49:58 Progress: Parameterizing module pio32_f2h_0
+Info (12250): 2025.04.12.12:49:58 Progress: Adding pio32_h2f_0 [pio32_h2f 1.0]
+Info (12250): 2025.04.12.12:49:58 Progress: Parameterizing module pio32_h2f_0
+Info (12250): 2025.04.12.12:49:58 Progress: Building connections
+Info (12250): 2025.04.12.12:49:58 Progress: Parameterizing connections
+Info (12250): 2025.04.12.12:49:58 Progress: Validating
+Info (12250): 2025.04.12.12:50:03 Progress: Done reading input file
 Info (12250): Soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info (12250): Soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning (12251): Soc_system.hps_0: set_interface_assignment: Interface "hps_io" does not exist
@@ -19336,6 +19336,14 @@ Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[10][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[9][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[8][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[7][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[6][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[5][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[4][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[3][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[2][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[1][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[0][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Info (13005): Duplicate registers merged to single register
     Info (13350): Duplicate register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_f2h_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|int_bytes_remaining_reg[0]" merged to single register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_f2h_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|int_bytes_remaining_reg[1]" File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1042
     Info (13350): Duplicate register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_f2h_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|out_uncomp_byte_cnt_reg[0]" merged to single register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_f2h_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|out_uncomp_byte_cnt_reg[1]" File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1085
@@ -19343,36 +19351,28 @@ Info (13005): Duplicate registers merged to single register
     Info (13350): Duplicate register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_h2f_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|out_uncomp_byte_cnt_reg[0]" merged to single register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_h2f_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|out_uncomp_byte_cnt_reg[1]" File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1085
     Info (13350): Duplicate register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[1][72]" merged to single register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[1][73]" File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 320
     Info (13350): Duplicate register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_h2f_0_slave_0_agent_rsp_fifo|mem[1][72]" merged to single register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_h2f_0_slave_0_agent_rsp_fifo|mem[1][73]" File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 320
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[7][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[6][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_f2h_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|out_uncomp_byte_cnt_reg[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1085
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[5][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[4][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_h2f_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|out_uncomp_byte_cnt_reg[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1085
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rdata_fifo|mem[1][33]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 320
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[3][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[1][95]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 320
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[2][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_h2f_0_slave_0_agent_rsp_fifo|mem[1][95]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 320
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[1][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_axi_master_ni:hps_0_h2f_axi_master_agent|burst_bytecount[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_axi_master_ni.sv Line: 518
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_2:mm_interconnect_2|altera_avalon_sc_fifo:hps_0_f2h_sdram1_data_agent_rsp_fifo|mem[0][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rdata_fifo|mem[0][32]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[0][95]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_h2f_0_slave_0_agent_rsp_fifo|mem[0][66]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_f2h_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|int_bytes_remaining_reg[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1042
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_h2f_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|int_bytes_remaining_reg[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1042
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[1][73]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 320
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[0][73]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[0][72]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:pio32_f2h_0_slave_0_agent|altera_merlin_burst_uncompressor:uncompressor|burst_uncompress_byte_counter[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_uncompressor.sv Line: 183
-Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:pio32_f2h_0_slave_0_agent|altera_merlin_burst_uncompressor:uncompressor|burst_uncompress_byte_counter[0]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_uncompressor.sv Line: 183
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|int_byte_cnt_narrow_reg[3]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1042
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pio32_h2f_0_slave_0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|int_bytes_remaining_reg[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1042
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|int_byte_cnt_narrow_reg[2]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1042
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[1][73]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 320
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_0_f2h_sdram0_data_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|int_byte_cnt_narrow_reg[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_adapter_13_1.sv Line: 1042
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[0][73]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_avalon_sc_fifo:hps_0_f2h_sdram0_data_agent_rsp_fifo|mem[14][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 320
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:pio32_f2h_0_slave_0_agent_rsp_fifo|mem[0][72]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_avalon_sc_fifo:hps_0_f2h_sdram0_data_agent_rsp_fifo|mem[13][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:pio32_f2h_0_slave_0_agent|altera_merlin_burst_uncompressor:uncompressor|burst_uncompress_byte_counter[1]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_uncompressor.sv Line: 183
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_avalon_sc_fifo:hps_0_f2h_sdram0_data_agent_rsp_fifo|mem[12][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
+Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:pio32_f2h_0_slave_0_agent|altera_merlin_burst_uncompressor:uncompressor|burst_uncompress_byte_counter[0]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_merlin_burst_uncompressor.sv Line: 183
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_avalon_sc_fifo:hps_0_f2h_sdram0_data_agent_rsp_fifo|mem[11][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_avalon_sc_fifo:hps_0_f2h_sdram0_data_agent_rsp_fifo|mem[10][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
 Warning (14130): Reduced register "soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_avalon_sc_fifo:hps_0_f2h_sdram0_data_agent_rsp_fifo|mem[9][222]" with stuck data_in port to stuck value GND File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/db/ip/soc_system/submodules/altera_avalon_sc_fifo.v Line: 306
@@ -19566,18 +19566,18 @@ Warning (21074): Design contains 7 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[1]" File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/tiny_npu.sv Line: 39
     Warning (15610): No output dependent on input pin "SW[2]" File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/tiny_npu.sv Line: 39
     Warning (15610): No output dependent on input pin "SW[3]" File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/tiny_npu.sv Line: 39
-Info (21057): Implemented 70006 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 69997 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 39 output pins
     Info (21060): Implemented 40 bidirectional pins
-    Info (21061): Implemented 62040 logic cells
+    Info (21061): Implemented 62031 logic cells
     Info (21064): Implemented 7224 RAM segments
     Info (21066): Implemented 1 delay-locked loops
     Info (21062): Implemented 13 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 728 warnings
-    Info: Peak virtual memory: 1628 megabytes
-    Info: Processing ended: Sat Apr 12 10:49:22 2025
-    Info: Elapsed time: 00:01:27
-    Info: Total CPU time (on all processors): 00:02:53
+    Info: Peak virtual memory: 1626 megabytes
+    Info: Processing ended: Sat Apr 12 12:51:15 2025
+    Info: Elapsed time: 00:01:26
+    Info: Total CPU time (on all processors): 00:02:55
 
 
