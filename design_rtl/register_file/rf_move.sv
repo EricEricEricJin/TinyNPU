@@ -21,6 +21,8 @@ logic line_cnt_dec;
 logic [LINE_NUM_W - 1 : 0] line_cnt;
 logic [ADDR_W - 1 : 0] src_addr, dst_addr;
 
+logic src_freeze, dst_freeze;
+
 // Flip src and dst addr at start
 // Line counter
 always_ff @(posedge clk, negedge rst_n) begin
@@ -28,16 +30,22 @@ always_ff @(posedge clk, negedge rst_n) begin
         src_addr <= '0;
         dst_addr <= '0;
         line_cnt <= '0;
+        src_freeze <= 0;
+        dst_freeze <= 0;
     end
     else if (rf_move.start) begin
         src_addr <= rf_move.src_addr;
         dst_addr <= rf_move.dst_addr;
         line_cnt <= rf_move.line_num - 1;
+        src_freeze <= rf_move.src_freeze;
+        dst_freeze <= rf_move.dst_freeze;
     end
     else if (line_cnt_dec) begin
-        src_addr <= src_addr + 1;
-        dst_addr <= dst_addr + 1;
         line_cnt <= line_cnt - 1;
+        if (!src_freeze) 
+            src_addr <= src_addr + 1;
+        if (!dst_freeze) 
+            dst_addr <= dst_addr + 1;
     end
 end
 
