@@ -56,6 +56,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "GPIO0_GPIO[5]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[6]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[7]",
+					"strict" : false
+				},
+				{
 					"name" : "GPIO0_GPIO[8]",
 					"strict" : false
 				},
@@ -64,7 +76,83 @@
 					"strict" : false
 				},
 				{
+					"name" : "GPIO0_GPIO[10]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[11]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[12]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[13]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[14]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[15]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[16]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[17]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[18]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[19]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[20]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[21]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[22]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[23]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[24]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[25]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[26]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[27]",
+					"strict" : false
+				},
+				{
 					"name" : "GPIO0_GPIO[28]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[29]",
 					"strict" : false
 				},
 				{
@@ -76,19 +164,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "GPIO0_GPIO[34]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO0_GPIO[29]",
-					"strict" : false
-				},
-				{
 					"name" : "GPIO0_GPIO[32]",
 					"strict" : false
 				},
 				{
 					"name" : "GPIO0_GPIO[33]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[34]",
 					"strict" : false
 				},
 				{

@@ -139,8 +139,15 @@ design_top i_design_top (
 ////////////////////////
 // Monitor signals 
 ////////////////////////
-assign GPIO0_GPIO = {clk, rst_n, h2f_write, f2h_read, f2h_pio32};
-
+// assign GPIO0_GPIO = {clk, rst_n, h2f_write, f2h_read, f2h_pio32};
+logic [33:0] gpio_out_reg;
+always_ff @(posedge clk, negedge rst_n) begin
+	if (!rst_n)
+		gpio_out_reg <= '0;
+	else
+		gpio_out_reg <= {h2f_write, f2h_read, f2h_pio32};
+end
+assign GPIO0_GPIO = {clk, rst_n, gpio_out_reg};
 
 ////////////////////////
 // counter to test alive
