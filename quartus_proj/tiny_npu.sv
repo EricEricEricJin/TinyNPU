@@ -35,7 +35,10 @@ module tiny_npu(
 	output		     [7:0]		LED,
 
 	//////////// SW //////////
-	input 		     [3:0]		SW
+	input 		     [3:0]		SW,
+    
+    //////////// GPIO_0, GPIO connect to GPIO Default //////////
+	inout 		    [35:0]		GPIO0_GPIO
 );
 
 
@@ -116,7 +119,6 @@ soc_system u0 (
     .memory_oct_rzqin        (HPS_DDR3_RZQ),        //                .oct_rzqin
 );
 
-
 ////////////////////////
 // Design Top
 ////////////////////////
@@ -131,8 +133,14 @@ design_top i_design_top (
     .h2f_write      (h2f_write),
     
     .f2h_pio32      (f2h_pio32),
-    .f2h_write      (f2h_read)
+    .f2h_read       (f2h_read)
 );
+
+////////////////////////
+// Monitor signals 
+////////////////////////
+assign GPIO0_GPIO = {clk, rst_n, h2f_write, f2h_read, f2h_pio32};
+
 
 ////////////////////////
 // counter to test alive

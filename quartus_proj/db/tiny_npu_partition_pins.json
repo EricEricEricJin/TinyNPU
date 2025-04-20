@@ -36,6 +36,62 @@
 					"strict" : false
 				},
 				{
+					"name" : "GPIO0_GPIO[0]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[1]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[2]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[3]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[4]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[8]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[9]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[28]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[30]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[31]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[34]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[29]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[32]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO0_GPIO[33]",
+					"strict" : false
+				},
+				{
 					"name" : "FPGA_CLK1_50",
 					"strict" : false
 				},
