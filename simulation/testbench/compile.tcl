@@ -15,6 +15,7 @@ set SRC_FILES {
     ip_cores/ram_176x1408.v                 \
     ip_cores/ram_256x8.v                 \
     ip_cores/fifo_16x128.v               \
+    simulation/testbench/avmm_raw_intf.sv \
     simulation/testbench/avmm_sdram_bfm.sv \
     simulation/testbench/hps_bfm.sv       \
     simulation/testbench/soc_system_bfm.sv  \
