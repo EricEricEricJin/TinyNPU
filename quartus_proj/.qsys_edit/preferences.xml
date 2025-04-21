@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="30" />
+   <connections preferredWidth="31" />
    <irq preferredWidth="34" />
    <name preferredWidth="205" />
    <description preferredWidth="246" />
@@ -12,7 +12,7 @@
    <baseaddress preferredWidth="148" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
+ <library expandedCategories="Library,Project" />
  <window width="1868" height="1011" x="52" y="69" />
  <generation simulation="NONE" />
  <hdlexample language="VERILOG" />

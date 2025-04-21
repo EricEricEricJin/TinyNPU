@@ -12,7 +12,7 @@ module design_top (
     input  wire  [31 : 0] h2f_pio32,
     input  wire           h2f_write,
     output logic [31 : 0] f2h_pio32,
-    input logic           f2h_read,
+    input  wire           f2h_read,
 
     output logic [7 : 0] LED
 );
