@@ -4,7 +4,8 @@ An FPGA-based reconfigurable neural processing unit
 
 ![poster](doc/fyp_poster.jpg)
 
-_Full document to be uploaded._
+Document: [doc/doc.md](doc/doc.md)
+_Full document under construction..._
 
 
 ## Project Overview

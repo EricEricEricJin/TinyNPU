@@ -1,5 +1,5 @@
 Fitter report for tiny_npu
-Sun Apr 20 14:46:46 2025
+Thu Apr 24 17:33:59 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +---------------------------------+------------------------------------------------+
-; Fitter Status                   ; Successful - Sun Apr 20 14:46:45 2025          ;
+; Fitter Status                   ; Successful - Thu Apr 24 17:33:58 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; tiny_npu                                       ;
 ; Top-level Entity Name           ; tiny_npu                                       ;
@@ -160,18 +160,18 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.48        ;
+; Average used               ; 1.51        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   8.0%      ;
-;     Processor 3            ;   7.7%      ;
-;     Processor 4            ;   7.5%      ;
-;     Processor 5            ;   6.2%      ;
-;     Processor 6            ;   6.2%      ;
-;     Processor 7            ;   6.2%      ;
-;     Processor 8            ;   6.1%      ;
+;     Processor 2            ;   8.4%      ;
+;     Processor 3            ;   8.1%      ;
+;     Processor 4            ;   7.9%      ;
+;     Processor 5            ;   6.6%      ;
+;     Processor 6            ;   6.6%      ;
+;     Processor 7            ;   6.5%      ;
+;     Processor 8            ;   6.5%      ;
 +----------------------------+-------------+
 
 
@@ -5238,24 +5238,24 @@ Info (176235): Finished register packing
     Extra Info (176218): Packed 128 registers into blocks of type Block RAM
     Extra Info (176218): Packed 257 registers into blocks of type DSP block
     Extra Info (176220): Created 24 register duplicates
-Info (11798): Fitter preparation operations ending: elapsed time is 00:01:02
+Info (11798): Fitter preparation operations ending: elapsed time is 00:01:00
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:01:25
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:01:22
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:01:27
+Info (170192): Fitter placement operations ending: elapsed time is 00:01:29
 Info (170193): Fitter routing operations beginning
 Info (170089): 2e+03 ns of routing delay (approximately 1.1% of available device routing delay) has been added to meet hold timing. For more information, refer to the Estimated Delay Added for Hold Timing section in the Fitter report.
 Info (170195): Router estimated average interconnect usage is 34% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 59% of the available device resources in the region that extends from location X22_Y35 to location X32_Y45
-Info (170194): Fitter routing operations ending: elapsed time is 00:04:34
-Info (11888): Total time spent on timing analysis during the Fitter is 102.39 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:04:20
+Info (11888): Total time spent on timing analysis during the Fitter is 102.64 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:01:07
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:01:06
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 36 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin GPIO0_GPIO[35] has a permanently enabled output enable File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/tiny_npu.sv Line: 42
@@ -5377,10 +5377,10 @@ Info (169186): Following groups of pins have the same dynamic on-chip terminatio
         Info (169066): Type bi-directional pin HPS_DDR3_DQ[22] uses the SSTL-15 Class I I/O standard File: /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/tiny_npu.sv Line: 22
 Info (144001): Generated suppressed messages file /home/eric/Documents/Conformer-FPGA-New/TinyNPU/quartus_proj/tiny_npu.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 77 warnings
-    Info: Peak virtual memory: 4288 megabytes
-    Info: Processing ended: Sun Apr 20 14:46:57 2025
-    Info: Elapsed time: 00:11:20
-    Info: Total CPU time (on all processors): 00:35:32
+    Info: Peak virtual memory: 4351 megabytes
+    Info: Processing ended: Thu Apr 24 17:34:08 2025
+    Info: Elapsed time: 00:10:55
+    Info: Total CPU time (on all processors): 00:34:41
 
 
 +----------------------------+

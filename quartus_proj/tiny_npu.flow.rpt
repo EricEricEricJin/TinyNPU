@@ -1,5 +1,5 @@
 Flow report for tiny_npu
-Sun Apr 20 14:48:18 2025
+Thu Apr 24 17:35:26 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Sun Apr 20 14:47:12 2025          ;
+; Flow Status                     ; Successful - Thu Apr 24 17:34:23 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; tiny_npu                                       ;
 ; Top-level Entity Name           ; tiny_npu                                       ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/20/2025 14:34:10 ;
+; Start date & time ; 04/24/2025 17:21:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tiny_npu            ;
 +-------------------+---------------------+
@@ -83,7 +83,7 @@ https://fpgasoftware.intel.com/eula.
 ; AUTO_RESOURCE_SHARING                                  ; On                                               ; Off           ; --          ; --         ;
 ; BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; Dont Care                                        ; Care          ; --          ; --         ;
 ; BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; Dont Care                                        ; Auto          ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                                  ; 66076473083265.174513084923136                   ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                                  ; 63451731822.174548650446517                      ; --            ; --          ; --         ;
 ; ECO_REGENERATE_REPORT                                  ; On                                               ; Off           ; --          ; --         ;
 ; FINAL_PLACEMENT_OPTIMIZATION                           ; Always                                           ; Automatically ; --          ; --         ;
 ; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION             ; Always                                           ; Automatically ; --          ; --         ;
@@ -136,11 +136,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:18     ; 1.5                     ; 1620 MB             ; 00:02:48                           ;
-; Fitter               ; 00:11:08     ; 1.5                     ; 4288 MB             ; 00:35:21                           ;
-; Assembler            ; 00:00:14     ; 1.0                     ; 927 MB              ; 00:00:14                           ;
-; Timing Analyzer      ; 00:01:04     ; 3.7                     ; 2521 MB             ; 00:03:48                           ;
-; Total                ; 00:13:44     ; --                      ; --                  ; 00:42:11                           ;
+; Analysis & Synthesis ; 00:01:20     ; 1.5                     ; 1658 MB             ; 00:02:50                           ;
+; Fitter               ; 00:10:45     ; 1.5                     ; 4351 MB             ; 00:34:31                           ;
+; Assembler            ; 00:00:13     ; 1.0                     ; 931 MB              ; 00:00:13                           ;
+; Timing Analyzer      ; 00:01:01     ; 3.7                     ; 2519 MB             ; 00:03:34                           ;
+; Total                ; 00:13:19     ; --                      ; --                  ; 00:41:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
